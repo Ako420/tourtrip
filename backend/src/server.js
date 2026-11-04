@@ -1,8 +1,6 @@
-import "dotenv/config";
 import app from "./app.js";
 import { connectDB, prisma } from "./config/db.js";
-
-const PORT = process.env.PORT || 5000;
+import { env } from "./config/env.js";
 
 const startServer = async () => {
   try {
@@ -12,8 +10,8 @@ const startServer = async () => {
     process.exit(1);
   }
 
-  const server = app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+  const server = app.listen(env.PORT, () => {
+    console.log(`Server running on port ${env.PORT}`);
   });
 
   const shutdown = () => {
