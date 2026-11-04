@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+/* Design tokens. Every colour, font, radius and shadow in the app comes from here. */
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary: #2563ff;
+  --color-primary-dark: #1a47c7;
+  --color-primary-deep: #123a9e;
+  --color-primary-soft: #eaf0ff;
+
+  --color-accent: #ff8a1f;
+  --color-accent-soft: #fff1e3;
+
+  --color-promo: #d81e5b;
+  --color-promo-soft: #fbd9e4;
+
+  --color-ink: #0f1a2e;
+  --color-ink-soft: #2f3a4d;
+  --color-muted: #667085;
+  --color-line: #e4e7ee;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f5f7fb;
+  --color-star: #ffb400;
+  --color-danger: #d92d20;
+  --color-danger-soft: #fef0ee;
+  --color-success: #0a8f5c;
+
+  --radius-card: 0.75rem;
+  --radius-panel: 1.25rem;
+
+  --shadow-card: 0 8px 24px rgb(15 26 46 / 0.1);
+  --shadow-float: 0 6px 18px rgb(15 26 46 / 0.2);
+
+  --animate-breathing: breathing 2.4s ease-in-out infinite;
+
+  @keyframes breathing {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.06);
+    }
+  }
+
+  --spacing-navbar: 4.25rem;
+  --spacing-sidebar: 13.25rem;
+  --spacing-content: 72.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Two range inputs share one track, so only their thumbs take pointer events. */
+.range-thumb {
+  pointer-events: none;
+  appearance: none;
+  background: transparent;
+}
+
+.range-thumb::-webkit-slider-thumb {
+  pointer-events: auto;
+  appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid var(--color-primary);
+  border-radius: 9999px;
+  background: var(--color-surface);
+  cursor: grab;
+}
+
+.range-thumb::-moz-range-thumb {
+  pointer-events: auto;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid var(--color-primary);
+  border-radius: 9999px;
+  background: var(--color-surface);
+  cursor: grab;
+}
