@@ -1,8 +1,14 @@
 export * from "./attraction.service";
+export * from "./attractionBooking.service";
 export * from "./auth.service";
 export * from "./booking.service";
+export * from "./car.service";
+export * from "./carBooking.service";
 export * from "./flight.service";
 export * from "./flightBooking.service";
 export * from "./home.service";
+export * from "./legal.service";
+export * from "./planner.service";
+export * from "./train.service";
 export * from "./hotel.service";
 export { ApiError, isApiEnabled } from "./http";

@@ -1,5 +1,7 @@
+export * from "./attractionBooking";
 export * from "./attractionFilters";
 export * from "./booking";
+export * from "./carSearch";
 export * from "./dates";
 export * from "./flightBooking";
 export * from "./flightFilters";
@@ -7,3 +9,5 @@ export * from "./flightSearch";
 export * from "./format";
 export * from "./hotelFilters";
 export * from "./search";
+export * from "./tripPlan";
+export * from "./trainSearch";

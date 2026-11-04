@@ -1,22 +1,31 @@
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import {
+  Breadcrumb,
   HandpickedHotels,
   HotelAmenities,
-  HotelBreadcrumb,
   HotelDetailsSkeleton,
   HotelGallery,
   HotelHeader,
-  HotelLocation,
   HotelOverview,
-  HotelPolicies,
-  HotelReviews,
   HotelRooms,
-  HotelSectionTabs,
+  LocationSection,
+  PolicyList,
+  ReviewsSection,
+  SectionTabs,
 } from "@/components";
 import { parseHotelSearch } from "@/lib";
 import { getHotelBySlug, getSimilarHotels } from "@/services";
 import type { RouteParams } from "@/types";
+
+const sections = [
+  { id: "overview", label: "Overview" },
+  { id: "rooms", label: "Rooms" },
+  { id: "amenities", label: "Amenities" },
+  { id: "reviews", label: "Reviews" },
+  { id: "policies", label: "Policies" },
+  { id: "location", label: "Location" },
+];
 
 type HotelDetailsScreenProps = {
   params: Promise<{ slug: string }>;
@@ -35,16 +44,28 @@ const HotelDetailsContent = async ({ params, searchParams }: HotelDetailsScreenP
 
   return (
     <>
-      <HotelBreadcrumb hotel={hotel} />
+      <Breadcrumb
+        links={[
+          { label: "Home", href: "/" },
+          { label: "Hotels", href: "/hotels" },
+          { label: hotel.city, href: `/hotels?destination=${encodeURIComponent(hotel.city)}` },
+        ]}
+        current={hotel.name}
+      />
       <HotelGallery name={hotel.name} images={hotel.images} />
       <HotelHeader hotel={hotel} />
-      <HotelSectionTabs />
+      <SectionTabs sections={sections} />
       <HotelOverview hotel={hotel} />
       <HotelRooms hotel={hotel} search={parseHotelSearch(query)} />
       <HotelAmenities amenities={hotel.amenities} />
-      <HotelReviews hotel={hotel} />
-      <HotelPolicies policies={hotel.policies} />
-      <HotelLocation hotel={hotel} />
+      <ReviewsSection
+        rating={hotel.rating}
+        reviewCount={hotel.reviewCount}
+        scores={hotel.reviewScores}
+        reviews={hotel.reviews}
+      />
+      <PolicyList policies={hotel.policies} />
+      <LocationSection address={`${hotel.address}, ${hotel.city}, ${hotel.country}`} nearby={hotel.nearby} />
       <HandpickedHotels title="You may also like" moreHref="/hotels" hotels={similarHotels} />
     </>
   );

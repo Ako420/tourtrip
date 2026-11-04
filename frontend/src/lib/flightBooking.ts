@@ -1,4 +1,4 @@
-import type { FlightOffer, FlightSearch, RouteParams } from "@/types";
+import type { FlightSearch, RouteParams } from "@/types";
 
 export type PassengerSlot = {
   key: string;
@@ -40,10 +40,13 @@ export const parseFlightBookingParams = (params: RouteParams) => {
   return { offerId: getText(params.offer), reference: getText(params.reference) };
 };
 
-export const getSeatProblem = (offer: FlightOffer, search: Pick<FlightSearch, "adults" | "children">) => {
+export const getSeatProblem = (
+  offer: { seatsLeft?: number },
+  search: Pick<FlightSearch, "adults" | "children">,
+) => {
   const travelers = search.adults + search.children;
 
   return offer.seatsLeft && offer.seatsLeft < travelers
-    ? `Only ${offer.seatsLeft} seats are left on this flight. Choose another flight.`
+    ? `Only ${offer.seatsLeft} seats are left. Choose another option.`
     : undefined;
 };

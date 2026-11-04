@@ -1,20 +1,23 @@
-import type { HotelDetails } from "@/types";
-import Icon from "../ui/Icon";
+import type { ReactNode } from "react";
+import type { NearbyPlace } from "@/types";
+import Icon from "./Icon";
 
-type HotelLocationProps = {
-  hotel: HotelDetails;
+type LocationSectionProps = {
+  address: string;
+  nearby: NearbyPlace[];
+  children?: ReactNode;
 };
 
-const HotelLocation = ({ hotel }: HotelLocationProps) => {
+const LocationSection = ({ address, nearby, children }: LocationSectionProps) => {
   return (
     <section id="location" className="mt-10 scroll-mt-32">
       <h2 className="mb-1 text-xl font-bold">Location</h2>
       <p className="mb-4 flex items-center gap-1.5 text-sm text-muted">
         <Icon name="location" />
-        {hotel.address}, {hotel.city}, {hotel.country}
+        {address}
       </p>
       <ul className="grid gap-3 sm:grid-cols-3">
-        {hotel.nearby.map((place) => (
+        {nearby.map((place) => (
           <li key={place.id} className="flex items-center gap-3 rounded-card border border-line p-3">
             <Icon name={place.iconName} className="text-primary" />
             <div>
@@ -24,8 +27,9 @@ const HotelLocation = ({ hotel }: HotelLocationProps) => {
           </li>
         ))}
       </ul>
+      {children}
     </section>
   );
 };
 
-export default HotelLocation;
+export default LocationSection;

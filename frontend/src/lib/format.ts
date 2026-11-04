@@ -1,9 +1,12 @@
 export const formatPrice = (amount: number | string, currency: string) => {
+  const value = Number(amount);
+
+  // Whole prices stay short, but cents are never rounded away.
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency,
-    maximumFractionDigits: 0,
-  }).format(Number(amount));
+    minimumFractionDigits: Number.isInteger(value) ? 0 : 2,
+  }).format(value);
 };
 
 export const formatShortDate = (isoDate: string) => {

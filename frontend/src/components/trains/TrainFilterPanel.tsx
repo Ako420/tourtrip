@@ -1,0 +1,68 @@
+import { departureWindows, trainChangeFilters } from "@/constants";
+import { formatPrice } from "@/lib";
+import type { TrainFilters, TrainSearchResult } from "@/types";
+import FilterCheckbox from "../ui/FilterCheckbox";
+import FilterGroup from "../ui/FilterGroup";
+
+type TrainFilterPanelProps = {
+  filters: TrainFilters;
+  result: TrainSearchResult;
+  onChange: (changes: Partial<TrainFilters>) => void;
+};
+
+const toggle = <T,>(list: T[], value: T) => {
+  return list.includes(value) ? list.filter((item) => item !== value) : [...list, value];
+};
+
+const TrainFilterPanel = ({ filters, result, onChange }: TrainFilterPanelProps) => {
+  return (
+    <div>
+      <FilterGroup title="Changes">
+        {trainChangeFilters.map((option) => (
+          <FilterCheckbox
+            key={option.value}
+            checked={filters.changes.includes(option.value)}
+            onChange={() => onChange({ changes: toggle(filters.changes, option.value) })}
+          >
+            {option.label}
+          </FilterCheckbox>
+        ))}
+      </FilterGroup>
+
+      <FilterGroup title="Departure time">
+        {departureWindows.map((window) => (
+          <FilterCheckbox
+            key={window.id}
+            checked={filters.departureWindows.includes(window.id)}
+            onChange={() => onChange({ departureWindows: toggle(filters.departureWindows, window.id) })}
+          >
+            {window.label} <span className="text-xs text-muted">{window.detail}</span>
+          </FilterCheckbox>
+        ))}
+      </FilterGroup>
+
+      <FilterGroup title="Operators">
+        {result.operators.map((operator) => (
+          <FilterCheckbox
+            key={operator.name}
+            checked={filters.operators.includes(operator.name)}
+            onChange={() => onChange({ operators: toggle(filters.operators, operator.name) })}
+          >
+            <span className="flex w-full justify-between gap-2">
+              {operator.name}
+              <span className="text-xs text-muted">{formatPrice(operator.lowestPrice, result.currency)}</span>
+            </span>
+          </FilterCheckbox>
+        ))}
+      </FilterGroup>
+
+      <FilterGroup title="Ticket options">
+        <FilterCheckbox checked={filters.refundable} onChange={() => onChange({ refundable: !filters.refundable })}>
+          Refundable
+        </FilterCheckbox>
+      </FilterGroup>
+    </div>
+  );
+};
+
+export default TrainFilterPanel;

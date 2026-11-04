@@ -1,3 +1,13 @@
+export { default as planActivitySchema } from "./planActivity";
+export { default as tripPlanSchema } from "./tripPlan";
+export { default as tripSetupSchema } from "./tripSetup";
+export { default as ticketSelectionSchema } from "./ticketSelection";
+export { default as trainBookingTripSchema } from "./trainBookingTrip";
+export { default as attractionBookingTripSchema } from "./attractionBookingTrip";
+export { default as bookingLookupSchema } from "./bookingLookup";
+export { default as createCarBookingSchema } from "./carBooking";
+export { default as carBookingTripSchema } from "./carBookingTrip";
+export { default as carSearchSchema } from "./carSearch";
 export { default as bookingSchema } from "./booking";
 export { default as bookingStaySchema } from "./bookingStay";
 export { default as createFlightBookingSchema } from "./flightBooking";

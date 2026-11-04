@@ -1,8 +1,16 @@
 export { default as airports } from "./airports";
+export { default as withAttractionDetails } from "./attractionDetails";
 export { default as attractions } from "./attractions";
 export { default as attractionsContent } from "./attractionsContent";
 export { default as destinations } from "./destinations";
 export { default as flightDeals } from "./flightDeals";
+export { default as legalDocuments } from "./legal";
+export { default as plannerContent } from "./plannerContent";
+export { default as buildTrainOffers, getTrainFareForDate, trainStations } from "./trainOffers";
+export { default as trainsContent } from "./trainsContent";
+export { default as sampleBookings, SAMPLE_BOOKING_EMAIL } from "./sampleBookings";
+export { default as buildCarOffers } from "./carOffers";
+export { default as carsContent } from "./carsContent";
 export { default as buildFlightOffers, getFareForDate } from "./flightOffers";
 export { default as flightsContent } from "./flights";
 export { default as homeContent } from "./home";

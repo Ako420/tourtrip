@@ -1,4 +1,5 @@
 import type { attractionCategories, attractionSortOptions } from "@/constants";
+import type { HotelPolicy, HotelReview, NearbyPlace, ReviewScore } from "./hotel";
 import type { RecommendationTab, Section } from "./home";
 
 export type AttractionCategory = (typeof attractionCategories)[number]["id"];
@@ -47,4 +48,24 @@ export type AttractionsContent = {
   trending: Section<TrendingDestination>;
   resultsTitle: string;
   recommendations: Section<RecommendationTab>;
+};
+
+export type TicketOption = {
+  id: string;
+  name: string;
+  description: string;
+  includes: string[];
+  adultPrice: number | string;
+  childPrice: number | string;
+};
+
+export type AttractionDetails = Attraction & {
+  description: string;
+  highlights: string[];
+  address: string;
+  tickets: TicketOption[];
+  reviewScores: ReviewScore[];
+  reviews: HotelReview[];
+  policies: HotelPolicy[];
+  nearby: NearbyPlace[];
 };

@@ -8,6 +8,7 @@ export type AuthResponse = {
   token: string;
 };
 
-export type FormState = {
+export type FormState<Result = unknown> = {
   message?: string;
+  result?: Result;
 };

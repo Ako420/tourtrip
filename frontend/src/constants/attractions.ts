@@ -8,6 +8,11 @@ export const attractionCategories = [
   { id: "city", label: "City breaks", iconName: "building" },
 ] as const;
 
+export const ticketLimits = {
+  adults: { min: 1, max: 10 },
+  children: { min: 0, max: 10 },
+};
+
 export const attractionSortOptions = [
   { value: "recommended", label: "Recommended" },
   { value: "rating", label: "Top rated" },

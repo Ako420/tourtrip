@@ -10,6 +10,7 @@ import FormField from "../auth/FormField";
 import FormMessage from "../auth/FormMessage";
 import Button from "../ui/Button";
 import Icon from "../ui/Icon";
+import TermsCheckbox from "./TermsCheckbox";
 
 type BookingFormProps = {
   stay: BookingStay;
@@ -24,7 +25,6 @@ const BookingForm = ({ stay }: BookingFormProps) => {
   const { formProps, getError, isPending, message } = useZodForm(bookingSchema, (_state, values) =>
     createBookingAction(stay, values),
   );
-  const termsError = getError("acceptTerms");
   const requestsError = getError("specialRequests");
 
   return (
@@ -86,28 +86,7 @@ const BookingForm = ({ stay }: BookingFormProps) => {
         </p>
       </section>
 
-      <div>
-        <label className="flex cursor-pointer items-start gap-2 text-sm">
-          <input
-            type="checkbox"
-            name="acceptTerms"
-            aria-invalid={Boolean(termsError)}
-            className="mt-0.5 size-4 accent-primary"
-          />
-          <span>
-            I agree to the{" "}
-            <Link href="/terms" className="text-primary hover:underline">
-              booking terms
-            </Link>{" "}
-            and{" "}
-            <Link href="/privacy" className="text-primary hover:underline">
-              privacy statement
-            </Link>
-            .
-          </span>
-        </label>
-        {termsError && <p className="mt-1.5 text-sm text-danger">{termsError}</p>}
-      </div>
+      <TermsCheckbox error={getError("acceptTerms")} />
 
       <Button type="submit" size="lg" disabled={isPending} className="disabled:opacity-60">
         {isPending ? "Confirming..." : "Confirm booking"}

@@ -10,7 +10,8 @@ import type { FlightBookingTrip } from "@/types";
 import FormField from "../auth/FormField";
 import FormMessage from "../auth/FormMessage";
 import Button from "../ui/Button";
-import Icon from "../ui/Icon";
+import TermsCheckbox from "./TermsCheckbox";
+import OnlinePaymentNote from "./OnlinePaymentNote";
 import PassengerFields from "./PassengerFields";
 
 type FlightBookingFormProps = {
@@ -22,7 +23,6 @@ const FlightBookingForm = ({ trip }: FlightBookingFormProps) => {
     createFlightBookingSchema(trip.adults, trip.children, trip.departDate),
     (_state, values) => createFlightBookingAction(trip, values),
   );
-  const termsError = getError("acceptTerms");
 
   return (
     <form {...formProps} className="flex flex-col gap-6">
@@ -51,39 +51,9 @@ const FlightBookingForm = ({ trip }: FlightBookingFormProps) => {
         </div>
       </section>
 
-      <section className="rounded-card border border-line p-5">
-        <h2 className="mb-2 text-lg font-bold">Payment</h2>
-        <p className="flex items-start gap-3 rounded-md bg-primary-soft p-3 text-sm">
-          <Icon name="credit-card" className="mt-0.5 text-primary" />
-          <span>
-            <strong className="block">Online payment is not connected yet</strong>
-            You will not be charged, and no card details are needed.
-          </span>
-        </p>
-      </section>
+      <OnlinePaymentNote />
 
-      <div>
-        <label className="flex cursor-pointer items-start gap-2 text-sm">
-          <input
-            type="checkbox"
-            name="acceptTerms"
-            aria-invalid={Boolean(termsError)}
-            className="mt-0.5 size-4 accent-primary"
-          />
-          <span>
-            I agree to the{" "}
-            <Link href="/terms" className="text-primary hover:underline">
-              booking terms
-            </Link>{" "}
-            and{" "}
-            <Link href="/privacy" className="text-primary hover:underline">
-              privacy statement
-            </Link>
-            .
-          </span>
-        </label>
-        {termsError && <p className="mt-1.5 text-sm text-danger">{termsError}</p>}
-      </div>
+      <TermsCheckbox error={getError("acceptTerms")} />
 
       <Button type="submit" size="lg" disabled={isPending} className="disabled:opacity-60">
         {isPending ? "Confirming..." : "Confirm booking"}

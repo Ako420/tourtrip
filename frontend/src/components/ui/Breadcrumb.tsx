@@ -1,18 +1,13 @@
 import Link from "next/link";
-import type { HotelSummary } from "@/types";
-import Icon from "../ui/Icon";
+import type { LinkItem } from "@/types";
+import Icon from "./Icon";
 
-type HotelBreadcrumbProps = {
-  hotel: HotelSummary;
+type BreadcrumbProps = {
+  links: LinkItem[];
+  current: string;
 };
 
-const HotelBreadcrumb = ({ hotel }: HotelBreadcrumbProps) => {
-  const links = [
-    { label: "Home", href: "/" },
-    { label: "Hotels", href: "/hotels" },
-    { label: hotel.city, href: `/hotels?destination=${encodeURIComponent(hotel.city)}` },
-  ];
-
+const Breadcrumb = ({ links, current }: BreadcrumbProps) => {
   return (
     <nav aria-label="Breadcrumb">
       <ol className="flex flex-wrap items-center gap-x-2 text-sm text-muted">
@@ -25,11 +20,11 @@ const HotelBreadcrumb = ({ hotel }: HotelBreadcrumbProps) => {
           </li>
         ))}
         <li aria-current="page" className="text-ink">
-          {hotel.name}
+          {current}
         </li>
       </ol>
     </nav>
   );
 };
 
-export default HotelBreadcrumb;
+export default Breadcrumb;

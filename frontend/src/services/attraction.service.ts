@@ -1,14 +1,15 @@
 import { ATTRACTIONS_PAGE_SIZE } from "@/constants";
-import { attractions, attractionsContent } from "@/data";
+import { attractions, attractionsContent, withAttractionDetails } from "@/data";
 import { toAttractionQuery } from "@/lib";
 import type {
   Attraction,
+  AttractionDetails,
   AttractionFilters,
   AttractionSearchResult,
   AttractionSort,
   AttractionsContent,
 } from "@/types";
-import { apiGet, isApiEnabled } from "./http";
+import { ApiError, apiGet, isApiEnabled } from "./http";
 
 const sorters: Partial<Record<AttractionSort, (a: Attraction, b: Attraction) => number>> = {
   rating: (a, b) => b.rating - a.rating,
@@ -26,6 +27,35 @@ const matchesQuery = (attraction: Attraction, query?: string) => {
 
 export const getAttractionsContent = async (): Promise<AttractionsContent> => {
   return isApiEnabled ? apiGet<AttractionsContent>("/attractions/content") : attractionsContent;
+};
+
+export const getAttractionBySlug = async (slug: string): Promise<AttractionDetails | null> => {
+  if (!isApiEnabled) {
+    const attraction = attractions.find((item) => item.slug === slug);
+
+    return attraction ? withAttractionDetails(attraction) : null;
+  }
+
+  try {
+    return await apiGet<AttractionDetails>(`/attractions/${encodeURIComponent(slug)}`);
+  } catch (error) {
+    if (error instanceof ApiError && error.status === 404) {
+      return null;
+    }
+
+    throw error;
+  }
+};
+
+export const getSimilarAttractions = async (attraction: Attraction): Promise<Attraction[]> => {
+  if (isApiEnabled) {
+    return apiGet<Attraction[]>(`/attractions/${encodeURIComponent(attraction.slug)}/similar`);
+  }
+
+  return attractions
+    .filter((item) => item.slug !== attraction.slug)
+    .toSorted((a, b) => Number(b.category === attraction.category) - Number(a.category === attraction.category))
+    .slice(0, 6);
 };
 
 export const searchAttractions = async (filters: AttractionFilters): Promise<AttractionSearchResult> => {

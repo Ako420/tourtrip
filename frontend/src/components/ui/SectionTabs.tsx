@@ -2,16 +2,11 @@
 
 import { useEffect, useState } from "react";
 
-const sections = [
-  { id: "overview", label: "Overview" },
-  { id: "rooms", label: "Rooms" },
-  { id: "amenities", label: "Amenities" },
-  { id: "reviews", label: "Reviews" },
-  { id: "policies", label: "Policies" },
-  { id: "location", label: "Location" },
-];
+type SectionTabsProps = {
+  sections: { id: string; label: string }[];
+};
 
-const HotelSectionTabs = () => {
+const SectionTabs = ({ sections }: SectionTabsProps) => {
   const [activeId, setActiveId] = useState(sections[0].id);
 
   useEffect(() => {
@@ -31,10 +26,10 @@ const HotelSectionTabs = () => {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [sections]);
 
   return (
-    <nav aria-label="Hotel sections" className="sticky top-navbar z-20 mt-5 border-b border-line bg-surface">
+    <nav aria-label="Page sections" className="sticky top-navbar z-20 mt-5 border-b border-line bg-surface">
       <ul className="scrollbar-none flex gap-6 overflow-x-auto">
         {sections.map(({ id, label }) => (
           <li key={id} className="shrink-0">
@@ -54,4 +49,4 @@ const HotelSectionTabs = () => {
   );
 };
 
-export default HotelSectionTabs;
+export default SectionTabs;

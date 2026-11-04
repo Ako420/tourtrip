@@ -1,14 +1,16 @@
 import type { HotelPolicy } from "@/types";
-import Icon from "../ui/Icon";
+import Icon from "./Icon";
 
-type HotelPoliciesProps = {
+type PolicyListProps = {
   policies: HotelPolicy[];
+  id?: string;
+  title?: string;
 };
 
-const HotelPolicies = ({ policies }: HotelPoliciesProps) => {
+const PolicyList = ({ policies, id = "policies", title = "Policies" }: PolicyListProps) => {
   return (
-    <section id="policies" className="mt-10 scroll-mt-32">
-      <h2 className="mb-4 text-xl font-bold">Policies</h2>
+    <section id={id} className="mt-10 scroll-mt-32">
+      <h2 className="mb-4 text-xl font-bold">{title}</h2>
       <dl className="divide-y divide-line rounded-card border border-line px-4">
         {policies.map((policy) => (
           <div key={policy.id} className="flex flex-col gap-1 py-3 sm:flex-row sm:gap-6">
@@ -24,4 +26,4 @@ const HotelPolicies = ({ policies }: HotelPoliciesProps) => {
   );
 };
 
-export default HotelPolicies;
+export default PolicyList;

@@ -2,17 +2,21 @@
 
 import { useState } from "react";
 import { formatCount, getRatingLabel } from "@/lib";
-import type { HotelDetails } from "@/types";
+import type { HotelReview, ReviewScore } from "@/types";
 
-type HotelReviewsProps = {
-  hotel: HotelDetails;
+type ReviewsSectionProps = {
+  rating: number;
+  reviewCount: number;
+  scores: ReviewScore[];
+  reviews: HotelReview[];
+  maxScore?: number;
 };
 
 const INITIAL_COUNT = 3;
 
-const HotelReviews = ({ hotel }: HotelReviewsProps) => {
+const ReviewsSection = ({ rating, reviewCount, scores, reviews, maxScore = 10 }: ReviewsSectionProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const reviews = isExpanded ? hotel.reviews : hotel.reviews.slice(0, INITIAL_COUNT);
+  const visibleReviews = isExpanded ? reviews : reviews.slice(0, INITIAL_COUNT);
 
   return (
     <section id="reviews" className="mt-10 scroll-mt-32">
@@ -20,19 +24,19 @@ const HotelReviews = ({ hotel }: HotelReviewsProps) => {
 
       <div className="grid gap-6 rounded-card border border-line p-5 md:grid-cols-[12rem_1fr]">
         <div>
-          <p className="text-4xl font-bold text-primary">{hotel.rating.toFixed(1)}</p>
-          <p className="mt-1 font-semibold">{getRatingLabel(hotel.rating)}</p>
-          <p className="text-sm text-muted">{formatCount(hotel.reviewCount, "review")}</p>
+          <p className="text-4xl font-bold text-primary">{rating.toFixed(1)}</p>
+          <p className="mt-1 font-semibold">{getRatingLabel((rating / maxScore) * 10)}</p>
+          <p className="text-sm text-muted">{formatCount(reviewCount, "review")}</p>
         </div>
         <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-2">
-          {hotel.reviewScores.map((score) => (
+          {scores.map((score) => (
             <li key={score.id}>
               <p className="flex justify-between text-sm">
                 {score.label}
                 <span className="font-semibold">{score.score.toFixed(1)}</span>
               </p>
               <div className="mt-1 h-1.5 rounded-full bg-line">
-                <div className="h-full rounded-full bg-primary" style={{ width: `${score.score * 10}%` }} />
+                <div className="h-full rounded-full bg-primary" style={{ width: `${(score.score / maxScore) * 100}%` }} />
               </div>
             </li>
           ))}
@@ -40,7 +44,7 @@ const HotelReviews = ({ hotel }: HotelReviewsProps) => {
       </div>
 
       <ul className="mt-4 divide-y divide-line">
-        {reviews.map((review) => (
+        {visibleReviews.map((review) => (
           <li key={review.id} className="py-4">
             <div className="flex items-start justify-between gap-3">
               <div>
@@ -58,7 +62,7 @@ const HotelReviews = ({ hotel }: HotelReviewsProps) => {
         ))}
       </ul>
 
-      {hotel.reviews.length > INITIAL_COUNT && (
+      {reviews.length > INITIAL_COUNT && (
         <button
           type="button"
           aria-expanded={isExpanded}
@@ -72,4 +76,4 @@ const HotelReviews = ({ hotel }: HotelReviewsProps) => {
   );
 };
 
-export default HotelReviews;
+export default ReviewsSection;

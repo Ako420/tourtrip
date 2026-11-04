@@ -9,13 +9,13 @@ import {
 import { z } from "zod";
 import type { FormState } from "@/types";
 
-type FormAction = (state: FormState, values: unknown) => Promise<FormState>;
+type FormAction<Result> = (state: FormState<Result>, values: unknown) => Promise<FormState<Result>>;
 type FieldErrors = Record<string, string[] | undefined>;
 
 const getValues = (form: HTMLFormElement) => Object.fromEntries(new FormData(form));
 
 // Validates in the browser for instant feedback. The action validates again on the server.
-const useZodForm = (schema: z.ZodType, action: FormAction) => {
+const useZodForm = <Result = unknown>(schema: z.ZodType, action: FormAction<Result>) => {
   const [state, submit, isPending] = useActionState(action, {});
   const [errors, setErrors] = useState<FieldErrors>({});
   const [touched, setTouched] = useState<string[]>([]);
@@ -66,6 +66,7 @@ const useZodForm = (schema: z.ZodType, action: FormAction) => {
     getError,
     isPending,
     message: state.message,
+    result: state.result,
   };
 };
 
