@@ -55,9 +55,9 @@ const flightsContent: FlightsContent = {
     title: "Discover what's happening",
     items: [
       { id: "winter", eyebrow: "Limited time", title: "Winter fare sale", subtitle: "Save on selected routes this month", href: "/flights#deals", ctaLabel: "Book now", imageUrl: unsplashImage("photo-1529074963764-98f45c47344b", 800), theme: "primary" },
-      { id: "egypt", eyebrow: "Stay inspired", title: "Wonders of Egypt", subtitle: "History on a grand scale", href: "/inspiration", ctaLabel: "Book now", imageUrl: unsplashImage("photo-1553913861-c0fddf2619ee", 800), theme: "sunset" },
+      { id: "egypt", eyebrow: "Stay inspired", title: "Wonders of Egypt", subtitle: "History on a grand scale", href: "/inspiration/cairo", ctaLabel: "Read guide", imageUrl: unsplashImage("photo-1553913861-c0fddf2619ee", 800), theme: "sunset" },
       { id: "japan", eyebrow: "City breaks", title: "Tokyo after dark", subtitle: "Neon nights and great food", href: "/flights?to=Tokyo#deals", ctaLabel: "Book now", imageUrl: unsplashImage("photo-1540959733332-eab4deabeeaf", 800), theme: "sunset" },
-      { id: "greece", eyebrow: "Sun seekers", title: "Island hop in Greece", subtitle: "White walls and blue seas", href: "/inspiration", ctaLabel: "Book now", imageUrl: unsplashImage("photo-1570077188670-e3a8d69ac5ff", 800), theme: "sunset" },
+      { id: "greece", eyebrow: "Sun seekers", title: "Island hop in Greece", subtitle: "White walls and blue seas", href: "/inspiration/santorini", ctaLabel: "Read guide", imageUrl: unsplashImage("photo-1570077188670-e3a8d69ac5ff", 800), theme: "sunset" },
     ],
   },
   why: {

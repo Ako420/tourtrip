@@ -8,3 +8,4 @@ export * from "./search";
 export * from "./trains";
 export * from "./support";
 export * from "./deals";
+export * from "./guides";

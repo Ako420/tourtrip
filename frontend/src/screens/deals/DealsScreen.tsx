@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { DealCampaigns, DealCoupons, DealFlights, DealHotels, Skeleton } from "@/components";
+import { DealCampaigns, DealCoupons, DealFlights, HotelGrid, Skeleton } from "@/components";
 import { getDeals } from "@/services";
 
 const DealsContent = async () => {
@@ -8,7 +8,7 @@ const DealsContent = async () => {
   return (
     <>
       <DealCampaigns campaigns={campaigns} />
-      <DealHotels title="Hot hotel deals" hotels={hotelDeals} />
+      <HotelGrid title="Hot hotel deals" hotels={hotelDeals} />
       <DealFlights title="Hot flight deals" deals={flightDeals} />
       <DealCoupons promotions={promotions} />
     </>

@@ -1,13 +1,13 @@
 import type { HotelSummary } from "@/types";
-import HotelStayCard from "../hotels/HotelStayCard";
+import HotelStayCard from "./HotelStayCard";
 import SectionHeading from "../ui/SectionHeading";
 
-type DealHotelsProps = {
+type HotelGridProps = {
   title: string;
   hotels: HotelSummary[];
 };
 
-const DealHotels = ({ title, hotels }: DealHotelsProps) => {
+const HotelGrid = ({ title, hotels }: HotelGridProps) => {
   if (hotels.length === 0) return null;
 
   return (
@@ -25,4 +25,4 @@ const DealHotels = ({ title, hotels }: DealHotelsProps) => {
   );
 };
 
-export default DealHotels;
+export default HotelGrid;

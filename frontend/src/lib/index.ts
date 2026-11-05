@@ -12,3 +12,4 @@ export * from "./hotelFilters";
 export * from "./search";
 export * from "./tripPlan";
 export * from "./trainSearch";
+export * from "./guide";

@@ -8,7 +8,7 @@ The pages still to build. Every link below opens the "page not found" screen tod
 2. Build only that task. Check its "Done when" line, then tick its box.
 3. Stop and review before starting the next one.
 
-**Next task: 1.3**
+**Next task: 1.4**
 
 **Rules for every page**
 
@@ -44,7 +44,7 @@ The pages still to build. Every link below opens the "page not found" screen tod
 
 **Done when:** signed-out and signed-in users each see the right version.
 
-#### [ ] 1.3 Travel Inspiration
+#### [x] 1.3 Travel Inspiration
 
 **Route:** `/inspiration`, `/inspiration/[slug]`. **API later:** `GET /guides`, `GET /guides/:slug` (backend 19.1).
 

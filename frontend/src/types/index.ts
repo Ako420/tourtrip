@@ -12,3 +12,4 @@ export * from "./train";
 export * from "./support";
 export * from "./deal";
 export * from "./rewards";
+export * from "./guide";

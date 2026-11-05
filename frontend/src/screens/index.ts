@@ -18,9 +18,11 @@ export { default as FlightBookingConfirmedScreen } from "./flight-booking/Flight
 export { default as FlightBookingScreen } from "./flight-booking/FlightBookingScreen";
 export { default as FlightResultsScreen } from "./flight-results/FlightResultsScreen";
 export { default as FlightsScreen } from "./flights/FlightsScreen";
+export { default as GuideDetailsScreen } from "./guide-details/GuideDetailsScreen";
 export { default as HomeScreen } from "./home/HomeScreen";
 export { default as HotelDetailsScreen } from "./hotel-details/HotelDetailsScreen";
 export { default as HotelsScreen } from "./hotels/HotelsScreen";
+export { default as InspirationScreen } from "./inspiration/InspirationScreen";
 export { default as LegalScreen } from "./legal/LegalScreen";
 export { default as LoginScreen } from "./login/LoginScreen";
 export { default as NotFoundContent } from "./not-found/NotFoundContent";

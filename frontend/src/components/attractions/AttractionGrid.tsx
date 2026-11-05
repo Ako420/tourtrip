@@ -1,13 +1,13 @@
 import type { Attraction } from "@/types";
-import AttractionCard from "../attractions/AttractionCard";
+import AttractionCard from "./AttractionCard";
 import SectionHeading from "../ui/SectionHeading";
 
-type DealAttractionsProps = {
+type AttractionGridProps = {
   title: string;
   attractions: Attraction[];
 };
 
-const DealAttractions = ({ title, attractions }: DealAttractionsProps) => {
+const AttractionGrid = ({ title, attractions }: AttractionGridProps) => {
   if (attractions.length === 0) return null;
 
   return (
@@ -25,4 +25,4 @@ const DealAttractions = ({ title, attractions }: DealAttractionsProps) => {
   );
 };
 
-export default DealAttractions;
+export default AttractionGrid;

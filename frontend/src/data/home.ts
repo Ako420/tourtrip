@@ -128,11 +128,11 @@ const homeContent: HomeContent = {
     title: "Magical trip moments that last",
     moreHref: "/inspiration",
     items: [
-      { id: "balloons", title: "Sunrise over Cappadocia by hot air balloon", location: "Cappadocia", imageUrl: unsplashImage("photo-1641128324972-af3212f0f6bd"), href: "/inspiration" },
-      { id: "temple", title: "A quiet morning at a lakeside temple", location: "Bali", imageUrl: unsplashImage("photo-1537996194471-e657df975ab4"), href: "/inspiration" },
-      { id: "safari", title: "Golden hour on a savanna safari", location: "East Africa", imageUrl: unsplashImage("photo-1516426122078-c23e76319801"), href: "/inspiration" },
-      { id: "aurora", title: "Chasing the northern lights", location: "Arctic Circle", imageUrl: unsplashImage("photo-1531366936337-7c912a4589a7"), href: "/inspiration" },
-      { id: "lake", title: "Rowing across a mountain lake", location: "The Alps", imageUrl: unsplashImage("photo-1476514525535-07fb3b4ae5f1"), href: "/inspiration" },
+      { id: "balloons", title: "Sunrise over Cappadocia by hot air balloon", location: "Cappadocia", imageUrl: unsplashImage("photo-1641128324972-af3212f0f6bd"), href: "/inspiration/cappadocia" },
+      { id: "temple", title: "A quiet morning at a lakeside temple", location: "Bali", imageUrl: unsplashImage("photo-1537996194471-e657df975ab4"), href: "/inspiration/bali" },
+      { id: "safari", title: "Golden hour on a savanna safari", location: "East Africa", imageUrl: unsplashImage("photo-1516426122078-c23e76319801"), href: "/inspiration/nairobi" },
+      { id: "aurora", title: "Chasing the northern lights", location: "Arctic Circle", imageUrl: unsplashImage("photo-1531366936337-7c912a4589a7"), href: "/inspiration/tromso" },
+      { id: "lake", title: "Rowing across a mountain lake", location: "The Alps", imageUrl: unsplashImage("photo-1476514525535-07fb3b4ae5f1"), href: "/inspiration/the-alps" },
     ],
   },
   handpickedHotels: {
@@ -163,7 +163,7 @@ const homeContent: HomeContent = {
         label: "Featured guides",
         links: toLinks(
           ["Tokyo travel guide", "Bali travel guide", "Paris travel guide", "Rome travel guide", "Marrakech travel guide", "Cape Town travel guide"],
-          () => "/inspiration",
+          (label) => `/inspiration/${label.replace(" travel guide", "").toLowerCase().replace(" ", "-")}`,
         ),
       },
       {
