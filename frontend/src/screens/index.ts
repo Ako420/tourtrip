@@ -35,6 +35,8 @@ export { default as PlannerScreen } from "./planner/PlannerScreen";
 export { default as RewardsScreen } from "./rewards/RewardsScreen";
 export { default as SignupScreen } from "./signup/SignupScreen";
 export { default as SupportScreen } from "./support/SupportScreen";
+export { default as TourDetailsScreen } from "./tour-details/TourDetailsScreen";
+export { default as ToursScreen } from "./tours/ToursScreen";
 export { default as TrainBookingConfirmedScreen } from "./train-booking/TrainBookingConfirmedScreen";
 export { default as TrainBookingScreen } from "./train-booking/TrainBookingScreen";
 export { default as TrainResultsScreen } from "./trains/TrainResultsScreen";

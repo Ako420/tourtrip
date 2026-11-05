@@ -14,3 +14,4 @@ export * from "./deal";
 export * from "./rewards";
 export * from "./guide";
 export * from "./package";
+export * from "./tour";

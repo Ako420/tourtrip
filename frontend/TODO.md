@@ -8,7 +8,7 @@ The pages still to build. Every link below opens the "page not found" screen tod
 2. Build only that task. Check its "Done when" line, then tick its box.
 3. Stop and review before starting the next one.
 
-**Next task: 1.5**
+**Next task: 1.6**
 
 **Rules for every page**
 
@@ -60,7 +60,7 @@ The pages still to build. Every link below opens the "page not found" screen tod
 
 **Done when:** a package can be searched and booked on sample data, with the price set on the server.
 
-#### [ ] 1.5 Private Tours and Group Tours
+#### [x] 1.5 Private Tours and Group Tours
 
 **Route:** `/private-tours`, `/group-tours`, `/tours/[slug]`. **API later:** `GET /tours`, `GET /tours/:slug` (backend 18.2).
 
