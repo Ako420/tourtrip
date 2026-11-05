@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { navbarLinks, sidebarGroups } from "@/constants";
 import Icon from "../ui/Icon";
 import FloatingActions from "./FloatingActions";
+import CurrencyMenu from "./CurrencyMenu";
 import Footer from "./Footer";
 import SignInButton from "./SignInButton";
 
@@ -39,6 +40,7 @@ const TopNavShell = ({ activeHref, account, children }: TopNavShellProps) => {
                 </li>
               ))}
             </ul>
+            <CurrencyMenu />
             {account ?? <SignInButton variant="inverse" />}
           </div>
         </div>

@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { formatPrice } from "@/lib";
 import type { Section, TrainRoute } from "@/types";
 import AppImage from "../ui/AppImage";
 import Icon from "../ui/Icon";
 import SectionHeading from "../ui/SectionHeading";
+import Price from "../ui/Price";
 
 type TrainRoutesProps = {
   section: Section<TrainRoute>;
@@ -36,7 +36,7 @@ const TrainRoutes = ({ section }: TrainRoutesProps) => {
                   {route.to}
                 </h3>
                 <p className="text-sm text-muted">{route.duration}</p>
-                <p className="text-sm">From {formatPrice(route.fromPrice, route.currency)}</p>
+                <p className="text-sm">From <Price amount={route.fromPrice} currency={route.currency} /></p>
               </div>
             </Link>
           </li>

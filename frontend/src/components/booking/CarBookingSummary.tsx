@@ -2,6 +2,7 @@ import { formatCount, formatPrice, formatShortDate, getRentalDays } from "@/lib"
 import type { CarOffer, CarSearch } from "@/types";
 import AppImage from "../ui/AppImage";
 import Icon from "../ui/Icon";
+import ChargeNotice from "./ChargeNotice";
 
 type CarBookingSummaryProps = {
   offer: CarOffer;
@@ -69,6 +70,7 @@ const CarBookingSummary = ({ offer, search }: CarBookingSummaryProps) => {
             <dd className="text-2xl font-bold text-primary">{formatPrice(offer.totalPrice, offer.currency)}</dd>
           </div>
         </dl>
+        <ChargeNotice />
       </div>
     </aside>
   );

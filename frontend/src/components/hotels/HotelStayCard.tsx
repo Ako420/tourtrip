@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { formatCount, formatPrice } from "@/lib";
+import { formatCount } from "@/lib";
 import type { HotelSummary } from "@/types";
 import AppImage from "../ui/AppImage";
 import FavoriteButton from "../ui/FavoriteButton";
 import StarRating from "../ui/StarRating";
+import Price from "../ui/Price";
 
 type HotelStayCardProps = {
   hotel: HotelSummary;
@@ -33,9 +34,9 @@ const HotelStayCard = ({ hotel }: HotelStayCardProps) => {
           <p className="mt-auto pt-3 font-bold">
             From{" "}
             {hotel.originalPrice && (
-              <s className="mr-1 text-sm font-normal text-muted">{formatPrice(hotel.originalPrice, hotel.currency)}</s>
+              <s className="mr-1 text-sm font-normal text-muted"><Price amount={hotel.originalPrice} currency={hotel.currency} /></s>
             )}
-            {formatPrice(hotel.pricePerNight, hotel.currency)}
+            <Price amount={hotel.pricePerNight} currency={hotel.currency} />
           </p>
         </div>
       </Link>

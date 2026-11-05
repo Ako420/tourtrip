@@ -42,7 +42,6 @@ export const sidebarGroups: NavGroup[] = [
 export const navbarLinks: NavItem[] = [
   { label: "App", href: "/app", iconName: "phone" },
   { label: "List your property", href: "/list-property" },
-  { label: "USD", href: "/currency", iconName: "globe" },
   { label: "Customer support", href: "/support" },
   { label: "Find bookings", href: "/bookings" },
 ];

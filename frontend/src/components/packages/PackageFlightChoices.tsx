@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { formatPrice, toPackageQuery } from "@/lib";
+import { toPackageQuery } from "@/lib";
 import type { PackageFlightChoice, PackageSearch } from "@/types";
 import FlightLegRow from "../flights/FlightLegRow";
 import SectionHeading from "../ui/SectionHeading";
+import Price from "../ui/Price";
 
 type PackageFlightChoicesProps = {
   choices: PackageFlightChoice[];
@@ -37,7 +38,7 @@ const PackageFlightChoices = ({ choices, selectedId, search }: PackageFlightChoi
               >
                 <span className="block text-sm font-semibold">{label}</span>
                 <span className="block text-sm text-ink-soft">{flight.airline}</span>
-                <span className="mt-1 block font-bold">{formatPrice(flight.totalPrice, flight.currency)}</span>
+                <span className="mt-1 block font-bold"><Price amount={flight.totalPrice} currency={flight.currency} /></span>
               </Link>
             </li>
           );

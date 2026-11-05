@@ -1,5 +1,6 @@
-import { formatCount, formatPrice, formatShortDate } from "@/lib";
+import { formatCount, formatShortDate } from "@/lib";
 import type { CruiseDetails } from "@/types";
+import Price from "../ui/Price";
 
 type CruiseSailingsProps = {
   cruise: CruiseDetails;
@@ -18,7 +19,7 @@ const CruiseSailings = ({ cruise }: CruiseSailingsProps) => {
               <span className="text-muted">
                 {formatCount(sailing.nights, "night")} from {sailing.port}
               </span>
-              <span className="font-bold">{formatPrice(sailing.price, cruise.currency)}</span>
+              <span className="font-bold"><Price amount={sailing.price} currency={cruise.currency} /></span>
             </li>
           ))}
         </ul>

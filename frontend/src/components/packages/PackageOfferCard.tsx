@@ -1,8 +1,9 @@
-import { formatCount, formatPrice } from "@/lib";
+import { formatCount } from "@/lib";
 import type { PackageOffer } from "@/types";
 import AppImage from "../ui/AppImage";
 import ButtonLink from "../ui/ButtonLink";
 import StarRating from "../ui/StarRating";
+import Price from "../ui/Price";
 
 type PackageOfferCardProps = {
   offer: PackageOffer;
@@ -39,11 +40,11 @@ const PackageOfferCard = ({ offer, bookHref, travelers }: PackageOfferCardProps)
       <div className="flex shrink-0 items-center justify-between gap-3 border-t border-line p-4 sm:w-48 sm:flex-col sm:items-stretch sm:justify-center sm:border-t-0 sm:border-l sm:text-right">
         <div>
           <p className="text-sm text-muted">
-            <s>{formatPrice(offer.regularTotal, currency)}</s>
+            <s><Price amount={offer.regularTotal} currency={currency} /></s>
           </p>
-          <p className="text-2xl font-bold text-primary">{formatPrice(offer.totalPrice, currency)}</p>
+          <p className="text-2xl font-bold text-primary"><Price amount={offer.totalPrice} currency={currency} /></p>
           <p className="text-xs text-muted">total, {formatCount(travelers, "traveler")}</p>
-          <p className="text-xs font-medium text-success">Save {formatPrice(offer.discount, currency)}</p>
+          <p className="text-xs font-medium text-success">Save <Price amount={offer.discount} currency={currency} /></p>
         </div>
         <ButtonLink href={bookHref} size="sm">
           Select

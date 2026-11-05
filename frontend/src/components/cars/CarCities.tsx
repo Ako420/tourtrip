@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { formatPrice } from "@/lib";
 import type { CarCity, Section } from "@/types";
 import AppImage from "../ui/AppImage";
 import SectionHeading from "../ui/SectionHeading";
+import Price from "../ui/Price";
 
 type CarCitiesProps = {
   section: Section<CarCity>;
@@ -29,7 +29,7 @@ const CarCities = ({ section }: CarCitiesProps) => {
               <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
               <span className="absolute bottom-3 left-3">
                 <span className="block text-lg font-bold">{city.name}</span>
-                <span className="text-xs">From {formatPrice(city.fromPrice, city.currency)} per day</span>
+                <span className="text-xs">From <Price amount={city.fromPrice} currency={city.currency} /> per day</span>
               </span>
             </Link>
           </li>

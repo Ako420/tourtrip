@@ -84,8 +84,8 @@ export const searchFlights = async (search: FlightSearch, filters: FlightFilters
       return { date, lowestPrice: getFareForDate(search, date) };
     }),
     sortSummary: {
-      best: best && `$${Number(best.totalPrice).toLocaleString("en-US")}`,
-      cheapest: cheapest && `$${Number(cheapest.totalPrice).toLocaleString("en-US")}`,
+      best: best?.totalPrice,
+      cheapest: cheapest?.totalPrice,
       fastest: fastest && formatDuration(fastest.outbound.durationMinutes),
     },
   };

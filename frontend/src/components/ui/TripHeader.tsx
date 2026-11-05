@@ -1,8 +1,9 @@
 import type { IconName } from "@/constants";
-import { formatCount, formatPrice } from "@/lib";
+import { formatCount } from "@/lib";
 import AppImage from "./AppImage";
 import ButtonLink from "./ButtonLink";
 import Icon from "./Icon";
+import Price from "./Price";
 
 type TripHeaderProps = {
   name: string;
@@ -42,7 +43,7 @@ const TripHeader = ({ name, imageUrl, summary, facts, rating, reviewCount, price
 
         <div className="flex w-full items-center justify-between gap-4 rounded-card border border-line p-4 sm:w-auto sm:flex-col sm:items-stretch sm:text-right">
           <p className="text-sm text-muted">
-            From <span className="block text-2xl font-bold text-primary">{formatPrice(price, currency)}</span>
+            From <span className="block text-2xl font-bold text-primary"><Price amount={price} currency={currency} /></span>
             per person
           </p>
           <ButtonLink href="#enquire">Enquire now</ButtonLink>

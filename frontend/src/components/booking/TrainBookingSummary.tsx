@@ -2,6 +2,7 @@ import { formatCount, formatPrice, formatShortDate } from "@/lib";
 import type { TrainOffer, TrainSearch } from "@/types";
 import FlightLegRow from "../flights/FlightLegRow";
 import Icon from "../ui/Icon";
+import ChargeNotice from "./ChargeNotice";
 
 type TrainBookingSummaryProps = {
   offer: TrainOffer;
@@ -58,6 +59,7 @@ const TrainBookingSummary = ({ offer, search }: TrainBookingSummaryProps) => {
           <dd className="text-2xl font-bold text-primary">{formatPrice(offer.totalPrice, offer.currency)}</dd>
         </div>
       </dl>
+      <ChargeNotice />
     </aside>
   );
 };

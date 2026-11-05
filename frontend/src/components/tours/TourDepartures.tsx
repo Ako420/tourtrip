@@ -1,5 +1,6 @@
-import { formatCount, formatPrice, formatShortDate } from "@/lib";
+import { formatCount, formatShortDate } from "@/lib";
 import type { TourDetails } from "@/types";
+import Price from "../ui/Price";
 
 type TourDeparturesProps = {
   tour: TourDetails;
@@ -20,7 +21,7 @@ const TourDepartures = ({ tour }: TourDeparturesProps) => {
             <li key={departure.id} className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-3 text-sm">
               <span className="font-medium">{formatShortDate(departure.date)}</span>
               <span className="text-muted">{formatCount(departure.seatsLeft, "seat")} left</span>
-              <span className="font-bold">{formatPrice(departure.price, tour.currency)}</span>
+              <span className="font-bold"><Price amount={departure.price} currency={tour.currency} /></span>
             </li>
           ))}
         </ul>

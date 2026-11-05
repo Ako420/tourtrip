@@ -8,7 +8,7 @@ The pages still to build. Every link below opens the "page not found" screen tod
 2. Build only that task. Check its "Done when" line, then tick its box.
 3. Stop and review before starting the next one.
 
-**Next task: 2.3**
+**Next task: 3.1**
 
 **Rules for every page**
 
@@ -106,7 +106,7 @@ The pages still to build. Every link below opens the "page not found" screen tod
 
 **Done when:** the page does not suggest an app can be downloaded today.
 
-#### [ ] 2.3 Currency selector
+#### [x] 2.3 Currency selector
 
 **Route:** `/currency`, or a menu in the header instead. **API later:** `GET /currencies` (backend 15.5).
 

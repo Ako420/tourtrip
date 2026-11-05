@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { departureWindows, stopFilters } from "@/constants";
-import { formatPrice } from "@/lib";
 import type { FlightFilters, FlightSearchResult } from "@/types";
 import FilterCheckbox from "../ui/FilterCheckbox";
 import FilterGroup from "../ui/FilterGroup";
+import Price from "../ui/Price";
 
 type FlightFilterPanelProps = {
   filters: FlightFilters;
@@ -43,7 +43,7 @@ const FlightFilterPanel = ({ filters, result, onChange }: FlightFilterPanelProps
 
       {priceRange.max > priceRange.min && (
         <FilterGroup title="Max price">
-          <p className="mb-2 text-sm text-ink-soft">Up to {formatPrice(maxPrice, currency)}</p>
+          <p className="mb-2 text-sm text-ink-soft">Up to <Price amount={maxPrice} currency={currency} /></p>
           <input
             type="range"
             aria-label="Maximum price"
@@ -79,7 +79,7 @@ const FlightFilterPanel = ({ filters, result, onChange }: FlightFilterPanelProps
           >
             <span className="flex w-full justify-between gap-2">
               {airline.name}
-              <span className="text-xs text-muted">{formatPrice(airline.lowestPrice, currency)}</span>
+              <span className="text-xs text-muted"><Price amount={airline.lowestPrice} currency={currency} /></span>
             </span>
           </FilterCheckbox>
         ))}

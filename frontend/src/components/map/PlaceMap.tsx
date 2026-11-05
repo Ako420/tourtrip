@@ -5,7 +5,7 @@ import type { LayerGroup, Map as LeafletMap, Marker } from "leaflet";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { MAP_ATTRIBUTION, MAP_MAX_ZOOM, MAP_PLACE_ZOOM, MAP_TILE_URL } from "@/constants";
-import { formatPrice } from "@/lib";
+import { useCurrency } from "@/hooks";
 import type { MapPlace } from "@/types";
 
 type Leaflet = typeof import("leaflet");
@@ -17,7 +17,7 @@ type PlaceMapProps = {
 };
 
 // Popups are plain elements, because Leaflet draws them outside of React.
-const buildPopup = (place: MapPlace, onOpen: (href: string) => void) => {
+const buildPopup = (place: MapPlace, price: string, onOpen: (href: string) => void) => {
   const popup = document.createElement("div");
   const name = document.createElement("p");
   const details = document.createElement("p");
@@ -26,7 +26,7 @@ const buildPopup = (place: MapPlace, onOpen: (href: string) => void) => {
   name.className = "font-semibold";
   name.textContent = place.name;
   details.className = "text-xs text-muted";
-  details.textContent = `${place.city} · From ${formatPrice(place.price, place.currency)}`;
+  details.textContent = `${place.city} · From ${price}`;
   link.className = "mt-1 inline-block font-medium text-primary hover:underline";
   link.href = place.href;
   link.textContent = "View details";
@@ -42,6 +42,7 @@ const buildPopup = (place: MapPlace, onOpen: (href: string) => void) => {
 
 const PlaceMap = ({ places, activeId, onSelect }: PlaceMapProps) => {
   const router = useRouter();
+  const { format } = useCurrency();
   const containerRef = useRef<HTMLDivElement>(null);
   const leafletRef = useRef<{ L: Leaflet; map: LeafletMap; pins: LayerGroup } | null>(null);
   const markersRef = useRef(new Map<string, Marker>());
@@ -85,7 +86,7 @@ const PlaceMap = ({ places, activeId, onSelect }: PlaceMapProps) => {
         icon: L.divIcon({ className: `map-pin map-pin-${place.type}`, iconSize: [16, 16] }),
       });
 
-      marker.bindPopup(buildPopup(place, (href) => router.push(href)));
+      marker.bindPopup(buildPopup(place, format(place.price, place.currency), (href) => router.push(href)));
       marker.on("click", () => onSelect(place.id));
       marker.addTo(pins);
       markersRef.current.set(place.id, marker);
@@ -94,7 +95,7 @@ const PlaceMap = ({ places, activeId, onSelect }: PlaceMapProps) => {
     if (places.length > 0) {
       map.fitBounds(L.latLngBounds(places.map((place) => [place.latitude, place.longitude])), { padding: [32, 32] });
     }
-  }, [isReady, places, onSelect, router]);
+  }, [isReady, places, onSelect, router, format]);
 
   useEffect(() => {
     const marker = activeId ? markersRef.current.get(activeId) : undefined;

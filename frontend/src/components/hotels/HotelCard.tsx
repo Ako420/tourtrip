@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { formatCount, formatPrice, getRatingLabel } from "@/lib";
+import { formatCount, getRatingLabel } from "@/lib";
 import type { HotelSummary } from "@/types";
 import AppImage from "../ui/AppImage";
 import ButtonLink from "../ui/ButtonLink";
@@ -7,6 +7,7 @@ import FavoriteButton from "../ui/FavoriteButton";
 import Icon from "../ui/Icon";
 import StarRating from "../ui/StarRating";
 import AmenityList from "./AmenityList";
+import Price from "../ui/Price";
 
 type HotelCardProps = {
   hotel: HotelSummary;
@@ -77,13 +78,13 @@ const HotelCard = ({ hotel, query = "", nights = 0, rooms = 1, isPriority = fals
 
         <div>
           {hotel.originalPrice && (
-            <p className="text-sm text-muted line-through">{formatPrice(hotel.originalPrice, hotel.currency)}</p>
+            <p className="text-sm text-muted line-through"><Price amount={hotel.originalPrice} currency={hotel.currency} /></p>
           )}
-          <p className="text-2xl font-bold text-primary">{formatPrice(hotel.pricePerNight, hotel.currency)}</p>
+          <p className="text-2xl font-bold text-primary"><Price amount={hotel.pricePerNight} currency={hotel.currency} /></p>
           <p className="text-xs text-muted">per night</p>
           {nights > 0 && (
             <p className="text-xs text-muted">
-              {formatPrice(Number(hotel.pricePerNight) * nights * rooms, hotel.currency)} total for{" "}
+              <Price amount={Number(hotel.pricePerNight) * nights * rooms} currency={hotel.currency} /> total for{" "}
               {formatCount(nights, "night")}, {formatCount(rooms, "room")}
             </p>
           )}

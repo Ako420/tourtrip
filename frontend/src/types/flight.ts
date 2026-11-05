@@ -116,5 +116,5 @@ export type FlightSearchResult = {
   priceRange: { min: number; max: number };
   airlines: { name: string; lowestPrice: number | string }[];
   fareCalendar: FareDay[];
-  sortSummary: Partial<Record<FlightSort, string>>;
+  sortSummary: Partial<Record<FlightSort, number | string>>;
 };

@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { navbarLinks } from "@/constants";
 import Icon from "../ui/Icon";
+import CurrencyMenu from "./CurrencyMenu";
 import Logo from "./Logo";
 import SignInButton from "./SignInButton";
 
@@ -54,6 +55,7 @@ const Navbar = ({ onMenuClick, account }: NavbarProps) => {
             </li>
           ))}
         </ul>
+        <CurrencyMenu />
         {account ?? <SignInButton />}
       </nav>
     </header>

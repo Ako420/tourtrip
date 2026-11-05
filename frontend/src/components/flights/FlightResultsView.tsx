@@ -86,6 +86,7 @@ const FlightResultsView = ({ search, filters, result }: FlightResultsViewProps) 
         <FlightSortTabs
           value={filters.sort}
           summary={result.sortSummary}
+          currency={result.currency}
           onChange={(sort) => updateFilters({ sort })}
         />
 

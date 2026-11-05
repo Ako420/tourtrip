@@ -5,13 +5,14 @@ import { useState } from "react";
 import { z } from "zod";
 import { ticketLimits } from "@/constants";
 import { useToday } from "@/hooks";
-import { formatCount, formatPrice } from "@/lib";
+import { formatCount } from "@/lib";
 import { ticketSelectionSchema } from "@/schemas";
 import type { AttractionDetails, TicketOption } from "@/types";
 import CounterRow from "../search/CounterRow";
 import DateField from "../search/DateField";
 import Button from "../ui/Button";
 import Icon from "../ui/Icon";
+import Price from "../ui/Price";
 
 type TicketSelectorProps = {
   attraction: AttractionDetails;
@@ -92,10 +93,10 @@ const TicketSelector = ({ attraction }: TicketSelectorProps) => {
 
             <div className="flex shrink-0 items-center justify-between gap-4 sm:flex-col sm:items-end">
               <div className="sm:text-right">
-                <p className="text-2xl font-bold text-primary">{formatPrice(getTotal(ticket), attraction.currency)}</p>
+                <p className="text-2xl font-bold text-primary"><Price amount={getTotal(ticket)} currency={attraction.currency} /></p>
                 <p className="text-xs text-muted">
-                  Total for {formatCount(adults + children, "guest")} · {formatPrice(ticket.adultPrice, attraction.currency)} per adult,{" "}
-                  {formatPrice(ticket.childPrice, attraction.currency)} per child
+                  Total for {formatCount(adults + children, "guest")} · <Price amount={ticket.adultPrice} currency={attraction.currency} /> per adult,{" "}
+                  <Price amount={ticket.childPrice} currency={attraction.currency} /> per child
                 </p>
               </div>
               <Button type="button" size="sm" onClick={() => handleBook(ticket)}>

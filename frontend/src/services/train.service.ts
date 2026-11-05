@@ -91,8 +91,8 @@ export const searchTrains = async (search: TrainSearch, filters: TrainFilters): 
       return { date, lowestPrice: getTrainFareForDate(search, date) };
     }),
     sortSummary: {
-      best: best && `$${Number(best.totalPrice).toLocaleString("en-US")}`,
-      cheapest: cheapest && `$${Number(cheapest.totalPrice).toLocaleString("en-US")}`,
+      best: best?.totalPrice,
+      cheapest: cheapest?.totalPrice,
       fastest: fastest && formatDuration(fastest.outbound.durationMinutes),
     },
   };

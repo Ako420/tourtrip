@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { formatCount, formatPrice, formatShortDate } from "@/lib";
+import { formatCount, formatShortDate } from "@/lib";
 import type { TrainOffer } from "@/types";
 import FlightLegRow from "../flights/FlightLegRow";
 import ButtonLink from "../ui/ButtonLink";
 import Icon from "../ui/Icon";
+import Price from "../ui/Price";
 
 type TrainOfferCardProps = {
   offer: TrainOffer;
@@ -37,7 +38,7 @@ const TrainOfferCard = ({ offer, bookHref, travelers }: TrainOfferCardProps) => 
 
         <div className="flex shrink-0 items-center justify-between gap-3 border-t border-line p-4 sm:w-44 sm:flex-col sm:items-stretch sm:justify-center sm:border-t-0 sm:border-l sm:text-right">
           <div>
-            <p className="text-2xl font-bold text-primary">{formatPrice(offer.totalPrice, offer.currency)}</p>
+            <p className="text-2xl font-bold text-primary"><Price amount={offer.totalPrice} currency={offer.currency} /></p>
             <p className="text-xs text-muted">
               {travelers > 1 ? `total, ${formatCount(travelers, "traveler")}` : "per traveler"}
             </p>

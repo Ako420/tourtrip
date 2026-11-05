@@ -76,7 +76,7 @@ const TrainResultsView = ({ search, filters, result }: TrainResultsViewProps) =>
           </button>
         </div>
 
-        <FlightSortTabs value={filters.sort} summary={result.sortSummary} onChange={(sort) => updateFilters({ sort })} />
+        <FlightSortTabs value={filters.sort} summary={result.sortSummary} currency={result.currency} onChange={(sort) => updateFilters({ sort })} />
 
         <div className={`mt-4 transition-opacity duration-200 ${isPending ? "opacity-50" : ""}`}>
           {result.items.length > 0 ? (

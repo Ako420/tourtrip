@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { formatPrice, formatShortDate } from "@/lib";
+import { formatShortDate } from "@/lib";
 import type { FlightDeal } from "@/types";
 import Icon from "../ui/Icon";
+import Price from "../ui/Price";
 
 type FlightDealCardProps = {
   deal: FlightDeal;
@@ -38,7 +39,7 @@ const FlightDealCard = ({ deal }: FlightDealCardProps) => {
         {deal.cabin} · {deal.isNonstop ? "Nonstop" : "1 stop"}
       </p>
       <p className="mt-3 text-right text-xs text-muted">
-        From <span className="text-lg font-bold text-ink">{formatPrice(deal.price, deal.currency)}</span>
+        From <span className="text-lg font-bold text-ink"><Price amount={deal.price} currency={deal.currency} /></span>
       </p>
     </Link>
   );

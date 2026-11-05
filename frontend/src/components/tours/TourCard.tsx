@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { formatCount, formatPrice, formatTourLength } from "@/lib";
+import { formatCount, formatTourLength } from "@/lib";
 import type { Tour } from "@/types";
 import AppImage from "../ui/AppImage";
 import Icon from "../ui/Icon";
+import Price from "../ui/Price";
 
 type TourCardProps = {
   tour: Tour;
@@ -37,7 +38,7 @@ const TourCard = ({ tour }: TourCardProps) => {
         <div className="mt-auto flex items-end justify-between gap-3 pt-3">
           <p className="text-xs text-muted">{formatTourLength(tour.days)}</p>
           <p className="text-sm text-muted">
-            From <span className="text-lg font-bold text-ink">{formatPrice(tour.price, tour.currency)}</span>
+            From <span className="text-lg font-bold text-ink"><Price amount={tour.price} currency={tour.currency} /></span>
           </p>
         </div>
       </div>

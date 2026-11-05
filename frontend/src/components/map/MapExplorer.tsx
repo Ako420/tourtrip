@@ -3,11 +3,12 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { mapPlaceFilters } from "@/constants";
-import { formatCount, formatPrice } from "@/lib";
+import { formatCount } from "@/lib";
 import type { MapPlace, MapPlaceType } from "@/types";
 import Icon from "../ui/Icon";
 import PillTabs from "../ui/PillTabs";
 import PlaceMap from "./PlaceMap";
+import Price from "../ui/Price";
 
 type MapExplorerProps = {
   places: MapPlace[];
@@ -55,7 +56,7 @@ const MapExplorer = ({ places }: MapExplorerProps) => {
                   {place.name}
                 </Link>
                 <p className="truncate text-xs text-muted">
-                  {place.city} · From {formatPrice(place.price, place.currency)}
+                  {place.city} · From <Price amount={place.price} currency={place.currency} />
                 </p>
               </div>
             </li>

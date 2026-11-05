@@ -1,9 +1,10 @@
-import { formatCount, formatPrice, getRatingLabel } from "@/lib";
+import { formatCount, getRatingLabel } from "@/lib";
 import type { HotelDetails } from "@/types";
 import ButtonLink from "../ui/ButtonLink";
 import FavoriteButton from "../ui/FavoriteButton";
 import Icon from "../ui/Icon";
 import StarRating from "../ui/StarRating";
+import Price from "../ui/Price";
 
 type HotelHeaderProps = {
   hotel: HotelDetails;
@@ -41,7 +42,7 @@ const HotelHeader = ({ hotel }: HotelHeaderProps) => {
         {availablePrices.length > 0 && (
           <div className="text-right">
             <p className="text-xs text-muted">From</p>
-            <p className="text-2xl font-bold text-primary">{formatPrice(Math.min(...availablePrices), hotel.currency)}</p>
+            <p className="text-2xl font-bold text-primary"><Price amount={Math.min(...availablePrices)} currency={hotel.currency} /></p>
             <p className="text-xs text-muted">per night</p>
           </div>
         )}

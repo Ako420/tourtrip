@@ -2,8 +2,9 @@
 
 import { useEffect, useRef } from "react";
 import { useToday } from "@/hooks";
-import { formatPrice, formatShortDate } from "@/lib";
+import { formatShortDate } from "@/lib";
 import type { FareDay } from "@/types";
+import Price from "../ui/Price";
 
 type DateStripProps = {
   days: FareDay[];
@@ -47,7 +48,7 @@ const DateStrip = ({ days, selectedDate, currency, onSelect }: DateStripProps) =
             >
               <span className="block text-xs text-muted">{formatShortDate(day.date)}</span>
               <span className={`block text-sm font-semibold ${Number(day.lowestPrice) === lowest ? "text-success" : ""}`}>
-                {formatPrice(day.lowestPrice, currency)}
+                <Price amount={day.lowestPrice} currency={currency} />
               </span>
             </button>
           </li>

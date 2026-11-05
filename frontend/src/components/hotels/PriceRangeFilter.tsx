@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { priceBrackets } from "@/constants";
-import { formatPrice } from "@/lib";
+import Price from "../ui/Price";
 
 type PriceChange = {
   minPrice?: number;
@@ -46,7 +46,7 @@ const PriceRangeFilter = ({ limit, minPrice, maxPrice, currency = "USD", onChang
   return (
     <div>
       <p className="mb-3 text-sm text-ink-soft">
-        {formatPrice(low, currency)} - {formatPrice(high, currency)} per night
+        <Price amount={low} currency={currency} /> - <Price amount={high} currency={currency} /> per night
       </p>
 
       <div className="relative h-5">

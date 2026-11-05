@@ -3,6 +3,7 @@ import type { HotelDetails, HotelRoom, HotelSearch } from "@/types";
 import AppImage from "../ui/AppImage";
 import Icon from "../ui/Icon";
 import StarRating from "../ui/StarRating";
+import ChargeNotice from "./ChargeNotice";
 
 type BookingSummaryProps = {
   hotel: HotelDetails;
@@ -85,6 +86,7 @@ const BookingSummary = ({ hotel, room, search }: BookingSummaryProps) => {
             <dd className="text-2xl font-bold text-primary">{formatPrice(getStayTotal(room, search), hotel.currency)}</dd>
           </div>
         </dl>
+        <ChargeNotice />
       </div>
     </aside>
   );

@@ -1,9 +1,10 @@
-import { formatCount, formatPrice, getRatingLabel } from "@/lib";
+import { formatCount, getRatingLabel } from "@/lib";
 import type { AttractionDetails } from "@/types";
 import AppImage from "../ui/AppImage";
 import ButtonLink from "../ui/ButtonLink";
 import FavoriteButton from "../ui/FavoriteButton";
 import Icon from "../ui/Icon";
+import Price from "../ui/Price";
 
 type AttractionHeaderProps = {
   attraction: AttractionDetails;
@@ -44,7 +45,7 @@ const AttractionHeader = ({ attraction }: AttractionHeaderProps) => {
         <div className="flex items-center gap-4">
           <div className="text-right">
             <p className="text-xs text-muted">From</p>
-            <p className="text-2xl font-bold text-primary">{formatPrice(attraction.price, attraction.currency)}</p>
+            <p className="text-2xl font-bold text-primary"><Price amount={attraction.price} currency={attraction.currency} /></p>
             <p className="text-xs text-muted">per adult</p>
           </div>
           <ButtonLink href="#tickets">See tickets</ButtonLink>

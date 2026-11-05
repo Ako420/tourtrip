@@ -1,3 +1,5 @@
+import { currencies } from "@/constants";
+
 export const formatPrice = (amount: number | string, currency: string) => {
   const value = Number(amount);
 
@@ -7,6 +9,21 @@ export const formatPrice = (amount: number | string, currency: string) => {
     currency,
     minimumFractionDigits: Number.isInteger(value) ? 0 : 2,
   }).format(value);
+};
+
+export const convertPrice = (amount: number | string, from: string, to: string) => {
+  const rates = new Map<string, number>(currencies.map(({ code, rate }) => [code, rate]));
+  const fromRate = rates.get(from);
+  const toRate = rates.get(to);
+
+  if (!fromRate || !toRate) return formatPrice(amount, from);
+
+  // Converted prices are estimates, so cents would suggest more accuracy than they have.
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: to,
+    maximumFractionDigits: 0,
+  }).format((Number(amount) / fromRate) * toRate);
 };
 
 export const formatShortDate = (isoDate: string) => {

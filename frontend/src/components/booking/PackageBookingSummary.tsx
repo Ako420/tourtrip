@@ -3,6 +3,7 @@ import type { PackageOffer, PackageSearch } from "@/types";
 import FlightLegRow from "../flights/FlightLegRow";
 import AppImage from "../ui/AppImage";
 import StarRating from "../ui/StarRating";
+import ChargeNotice from "./ChargeNotice";
 
 type PackageBookingSummaryProps = {
   offer: PackageOffer;
@@ -63,6 +64,7 @@ const PackageBookingSummary = ({ offer, search }: PackageBookingSummaryProps) =>
             <dd className="text-2xl font-bold text-primary">{formatPrice(offer.totalPrice, currency)}</dd>
           </div>
         </dl>
+        <ChargeNotice />
       </div>
     </aside>
   );

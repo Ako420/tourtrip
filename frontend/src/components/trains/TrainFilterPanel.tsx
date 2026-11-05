@@ -1,8 +1,8 @@
 import { departureWindows, trainChangeFilters } from "@/constants";
-import { formatPrice } from "@/lib";
 import type { TrainFilters, TrainSearchResult } from "@/types";
 import FilterCheckbox from "../ui/FilterCheckbox";
 import FilterGroup from "../ui/FilterGroup";
+import Price from "../ui/Price";
 
 type TrainFilterPanelProps = {
   filters: TrainFilters;
@@ -50,7 +50,7 @@ const TrainFilterPanel = ({ filters, result, onChange }: TrainFilterPanelProps) 
           >
             <span className="flex w-full justify-between gap-2">
               {operator.name}
-              <span className="text-xs text-muted">{formatPrice(operator.lowestPrice, result.currency)}</span>
+              <span className="text-xs text-muted"><Price amount={operator.lowestPrice} currency={result.currency} /></span>
             </span>
           </FilterCheckbox>
         ))}

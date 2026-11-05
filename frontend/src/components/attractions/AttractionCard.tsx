@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { formatCount, formatPrice } from "@/lib";
+import { formatCount } from "@/lib";
 import type { Attraction } from "@/types";
 import AppImage from "../ui/AppImage";
 import FavoriteButton from "../ui/FavoriteButton";
 import Icon from "../ui/Icon";
+import Price from "../ui/Price";
 
 type AttractionCardProps = {
   attraction: Attraction;
@@ -41,7 +42,7 @@ const AttractionCard = ({ attraction }: AttractionCardProps) => {
           {attraction.freeCancellation && <p className="text-xs text-success">Free cancellation</p>}
           <p className="mt-auto pt-3 text-sm text-muted">
             From{" "}
-            <span className="text-lg font-bold text-ink">{formatPrice(attraction.price, attraction.currency)}</span>
+            <span className="text-lg font-bold text-ink"><Price amount={attraction.price} currency={attraction.currency} /></span>
           </p>
         </div>
       </Link>

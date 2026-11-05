@@ -2,6 +2,7 @@ import { formatCount, formatPrice, formatShortDate } from "@/lib";
 import type { FlightOffer, FlightSearch } from "@/types";
 import FlightLegRow from "../flights/FlightLegRow";
 import Icon from "../ui/Icon";
+import ChargeNotice from "./ChargeNotice";
 
 type FlightBookingSummaryProps = {
   offer: FlightOffer;
@@ -62,6 +63,7 @@ const FlightBookingSummary = ({ offer, search }: FlightBookingSummaryProps) => {
           <dd className="text-2xl font-bold text-primary">{formatPrice(offer.totalPrice, offer.currency)}</dd>
         </div>
       </dl>
+      <ChargeNotice />
     </aside>
   );
 };

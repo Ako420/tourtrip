@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { formatCount, formatPrice, formatShortDate } from "@/lib";
+import { formatCount, formatShortDate } from "@/lib";
 import type { CruiseListing } from "@/types";
 import AppImage from "../ui/AppImage";
 import Icon from "../ui/Icon";
+import Price from "../ui/Price";
 
 type CruiseCardProps = {
   cruise: CruiseListing;
@@ -39,7 +40,7 @@ const CruiseCard = ({ cruise }: CruiseCardProps) => {
         <div className="mt-auto flex items-end justify-between gap-3 pt-3">
           <p className="text-xs text-muted">Next: {formatShortDate(cruise.nextSailingDate)}</p>
           <p className="text-sm text-muted">
-            From <span className="text-lg font-bold text-ink">{formatPrice(cruise.price, cruise.currency)}</span>
+            From <span className="text-lg font-bold text-ink"><Price amount={cruise.price} currency={cruise.currency} /></span>
           </p>
         </div>
       </div>
