@@ -25,7 +25,7 @@ const TripHeader = ({ name, imageUrl, summary, facts, rating, reviewCount, price
 
       <header className="mt-5 flex flex-wrap items-start justify-between gap-4">
         <div className="min-w-0">
-          <h1 className="text-2xl font-bold sm:text-3xl">{name}</h1>
+          <h1 className="type-page font-bold">{name}</h1>
           <p className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted">
             {facts.map((fact) => (
               <span key={fact.label} className="flex items-center gap-1.5">
@@ -43,7 +43,7 @@ const TripHeader = ({ name, imageUrl, summary, facts, rating, reviewCount, price
 
         <div className="flex w-full items-center justify-between gap-4 rounded-card border border-line p-4 sm:w-auto sm:flex-col sm:items-stretch sm:text-right">
           <p className="text-sm text-muted">
-            From <span className="block text-2xl font-bold text-primary"><Price amount={price} currency={currency} /></span>
+            From <span className="block type-price font-bold text-primary"><Price amount={price} currency={currency} /></span>
             per person
           </p>
           <ButtonLink href="#enquire">Enquire now</ButtonLink>

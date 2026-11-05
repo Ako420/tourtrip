@@ -38,7 +38,7 @@ const FloatingActions = () => {
         className="flex size-14 flex-col items-center justify-center rounded-full border-2 border-primary-soft bg-primary-deep text-white shadow-float transition-colors duration-300 ease-out hover:bg-primary-dark motion-safe:animate-breathing"
       >
         <Icon name="robot" className="text-lg" />
-        <span className="text-[0.5625rem] font-semibold">ASK</span>
+        <span className="text-micro font-semibold">ASK</span>
       </Link>
       <Link href={authLinks.support} aria-label="Customer support" className={buttonClass}>
         <Icon name="headset" />

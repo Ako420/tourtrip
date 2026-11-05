@@ -10,7 +10,7 @@ const MobileAppHero = ({ hero }: MobileAppHeroProps) => {
     <section className="bg-primary-deep px-4 pt-32 pb-16 text-white sm:pb-20 xl:pt-24">
       <div className="mx-auto flex max-w-content items-center justify-between gap-8">
         <div>
-          <h1 className="text-3xl font-bold sm:text-5xl">
+          <h1 className="type-hero font-bold">
             {hero.title}
             <span className="text-accent">.</span>
           </h1>

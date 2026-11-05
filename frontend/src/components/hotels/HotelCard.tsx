@@ -80,7 +80,7 @@ const HotelCard = ({ hotel, query = "", nights = 0, rooms = 1, isPriority = fals
           {hotel.originalPrice && (
             <p className="text-sm text-muted line-through"><Price amount={hotel.originalPrice} currency={hotel.currency} /></p>
           )}
-          <p className="text-2xl font-bold text-primary"><Price amount={hotel.pricePerNight} currency={hotel.currency} /></p>
+          <p className="type-price font-bold text-primary"><Price amount={hotel.pricePerNight} currency={hotel.currency} /></p>
           <p className="text-xs text-muted">per night</p>
           {nights > 0 && (
             <p className="text-xs text-muted">

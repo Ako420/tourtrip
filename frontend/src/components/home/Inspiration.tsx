@@ -29,7 +29,7 @@ const Inspiration = ({ section }: InspirationProps) => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
             {item.tag && (
-              <span className="absolute top-2 left-2 rounded-sm bg-ink/50 px-1.5 text-[0.6875rem]">{item.tag}</span>
+              <span className="absolute top-2 left-2 rounded-sm bg-ink/50 px-1.5 text-badge">{item.tag}</span>
             )}
             <span className="absolute bottom-2 left-3 text-lg font-bold">{item.name}</span>
           </Link>

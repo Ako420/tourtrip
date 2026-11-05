@@ -17,7 +17,7 @@ const TrainBookingSummary = ({ offer, search }: TrainBookingSummaryProps) => {
     <aside aria-label="Booking summary" className="rounded-card border border-line p-4 lg:sticky lg:top-24">
       <p className="flex items-center gap-2 text-sm">
         <span className="flex size-6 items-center justify-center rounded-full bg-primary-soft text-primary">
-          <Icon name="train" className="text-[0.625rem]" />
+          <Icon name="train" className="text-tiny" />
         </span>
         <span className="font-semibold">{offer.operator}</span>
         <span className="text-muted">{offer.trainNumber}</span>
@@ -56,7 +56,7 @@ const TrainBookingSummary = ({ offer, search }: TrainBookingSummaryProps) => {
         </div>
         <div className="mt-2 flex items-baseline justify-between border-t border-line pt-2">
           <dt className="font-semibold">Total</dt>
-          <dd className="text-2xl font-bold text-primary">{formatPrice(offer.totalPrice, offer.currency)}</dd>
+          <dd className="type-price font-bold text-primary">{formatPrice(offer.totalPrice, offer.currency)}</dd>
         </div>
       </dl>
       <ChargeNotice />

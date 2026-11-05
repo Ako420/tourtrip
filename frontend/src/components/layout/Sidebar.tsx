@@ -42,7 +42,7 @@ const SidebarNav = ({ isToggled, onNavigate, pathname }: SidebarNavProps) => {
                   <span className={`truncate ${isToggled ? "lg:hidden" : ""}`}>{item.label}</span>
                   {item.badge && (
                     <span
-                      className={`rounded-sm bg-promo px-1 text-[0.625rem] leading-4 text-white ${
+                      className={`rounded-sm bg-promo px-1 text-tiny text-white ${
                         isToggled ? "lg:hidden" : ""
                       }`}
                     >

@@ -20,7 +20,7 @@ const Hero = ({ hero, destinations }: HeroProps) => {
       </div>
 
       <div className="relative px-3 pt-10 text-center text-white sm:pt-14">
-        <h1 className="text-3xl font-bold sm:text-[2.5rem] sm:leading-tight">{hero.title}</h1>
+        <h1 className="type-title font-bold">{hero.title}</h1>
 
         <ul className="mt-3 flex flex-wrap items-center justify-center gap-x-6 gap-y-1 text-sm text-white/90">
           {hero.guarantees.map((guarantee) => (

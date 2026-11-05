@@ -67,7 +67,7 @@ const CarBookingSummary = ({ offer, search }: CarBookingSummaryProps) => {
           </div>
           <div className="mt-2 flex items-baseline justify-between border-t border-line pt-2">
             <dt className="font-semibold">Total</dt>
-            <dd className="text-2xl font-bold text-primary">{formatPrice(offer.totalPrice, offer.currency)}</dd>
+            <dd className="type-price font-bold text-primary">{formatPrice(offer.totalPrice, offer.currency)}</dd>
           </div>
         </dl>
         <ChargeNotice />

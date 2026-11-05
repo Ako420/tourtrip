@@ -7,7 +7,7 @@ const BookingsScreen = () => {
 
   return (
     <div className="mx-auto max-w-3xl pb-8">
-      <h1 className="text-2xl font-bold sm:text-3xl">Find your booking</h1>
+      <h1 className="type-page font-bold">Find your booking</h1>
       <p className="mt-1 mb-6 text-muted">Enter your reference and the email you booked with.</p>
 
       <BookingLookupForm />

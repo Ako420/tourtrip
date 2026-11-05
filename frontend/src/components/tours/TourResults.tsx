@@ -15,7 +15,7 @@ const TourResults = ({ type, tours, query }: TourResultsProps) => {
   return (
     <section className="mx-auto max-w-content">
       <div className="mb-5 flex flex-wrap items-baseline justify-between gap-2">
-        <h2 className="text-2xl font-bold sm:text-[1.75rem]">{query ? `Tours for "${query}"` : "Recommended tours"}</h2>
+        <h2 className="type-section font-bold">{query ? `Tours for "${query}"` : "Recommended tours"}</h2>
         <p className="text-sm text-muted" aria-live="polite">
           {formatCount(tours.length, "tour")}
         </p>

@@ -20,7 +20,7 @@ const AttractionHeader = ({ attraction }: AttractionHeaderProps) => {
 
       <header className="mt-5 flex flex-wrap items-start justify-between gap-4">
         <div className="min-w-0">
-          <h1 className="text-2xl font-bold sm:text-3xl">{attraction.name}</h1>
+          <h1 className="type-page font-bold">{attraction.name}</h1>
           <p className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted">
             <span className="flex items-center gap-1.5">
               <Icon name="location" />
@@ -45,7 +45,7 @@ const AttractionHeader = ({ attraction }: AttractionHeaderProps) => {
         <div className="flex items-center gap-4">
           <div className="text-right">
             <p className="text-xs text-muted">From</p>
-            <p className="text-2xl font-bold text-primary"><Price amount={attraction.price} currency={attraction.currency} /></p>
+            <p className="type-price font-bold text-primary"><Price amount={attraction.price} currency={attraction.currency} /></p>
             <p className="text-xs text-muted">per adult</p>
           </div>
           <ButtonLink href="#tickets">See tickets</ButtonLink>

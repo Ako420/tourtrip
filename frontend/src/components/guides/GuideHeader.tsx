@@ -20,7 +20,7 @@ const GuideHeader = ({ guide }: GuideHeaderProps) => {
           <p className="text-sm text-white/85">
             {guide.city} · {formatShortDate(guide.publishedAt)}
           </p>
-          <h1 className="mt-1 max-w-3xl text-3xl font-bold sm:text-5xl">{guide.title}</h1>
+          <h1 className="mt-1 max-w-3xl type-hero font-bold">{guide.title}</h1>
         </div>
       </div>
     </header>

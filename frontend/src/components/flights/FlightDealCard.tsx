@@ -22,7 +22,7 @@ const FlightDealCard = ({ deal }: FlightDealCardProps) => {
     <Link href={href} className="group block h-full rounded-card border border-line p-4 transition-shadow duration-300 ease-out hover:shadow-card">
       <p className="flex items-center gap-2 text-xs text-muted">
         <span className="flex size-6 items-center justify-center rounded-full bg-primary-soft text-primary">
-          <Icon name="plane" className="text-[0.625rem]" />
+          <Icon name="plane" className="text-tiny" />
         </span>
         {deal.airline}
         <span className="ml-auto text-primary">More</span>

@@ -2,7 +2,7 @@
 
 /* Design tokens. Every colour, font, radius and shadow in the app comes from here. */
 @theme {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-barlow), ui-sans-serif, system-ui, sans-serif;
 
   --color-primary: #2563ff;
   --color-primary-dark: #1a47c7;
@@ -44,9 +44,65 @@
     }
   }
 
+  /* Fixed font sizes. Headings that change with screen width are the type-* utilities below. */
+  --text-logo: 1.75rem;
+  --text-logo--line-height: 2.25rem;
+  --text-badge: 0.6875rem;
+  --text-badge--line-height: 1rem;
+  --text-tiny: 0.625rem;
+  --text-tiny--line-height: 1rem;
+  --text-micro: 0.5625rem;
+  --text-micro--line-height: 0.75rem;
+
   --spacing-navbar: 4.25rem;
   --spacing-sidebar: 13.25rem;
   --spacing-content: 72.5rem;
+}
+
+/* Heading sizes. Change one here and it changes across the site. */
+@utility type-hero {
+  font-size: var(--text-3xl);
+  line-height: var(--text-3xl--line-height);
+
+  @variant sm {
+    font-size: var(--text-5xl);
+    line-height: var(--text-5xl--line-height);
+  }
+}
+
+@utility type-title {
+  font-size: var(--text-3xl);
+  line-height: var(--text-3xl--line-height);
+
+  @variant sm {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+}
+
+@utility type-page {
+  font-size: var(--text-2xl);
+  line-height: var(--text-2xl--line-height);
+
+  @variant sm {
+    font-size: var(--text-3xl);
+    line-height: var(--text-3xl--line-height);
+  }
+}
+
+@utility type-section {
+  font-size: var(--text-2xl);
+  line-height: var(--text-2xl--line-height);
+
+  @variant sm {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+  }
+}
+
+@utility type-price {
+  font-size: var(--text-2xl);
+  line-height: var(--text-2xl--line-height);
 }
 
 html {

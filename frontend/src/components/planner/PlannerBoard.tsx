@@ -45,14 +45,14 @@ const PlannerBoard = ({ plan, suggestions, onChange, onReset }: PlannerBoardProp
     <>
       <header className="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold sm:text-3xl">Your trip to {plan.destination}</h1>
+          <h1 className="type-page font-bold">Your trip to {plan.destination}</h1>
           <p className="mt-1 text-sm text-muted">
             {formatShortDate(plan.startDate)} - {formatShortDate(plan.endDate)} · {formatCount(plan.days.length, "day")}
           </p>
         </div>
         <div className="text-right">
           <p className="text-xs text-muted">Estimated activities</p>
-          <p className="text-2xl font-bold text-primary">{formatPrice(getPlanTotal(plan), plan.currency)}</p>
+          <p className="type-price font-bold text-primary">{formatPrice(getPlanTotal(plan), plan.currency)}</p>
         </div>
       </header>
 

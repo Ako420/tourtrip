@@ -43,7 +43,7 @@ const CarOfferCard = ({ offer, bookHref, days }: CarOfferCardProps) => {
 
       <div className="flex shrink-0 items-center justify-between gap-3 border-t border-line p-4 sm:w-44 sm:flex-col sm:items-stretch sm:justify-center sm:border-t-0 sm:border-l sm:text-right">
         <div>
-          <p className="text-2xl font-bold text-primary"><Price amount={offer.totalPrice} currency={offer.currency} /></p>
+          <p className="type-price font-bold text-primary"><Price amount={offer.totalPrice} currency={offer.currency} /></p>
           <p className="text-xs text-muted">
             total for {formatCount(days, "day")} · <Price amount={offer.pricePerDay} currency={offer.currency} /> per day
           </p>

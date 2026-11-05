@@ -16,7 +16,7 @@ const CarHero = ({ hero, search, locations, preselectedType }: CarHeroProps) => 
       <div className="absolute inset-0 bg-gradient-to-b from-ink/65 via-ink/30 to-ink/10" />
 
       <div className="relative mx-auto max-w-content">
-        <h1 className="mb-5 text-3xl font-bold sm:text-5xl">
+        <h1 className="mb-5 type-hero font-bold">
           {hero.title}
           <span className="text-accent">.</span>
         </h1>

@@ -9,7 +9,7 @@ const MapContent = async () => {
 const MapScreen = () => {
   return (
     <div className="pb-8">
-      <h1 className="text-2xl font-bold sm:text-3xl">Explore the map</h1>
+      <h1 className="type-page font-bold">Explore the map</h1>
       <p className="mt-1 mb-4 text-sm text-muted">Sample places shown by city. Pins are approximate.</p>
 
       <Suspense fallback={<Skeleton className="h-96" />}>

@@ -49,7 +49,7 @@ const RoomCard = ({ room, currency, bookHref, nights, roomCount, guestCount }: R
 
       <div className="flex shrink-0 flex-col justify-between gap-3 border-t border-line p-4 sm:w-48 sm:border-t-0 sm:border-l sm:text-right">
         <div>
-          <p className="text-2xl font-bold text-primary"><Price amount={room.pricePerNight} currency={currency} /></p>
+          <p className="type-price font-bold text-primary"><Price amount={room.pricePerNight} currency={currency} /></p>
           <p className="text-xs text-muted">per night</p>
           {nights > 0 && (
             <p className="text-xs text-muted">

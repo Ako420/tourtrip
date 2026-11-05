@@ -22,7 +22,7 @@ const AttractionResults = ({ title, filters, result }: AttractionResultsProps) =
   return (
     <section id="results" className="mx-auto mt-12 max-w-content scroll-mt-4">
       <div className="mb-4 flex flex-wrap items-baseline gap-x-3">
-        <h2 className="text-2xl font-bold sm:text-[1.75rem]">
+        <h2 className="type-section font-bold">
           {filters.query ? `Things to do in "${filters.query}"` : title}
         </h2>
         <p className="text-sm text-muted" aria-live="polite">

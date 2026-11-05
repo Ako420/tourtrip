@@ -21,7 +21,7 @@ const TourHero = ({ type, content, query }: TourHeroProps) => {
       <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/40 to-ink/20" />
 
       <div className="relative mx-auto max-w-content">
-        <h1 className="text-3xl font-bold sm:text-5xl">
+        <h1 className="type-hero font-bold">
           {content.title}
           <span className="text-accent">.</span>
         </h1>

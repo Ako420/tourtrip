@@ -19,7 +19,7 @@ const DealsScreen = () => {
   return (
     <div className="pb-8">
       <header className="mx-auto mb-6 max-w-content">
-        <h1 className="text-3xl font-bold sm:text-4xl">Today&apos;s top deals</h1>
+        <h1 className="type-title font-bold">Today&apos;s top deals</h1>
         <p className="mt-1 text-muted">Current offers on hotels, flights and things to do.</p>
       </header>
 

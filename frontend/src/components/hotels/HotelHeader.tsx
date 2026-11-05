@@ -17,7 +17,7 @@ const HotelHeader = ({ hotel }: HotelHeaderProps) => {
     <header className="mt-5 flex flex-wrap items-start justify-between gap-4">
       <div className="min-w-0">
         <div className="flex items-center gap-3 pr-1">
-          <h1 className="text-2xl font-bold sm:text-3xl">{hotel.name}</h1>
+          <h1 className="type-page font-bold">{hotel.name}</h1>
           <StarRating stars={hotel.stars} />
         </div>
         <p className="mt-1 flex items-center gap-1.5 text-sm text-muted">
@@ -42,7 +42,7 @@ const HotelHeader = ({ hotel }: HotelHeaderProps) => {
         {availablePrices.length > 0 && (
           <div className="text-right">
             <p className="text-xs text-muted">From</p>
-            <p className="text-2xl font-bold text-primary"><Price amount={Math.min(...availablePrices)} currency={hotel.currency} /></p>
+            <p className="type-price font-bold text-primary"><Price amount={Math.min(...availablePrices)} currency={hotel.currency} /></p>
             <p className="text-xs text-muted">per night</p>
           </div>
         )}

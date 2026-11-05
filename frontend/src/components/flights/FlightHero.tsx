@@ -18,7 +18,7 @@ const FlightHero = ({ hero, quickLinks, search, airports }: FlightHeroProps) => 
       <div className="absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/25 to-ink/10" />
 
       <div className="relative mx-auto max-w-content">
-        <h1 className="text-3xl font-bold sm:text-4xl">
+        <h1 className="type-title font-bold">
           {hero.title}
           <span className="text-accent">.</span>
         </h1>

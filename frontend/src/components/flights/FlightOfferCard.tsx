@@ -24,7 +24,7 @@ const FlightOfferCard = ({ offer, bookHref, travelers }: FlightOfferCardProps) =
         <div className="flex-1 p-4">
           <p className="mb-3 flex items-center gap-2 text-sm">
             <span className="flex size-6 items-center justify-center rounded-full bg-primary-soft text-primary">
-              <Icon name="plane" className="text-[0.625rem]" />
+              <Icon name="plane" className="text-tiny" />
             </span>
             <span className="font-medium">{offer.airline}</span>
             <span className="text-muted">{offer.flightNumber}</span>
@@ -38,7 +38,7 @@ const FlightOfferCard = ({ offer, bookHref, travelers }: FlightOfferCardProps) =
 
         <div className="flex shrink-0 items-center justify-between gap-3 border-t border-line p-4 sm:w-44 sm:flex-col sm:items-stretch sm:justify-center sm:border-t-0 sm:border-l sm:text-right">
           <div>
-            <p className="text-2xl font-bold text-primary"><Price amount={offer.totalPrice} currency={offer.currency} /></p>
+            <p className="type-price font-bold text-primary"><Price amount={offer.totalPrice} currency={offer.currency} /></p>
             <p className="text-xs text-muted">
               {travelers > 1 ? `total, ${formatCount(travelers, "traveler")}` : "per traveler"}
             </p>

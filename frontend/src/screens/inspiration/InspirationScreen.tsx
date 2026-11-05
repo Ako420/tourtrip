@@ -30,7 +30,7 @@ const GuideResults = async ({ searchParams }: InspirationScreenProps) => {
 const InspirationScreen = ({ searchParams }: InspirationScreenProps) => {
   return (
     <div className="mx-auto max-w-content pb-8">
-      <h1 className="text-3xl font-bold sm:text-4xl">Travel Inspiration</h1>
+      <h1 className="type-title font-bold">Travel Inspiration</h1>
       <p className="mt-1 mb-6 text-muted">City guides to help you plan your next trip.</p>
 
       <Suspense fallback={<Skeleton className="h-96" />}>

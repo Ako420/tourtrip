@@ -16,7 +16,7 @@ const Breadcrumb = ({ links, current }: BreadcrumbProps) => {
             <Link href={link.href} className="transition-colors duration-300 ease-out hover:text-primary">
               {link.label}
             </Link>
-            <Icon name="chevron-right" className="text-[0.625rem]" />
+            <Icon name="chevron-right" className="text-tiny" />
           </li>
         ))}
         <li aria-current="page" className="text-ink">

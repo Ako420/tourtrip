@@ -93,7 +93,7 @@ const TicketSelector = ({ attraction }: TicketSelectorProps) => {
 
             <div className="flex shrink-0 items-center justify-between gap-4 sm:flex-col sm:items-end">
               <div className="sm:text-right">
-                <p className="text-2xl font-bold text-primary"><Price amount={getTotal(ticket)} currency={attraction.currency} /></p>
+                <p className="type-price font-bold text-primary"><Price amount={getTotal(ticket)} currency={attraction.currency} /></p>
                 <p className="text-xs text-muted">
                   Total for {formatCount(adults + children, "guest")} · <Price amount={ticket.adultPrice} currency={attraction.currency} /> per adult,{" "}
                   <Price amount={ticket.childPrice} currency={attraction.currency} /> per child

@@ -39,7 +39,7 @@ const AssistantContent = async () => {
 const AssistantScreen = () => {
   return (
     <div className="mx-auto max-w-3xl pb-8">
-      <h1 className="text-2xl font-bold sm:text-3xl">Travel assistant</h1>
+      <h1 className="type-page font-bold">Travel assistant</h1>
       <p className="mt-1 mb-5 text-sm text-muted">
         Ask for trip ideas and travel tips. It is powered by AI and can make mistakes. It can&apos;t see your bookings or live
         prices, and it can&apos;t book for you.

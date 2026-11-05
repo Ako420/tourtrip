@@ -19,7 +19,7 @@ const DealCampaignHero = ({ campaign }: DealCampaignHeroProps) => {
           <Icon name="chevron-left" className="text-xs" />
           All deals
         </Link>
-        <h1 className="mt-4 text-3xl font-bold sm:text-5xl">{campaign.title}</h1>
+        <h1 className="mt-4 type-hero font-bold">{campaign.title}</h1>
         <p className="mt-2 max-w-xl text-white/85">{campaign.subtitle}</p>
         <p className="mt-5 text-2xl font-bold text-accent">{campaign.headline}</p>
         <p className="mt-1 text-sm text-white/85">Ends {formatShortDate(campaign.endsAt)}</p>

@@ -25,7 +25,7 @@ const CruiseResults = ({ result, filters }: CruiseResultsProps) => {
   return (
     <section className="mx-auto max-w-content">
       <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
-        <h2 className="text-2xl font-bold sm:text-[1.75rem]">{getTitle(filters)}</h2>
+        <h2 className="type-section font-bold">{getTitle(filters)}</h2>
         <p className="text-sm text-muted" aria-live="polite">
           {formatCount(result.items.length, "cruise")}
         </p>

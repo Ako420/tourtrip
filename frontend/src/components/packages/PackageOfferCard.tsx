@@ -42,7 +42,7 @@ const PackageOfferCard = ({ offer, bookHref, travelers }: PackageOfferCardProps)
           <p className="text-sm text-muted">
             <s><Price amount={offer.regularTotal} currency={currency} /></s>
           </p>
-          <p className="text-2xl font-bold text-primary"><Price amount={offer.totalPrice} currency={currency} /></p>
+          <p className="type-price font-bold text-primary"><Price amount={offer.totalPrice} currency={currency} /></p>
           <p className="text-xs text-muted">total, {formatCount(travelers, "traveler")}</p>
           <p className="text-xs font-medium text-success">Save <Price amount={offer.discount} currency={currency} /></p>
         </div>

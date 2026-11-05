@@ -50,7 +50,7 @@ const SupportScreen = () => {
       <LinkCards title="More ways to get help" items={supportOptions} />
 
       <section id="contact" className="mx-auto mt-10 max-w-content scroll-mt-24">
-        <h2 className="text-2xl font-bold sm:text-[1.75rem]">Send us a message</h2>
+        <h2 className="type-section font-bold">Send us a message</h2>
         <p className="mt-1 mb-5 text-muted">Give us the details and add your booking reference if you have one.</p>
         <Suspense fallback={<Skeleton className="h-96" />}>
           <ContactContent />
