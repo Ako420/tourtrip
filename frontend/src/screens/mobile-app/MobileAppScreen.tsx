@@ -1,19 +1,15 @@
 import { Suspense } from "react";
-import { FlightsSkeleton, LinkCards, MobileAppHero, TrustSection } from "@/components";
+import { FlightsSkeleton, MobileAppHero, MobileAppPlanned } from "@/components";
 import { getMobileAppContent } from "@/services";
 
 const MobileAppContent = async () => {
   const { hero, planned, today } = await getMobileAppContent();
 
   return (
-    <>
-      <MobileAppHero hero={hero} />
-
-      <div className="page-sheet px-4 pt-10 pb-8">
-        <TrustSection section={planned} />
-        <LinkCards title={today.title} items={today.items} />
-      </div>
-    </>
+    <div className="overflow-hidden bg-primary">
+      <MobileAppHero hero={hero} today={today} />
+      <MobileAppPlanned section={planned} />
+    </div>
   );
 };
 

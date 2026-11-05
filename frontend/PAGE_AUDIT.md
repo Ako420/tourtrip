@@ -10,7 +10,7 @@ Check every built page against its https://www.trip.com/ page, section by sectio
 4. Fix the page, check the "Done when" line, then tick the box.
 5. Stop and review before starting the next page.
 
-**Next task: B14**
+**Next task: B15**
 
 New pages in `TODO.md` section 3 wait until this audit is finished, so they are built to the corrected pattern.
 
@@ -111,7 +111,7 @@ Everything else builds on these.
 | [x] B11 | `/deals` | https://www.trip.com/sale/deals/ |
 | [x] B12 | `/rewards` | https://www.trip.com/customer/loyalty/ |
 | [x] B13 | `/support` | https://www.trip.com/pages/support/ |
-| [ ] B14 | `/app` | https://www.trip.com/pages/appdownload |
+| [x] B14 | `/app` | https://www.trip.com/pages/appdownload |
 | [ ] B15 | `/inspiration` | https://www.trip.com/guide/ |
 
 **Known structure of the reference, in order:**
@@ -128,7 +128,7 @@ Everything else builds on these.
 - **B11 Deals:** page title, tabs, campaign cards, about text, popular flights. Done. The hot hotel deals, hot flight deals and coupon sections are removed, because the reference has none of them here. Hot flight deals became the popular flights links, and campaign pages still show their own hotels and flights. Campaign cards use our photos with a text headline, not designed banners. `GET /deals` in `backend/TODO.md` now needs `campaigns`, `about` and `popularFlights`.
 - **B12 Rewards:** guest vs member, why join with a tier comparison, extra coins, tier boosts, spending coins, how it works, FAQ tabs, closing call to action. Done, and the page moved to the full-width header with a blue hero. Tiers and coin rates keep our own rules, with the "not connected yet" notes still on the page. Left out: the QR codes and phone mockup, the Services and Deals rows, the gift cards and airport transfers products, and the Terms FAQ tab, because we have no terms for this yet. Tier badges use one Font Awesome gem, not six designs. `GET /rewards/tiers` in `backend/TODO.md` still needs updating to the new `RewardsProgram` shape, where `perks` replaces `plannedPerks`.
 - **B13 Support:** hero, service chat with product tabs and question cards, ways to get help, guarantee, how help works, app. Done, and the page moved to the full-width header. Question cards open their answer in place, because we have no live service chat. The help bar links to the assistant, Find bookings, the terms and the message form, with no phone or emergency options, because those need real numbers. "Know the rules before you book" replaces the guarantee, and three written steps replace the video. The app card says the app is planned, with no QR code. Kept although the reference doesn't have them: help topic search and the message form, the only real way to reach us. Left out: the "More FAQ" category chips and the 30-second response claim.
-- **B14 App:** hero, summary panel, four benefit cards. Store links stay out until an app exists.
+- **B14 App:** hero, summary panel, four benefit cards. Store links stay out until an app exists. Done. The summary panel keeps the "not available yet" notice and links to what works on a phone today, in place of the QR code, store badges and usage stats. The four cards carry a "What we plan to include" heading, so they don't read as features that exist. Font Awesome icons replace the illustration.
 - **B15 Inspiration:** featured posts carousel, recent articles, destination and all-articles sections.
 
 **Done when, for each:** every section in the list is built or has a recorded exception.
