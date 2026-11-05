@@ -10,7 +10,7 @@ Check every built page against its https://www.trip.com/ page, section by sectio
 4. Fix the page, check the "Done when" line, then tick the box.
 5. Stop and review before starting the next page.
 
-**Next task: B9**
+**Next task: B10**
 
 New pages in `TODO.md` section 3 wait until this audit is finished, so they are built to the corrected pattern.
 
@@ -106,7 +106,7 @@ Everything else builds on these.
 | [x] B6 | `/cars` | https://www.trip.com/carhire/ |
 | [x] B7 | `/packages` | https://www.trip.com/packages/ |
 | [x] B8 | `/private-tours` | https://www.trip.com/package-tours/private-tours |
-| [ ] B9 | `/group-tours` | https://www.trip.com/package-tours/group-tours |
+| [x] B9 | `/group-tours` | https://www.trip.com/package-tours/group-tours |
 | [ ] B10 | `/cruises` | https://www.trip.com/cruises/ |
 | [ ] B11 | `/deals` | https://www.trip.com/sale/deals/ |
 | [ ] B12 | `/rewards` | https://www.trip.com/customer/loyalty/ |
@@ -123,7 +123,7 @@ Everything else builds on these.
 - **B5 Attractions:** hero, trending destinations, recommended for you. Done, with the three image banners, four benefits and a picks block added. Recommended rows go by category, not city, because our sample data has about one attraction per city. A search or Explore swaps those rows for the results list on the same page. The new user discount becomes the free account banner, and our banners promise no discount. Left out: current location, the Explore hotels option, and the booked counts, opening hours, distance from downtown, award and trending badges on cards, which our sample data doesn't have.
 - **B6 Cars:** hero, promo codes, types, cities, reviews, brands, FAQs, guide, why book, selection, tips, recommendations. Done, with a sticky search and section menu that shows the current section. The promo code becomes the free account banner, because we have no discount. Reviews and suppliers are samples, marked as samples on the page, and suppliers have no logos. Why book, selection and tips sit inside the guide, as on the reference. The driver age picker stays a 25 to 69 checkbox, and the license country is left out because pricing doesn't use it. Types are kept although the reference hid them on this visit, because the plan lists them.
 - **B7 Packages:** hero, three benefits, daily deals. Done. Each deal is a real sample search for one adult, so its price matches the booking page, and its discount is our real 6%. The destinations and FAQ sections are removed, because the reference has neither here. Left out: the countdown, because deals have no real end time, the one-way option and the different hotel dates option, because booking them needs their own flow, and the rewards benefit, which we can't back up. The route panel shows city names, because our sample data has no airport codes. `GET /packages/deals` isn't in `backend/TODO.md` yet.
-- **B8 and B9 Tours:** hero with search and popular places, destination tabs with tour cards, popular cities, popular global destinations. Private tours also have a "Customize my trip" action. B8 done: the action opens the trip planner. Destination tabs go by region, with an All tab, because we have one tour per city. Popular global destinations link to the other tour type, so its photos don't repeat the cities row. A search swaps the tabs for the results list on the same page. Left out: the booked counts on cards, which our sample data doesn't have. Both tour pages share this screen, so B9 only needs a comparison with its own reference.
+- **B8 and B9 Tours:** hero with search and popular places, destination tabs with tour cards, popular cities, popular global destinations. Private tours also have a "Customize my trip" action. B8 done: the action opens the trip planner. Destination tabs go by region, with an All tab, because we have one tour per city. Popular global destinations link to the other tour type, so its photos don't repeat the cities row. A search swaps the tabs for the results list on the same page. Left out: the booked counts on cards, which our sample data doesn't have. Both tour pages share this screen, so B9 only needs a comparison with its own reference. B9 done: the reference has the same sections and no "Customize my trip" action, so nothing changed. Its hero promises free cancellation, no shopping and guaranteed departure, which we can't back up, so our subtitle stays.
 - **B10 Cruises:** hero with search, popular cruises with line tabs and cards.
 - **B11 Deals:** page title, tabs, campaign cards, about text, popular flights.
 - **B12 Rewards:** guest vs member, why join with a tier comparison, extra coins, tier boosts, spending coins, how it works, FAQ tabs, closing call to action.
