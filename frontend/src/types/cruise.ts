@@ -45,6 +45,5 @@ export type CruiseSearchResult = {
 
 export type CruisesContent = {
   title: string;
-  subtitle: string;
   imageUrl: string;
 };

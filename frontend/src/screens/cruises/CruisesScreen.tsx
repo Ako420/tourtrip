@@ -16,7 +16,7 @@ const CruisesContent = async ({ searchParams }: CruisesScreenProps) => {
     <>
       <CruiseHero content={content} filters={filters} />
 
-      <div className="page-sheet px-4 pt-10 pb-8">
+      <div className="page-sheet bg-surface! px-4 pt-8 pb-16">
         <CruiseResults result={result} filters={filters} />
       </div>
     </>

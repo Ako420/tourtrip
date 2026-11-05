@@ -164,6 +164,5 @@ export const cruises: CruiseDetails[] = rows.map(({ photoId, firstSailing, ...cr
 // Same shape as GET /cruises/content. Used until API_URL is set.
 export const cruisesContent: CruisesContent = {
   title: "Cruises",
-  subtitle: "See more of the world, and unpack only once.",
   imageUrl: unsplashImage("photo-1570077188670-e3a8d69ac5ff", 2000),
 };
