@@ -45,7 +45,7 @@ const SearchForm = ({ initialValues, destinations = [] }: SearchFormProps) => {
   const handleSubmit = (event: SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    router.push(`/hotels?${toSearchQuery({ destination, checkIn, checkOut, ...guests })}`);
+    router.push(`/hotels/list?${toSearchQuery({ destination, checkIn, checkOut, ...guests })}`);
   };
 
   return (

@@ -48,7 +48,7 @@ const HotelDetailsContent = async ({ params, searchParams }: HotelDetailsScreenP
         links={[
           { label: "Home", href: "/" },
           { label: "Hotels", href: "/hotels" },
-          { label: hotel.city, href: `/hotels?destination=${encodeURIComponent(hotel.city)}` },
+          { label: hotel.city, href: `/hotels/list?destination=${encodeURIComponent(hotel.city)}` },
         ]}
         current={hotel.name}
       />
@@ -66,7 +66,7 @@ const HotelDetailsContent = async ({ params, searchParams }: HotelDetailsScreenP
       />
       <PolicyList policies={hotel.policies} />
       <LocationSection address={`${hotel.address}, ${hotel.city}, ${hotel.country}`} nearby={hotel.nearby} />
-      <HandpickedHotels title="You may also like" moreHref="/hotels" hotels={similarHotels} />
+      <HandpickedHotels title="You may also like" moreHref="/hotels/list" hotels={similarHotels} />
     </>
   );
 };

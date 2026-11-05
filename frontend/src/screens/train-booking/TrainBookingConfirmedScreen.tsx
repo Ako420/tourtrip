@@ -44,7 +44,7 @@ const TrainBookingConfirmedContent = async ({ searchParams }: TrainBookingConfir
 
           <div className="mt-6 flex flex-wrap gap-3">
             <ButtonLink href="/trains">Back to trains</ButtonLink>
-            <ButtonLink href={`/hotels?destination=${encodeURIComponent(search.to ?? "")}`} variant="outline">
+            <ButtonLink href={`/hotels/list?destination=${encodeURIComponent(search.to ?? "")}`} variant="outline">
               Find a hotel in {search.to}
             </ButtonLink>
           </div>

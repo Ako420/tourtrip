@@ -10,7 +10,7 @@ const useHotelFilters = (search: HotelSearch, filters: HotelFilters) => {
 
   const navigate = (next: HotelFilters, scroll: boolean) => {
     startTransition(() => {
-      router.push(`/hotels?${toHotelQuery(search, next)}`, { scroll });
+      router.push(`/hotels/list?${toHotelQuery(search, next)}`, { scroll });
     });
   };
 

@@ -94,7 +94,7 @@ export const footerColumns: FooterColumn[] = [
       { label: "Rewards", href: "/rewards" },
       { label: "Affiliate program", href: "/affiliates" },
       { label: "List your property", href: "/list-property" },
-      { label: "All hotels", href: "/hotels" },
+      { label: "All hotels", href: "/hotels/list" },
       { label: "Become a supplier", href: "/suppliers" },
       { label: "Security", href: "/security" },
     ],

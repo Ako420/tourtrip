@@ -1,5 +1,5 @@
 import { HOTELS_PAGE_SIZE } from "@/constants";
-import { destinations, hotels } from "@/data";
+import { destinations, hotels, hotelsContent } from "@/data";
 import { toHotelQuery } from "@/lib";
 import type {
   Amenity,
@@ -9,6 +9,7 @@ import type {
   HotelSearchResult,
   HotelSort,
   HotelSummary,
+  HotelsContent,
 } from "@/types";
 import { ApiError, apiGet, isApiLive } from "./http";
 
@@ -37,6 +38,10 @@ const sorters: Partial<Record<HotelSort, (a: HotelSummary, b: HotelSummary) => n
   "price-asc": (a, b) => Number(a.pricePerNight) - Number(b.pricePerNight),
   "price-desc": (a, b) => Number(b.pricePerNight) - Number(a.pricePerNight),
   rating: (a, b) => b.rating - a.rating,
+};
+
+export const getHotelsContent = async (): Promise<HotelsContent> => {
+  return isApiLive("content") ? apiGet<HotelsContent>("/hotels/content") : hotelsContent;
 };
 
 export const searchHotels = async (search: HotelSearch, filters: HotelFilters): Promise<HotelSearchResult> => {

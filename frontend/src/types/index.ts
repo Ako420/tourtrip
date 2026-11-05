@@ -19,3 +19,4 @@ export * from "./cruise";
 export * from "./map";
 export * from "./assistant";
 export * from "./mobileApp";
+export * from "./hotelsContent";

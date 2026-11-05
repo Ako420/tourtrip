@@ -61,7 +61,7 @@ const AttractionDetailsContent = async ({ params }: AttractionDetailsScreenProps
       <PolicyList id="know-before" title="Know before you go" policies={attraction.policies} />
       <LocationSection address={attraction.address} nearby={attraction.nearby}>
         <ButtonLink
-          href={`/hotels?destination=${encodeURIComponent(attraction.city)}`}
+          href={`/hotels/list?destination=${encodeURIComponent(attraction.city)}`}
           variant="outline"
           size="sm"
           className="mt-4"

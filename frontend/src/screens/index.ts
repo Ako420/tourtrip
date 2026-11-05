@@ -24,6 +24,7 @@ export { default as FlightsScreen } from "./flights/FlightsScreen";
 export { default as GuideDetailsScreen } from "./guide-details/GuideDetailsScreen";
 export { default as HomeScreen } from "./home/HomeScreen";
 export { default as HotelDetailsScreen } from "./hotel-details/HotelDetailsScreen";
+export { default as HotelsLandingScreen } from "./hotels/HotelsLandingScreen";
 export { default as HotelsScreen } from "./hotels/HotelsScreen";
 export { default as InspirationScreen } from "./inspiration/InspirationScreen";
 export { default as LegalScreen } from "./legal/LegalScreen";

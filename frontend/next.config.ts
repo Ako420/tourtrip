@@ -8,6 +8,15 @@ const nextConfig: NextConfig = {
     loader: "custom",
     loaderFile: "./src/lib/imageLoader.ts",
   },
+  // Search links used to open on /hotels, which is now the landing page.
+  redirects: async () => [
+    {
+      source: "/hotels",
+      has: [{ type: "query", key: "destination" }],
+      destination: "/hotels/list",
+      permanent: true,
+    },
+  ],
   turbopack: {
     rules: {
       "*.css": {

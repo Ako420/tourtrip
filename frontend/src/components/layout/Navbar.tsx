@@ -44,7 +44,7 @@ const Navbar = ({ onMenuClick, account }: NavbarProps) => {
 
       <Logo />
 
-      <Form action="/hotels" role="search" className="ml-3 hidden h-9 w-75 md:flex">
+      <Form action="/hotels/list" role="search" className="ml-3 hidden h-9 w-75 md:flex">
         <input
           name="destination"
           placeholder="Destination or hotel"

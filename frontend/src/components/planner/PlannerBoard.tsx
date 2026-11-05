@@ -60,7 +60,7 @@ const PlannerBoard = ({ plan, suggestions, onChange, onReset }: PlannerBoardProp
         <Button type="button" size="sm" disabled={!canFill} onClick={() => onChange(fillEmptySlots(plan, matches))} className="disabled:opacity-60">
           Fill my days
         </Button>
-        <ButtonLink href={`/hotels?destination=${destinationQuery}`} size="sm" variant="outline">
+        <ButtonLink href={`/hotels/list?destination=${destinationQuery}`} size="sm" variant="outline">
           Find hotels
         </ButtonLink>
         <ButtonLink href={`/flights?to=${destinationQuery}#deals`} size="sm" variant="outline">

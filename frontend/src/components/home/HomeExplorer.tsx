@@ -49,7 +49,7 @@ const HomeExplorer = ({ content, hotels, destinations }: HomeExplorerProps) => {
           {destination.hotels.length > 0 && (
             <HandpickedHotels
               title={`Where to stay in ${destination.name}`}
-              moreHref={`/hotels?destination=${query}`}
+              moreHref={`/hotels/list?destination=${query}`}
               hotels={destination.hotels}
             />
           )}
