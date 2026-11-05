@@ -10,3 +10,4 @@ export * from "./legal";
 export * from "./planner";
 export * from "./train";
 export * from "./support";
+export * from "./deal";

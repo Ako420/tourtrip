@@ -5,6 +5,7 @@ export * from "./auth.service";
 export * from "./booking.service";
 export * from "./car.service";
 export * from "./carBooking.service";
+export * from "./deal.service";
 export * from "./flight.service";
 export * from "./flightBooking.service";
 export * from "./home.service";

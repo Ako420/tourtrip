@@ -30,7 +30,13 @@ const HotelStayCard = ({ hotel }: HotelStayCardProps) => {
             <span className="rounded-sm bg-primary px-1 font-semibold text-white">{hotel.rating.toFixed(1)}/10</span>
             {formatCount(hotel.reviewCount, "review")}
           </p>
-          <p className="mt-auto pt-3 font-bold">From {formatPrice(hotel.pricePerNight, hotel.currency)}</p>
+          <p className="mt-auto pt-3 font-bold">
+            From{" "}
+            {hotel.originalPrice && (
+              <s className="mr-1 text-sm font-normal text-muted">{formatPrice(hotel.originalPrice, hotel.currency)}</s>
+            )}
+            {formatPrice(hotel.pricePerNight, hotel.currency)}
+          </p>
         </div>
       </Link>
       <FavoriteButton label={hotel.name} />

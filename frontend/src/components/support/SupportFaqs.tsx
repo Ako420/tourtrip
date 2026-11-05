@@ -5,6 +5,7 @@ import { supportProducts } from "@/constants";
 import type { SupportFaq, SupportProductId } from "@/types";
 import FaqList from "../ui/FaqList";
 import Icon from "../ui/Icon";
+import PillTabs from "../ui/PillTabs";
 import SectionHeading from "../ui/SectionHeading";
 
 type SupportFaqsProps = {
@@ -38,21 +39,8 @@ const SupportFaqs = ({ faqs }: SupportFaqsProps) => {
       </label>
 
       {!search && (
-        <div className="scrollbar-none mb-4 flex gap-2 overflow-x-auto">
-          {supportProducts.map((product) => (
-            <button
-              key={product.id}
-              type="button"
-              aria-pressed={product.id === productId}
-              onClick={() => setProductId(product.id)}
-              className={`flex shrink-0 items-center gap-2 rounded-md border px-3 py-2 text-sm font-medium transition-colors duration-300 ease-out ${
-                product.id === productId ? "border-ink bg-ink text-white" : "border-line hover:border-primary hover:text-primary"
-              }`}
-            >
-              <Icon name={product.iconName} />
-              {product.label}
-            </button>
-          ))}
+        <div className="mb-4">
+          <PillTabs options={supportProducts} activeId={productId} onChange={setProductId} />
         </div>
       )}
 

@@ -17,7 +17,7 @@ const flightsContent: FlightsContent = {
   },
   quickLinks: [
     { label: "My bookings", href: "/bookings", iconName: "ticket" },
-    { label: "Price alerts", href: "/deals", iconName: "tag" },
+    { label: "Deals", href: "/deals", iconName: "tag" },
     { label: "Customer support", href: "/support", iconName: "headset" },
     { label: "Explore destinations", href: "/inspiration", iconName: "globe" },
   ],
