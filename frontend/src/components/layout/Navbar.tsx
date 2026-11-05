@@ -1,15 +1,17 @@
 import Form from "next/form";
 import Link from "next/link";
-import { authLinks, navbarLinks } from "@/constants";
-import ButtonLink from "../ui/ButtonLink";
+import type { ReactNode } from "react";
+import { navbarLinks } from "@/constants";
 import Icon from "../ui/Icon";
 import Logo from "./Logo";
+import SignInButton from "./SignInButton";
 
 type NavbarProps = {
   onMenuClick?: () => void;
+  account?: ReactNode;
 };
 
-const Navbar = ({ onMenuClick }: NavbarProps) => {
+const Navbar = ({ onMenuClick, account }: NavbarProps) => {
   return (
     <header className="sticky top-0 z-40 flex h-navbar items-center gap-4 border-b border-line bg-surface px-4 lg:px-5">
       {onMenuClick && (
@@ -52,9 +54,7 @@ const Navbar = ({ onMenuClick }: NavbarProps) => {
             </li>
           ))}
         </ul>
-        <ButtonLink href={authLinks.login} size="sm">
-          Sign in/register
-        </ButtonLink>
+        {account ?? <SignInButton />}
       </nav>
     </header>
   );

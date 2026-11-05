@@ -16,6 +16,7 @@ const signupSchema = z
       .regex(/[a-zA-Z]/, "Password must include a letter")
       .regex(/[0-9]/, "Password must include a number"),
     confirmPassword: z.string().min(1, "Confirm your password"),
+    acceptTerms: z.literal("on", { error: "Accept the terms to continue" }),
   })
   .refine((values) => values.password === values.confirmPassword, {
     message: "Passwords do not match",

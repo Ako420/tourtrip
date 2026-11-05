@@ -1,3 +1,5 @@
+export { default as AccountNav } from "./account/AccountNav";
+export { default as AccountScreen } from "./account/AccountScreen";
 export { default as AttractionBookingConfirmedScreen } from "./attraction-booking/AttractionBookingConfirmedScreen";
 export { default as AttractionBookingScreen } from "./attraction-booking/AttractionBookingScreen";
 export { default as AttractionDetailsScreen } from "./attraction-details/AttractionDetailsScreen";

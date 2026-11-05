@@ -8,8 +8,8 @@ import {
   HotelDetailsSkeleton,
   StatusMessage,
 } from "@/components";
-import { checkRoom, parseBookingParams, parseHotelSearch, toSearchQuery } from "@/lib";
-import { getHotelBySlug } from "@/services";
+import { checkRoom, parseBookingParams, parseHotelSearch, toSearchQuery, toContactDefaults } from "@/lib";
+import { getCurrentUser, getHotelBySlug } from "@/services";
 import type { RouteParams } from "@/types";
 
 type BookingScreenProps = {
@@ -56,7 +56,7 @@ const BookingContent = async ({ params, searchParams }: BookingScreenProps) => {
       </div>
       <div className="mt-6 grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
         <div className="order-2 lg:order-1">
-          <BookingForm stay={stay} />
+          <BookingForm stay={stay} contact={toContactDefaults(await getCurrentUser())} />
         </div>
         <div className="order-1 lg:order-2">
           <BookingSummary hotel={hotel} room={room} search={search} />

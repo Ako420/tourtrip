@@ -1,19 +1,19 @@
 "use client";
 
-import Link from "next/link";
 import { createBookingAction } from "@/actions/booking";
-import { authLinks } from "@/constants";
 import { useZodForm } from "@/hooks";
 import { bookingSchema } from "@/schemas";
-import type { BookingStay } from "@/types";
+import type { BookingStay, ContactDefaults } from "@/types";
 import FormField from "../auth/FormField";
 import FormMessage from "../auth/FormMessage";
 import Button from "../ui/Button";
 import Icon from "../ui/Icon";
+import SignInToBookLink from "./SignInToBookLink";
 import TermsCheckbox from "./TermsCheckbox";
 
 type BookingFormProps = {
   stay: BookingStay;
+  contact?: ContactDefaults;
 };
 
 const arrivalTimes = ["Before 2:00 PM", "2:00 PM - 6:00 PM", "6:00 PM - 10:00 PM", "After 10:00 PM"];
@@ -21,7 +21,7 @@ const arrivalTimes = ["Before 2:00 PM", "2:00 PM - 6:00 PM", "6:00 PM - 10:00 PM
 const inputClass =
   "w-full rounded-md border border-line bg-surface px-3 outline-none transition-colors duration-200 focus:border-primary";
 
-const BookingForm = ({ stay }: BookingFormProps) => {
+const BookingForm = ({ stay, contact }: BookingFormProps) => {
   const { formProps, getError, isPending, message } = useZodForm(bookingSchema, (_state, values) =>
     createBookingAction(stay, values),
   );
@@ -34,15 +34,13 @@ const BookingForm = ({ stay }: BookingFormProps) => {
       <section className="rounded-card border border-line p-5">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
           <h2 className="text-lg font-bold">Who is staying?</h2>
-          <Link href={authLinks.login} className="text-sm font-medium text-primary hover:underline">
-            Sign in to book faster
-          </Link>
+          {!contact && <SignInToBookLink />}
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
-          <FormField name="firstName" label="First name" autoComplete="given-name" error={getError("firstName")} />
-          <FormField name="lastName" label="Last name" autoComplete="family-name" error={getError("lastName")} />
-          <FormField name="email" label="Email" type="email" autoComplete="email" error={getError("email")} />
-          <FormField name="phone" label="Phone number" type="tel" autoComplete="tel" error={getError("phone")} />
+          <FormField name="firstName" label="First name" autoComplete="given-name" defaultValue={contact?.firstName} error={getError("firstName")} />
+          <FormField name="lastName" label="Last name" autoComplete="family-name" defaultValue={contact?.lastName} error={getError("lastName")} />
+          <FormField name="email" label="Email" type="email" autoComplete="email" defaultValue={contact?.email} error={getError("email")} />
+          <FormField name="phone" label="Phone number" type="tel" autoComplete="tel" defaultValue={contact?.phone} error={getError("phone")} />
         </div>
       </section>
 

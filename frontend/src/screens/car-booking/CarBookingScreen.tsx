@@ -7,9 +7,9 @@ import {
   FlightResultsSkeleton,
   StatusMessage,
 } from "@/components";
-import { parseCarBookingParams, parseCarSearch, toCarQuery } from "@/lib";
+import { parseCarBookingParams, parseCarSearch, toCarQuery, toContactDefaults } from "@/lib";
 import { carSearchSchema } from "@/schemas";
-import { getCarOffer } from "@/services";
+import { getCurrentUser, getCarOffer } from "@/services";
 import type { RouteParams } from "@/types";
 
 type CarBookingScreenProps = {
@@ -56,7 +56,7 @@ const CarBookingContent = async ({ searchParams }: CarBookingScreenProps) => {
       </div>
       <div className="mt-6 grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
         <div className="order-2 lg:order-1">
-          <CarBookingForm trip={trip} />
+          <CarBookingForm trip={trip} contact={toContactDefaults(await getCurrentUser())} />
         </div>
         <div className="order-1 lg:order-2">
           <CarBookingSummary offer={offer} search={search} />

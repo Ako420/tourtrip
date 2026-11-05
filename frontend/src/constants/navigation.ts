@@ -58,6 +58,7 @@ export const serviceTabs: NavItem[] = [
 
 export const authLinks = {
   login: "/login",
+  account: "/account",
   signup: "/signup",
   support: "/support",
   assistant: "/assistant",

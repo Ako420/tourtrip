@@ -7,9 +7,9 @@ import {
   FlightResultsSkeleton,
   StatusMessage,
 } from "@/components";
-import { getSeatProblem, parseFlightBookingParams, parseFlightSearch, toFlightQuery } from "@/lib";
+import { getSeatProblem, parseFlightBookingParams, parseFlightSearch, toFlightQuery, toContactDefaults } from "@/lib";
 import { flightSearchSchema } from "@/schemas";
-import { getFlightOffer } from "@/services";
+import { getCurrentUser, getFlightOffer } from "@/services";
 import type { RouteParams } from "@/types";
 
 type FlightBookingScreenProps = {
@@ -53,7 +53,7 @@ const FlightBookingContent = async ({ searchParams }: FlightBookingScreenProps) 
       </div>
       <div className="mt-6 grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
         <div className="order-2 lg:order-1">
-          <FlightBookingForm trip={trip} />
+          <FlightBookingForm trip={trip} contact={toContactDefaults(await getCurrentUser())} />
         </div>
         <div className="order-1 lg:order-2">
           <FlightBookingSummary offer={offer} search={search} />

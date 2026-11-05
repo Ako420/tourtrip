@@ -1,20 +1,21 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { authLinks, navbarLinks, sidebarGroups } from "@/constants";
-import ButtonLink from "../ui/ButtonLink";
+import { navbarLinks, sidebarGroups } from "@/constants";
 import Icon from "../ui/Icon";
 import FloatingActions from "./FloatingActions";
 import Footer from "./Footer";
+import SignInButton from "./SignInButton";
 
 type TopNavShellProps = {
   activeHref: string;
+  account?: ReactNode;
   children: ReactNode;
 };
 
 const mainLinks = sidebarGroups.slice(0, 3).flatMap((group) => group.items);
 
 // Used by pages with a full-width hero. The menu sits on top of the hero, so it has no background.
-const TopNavShell = ({ activeHref, children }: TopNavShellProps) => {
+const TopNavShell = ({ activeHref, account, children }: TopNavShellProps) => {
   return (
     <>
       <header className="absolute inset-x-0 top-0 z-30 text-white">
@@ -38,9 +39,7 @@ const TopNavShell = ({ activeHref, children }: TopNavShellProps) => {
                 </li>
               ))}
             </ul>
-            <ButtonLink href={authLinks.login} variant="inverse" size="sm">
-              Sign in/register
-            </ButtonLink>
+            {account ?? <SignInButton variant="inverse" />}
           </div>
         </div>
 

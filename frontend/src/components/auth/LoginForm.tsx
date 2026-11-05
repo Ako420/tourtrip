@@ -8,8 +8,14 @@ import FormField from "./FormField";
 import FormMessage from "./FormMessage";
 import PasswordField from "./PasswordField";
 
-const LoginForm = () => {
-  const { formProps, getError, isPending, message } = useZodForm(loginSchema, loginAction);
+type LoginFormProps = {
+  next: string;
+};
+
+const LoginForm = ({ next }: LoginFormProps) => {
+  const { formProps, getError, isPending, message } = useZodForm(loginSchema, (_state, values) =>
+    loginAction(next, values),
+  );
 
   return (
     <form {...formProps} className="flex flex-col gap-4">

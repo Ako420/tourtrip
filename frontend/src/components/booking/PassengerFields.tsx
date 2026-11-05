@@ -1,12 +1,14 @@
 import type { PassengerSlot } from "@/lib";
+import type { ContactDefaults } from "@/types";
 import FormField from "../auth/FormField";
 
 type PassengerFieldsProps = {
   slot: PassengerSlot;
   getError: (name: string) => string | undefined;
+  contact?: ContactDefaults;
 };
 
-const PassengerFields = ({ slot, getError }: PassengerFieldsProps) => {
+const PassengerFields = ({ slot, getError, contact }: PassengerFieldsProps) => {
   const { key, label, type } = slot;
 
   return (
@@ -16,12 +18,14 @@ const PassengerFields = ({ slot, getError }: PassengerFieldsProps) => {
         <FormField
           name={`${key}FirstName`}
           label="First name"
+          defaultValue={contact?.firstName}
           autoComplete={type === "adult" ? "given-name" : "off"}
           error={getError(`${key}FirstName`)}
         />
         <FormField
           name={`${key}LastName`}
           label="Last name"
+          defaultValue={contact?.lastName}
           autoComplete={type === "adult" ? "family-name" : "off"}
           error={getError(`${key}LastName`)}
         />
