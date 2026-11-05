@@ -1,43 +1,56 @@
 import { Suspense } from "react";
 import {
-  FlightTips,
-  RewardsEarnRates,
+  RewardsEarn,
+  RewardsFaqs,
   RewardsHero,
+  RewardsJoinButton,
   RewardsMembership,
-  RewardsTiers,
+  RewardsPerkTable,
+  RewardsProgress,
+  RewardsSpend,
   Skeleton,
 } from "@/components";
 import { getCurrentUser, getRewardsProgram } from "@/services";
 
-const MembershipContent = async () => {
-  return <RewardsMembership user={await getCurrentUser()} />;
-};
-
-const ProgramContent = async () => {
-  const { tiers, earnRates, faqs } = await getRewardsProgram();
+const RewardsContent = async () => {
+  const [user, program] = await Promise.all([getCurrentUser(), getRewardsProgram()]);
 
   return (
     <>
-      <RewardsTiers tiers={tiers} />
-      <RewardsEarnRates rates={earnRates} />
-      <FlightTips section={{ title: "How rewards work", items: faqs }} />
+      <RewardsHero hero={program.hero} />
+
+      <div className="page-sheet bg-surface! pt-px">
+        <div className="px-4">
+          <RewardsMembership user={user} membership={program.membership} joinLabel={program.joinLabel} />
+          <RewardsPerkTable user={user} program={program} />
+        </div>
+
+        <RewardsEarn user={user} program={program} />
+
+        <div className="px-4">
+          <RewardsSpend user={user} spend={program.spend} joinLabel={program.joinLabel} />
+        </div>
+
+        <RewardsProgress user={user} program={program} />
+
+        <div className="px-4">
+          <RewardsFaqs faqs={program.faqs} />
+        </div>
+
+        <section className="mt-16 bg-surface-alt px-4 py-16 text-center sm:mt-24 sm:py-24">
+          <h2 className="type-section-lg font-bold">{program.closingTitle}</h2>
+          <RewardsJoinButton user={user} label={program.joinLabel} />
+        </section>
+      </div>
     </>
   );
 };
 
 const RewardsScreen = () => {
   return (
-    <div className="pb-8">
-      <RewardsHero />
-
-      <Suspense fallback={<Skeleton className="mx-auto mt-6 h-24 max-w-content" />}>
-        <MembershipContent />
-      </Suspense>
-
-      <Suspense fallback={<Skeleton className="mx-auto mt-12 h-96 max-w-content" />}>
-        <ProgramContent />
-      </Suspense>
-    </div>
+    <Suspense fallback={<Skeleton className="h-96" />}>
+      <RewardsContent />
+    </Suspense>
   );
 };
 
