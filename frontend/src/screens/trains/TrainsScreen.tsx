@@ -16,7 +16,7 @@ const TrainsContent = async ({ searchParams }: TrainsScreenProps) => {
     <>
       <TrainHero key={toTrainQuery(search)} hero={content.hero} search={search} stations={stations} />
 
-      <div className="relative -mt-6 rounded-t-[2rem] bg-surface px-4 pt-10 pb-8">
+      <div className="page-sheet px-4 pt-10 pb-8">
         <TrustSection section={content.trust} />
         <TrainRoutes section={content.routes} />
         <FlightTips section={content.faqs} />

@@ -17,7 +17,7 @@ const ToursContent = async ({ type, searchParams }: ToursScreenProps) => {
     <>
       <TourHero type={type} content={content} query={query} />
 
-      <div className="relative -mt-6 rounded-t-[2rem] bg-surface px-4 pt-10 pb-8">
+      <div className="page-sheet px-4 pt-10 pb-8">
         <TourResults type={type} tours={tours} query={query} />
       </div>
     </>

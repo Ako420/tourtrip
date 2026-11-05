@@ -19,7 +19,7 @@ const SidebarNav = ({ isToggled, onNavigate, pathname }: SidebarNavProps) => {
   return (
     <nav aria-label="Main">
       {sidebarGroups.map((group) => (
-        <ul key={group.id} className="mx-3 border-b border-line py-2 last:border-b-0">
+        <ul key={group.id} className="mx-4 border-b border-line py-2 last:border-b-0">
           {group.items.map((item) => {
             const isActive = pathname?.startsWith(item.href);
 
@@ -30,7 +30,7 @@ const SidebarNav = ({ isToggled, onNavigate, pathname }: SidebarNavProps) => {
                   onClick={onNavigate}
                   title={item.label}
                   aria-current={isActive ? "page" : undefined}
-                  className={`relative flex h-11 items-center gap-3 rounded-md px-2 text-sm font-medium transition-colors duration-300 ease-out hover:bg-surface-alt ${
+                  className={`relative flex h-11 items-center gap-5 rounded-md pl-2 transition-colors duration-300 ease-out hover:bg-surface-alt ${
                     isActive ? "text-primary" : "text-ink"
                   }`}
                 >
@@ -42,7 +42,7 @@ const SidebarNav = ({ isToggled, onNavigate, pathname }: SidebarNavProps) => {
                   <span className={`truncate ${isToggled ? "lg:hidden" : ""}`}>{item.label}</span>
                   {item.badge && (
                     <span
-                      className={`rounded-sm bg-promo px-1 text-tiny text-white ${
+                      className={`absolute top-0.5 right-4 rounded-sm bg-promo px-1 text-tiny text-white ${
                         isToggled ? "lg:hidden" : ""
                       }`}
                     >

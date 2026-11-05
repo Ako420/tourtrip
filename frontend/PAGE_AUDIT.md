@@ -10,7 +10,7 @@ Check every built page against its https://www.trip.com/ page, section by sectio
 4. Fix the page, check the "Done when" line, then tick the box.
 5. Stop and review before starting the next page.
 
-**Next task: A2**
+**Next task: B1**
 
 New pages in `TODO.md` section 3 wait until this audit is finished, so they are built to the corrected pattern.
 
@@ -84,13 +84,15 @@ Everything else builds on these.
 
 **Done when:** no one-off font sizes remain, and you have chosen the font.
 
-#### [ ] A2 Check the shared layout
+#### [x] A2 Check the shared layout
 
 **Files:** `AppShell`, `Navbar`, `Sidebar`, `TopNavShell`, `Footer`, `FloatingActions`, `SectionHeading`
 
 - Compare header height, sidebar width and items, page width, section spacing, footer columns and card styles.
 
 **Done when:** shared parts match, so page tasks don't repeat this work.
+
+**Left out on purpose:** the footer's "Our partners" and awards rows, "Investor relations" and "About Trip.com Group", because Hotel Jr has none of these. "AI generated personalized content" waits for a page of its own.
 
 ## B. Landing pages
 

@@ -1,7 +1,8 @@
 import Form from "next/form";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { navbarLinks } from "@/constants";
+import { navbarLeadLinks, navbarLinks } from "@/constants";
+import type { NavItem } from "@/types";
 import Icon from "../ui/Icon";
 import CurrencyMenu from "./CurrencyMenu";
 import Logo from "./Logo";
@@ -10,6 +11,21 @@ import SignInButton from "./SignInButton";
 type NavbarProps = {
   onMenuClick?: () => void;
   account?: ReactNode;
+};
+
+const NavbarLinks = ({ links }: { links: NavItem[] }) => {
+  return (
+    <ul className="hidden items-center gap-5 xl:flex">
+      {links.map((link) => (
+        <li key={link.href}>
+          <Link href={link.href} className="flex items-center gap-1.5 text-sm font-medium transition-colors duration-300 ease-out hover:text-primary">
+            {link.iconName && <Icon name={link.iconName} className="text-ink-soft" />}
+            {link.label}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
 };
 
 const Navbar = ({ onMenuClick, account }: NavbarProps) => {
@@ -28,7 +44,7 @@ const Navbar = ({ onMenuClick, account }: NavbarProps) => {
 
       <Logo />
 
-      <Form action="/hotels" role="search" className="ml-3 hidden h-9 w-72 md:flex">
+      <Form action="/hotels" role="search" className="ml-3 hidden h-9 w-75 md:flex">
         <input
           name="destination"
           placeholder="Destination or hotel"
@@ -45,17 +61,9 @@ const Navbar = ({ onMenuClick, account }: NavbarProps) => {
       </Form>
 
       <nav aria-label="Account" className="ml-auto flex items-center gap-5">
-        <ul className="hidden items-center gap-5 xl:flex">
-          {navbarLinks.map((link) => (
-            <li key={link.href}>
-              <Link href={link.href} className="flex items-center gap-1.5 text-sm font-medium transition-colors duration-300 ease-out hover:text-primary">
-                {link.iconName && <Icon name={link.iconName} className="text-ink-soft" />}
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <NavbarLinks links={navbarLeadLinks} />
         <CurrencyMenu />
+        <NavbarLinks links={navbarLinks} />
         {account ?? <SignInButton />}
       </nav>
     </header>

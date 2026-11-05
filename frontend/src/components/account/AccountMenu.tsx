@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { logoutAction } from "@/actions/auth";
 import { authLinks } from "@/constants";
+import { useDismiss } from "@/hooks";
 import { getInitials } from "@/lib";
 import type { AccountUser } from "@/types";
 import Icon from "../ui/Icon";
@@ -21,24 +22,7 @@ const AccountMenu = ({ user, variant = "primary" }: AccountMenuProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [firstName] = user.fullName.trim().split(/\s+/);
 
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const handlePointerDown = (event: PointerEvent) => {
-      if (!containerRef.current?.contains(event.target as Node)) setIsOpen(false);
-    };
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setIsOpen(false);
-    };
-
-    document.addEventListener("pointerdown", handlePointerDown);
-    document.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      document.removeEventListener("pointerdown", handlePointerDown);
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [isOpen]);
+  useDismiss(containerRef, isOpen, () => setIsOpen(false));
 
   return (
     <div ref={containerRef} className="relative">

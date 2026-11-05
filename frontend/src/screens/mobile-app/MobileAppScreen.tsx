@@ -9,7 +9,7 @@ const MobileAppContent = async () => {
     <>
       <MobileAppHero hero={hero} />
 
-      <div className="relative -mt-6 rounded-t-[2rem] bg-surface px-4 pt-10 pb-8">
+      <div className="page-sheet px-4 pt-10 pb-8">
         <TrustSection section={planned} />
         <LinkCards title={today.title} items={today.items} />
       </div>

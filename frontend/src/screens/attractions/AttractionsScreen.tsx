@@ -22,7 +22,7 @@ const AttractionsContent = async ({ searchParams }: AttractionsScreenProps) => {
     <>
       <AttractionHero hero={content.hero} quickSearches={content.quickSearches} query={filters.query} />
 
-      <div className="relative -mt-6 rounded-t-[2rem] bg-surface px-4 pt-10">
+      <div className="page-sheet px-4 pt-10">
         <TrendingDestinations section={content.trending} />
         <AttractionResults key={toAttractionQuery(filters)} title={content.resultsTitle} filters={filters} result={result} />
         <Recommendations section={content.recommendations} />

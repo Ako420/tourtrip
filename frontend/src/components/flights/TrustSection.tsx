@@ -13,7 +13,7 @@ const TrustSection = ({ section }: TrustSectionProps) => {
       <SectionHeading
         action={
           section.moreHref && (
-            <Link href={section.moreHref} className="flex shrink-0 items-center gap-2 text-sm font-medium hover:text-primary">
+            <Link href={section.moreHref} className="flex shrink-0 items-center gap-2 text-lg hover:text-primary">
               {section.moreLabel}
               <Icon name="chevron-right" className="text-xs" />
             </Link>
@@ -29,8 +29,8 @@ const TrustSection = ({ section }: TrustSectionProps) => {
             <span className="flex size-11 items-center justify-center rounded-full bg-primary-soft text-lg text-primary">
               <Icon name={item.iconName} />
             </span>
-            <h3 className="mt-3 font-semibold">{item.title}</h3>
-            <p className="mt-1 text-sm text-muted">{item.description}</p>
+            <h3 className="mt-3 text-lg font-medium">{item.title}</h3>
+            <p className="mt-1 text-sm text-ink-soft">{item.description}</p>
           </li>
         ))}
       </ul>

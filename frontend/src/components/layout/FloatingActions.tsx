@@ -7,7 +7,7 @@ import Icon from "../ui/Icon";
 
 const SCROLL_TOP_OFFSET = 400;
 
-const buttonClass = "flex size-12 items-center justify-center rounded-full bg-surface text-lg shadow-float transition-colors duration-300 ease-out hover:text-primary";
+const buttonClass = "flex size-12 items-center lg:size-15 justify-center rounded-full bg-surface text-lg shadow-float transition-colors duration-300 ease-out hover:text-primary";
 
 const FloatingActions = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -21,7 +21,7 @@ const FloatingActions = () => {
   }, []);
 
   return (
-    <div className="fixed right-4 bottom-6 z-20 flex flex-col items-center gap-3 lg:right-8">
+    <div className="fixed right-4 bottom-6 z-20 flex flex-col items-center gap-2 lg:right-2 lg:bottom-20">
       {showBackToTop && (
         <button
           type="button"
@@ -35,7 +35,7 @@ const FloatingActions = () => {
       <Link
         href={authLinks.assistant}
         aria-label="Travel assistant"
-        className="flex size-14 flex-col items-center justify-center rounded-full border-2 border-primary-soft bg-primary-deep text-white shadow-float transition-colors duration-300 ease-out hover:bg-primary-dark motion-safe:animate-breathing"
+        className="flex size-14 flex-col items-center lg:size-15 justify-center rounded-full border-2 border-primary-soft bg-primary-deep text-white shadow-float transition-colors duration-300 ease-out hover:bg-primary-dark motion-safe:animate-breathing"
       >
         <Icon name="robot" className="text-lg" />
         <span className="text-micro font-semibold">ASK</span>

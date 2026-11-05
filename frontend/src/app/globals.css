@@ -18,7 +18,7 @@
   --color-ink: #0f1a2e;
   --color-ink-soft: #2f3a4d;
   --color-muted: #667085;
-  --color-line: #e4e7ee;
+  --color-line: #d4d7de;
   --color-surface: #ffffff;
   --color-surface-alt: #f5f7fb;
   --color-star: #ffb400;
@@ -26,7 +26,7 @@
   --color-danger-soft: #fef0ee;
   --color-success: #0a8f5c;
 
-  --radius-card: 0.75rem;
+  --radius-card: 0.5rem;
   --radius-panel: 1.25rem;
 
   --shadow-card: 0 8px 24px rgb(15 26 46 / 0.1);
@@ -54,8 +54,8 @@
   --text-micro: 0.5625rem;
   --text-micro--line-height: 0.75rem;
 
-  --spacing-navbar: 4.25rem;
-  --spacing-sidebar: 13.25rem;
+  --spacing-navbar: 4.125rem;
+  --spacing-sidebar: 13.5rem;
   --spacing-content: 72.5rem;
 }
 
@@ -103,6 +103,15 @@
 @utility type-price {
   font-size: var(--text-2xl);
   line-height: var(--text-2xl--line-height);
+}
+
+/* The rounded panel that sits over a full-width hero. */
+@utility page-sheet {
+  position: relative;
+  margin-top: -2rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  background-color: var(--color-surface-alt);
 }
 
 html {

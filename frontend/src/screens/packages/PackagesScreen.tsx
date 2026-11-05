@@ -22,7 +22,7 @@ const PackagesContent = async ({ searchParams }: PackagesScreenProps) => {
         destinations={destinations}
       />
 
-      <div className="relative -mt-6 rounded-t-[2rem] bg-surface px-4 pt-10 pb-8">
+      <div className="page-sheet px-4 pt-10 pb-8">
         <TrustSection section={content.trust} />
         <Inspiration section={content.destinations} />
         <FlightTips section={content.faqs} />
