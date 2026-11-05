@@ -16,10 +16,12 @@ const DealCampaigns = ({ campaigns }: DealCampaignsProps) => {
 
   return (
     <section className="mx-auto max-w-content">
-      <PillTabs options={dealProducts} activeId={productId} onChange={setProductId} />
+      <div className="flex justify-center">
+        <PillTabs options={dealProducts} activeId={productId} onChange={setProductId} />
+      </div>
 
       {visibleCampaigns.length > 0 ? (
-        <ul className="mt-5 grid gap-5 md:grid-cols-2">
+        <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {visibleCampaigns.map((campaign) => (
             <li key={campaign.slug}>
               <DealCampaignCard campaign={campaign} />

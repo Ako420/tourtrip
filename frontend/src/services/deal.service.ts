@@ -1,9 +1,10 @@
 import { connection } from "next/server";
-import { attractions, dealCampaignLinks, dealCampaigns, dealPromotions, flightDeals, hotels } from "@/data";
-import type { DealCampaign, DealCampaignDetails, DealsContent, HotelSummary } from "@/types";
+import { attractions, dealCampaignLinks, dealCampaigns, dealsAbout, flightDeals, hotels } from "@/data";
+import { toFlightDealHref } from "@/lib";
+import type { DealCampaign, DealCampaignDetails, DealsContent } from "@/types";
 import { ApiError, apiGet, isApiLive } from "./http";
 
-const HOT_DEAL_COUNT = 4;
+const POPULAR_FLIGHT_COUNT = 12;
 
 // Ended campaigns drop out on their own. The check reads today's date, so it runs per request.
 const getToday = async () => {
@@ -16,10 +17,6 @@ const isLive = (campaign: DealCampaign, today: string) => {
   return campaign.startsAt <= today && today <= campaign.endsAt;
 };
 
-const getSaving = ({ originalPrice, pricePerNight }: HotelSummary) => {
-  return originalPrice ? 1 - Number(pricePerNight) / Number(originalPrice) : 0;
-};
-
 export const getDeals = async (): Promise<DealsContent> => {
   if (isApiLive("deals")) {
     return apiGet<DealsContent>("/deals");
@@ -29,15 +26,12 @@ export const getDeals = async (): Promise<DealsContent> => {
 
   return {
     campaigns: dealCampaigns.filter((campaign) => isLive(campaign, today)),
-    hotelDeals: hotels
-      .filter((hotel) => getSaving(hotel) > 0)
-      .toSorted((a, b) => getSaving(b) - getSaving(a))
-      .slice(0, HOT_DEAL_COUNT),
-    flightDeals: flightDeals
+    about: dealsAbout,
+    popularFlights: flightDeals
       .filter((deal) => deal.departDate > today)
       .toSorted((a, b) => Number(a.price) - Number(b.price))
-      .slice(0, HOT_DEAL_COUNT),
-    promotions: dealPromotions,
+      .slice(0, POPULAR_FLIGHT_COUNT)
+      .map((deal) => ({ label: `Flights from ${deal.from} to ${deal.to}`, href: toFlightDealHref(deal) })),
   };
 };
 

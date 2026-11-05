@@ -10,7 +10,7 @@ Check every built page against its https://www.trip.com/ page, section by sectio
 4. Fix the page, check the "Done when" line, then tick the box.
 5. Stop and review before starting the next page.
 
-**Next task: B11**
+**Next task: B12**
 
 New pages in `TODO.md` section 3 wait until this audit is finished, so they are built to the corrected pattern.
 
@@ -108,7 +108,7 @@ Everything else builds on these.
 | [x] B8 | `/private-tours` | https://www.trip.com/package-tours/private-tours |
 | [x] B9 | `/group-tours` | https://www.trip.com/package-tours/group-tours |
 | [x] B10 | `/cruises` | https://www.trip.com/cruises/ |
-| [ ] B11 | `/deals` | https://www.trip.com/sale/deals/ |
+| [x] B11 | `/deals` | https://www.trip.com/sale/deals/ |
 | [ ] B12 | `/rewards` | https://www.trip.com/customer/loyalty/ |
 | [ ] B13 | `/support` | https://www.trip.com/pages/support/ |
 | [ ] B14 | `/app` | https://www.trip.com/pages/appdownload |
@@ -125,7 +125,7 @@ Everything else builds on these.
 - **B7 Packages:** hero, three benefits, daily deals. Done. Each deal is a real sample search for one adult, so its price matches the booking page, and its discount is our real 6%. The destinations and FAQ sections are removed, because the reference has neither here. Left out: the countdown, because deals have no real end time, the one-way option and the different hotel dates option, because booking them needs their own flow, and the rewards benefit, which we can't back up. The route panel shows city names, because our sample data has no airport codes. `GET /packages/deals` isn't in `backend/TODO.md` yet.
 - **B8 and B9 Tours:** hero with search and popular places, destination tabs with tour cards, popular cities, popular global destinations. Private tours also have a "Customize my trip" action. B8 done: the action opens the trip planner. Destination tabs go by region, with an All tab, because we have one tour per city. Popular global destinations link to the other tour type, so its photos don't repeat the cities row. A search swaps the tabs for the results list on the same page. Left out: the booked counts on cards, which our sample data doesn't have. Both tour pages share this screen, so B9 only needs a comparison with its own reference. B9 done: the reference has the same sections and no "Customize my trip" action, so nothing changed. Its hero promises free cancellation, no shopping and guaranteed departure, which we can't back up, so our subtitle stays.
 - **B10 Cruises:** hero with search, popular cruises with line tabs and cards. Done. Cruise lines are sample names, and cards show the line where the reference shows the ship, because our sample data has no ships. Lengths stay in nights, not days. "Show all" appears only after a search or filter, because the default list already shows everything, and there is no "See more" because all 8 sample cruises fit on the page. The hero subtitle is removed, as on the reference.
-- **B11 Deals:** page title, tabs, campaign cards, about text, popular flights.
+- **B11 Deals:** page title, tabs, campaign cards, about text, popular flights. Done. The hot hotel deals, hot flight deals and coupon sections are removed, because the reference has none of them here. Hot flight deals became the popular flights links, and campaign pages still show their own hotels and flights. Campaign cards use our photos with a text headline, not designed banners. `GET /deals` in `backend/TODO.md` now needs `campaigns`, `about` and `popularFlights`.
 - **B12 Rewards:** guest vs member, why join with a tier comparison, extra coins, tier boosts, spending coins, how it works, FAQ tabs, closing call to action.
 - **B13 Support:** hero, service chat with product tabs and question cards, ways to get help, guarantee, how help works, app.
 - **B14 App:** hero, summary panel, four benefit cards. Store links stay out until an app exists.

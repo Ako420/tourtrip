@@ -1,7 +1,7 @@
 import type { dealProducts } from "@/constants";
 import type { Attraction } from "./attraction";
 import type { FlightDeal } from "./flight";
-import type { Promotion } from "./home";
+import type { LinkItem } from "./home";
 import type { HotelSummary } from "./hotel";
 
 export type DealProduct = Exclude<(typeof dealProducts)[number]["id"], "all">;
@@ -25,7 +25,6 @@ export type DealCampaignDetails = DealCampaign & {
 
 export type DealsContent = {
   campaigns: DealCampaign[];
-  hotelDeals: HotelSummary[];
-  flightDeals: FlightDeal[];
-  promotions: Promotion[];
+  about: { id: string; title: string; body: string }[];
+  popularFlights: LinkItem[];
 };

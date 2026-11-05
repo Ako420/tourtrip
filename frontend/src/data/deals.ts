@@ -1,5 +1,4 @@
-import type { DealCampaign, Promotion } from "@/types";
-import homeContent from "./home";
+import type { DealCampaign } from "@/types";
 import unsplashImage from "./unsplashImage";
 
 type SampleDealLinks = {
@@ -71,16 +70,15 @@ export const dealCampaignLinks: Record<string, SampleDealLinks> = {
   "autumn-send-off": { hotelSlugs: ["sakura-house-tokyo"] },
 };
 
-const promotionHrefs: Record<string, string> = {
-  "hotels-10": "/hotels",
-  "trains-5": "/trains",
-  "tours-10": "/attractions",
-  "cars-8": "/cars",
-  "flights-5": "/flights",
-};
-
-export const dealPromotions: Promotion[] = homeContent.promotions.items.map((promotion) => ({
-  ...promotion,
-  ctaLabel: "Browse",
-  ctaHref: promotionHrefs[promotion.id] ?? "/",
-}));
+export const dealsAbout = [
+  {
+    id: "save",
+    title: "Save on travel with Hotel Jr",
+    body: "Hotel Jr brings hotels, flights, trains, cars and things to do together in one place. This page gathers the current offers, so you can compare them and pick the one that suits your trip. Prices and offers on this site are samples for now.",
+  },
+  {
+    id: "find",
+    title: "Find the deal that fits your trip",
+    body: "Use the tabs to see offers by product, then open a deal to see the hotels, flights or tickets it covers. Each deal shows its end date, and ended deals drop off this page on their own.",
+  },
+];

@@ -61,7 +61,7 @@ export { default as CruiseSailings } from "./cruises/CruiseSailings";
 export { default as DealCampaignCard } from "./deals/DealCampaignCard";
 export { default as DealCampaignHero } from "./deals/DealCampaignHero";
 export { default as DealCampaigns } from "./deals/DealCampaigns";
-export { default as DealCoupons } from "./deals/DealCoupons";
+export { default as DealsAbout } from "./deals/DealsAbout";
 export { default as DealFlights } from "./deals/DealFlights";
 export { default as EnquiryForm } from "./enquiry/EnquiryForm";
 export { default as AppPromo } from "./flights/AppPromo";
