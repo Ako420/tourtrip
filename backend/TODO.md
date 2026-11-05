@@ -8,7 +8,7 @@ The full plan for the Hotel Jr backend: everything needed to run a travel site l
 2. Build only that task. Check its "Done when" line, then tick its box.
 3. Stop and review before starting the next one.
 
-**Next task: 6.2** (5.5 waits for the page audit)
+**Next task: 6.4** (5.5 waits for the page audit)
 
 **Stack**
 
@@ -105,7 +105,7 @@ backend/
     mappers/              <name>.mapper.js, database row → API shape
     middlewares/          errorHandler, notFound, validate, auth, rateLimit, upload
     jobs/                 Scheduled work, such as coin expiry
-    utils/                httpError.js, dates.js, money.js, pagination.js, reference.js, token.js
+    utils/                hash.js, httpError.js, dates.js, money.js, pagination.js, reference.js, token.js
   tests/                  <name>.test.js
 ```
 
@@ -1347,19 +1347,24 @@ Task 5.2 passed against the committed frontend data, and a build with `content` 
 
 **Done when:** the migration applies.
 
-#### [ ] 6.2 Seed the flight data
+#### [x] 6.2 Seed the flight data
 
 - 14 airports from `frontend/src/data/airports.ts`, and the 4 fictional airlines from `flightOffers.ts`.
 - For each pair of cities, create schedules each way, linked with `returnScheduleId`.
 - Move the sample's repeatable `hash` logic into the seed, so times and fares look the same.
-- Add the 12 deals from `flightDeals.ts`. Move any past dates forward.
+- Add the 12 deals from `flightDeals.ts`. Move any past dates forward, by whole weeks when the seed runs, so the rule keeps working as dates pass.
+- Schedule ids look like `LOS-LHR-1`, so they survive a re-seed. They can't contain `_`, which joins them into offer ids.
+- A return flight is the real flight the other way, so its time differs from the sample, which adds 145 minutes to return legs. Outbound legs match the sample exactly.
+- The sample could stop at a flight's own origin or destination. Those 104 flights move on to the next stop city.
+- Never delete schedules here, because `FlightDeparture` holds the seats that have been sold.
 
 **Done when:** every ordered city pair has schedules, and seeding twice creates no duplicates.
 
-#### [ ] 6.3 Build fare calculation
+#### [x] 6.3 Build fare calculation
 
 **Files:** `services/flightPricing.service.js`, `tests/flightPricing.test.js`
 
+- `hash` lives in `utils/hash.js`, because the seed and the day factor need the same one.
 - Pure functions, no database:
   - Cabin multipliers: Economy 1, Premium Economy 1.6, Business 3.2, First 5.
   - Round trip factor 1.8.
@@ -1368,6 +1373,8 @@ Task 5.2 passed against the committed frontend data, and a build with `content` 
 - `pricePerAdult` is rounded, and `totalPrice = round(pricePerAdult * (adults + children * 0.75))`.
 
 **Done when:** tests prove the same input gives the same price, and cover each cabin, one-way and children.
+
+Fares match the sample on 99.85% of prices. The rest are $1 off, because `baseFare` is stored to the cent.
 
 #### [ ] 6.4 Build the offer builder
 
