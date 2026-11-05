@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState, type SubmitEvent } from "react";
 import { z } from "zod";
-import { PACKAGE_NIGHTS } from "@/constants";
+import { PACKAGE_DISCOUNT, PACKAGE_NIGHTS } from "@/constants";
 import { useToday } from "@/hooks";
 import { addDays, toPackageQuery } from "@/lib";
 import { packageSearchSchema } from "@/schemas";
@@ -130,9 +130,12 @@ const PackageSearchForm = ({ initialValues, airports, destinations }: PackageSea
       </div>
 
       <div className="mt-3 flex justify-end">
-        <Button type="submit" size="lg" className="w-full sm:w-auto sm:px-10">
+        <Button type="submit" size="lg" className="relative w-full sm:w-auto sm:px-10">
           <Icon name="search" />
           Search flights + hotels
+          <span className="absolute -top-3 right-0 rounded-sm bg-promo px-1.5 py-0.5 text-xs font-semibold">
+            Save {PACKAGE_DISCOUNT * 100}%
+          </span>
         </Button>
       </div>
     </form>

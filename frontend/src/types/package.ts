@@ -1,7 +1,6 @@
 import type { z } from "zod";
 import type { packageBookingTripSchema } from "@/schemas";
 import type { FlightOffer, FlightSearch, TrustItem } from "./flight";
-import type { InspirationItem, Section } from "./home";
 import type { HotelRoom, HotelSummary } from "./hotel";
 
 export type PackageSearch = Omit<FlightSearch, "tripType" | "isNonstop"> & {
@@ -37,11 +36,23 @@ export type PackageSearchResult = {
   offers: PackageOffer[];
 };
 
+export type PackageDealRoute = {
+  from: string;
+  to: string;
+  daysAhead: number;
+  nights: number;
+};
+
+export type PackageDeal = {
+  id: string;
+  search: PackageSearch;
+  offer: PackageOffer;
+};
+
 export type PackagesContent = {
-  hero: { title: string; subtitle: string; imageUrl: string };
-  trust: Section<TrustItem> & { moreLabel: string };
-  destinations: Section<InspirationItem>;
-  faqs: Section<{ id: string; question: string; answer: string }>;
+  hero: { title: string; imageUrl: string };
+  benefits: TrustItem[];
+  deals: { title: string; note: string; routes: PackageDealRoute[] };
 };
 
 export type PackageBookingTrip = z.infer<typeof packageBookingTripSchema>;

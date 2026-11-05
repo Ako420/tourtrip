@@ -144,6 +144,8 @@ export { default as LegalText } from "./legal/LegalText";
 export { default as MapExplorer } from "./map/MapExplorer";
 export { default as PlaceMap } from "./map/PlaceMap";
 export { default as MobileAppHero } from "./mobile-app/MobileAppHero";
+export { default as PackageDealCard } from "./packages/PackageDealCard";
+export { default as PackageDeals } from "./packages/PackageDeals";
 export { default as PackageFlightChoices } from "./packages/PackageFlightChoices";
 export { default as PackageHero } from "./packages/PackageHero";
 export { default as PackageOfferCard } from "./packages/PackageOfferCard";

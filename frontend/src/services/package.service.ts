@@ -1,11 +1,23 @@
+import { connection } from "next/server";
 import { randomUUID } from "node:crypto";
 import { buildFlightOffers, hotels, packagesContent } from "@/data";
-import { buildPackageOffer, checkRoom, getSeatProblem, toPackageFlightSearch, toPackageQuery, toPackageStay } from "@/lib";
+import {
+  addDays,
+  buildPackageOffer,
+  checkRoom,
+  getSeatProblem,
+  parsePackageSearch,
+  toPackageFlightSearch,
+  toPackageQuery,
+  toPackageStay,
+} from "@/lib";
 import type {
   BookingResponse,
   FlightOffer,
   HotelDetails,
   PackageBookingRequest,
+  PackageDeal,
+  PackageDealRoute,
   PackageFlightChoice,
   PackageOffer,
   PackageSearch,
@@ -72,6 +84,37 @@ export const searchPackages = async (search: PackageSearch, flightId: string): P
     .toSorted((a, b) => a.totalPrice - b.totalPrice);
 
   return { flightChoices, selectedFlightId: selectedFlight.id, offers };
+};
+
+// Each deal is a real search for one adult, so its price matches what the booking page charges.
+export const getPackageDeals = async (routes: PackageDealRoute[]): Promise<PackageDeal[]> => {
+  if (isApiLive("packages")) {
+    return apiGet<PackageDeal[]>("/packages/deals");
+  }
+
+  await connection();
+
+  const today = new Date().toISOString().slice(0, 10);
+  const deals = await Promise.all(
+    routes.map(async ({ from, to, daysAhead, nights }) => {
+      const departDate = addDays(today, daysAhead);
+      const search: PackageSearch = {
+        ...parsePackageSearch({}),
+        from,
+        to,
+        departDate,
+        returnDate: addDays(departDate, nights),
+        adults: 1,
+        children: 0,
+        rooms: 1,
+      };
+      const { offers } = await searchPackages(search, "");
+
+      return offers.slice(0, 1).map((offer) => ({ id: `${from}-${to}`, search, offer }));
+    }),
+  );
+
+  return deals.flat();
 };
 
 export const getPackageOffer = async (

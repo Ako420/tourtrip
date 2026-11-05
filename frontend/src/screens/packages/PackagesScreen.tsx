@@ -1,7 +1,7 @@
 import { Suspense } from "react";
-import { FlightsSkeleton, FlightTips, Inspiration, PackageHero, TrustSection } from "@/components";
+import { FlightsSkeleton, HotelBenefits, PackageDeals, PackageHero } from "@/components";
 import { parsePackageSearch } from "@/lib";
-import { getAirports, getDestinations, getPackagesContent } from "@/services";
+import { getAirports, getDestinations, getPackageDeals, getPackagesContent } from "@/services";
 import type { RouteParams } from "@/types";
 
 type PackagesScreenProps = {
@@ -11,6 +11,7 @@ type PackagesScreenProps = {
 const PackagesContent = async ({ searchParams }: PackagesScreenProps) => {
   const search = parsePackageSearch(await searchParams);
   const [content, airports, destinations] = await Promise.all([getPackagesContent(), getAirports(), getDestinations()]);
+  const deals = await getPackageDeals(content.deals.routes);
 
   return (
     <>
@@ -22,10 +23,9 @@ const PackagesContent = async ({ searchParams }: PackagesScreenProps) => {
         destinations={destinations}
       />
 
-      <div className="page-sheet px-4 pt-10 pb-8">
-        <TrustSection section={content.trust} />
-        <Inspiration section={content.destinations} />
-        <FlightTips section={content.faqs} />
+      <div className="page-sheet bg-surface! px-4 pt-1 pb-20">
+        <HotelBenefits items={content.benefits} />
+        <PackageDeals section={content.deals} deals={deals} />
       </div>
     </>
   );
