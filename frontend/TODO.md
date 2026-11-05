@@ -8,7 +8,7 @@ The pages still to build. Every link below opens the "page not found" screen tod
 2. Build only that task. Check its "Done when" line, then tick its box.
 3. Stop and review before starting the next one.
 
-**Next task: 2.1**
+**Next task: 2.2**
 
 **Rules for every page**
 
@@ -89,7 +89,7 @@ The pages still to build. Every link below opens the "page not found" screen tod
 
 ## 2. Tools
 
-#### [ ] 2.1 Travel assistant
+#### [x] 2.1 Travel assistant
 
 **Route:** `/assistant`.
 

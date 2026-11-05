@@ -14,6 +14,7 @@ const envSchema = z.object({
   DATABASE_URL: z.url("is required and must be a valid URL"),
   JWT_SECRET: z.string("is required").min(32, "must be at least 32 characters"),
   JWT_EXPIRES_IN: z.string().min(1, "cannot be empty").default("7d"),
+  ANTHROPIC_API_KEY: z.string().min(1).optional(),
 });
 
 const result = envSchema.safeParse(process.env);

@@ -13,3 +13,4 @@ export * from "./packages";
 export * from "./tours";
 export * from "./cruises";
 export * from "./map";
+export * from "./assistant";

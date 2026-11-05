@@ -808,6 +808,7 @@ Response:
 | --- | --- | --- | --- | --- |
 | GET | `/support/faqs` | none | 21.1 | Help articles, `?q=`, `?product=` |
 | POST | `/support/tickets` | optional | 21.2 | Contact support |
+| POST | `/assistant/chat` | user | 21.7 | Chat with the travel assistant |
 | GET | `/support/tickets` | user | 21.2 | My support requests |
 | GET | `/support/tickets/:id` | user | 21.2 | One request and its messages |
 | POST | `/support/tickets/:id/messages` | user | 21.2 | Reply to a request |
@@ -2208,6 +2209,13 @@ trip.com's flights page couldn't be read, so these come from search results abou
 - Add `/support`, `/list-property`, `/suppliers`, `/affiliates` and the footer pages.
 
 **Done when:** no sidebar or footer link leads to a missing page.
+
+#### [x] 21.7 Build the travel assistant
+
+- `POST /assistant/chat` streams Claude's reply as one JSON object per line. It needs a signed-in user, with a limit of 30 messages an hour each.
+- It is switched off until `ANTHROPIC_API_KEY` is set. It has no access to prices, availability or bookings.
+
+**Done when:** a signed-in user can chat on `/assistant`, and a reply can be stopped part way.
 
 ---
 

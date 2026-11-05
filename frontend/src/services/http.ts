@@ -16,6 +16,7 @@ export class ApiError extends Error {
 
 export type ApiArea =
   | "accounts"
+  | "assistant"
   | "attractions"
   | "bookings"
   | "cars"
@@ -72,6 +73,18 @@ export const apiPost = async <T>(path: string, body: unknown, options: RequestOp
   const { data } = await client.post<T>(path, body, await getConfig(options));
 
   return data;
+};
+
+// Axios buffers responses on the server, so a reply that streams uses fetch directly.
+export const apiStream = async (path: string, body: unknown, { auth, signal }: RequestOptions & { signal: AbortSignal }) => {
+  const { headers } = await getConfig({ auth });
+
+  return fetch(`${API_URL}${path}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", ...headers },
+    body: JSON.stringify(body),
+    signal,
+  });
 };
 
 export const apiPut = async <T>(path: string, body: unknown, options: RequestOptions = {}): Promise<T> => {

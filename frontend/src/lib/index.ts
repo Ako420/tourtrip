@@ -16,3 +16,4 @@ export * from "./guide";
 export * from "./packageSearch";
 export * from "./tour";
 export * from "./cruise";
+export * from "./assistant";

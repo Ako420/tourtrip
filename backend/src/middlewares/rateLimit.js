@@ -13,3 +13,15 @@ export const loginLimiter = rateLimit({
     next(new HttpError(429, "Too many failed attempts. Try again later.", "TOO_MANY_ATTEMPTS"));
   },
 });
+
+// Each message costs money, so every signed-in user gets a limit of their own.
+export const assistantLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000,
+  limit: 30,
+  keyGenerator: (req) => req.user.id,
+  standardHeaders: "draft-8",
+  legacyHeaders: false,
+  handler: (req, res, next) => {
+    next(new HttpError(429, "You have sent a lot of messages. Try again later.", "TOO_MANY_MESSAGES"));
+  },
+});
