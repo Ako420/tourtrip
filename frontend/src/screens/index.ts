@@ -26,6 +26,7 @@ export { default as LoginScreen } from "./login/LoginScreen";
 export { default as NotFoundContent } from "./not-found/NotFoundContent";
 export { default as NotFoundScreen } from "./not-found/NotFoundScreen";
 export { default as PlannerScreen } from "./planner/PlannerScreen";
+export { default as RewardsScreen } from "./rewards/RewardsScreen";
 export { default as SignupScreen } from "./signup/SignupScreen";
 export { default as SupportScreen } from "./support/SupportScreen";
 export { default as TrainBookingConfirmedScreen } from "./train-booking/TrainBookingConfirmedScreen";

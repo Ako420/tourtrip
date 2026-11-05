@@ -17,3 +17,4 @@ export { default as homeContent } from "./home";
 export { default as hotels } from "./hotels";
 export { default as supportFaqs } from "./supportFaqs";
 export { dealCampaignLinks, dealCampaigns, dealPromotions } from "./deals";
+export { default as rewardsProgram } from "./rewards";

@@ -8,7 +8,7 @@ The pages still to build. Every link below opens the "page not found" screen tod
 2. Build only that task. Check its "Done when" line, then tick its box.
 3. Stop and review before starting the next one.
 
-**Next task: 1.2**
+**Next task: 1.3**
 
 **Rules for every page**
 
@@ -35,7 +35,7 @@ The pages still to build. Every link below opens the "page not found" screen tod
 
 **Done when:** a deal opens its campaign page, and "Price alerts" on the flights page no longer leads to a dead link, or is relabelled.
 
-#### [ ] 1.2 Rewards
+#### [x] 1.2 Rewards
 
 **Route:** `/rewards`. **API later:** `GET /rewards/tiers`, `GET /rewards`, `GET /rewards/coins` (backend 14.9).
 
