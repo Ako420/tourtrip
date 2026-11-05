@@ -1,0 +1,1475 @@
+{
+  "home": {
+    "hero": {
+      "title": "Your next stay starts here",
+      "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2000&q=75",
+      "guarantees": [
+        {
+          "id": "price",
+          "label": "Best price promise",
+          "iconName": "tag"
+        },
+        {
+          "id": "booking",
+          "label": "Secure booking",
+          "iconName": "shield"
+        },
+        {
+          "id": "stay",
+          "label": "Stay protection",
+          "iconName": "check"
+        }
+      ]
+    },
+    "promotions": {
+      "title": "Welcome offers",
+      "intro": {
+        "title": "Join today and save more on every trip",
+        "ctaLabel": "Sign in & claim all",
+        "ctaHref": "/login"
+      },
+      "items": [
+        {
+          "id": "hotels-10",
+          "title": "10% off",
+          "subtitle": "Hotels & Homes",
+          "terms": "First hotel booking only. Minimum spend applies.",
+          "iconName": "bed",
+          "ctaLabel": "Claim",
+          "ctaHref": "/login"
+        },
+        {
+          "id": "trains-5",
+          "title": "5% off",
+          "subtitle": "Train tickets",
+          "terms": "Selected routes only.",
+          "iconName": "train",
+          "ctaLabel": "Claim",
+          "ctaHref": "/login"
+        },
+        {
+          "id": "tours-10",
+          "title": "10% off",
+          "subtitle": "Attractions & Tours",
+          "terms": "Valid on tickets over $30.",
+          "iconName": "ticket",
+          "ctaLabel": "Claim",
+          "ctaHref": "/login"
+        },
+        {
+          "id": "cars-8",
+          "title": "8% off",
+          "subtitle": "Car rentals",
+          "terms": "Rentals of three days or more.",
+          "iconName": "car",
+          "ctaLabel": "Claim",
+          "ctaHref": "/login"
+        },
+        {
+          "id": "flights-5",
+          "title": "$15 off",
+          "subtitle": "Flights",
+          "terms": "First flight booking only.",
+          "iconName": "plane",
+          "ctaLabel": "Claim",
+          "ctaHref": "/login"
+        }
+      ]
+    },
+    "banners": [
+      {
+        "id": "year-end",
+        "eyebrow": "Limited time",
+        "title": "Year-End Getaway Sale",
+        "subtitle": "Up to 30% off selected stays this month",
+        "href": "/hotels",
+        "ctaLabel": "Book now",
+        "imageUrl": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1400&q=75",
+        "theme": "primary"
+      },
+      {
+        "id": "coast",
+        "eyebrow": "Stay inspired",
+        "title": "Escape to the coast",
+        "subtitle": "Quiet beaches and slow mornings",
+        "href": "/hotels?destination=Bali",
+        "ctaLabel": "Book now",
+        "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=75",
+        "theme": "sunset"
+      }
+    ],
+    "inspiration": {
+      "title": "Get inspired for your next trip",
+      "items": [
+        {
+          "id": "anywhere",
+          "name": "Anywhere",
+          "imageUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=500&q=75",
+          "href": "/hotels"
+        },
+        {
+          "id": "cape-town",
+          "name": "Cape Town",
+          "tag": "Long haul",
+          "imageUrl": "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=500&q=75",
+          "href": "/hotels?destination=Cape%20Town"
+        },
+        {
+          "id": "marrakech",
+          "name": "Marrakech",
+          "tag": "Medium haul",
+          "imageUrl": "https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=500&q=75",
+          "href": "/hotels?destination=Marrakech"
+        },
+        {
+          "id": "hong-kong",
+          "name": "Hong Kong",
+          "tag": "Long haul",
+          "imageUrl": "https://images.unsplash.com/photo-1536599018102-9f803c140fc1?auto=format&fit=crop&w=500&q=75",
+          "href": "/hotels?destination=Hong%20Kong"
+        },
+        {
+          "id": "dubai",
+          "name": "Dubai",
+          "tag": "Medium haul",
+          "imageUrl": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=500&q=75",
+          "href": "/hotels?destination=Dubai"
+        },
+        {
+          "id": "singapore",
+          "name": "Singapore",
+          "tag": "Long haul",
+          "imageUrl": "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=500&q=75",
+          "href": "/hotels?destination=Singapore"
+        },
+        {
+          "id": "istanbul",
+          "name": "Istanbul",
+          "tag": "Short haul",
+          "imageUrl": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=500&q=75",
+          "href": "/hotels?destination=Istanbul"
+        }
+      ]
+    },
+    "places": {
+      "title": "Places you may like",
+      "moreHref": "/attractions",
+      "items": [
+        {
+          "id": "colosseum",
+          "name": "The Colosseum",
+          "city": "Rome",
+          "badge": "Top pick",
+          "imageUrl": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=75",
+          "rating": 4.8,
+          "reviewCount": 3685,
+          "href": "/attractions?q=Rome#results"
+        },
+        {
+          "id": "taj-mahal",
+          "name": "Taj Mahal",
+          "city": "Agra",
+          "badge": "Top pick",
+          "imageUrl": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=75",
+          "rating": 4.9,
+          "reviewCount": 20441,
+          "href": "/attractions?q=Agra#results"
+        },
+        {
+          "id": "machu-picchu",
+          "name": "Machu Picchu",
+          "city": "Cusco",
+          "badge": "Top pick",
+          "imageUrl": "https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=75",
+          "rating": 4.9,
+          "reviewCount": 8120,
+          "href": "/attractions?q=Cusco#results"
+        },
+        {
+          "id": "big-ben",
+          "name": "Big Ben",
+          "city": "London",
+          "badge": "Top pick",
+          "imageUrl": "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&w=800&q=75",
+          "rating": 4.6,
+          "reviewCount": 5179,
+          "href": "/attractions?q=London#results"
+        },
+        {
+          "id": "eiffel-tower",
+          "name": "Eiffel Tower",
+          "city": "Paris",
+          "badge": "Top pick",
+          "imageUrl": "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=800&q=75",
+          "rating": 4.7,
+          "reviewCount": 12490,
+          "href": "/attractions?q=Paris#results"
+        },
+        {
+          "id": "great-wall",
+          "name": "The Great Wall",
+          "city": "Beijing",
+          "badge": "Top pick",
+          "imageUrl": "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=800&q=75",
+          "rating": 4.8,
+          "reviewCount": 9310,
+          "href": "/attractions?q=Beijing#results"
+        }
+      ]
+    },
+    "moments": {
+      "title": "Magical trip moments that last",
+      "moreHref": "/inspiration",
+      "items": [
+        {
+          "id": "balloons",
+          "title": "Sunrise over Cappadocia by hot air balloon",
+          "location": "Cappadocia",
+          "imageUrl": "https://images.unsplash.com/photo-1641128324972-af3212f0f6bd?auto=format&fit=crop&w=800&q=75",
+          "href": "/inspiration/cappadocia"
+        },
+        {
+          "id": "temple",
+          "title": "A quiet morning at a lakeside temple",
+          "location": "Bali",
+          "imageUrl": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=75",
+          "href": "/inspiration/bali"
+        },
+        {
+          "id": "safari",
+          "title": "Golden hour on a savanna safari",
+          "location": "East Africa",
+          "imageUrl": "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=75",
+          "href": "/inspiration/nairobi"
+        },
+        {
+          "id": "aurora",
+          "title": "Chasing the northern lights",
+          "location": "Arctic Circle",
+          "imageUrl": "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=800&q=75",
+          "href": "/inspiration/tromso"
+        },
+        {
+          "id": "lake",
+          "title": "Rowing across a mountain lake",
+          "location": "The Alps",
+          "imageUrl": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=800&q=75",
+          "href": "/inspiration/the-alps"
+        }
+      ]
+    },
+    "handpickedHotels": {
+      "title": "Stay cozy at our handpicked hotels",
+      "moreHref": "/hotels"
+    },
+    "recommendations": {
+      "title": "Hotel Jr recommendations",
+      "items": [
+        {
+          "id": "hotels",
+          "label": "Featured hotel destinations",
+          "links": [
+            {
+              "label": "Hotels in Bali",
+              "href": "/hotels?destination=Bali"
+            },
+            {
+              "label": "Hotels in Lisbon",
+              "href": "/hotels?destination=Lisbon"
+            },
+            {
+              "label": "Hotels in Tokyo",
+              "href": "/hotels?destination=Tokyo"
+            },
+            {
+              "label": "Hotels in Nairobi",
+              "href": "/hotels?destination=Nairobi"
+            },
+            {
+              "label": "Hotels in Marrakech",
+              "href": "/hotels?destination=Marrakech"
+            },
+            {
+              "label": "Hotels in Phuket",
+              "href": "/hotels?destination=Phuket"
+            },
+            {
+              "label": "Hotels in Cape Town",
+              "href": "/hotels?destination=Cape%20Town"
+            },
+            {
+              "label": "Hotels in Dubai",
+              "href": "/hotels?destination=Dubai"
+            },
+            {
+              "label": "Hotels in Singapore",
+              "href": "/hotels?destination=Singapore"
+            },
+            {
+              "label": "Hotels in Hong Kong",
+              "href": "/hotels?destination=Hong%20Kong"
+            },
+            {
+              "label": "Hotels in Istanbul",
+              "href": "/hotels?destination=Istanbul"
+            },
+            {
+              "label": "Hotels in Paris",
+              "href": "/hotels?destination=Paris"
+            },
+            {
+              "label": "Hotels in London",
+              "href": "/hotels?destination=London"
+            },
+            {
+              "label": "Hotels in Rome",
+              "href": "/hotels?destination=Rome"
+            },
+            {
+              "label": "Hotels in New York",
+              "href": "/hotels?destination=New%20York"
+            }
+          ]
+        },
+        {
+          "id": "flights",
+          "label": "Featured flight destinations",
+          "links": [
+            {
+              "label": "Flights to Tokyo",
+              "href": "/flights"
+            },
+            {
+              "label": "Flights to Dubai",
+              "href": "/flights"
+            },
+            {
+              "label": "Flights to Paris",
+              "href": "/flights"
+            },
+            {
+              "label": "Flights to London",
+              "href": "/flights"
+            },
+            {
+              "label": "Flights to Nairobi",
+              "href": "/flights"
+            },
+            {
+              "label": "Flights to Bali",
+              "href": "/flights"
+            },
+            {
+              "label": "Flights to Rome",
+              "href": "/flights"
+            },
+            {
+              "label": "Flights to New York",
+              "href": "/flights"
+            },
+            {
+              "label": "Flights to Singapore",
+              "href": "/flights"
+            },
+            {
+              "label": "Flights to Istanbul",
+              "href": "/flights"
+            }
+          ]
+        },
+        {
+          "id": "guides",
+          "label": "Featured guides",
+          "links": [
+            {
+              "label": "Tokyo travel guide",
+              "href": "/inspiration/tokyo"
+            },
+            {
+              "label": "Bali travel guide",
+              "href": "/inspiration/bali"
+            },
+            {
+              "label": "Paris travel guide",
+              "href": "/inspiration/paris"
+            },
+            {
+              "label": "Rome travel guide",
+              "href": "/inspiration/rome"
+            },
+            {
+              "label": "Marrakech travel guide",
+              "href": "/inspiration/marrakech"
+            },
+            {
+              "label": "Cape Town travel guide",
+              "href": "/inspiration/cape-town"
+            }
+          ]
+        },
+        {
+          "id": "attractions",
+          "label": "Popular attractions",
+          "links": [
+            {
+              "label": "The Colosseum",
+              "href": "/attractions"
+            },
+            {
+              "label": "Taj Mahal",
+              "href": "/attractions"
+            },
+            {
+              "label": "Machu Picchu",
+              "href": "/attractions"
+            },
+            {
+              "label": "Big Ben",
+              "href": "/attractions"
+            },
+            {
+              "label": "Eiffel Tower",
+              "href": "/attractions"
+            },
+            {
+              "label": "The Great Wall",
+              "href": "/attractions"
+            }
+          ]
+        },
+        {
+          "id": "cars",
+          "label": "Car rentals in top cities",
+          "links": [
+            {
+              "label": "Car rentals in Dubai",
+              "href": "/cars"
+            },
+            {
+              "label": "Car rentals in Lisbon",
+              "href": "/cars"
+            },
+            {
+              "label": "Car rentals in Cape Town",
+              "href": "/cars"
+            },
+            {
+              "label": "Car rentals in Rome",
+              "href": "/cars"
+            },
+            {
+              "label": "Car rentals in Bali",
+              "href": "/cars"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "flights": {
+    "hero": {
+      "title": "Find your next flight",
+      "subtitle": "Compare fares and take off for less",
+      "imageUrl": "https://images.unsplash.com/photo-1500835556837-99ac94a94552?auto=format&fit=crop&w=2000&q=75"
+    },
+    "quickLinks": [
+      {
+        "label": "My bookings",
+        "href": "/bookings",
+        "iconName": "ticket"
+      },
+      {
+        "label": "Deals",
+        "href": "/deals",
+        "iconName": "tag"
+      },
+      {
+        "label": "Customer support",
+        "href": "/support",
+        "iconName": "headset"
+      },
+      {
+        "label": "Explore destinations",
+        "href": "/inspiration",
+        "iconName": "globe"
+      }
+    ],
+    "trust": {
+      "title": "Fly with confidence",
+      "moreLabel": "Register now",
+      "moreHref": "/signup",
+      "items": [
+        {
+          "id": "travelers",
+          "title": "Made for travelers",
+          "description": "Search, compare and book every part of your trip in one place.",
+          "iconName": "thumbs-up"
+        },
+        {
+          "id": "support",
+          "title": "Support around the clock",
+          "description": "Our team is ready to help before, during and after your trip.",
+          "iconName": "headset"
+        },
+        {
+          "id": "pricing",
+          "title": "Transparent pricing",
+          "description": "No surprises. Taxes and fees are included in the price you see.",
+          "iconName": "tag"
+        },
+        {
+          "id": "rewards",
+          "title": "Earn on every trip",
+          "description": "Collect rewards each time you book and use them on your next journey.",
+          "iconName": "coins"
+        }
+      ]
+    },
+    "trending": {
+      "title": "See what's trending now",
+      "caption": "Great journeys start at the gate",
+      "imageUrl": "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&fit=crop&w=1200&q=75",
+      "mapImageUrl": "https://images.unsplash.com/photo-1499591934245-40b55745b905?auto=format&fit=crop&w=700&q=75",
+      "ctaLabel": "Explore the world",
+      "ctaHref": "/inspiration"
+    },
+    "dealsTitle": "Popular flight deals",
+    "app": {
+      "title": "A Hotel Jr app is planned",
+      "imageUrl": "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=2000&q=75",
+      "benefits": [
+        "All your trips",
+        "Trip updates",
+        "Travel assistant"
+      ],
+      "ctaLabel": "See what's planned",
+      "ctaHref": "/app"
+    },
+    "banners": {
+      "title": "Discover what's happening",
+      "items": [
+        {
+          "id": "winter",
+          "eyebrow": "Limited time",
+          "title": "Winter fare sale",
+          "subtitle": "Save on selected routes this month",
+          "href": "/flights#deals",
+          "ctaLabel": "Book now",
+          "imageUrl": "https://images.unsplash.com/photo-1529074963764-98f45c47344b?auto=format&fit=crop&w=800&q=75",
+          "theme": "primary"
+        },
+        {
+          "id": "egypt",
+          "eyebrow": "Stay inspired",
+          "title": "Wonders of Egypt",
+          "subtitle": "History on a grand scale",
+          "href": "/inspiration/cairo",
+          "ctaLabel": "Read guide",
+          "imageUrl": "https://images.unsplash.com/photo-1553913861-c0fddf2619ee?auto=format&fit=crop&w=800&q=75",
+          "theme": "sunset"
+        },
+        {
+          "id": "japan",
+          "eyebrow": "City breaks",
+          "title": "Tokyo after dark",
+          "subtitle": "Neon nights and great food",
+          "href": "/flights?to=Tokyo#deals",
+          "ctaLabel": "Book now",
+          "imageUrl": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=75",
+          "theme": "sunset"
+        },
+        {
+          "id": "greece",
+          "eyebrow": "Sun seekers",
+          "title": "Island hop in Greece",
+          "subtitle": "White walls and blue seas",
+          "href": "/inspiration/santorini",
+          "ctaLabel": "Read guide",
+          "imageUrl": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=75",
+          "theme": "sunset"
+        }
+      ]
+    },
+    "why": {
+      "title": "Why book flights with Hotel Jr",
+      "heading": "Trips that suit you",
+      "body": "Booking a flight should be the exciting part of a trip, not the stressful one. With so much to compare, finding the right fare can take hours. Hotel Jr brings it together so you can search routes, compare prices and dates, and see the full cost before you book. Add a hotel to the same trip, keep your plans in one place, and spend your time looking forward to the journey instead."
+    },
+    "tips": {
+      "title": "How to book cheap flights",
+      "items": [
+        {
+          "id": "midweek",
+          "question": "Fly during the working week",
+          "answer": "Tuesdays and Wednesdays are often cheaper than weekends, when demand from leisure travelers is highest."
+        },
+        {
+          "id": "early",
+          "question": "Book early",
+          "answer": "Fares tend to rise as seats fill up, so booking a few weeks ahead usually beats waiting until the last minute."
+        },
+        {
+          "id": "times",
+          "question": "Consider less popular departure times",
+          "answer": "Early morning and late evening flights are often priced lower than those in the middle of the day."
+        },
+        {
+          "id": "connection",
+          "question": "Choose flights with a connection",
+          "answer": "A stopover can cost less than a nonstop flight. Check that the layover is long enough to make your connection."
+        },
+        {
+          "id": "flexible",
+          "question": "Stay flexible with your dates",
+          "answer": "Moving your trip by a day or two can change the fare, so compare nearby dates before you book."
+        },
+        {
+          "id": "package",
+          "question": "Book a flight and hotel together",
+          "answer": "Package deals can cost less than booking each one separately, especially for longer stays."
+        },
+        {
+          "id": "fees",
+          "question": "Watch out for hidden costs",
+          "answer": "Check what is included in the fare, such as baggage and seat selection, so you can compare the real price."
+        }
+      ]
+    },
+    "recommendations": {
+      "title": "Recommended by Hotel Jr",
+      "items": [
+        {
+          "id": "destinations",
+          "label": "Flights to popular destinations",
+          "links": [
+            {
+              "label": "Flights to Bangkok",
+              "href": "/flights?to=Bangkok#deals"
+            },
+            {
+              "label": "Flights to Dubai",
+              "href": "/flights?to=Dubai#deals"
+            },
+            {
+              "label": "Flights to Hong Kong",
+              "href": "/flights?to=Hong%20Kong#deals"
+            },
+            {
+              "label": "Flights to Johannesburg",
+              "href": "/flights?to=Johannesburg#deals"
+            },
+            {
+              "label": "Flights to London",
+              "href": "/flights?to=London#deals"
+            },
+            {
+              "label": "Flights to Miami",
+              "href": "/flights?to=Miami#deals"
+            },
+            {
+              "label": "Flights to Nairobi",
+              "href": "/flights?to=Nairobi#deals"
+            },
+            {
+              "label": "Flights to New York",
+              "href": "/flights?to=New%20York#deals"
+            },
+            {
+              "label": "Flights to Paris",
+              "href": "/flights?to=Paris#deals"
+            },
+            {
+              "label": "Flights to Tokyo",
+              "href": "/flights?to=Tokyo#deals"
+            }
+          ]
+        },
+        {
+          "id": "routes",
+          "label": "Popular routes",
+          "links": [
+            {
+              "label": "New York to London",
+              "href": "/flights?from=New%20York&to=London#deals"
+            },
+            {
+              "label": "Lagos to London",
+              "href": "/flights?from=Lagos&to=London#deals"
+            },
+            {
+              "label": "Nairobi to Dubai",
+              "href": "/flights?from=Nairobi&to=Dubai#deals"
+            },
+            {
+              "label": "Hong Kong to Tokyo",
+              "href": "/flights?from=Hong%20Kong&to=Tokyo#deals"
+            },
+            {
+              "label": "Accra to Paris",
+              "href": "/flights?from=Accra&to=Paris#deals"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "attractions": {
+    "hero": {
+      "title": "Attractions & Tours",
+      "subtitle": "Find places to see and things to do",
+      "imageUrl": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=2000&q=75"
+    },
+    "quickSearches": [
+      "Rome",
+      "Paris",
+      "Tokyo",
+      "Cape Town",
+      "Bali",
+      "Dubai",
+      "Nairobi"
+    ],
+    "trending": {
+      "title": "Trending destinations",
+      "items": [
+        {
+          "id": "rome",
+          "name": "Rome",
+          "imageUrl": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=900&q=75"
+        },
+        {
+          "id": "tokyo",
+          "name": "Tokyo",
+          "imageUrl": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=600&q=75"
+        },
+        {
+          "id": "cape-town",
+          "name": "Cape Town",
+          "imageUrl": "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=600&q=75"
+        },
+        {
+          "id": "dubai",
+          "name": "Dubai",
+          "imageUrl": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=75"
+        },
+        {
+          "id": "bali",
+          "name": "Bali",
+          "imageUrl": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=75"
+        }
+      ]
+    },
+    "resultsTitle": "Popular things to do",
+    "recommendations": {
+      "title": "Explore more",
+      "items": [
+        {
+          "id": "cities",
+          "label": "Things to do by city",
+          "links": [
+            {
+              "label": "Things to do in Rome",
+              "href": "/attractions?q=Rome#results"
+            },
+            {
+              "label": "Things to do in Paris",
+              "href": "/attractions?q=Paris#results"
+            },
+            {
+              "label": "Things to do in Tokyo",
+              "href": "/attractions?q=Tokyo#results"
+            },
+            {
+              "label": "Things to do in Cairo",
+              "href": "/attractions?q=Cairo#results"
+            },
+            {
+              "label": "Things to do in Dubai",
+              "href": "/attractions?q=Dubai#results"
+            },
+            {
+              "label": "Things to do in Sydney",
+              "href": "/attractions?q=Sydney#results"
+            },
+            {
+              "label": "Things to do in Beijing",
+              "href": "/attractions?q=Beijing#results"
+            },
+            {
+              "label": "Things to do in Bali",
+              "href": "/attractions?q=Bali#results"
+            },
+            {
+              "label": "Things to do in Nairobi",
+              "href": "/attractions?q=Nairobi#results"
+            },
+            {
+              "label": "Things to do in Cape Town",
+              "href": "/attractions?q=Cape%20Town#results"
+            }
+          ]
+        },
+        {
+          "id": "countries",
+          "label": "Things to do by country",
+          "links": [
+            {
+              "label": "Things to do in Italy",
+              "href": "/attractions?q=Italy#results"
+            },
+            {
+              "label": "Things to do in France",
+              "href": "/attractions?q=France#results"
+            },
+            {
+              "label": "Things to do in Japan",
+              "href": "/attractions?q=Japan#results"
+            },
+            {
+              "label": "Things to do in Egypt",
+              "href": "/attractions?q=Egypt#results"
+            },
+            {
+              "label": "Things to do in Peru",
+              "href": "/attractions?q=Peru#results"
+            },
+            {
+              "label": "Things to do in Kenya",
+              "href": "/attractions?q=Kenya#results"
+            },
+            {
+              "label": "Things to do in Greece",
+              "href": "/attractions?q=Greece#results"
+            },
+            {
+              "label": "Things to do in Norway",
+              "href": "/attractions?q=Norway#results"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "cars": {
+    "hero": {
+      "title": "Car Rentals",
+      "imageUrl": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=2000&q=75"
+    },
+    "trust": {
+      "title": "Rent with confidence",
+      "moreLabel": "Register now",
+      "moreHref": "/signup",
+      "items": [
+        {
+          "id": "compare",
+          "title": "Compare in one place",
+          "description": "See cars from different suppliers side by side.",
+          "iconName": "search"
+        },
+        {
+          "id": "price",
+          "title": "Clear pricing",
+          "description": "See the total for your rental before you book.",
+          "iconName": "tag"
+        },
+        {
+          "id": "cancel",
+          "title": "Flexible options",
+          "description": "Filter for cars with free cancellation.",
+          "iconName": "check"
+        },
+        {
+          "id": "support",
+          "title": "Help when you need it",
+          "description": "Our team can help before and during your trip.",
+          "iconName": "headset"
+        }
+      ]
+    },
+    "types": {
+      "title": "Popular car rental types",
+      "items": [
+        {
+          "id": "economy",
+          "label": "Economy",
+          "detail": "Easy to park",
+          "imageUrl": "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=75"
+        },
+        {
+          "id": "compact",
+          "label": "Compact",
+          "detail": "Great for city trips",
+          "imageUrl": "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=600&q=75"
+        },
+        {
+          "id": "sedan",
+          "label": "Sedan",
+          "detail": "Comfortable for longer drives",
+          "imageUrl": "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=600&q=75"
+        },
+        {
+          "id": "suv",
+          "label": "SUV",
+          "detail": "Room for family and bags",
+          "imageUrl": "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=600&q=75"
+        },
+        {
+          "id": "van",
+          "label": "Van",
+          "detail": "Space for groups",
+          "imageUrl": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=600&q=75"
+        },
+        {
+          "id": "luxury",
+          "label": "Luxury",
+          "detail": "For a special trip",
+          "imageUrl": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=75"
+        }
+      ]
+    },
+    "cities": {
+      "title": "Popular car rental cities",
+      "items": [
+        {
+          "id": "dubai",
+          "name": "Dubai",
+          "fromPrice": 29,
+          "currency": "USD",
+          "imageUrl": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=500&q=75"
+        },
+        {
+          "id": "cape-town",
+          "name": "Cape Town",
+          "fromPrice": 21,
+          "currency": "USD",
+          "imageUrl": "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=500&q=75"
+        },
+        {
+          "id": "rome",
+          "name": "Rome",
+          "fromPrice": 26,
+          "currency": "USD",
+          "imageUrl": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=500&q=75"
+        },
+        {
+          "id": "bali",
+          "name": "Bali",
+          "fromPrice": 18,
+          "currency": "USD",
+          "imageUrl": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=500&q=75"
+        },
+        {
+          "id": "tokyo",
+          "name": "Tokyo",
+          "fromPrice": 34,
+          "currency": "USD",
+          "imageUrl": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=500&q=75"
+        },
+        {
+          "id": "marrakech",
+          "name": "Marrakech",
+          "fromPrice": 19,
+          "currency": "USD",
+          "imageUrl": "https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=500&q=75"
+        }
+      ]
+    },
+    "faqs": {
+      "title": "Car rental questions",
+      "items": [
+        {
+          "id": "bring",
+          "question": "What do I need to bring to pick up the car?",
+          "answer": "Usually a valid driving license, a passport or ID, and a card in the main driver's name. Check your rental details, as this varies by supplier and country."
+        },
+        {
+          "id": "deposit",
+          "question": "Do I need to pay a deposit?",
+          "answer": "Most suppliers hold a deposit on a card at pick-up and release it after you return the car in good condition."
+        },
+        {
+          "id": "age",
+          "question": "Is there a minimum driver age?",
+          "answer": "This depends on the supplier and country. Drivers under 25 or over 69 may pay an extra fee."
+        },
+        {
+          "id": "fuel",
+          "question": "How does fuel work?",
+          "answer": "Many rentals are full to full, which means you collect the car with a full tank and return it full."
+        },
+        {
+          "id": "cancel",
+          "question": "Can I cancel my booking?",
+          "answer": "Cars marked as free cancellation can be cancelled for free until the time shown. Other rentals follow the supplier's rules."
+        }
+      ]
+    }
+  },
+  "trains": {
+    "hero": {
+      "title": "Train tickets",
+      "subtitle": "Compare routes and travel by rail",
+      "imageUrl": "https://images.unsplash.com/photo-1532105956626-9569c03602f6?auto=format&fit=crop&w=2000&q=75"
+    },
+    "trust": {
+      "title": "Why book trains with us",
+      "moreLabel": "Register now",
+      "moreHref": "/signup",
+      "items": [
+        {
+          "id": "compare",
+          "title": "All in one search",
+          "description": "See times and fares side by side for your journey.",
+          "iconName": "search"
+        },
+        {
+          "id": "price",
+          "title": "Clear pricing",
+          "description": "See the full price for your group before you book.",
+          "iconName": "tag"
+        },
+        {
+          "id": "mobile",
+          "title": "Mobile tickets",
+          "description": "Keep your booking reference on your phone.",
+          "iconName": "phone"
+        },
+        {
+          "id": "support",
+          "title": "Help when you need it",
+          "description": "Our team can help before and during your trip.",
+          "iconName": "headset"
+        }
+      ]
+    },
+    "routes": {
+      "title": "Popular train routes",
+      "items": [
+        {
+          "id": "london-paris",
+          "from": "London",
+          "to": "Paris",
+          "duration": "About 2h 30m",
+          "fromPrice": 49,
+          "currency": "USD",
+          "imageUrl": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=75"
+        },
+        {
+          "id": "rome-milan",
+          "from": "Rome",
+          "to": "Milan",
+          "duration": "About 3h",
+          "fromPrice": 35,
+          "currency": "USD",
+          "imageUrl": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=600&q=75"
+        },
+        {
+          "id": "tokyo-kyoto",
+          "from": "Tokyo",
+          "to": "Kyoto",
+          "duration": "About 2h 15m",
+          "fromPrice": 88,
+          "currency": "USD",
+          "imageUrl": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=600&q=75"
+        },
+        {
+          "id": "lisbon-porto",
+          "from": "Lisbon",
+          "to": "Porto",
+          "duration": "About 3h",
+          "fromPrice": 22,
+          "currency": "USD",
+          "imageUrl": "https://images.unsplash.com/photo-1585208798174-6cedd86e019a?auto=format&fit=crop&w=600&q=75"
+        },
+        {
+          "id": "nairobi-mombasa",
+          "from": "Nairobi",
+          "to": "Mombasa",
+          "duration": "About 6h",
+          "fromPrice": 15,
+          "currency": "USD",
+          "imageUrl": "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=600&q=75"
+        },
+        {
+          "id": "cape-town-johannesburg",
+          "from": "Cape Town",
+          "to": "Johannesburg",
+          "duration": "About 27h",
+          "fromPrice": 45,
+          "currency": "USD",
+          "imageUrl": "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=600&q=75"
+        }
+      ]
+    },
+    "faqs": {
+      "title": "Train travel questions",
+      "items": [
+        {
+          "id": "ticket",
+          "question": "How do I get my ticket?",
+          "answer": "Your booking confirmation includes your reference. Check the rules for your operator, as some journeys need a printed or station-collected ticket."
+        },
+        {
+          "id": "early",
+          "question": "How early should I arrive?",
+          "answer": "Around 20 minutes is usually enough, but allow more time for international trains with passport checks."
+        },
+        {
+          "id": "bags",
+          "question": "How much luggage can I bring?",
+          "answer": "Most trains are generous with luggage, but limits vary by operator. Check before you travel."
+        },
+        {
+          "id": "change",
+          "question": "Can I change my ticket?",
+          "answer": "Refundable tickets can usually be changed or cancelled before departure. Other tickets follow the operator's rules."
+        },
+        {
+          "id": "children",
+          "question": "Do children need a ticket?",
+          "answer": "Rules vary by country and operator. Children aged 2 to 15 pay a child fare on this site."
+        }
+      ]
+    }
+  },
+  "packages": {
+    "hero": {
+      "title": "Flight + Hotel",
+      "subtitle": "Book them together and save 6%.",
+      "imageUrl": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2000&q=75"
+    },
+    "trust": {
+      "title": "Why book them together",
+      "moreLabel": "",
+      "items": [
+        {
+          "id": "save",
+          "title": "Pay less",
+          "description": "Get 6% off the full price of your flight and hotel.",
+          "iconName": "tag"
+        },
+        {
+          "id": "reference",
+          "title": "One booking",
+          "description": "A single reference covers your flight and your stay.",
+          "iconName": "ticket"
+        },
+        {
+          "id": "flight",
+          "title": "Choose your flight",
+          "description": "Pick the cheapest or the fastest flight for your dates.",
+          "iconName": "plane"
+        },
+        {
+          "id": "stays",
+          "title": "Compare stays",
+          "description": "See every hotel with its full package price.",
+          "iconName": "bed"
+        }
+      ]
+    },
+    "destinations": {
+      "title": "Popular package destinations",
+      "items": [
+        {
+          "id": "bali",
+          "name": "Bali",
+          "imageUrl": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=500&q=75",
+          "href": "/packages?to=Bali"
+        },
+        {
+          "id": "tokyo",
+          "name": "Tokyo",
+          "imageUrl": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=500&q=75",
+          "href": "/packages?to=Tokyo"
+        },
+        {
+          "id": "dubai",
+          "name": "Dubai",
+          "imageUrl": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=500&q=75",
+          "href": "/packages?to=Dubai"
+        },
+        {
+          "id": "paris",
+          "name": "Paris",
+          "imageUrl": "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=500&q=75",
+          "href": "/packages?to=Paris"
+        },
+        {
+          "id": "rome",
+          "name": "Rome",
+          "imageUrl": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=500&q=75",
+          "href": "/packages?to=Rome"
+        },
+        {
+          "id": "cape-town",
+          "name": "Cape Town",
+          "imageUrl": "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=500&q=75",
+          "href": "/packages?to=Cape%20Town"
+        }
+      ]
+    },
+    "faqs": {
+      "title": "Flight + Hotel questions",
+      "items": [
+        {
+          "id": "included",
+          "question": "What is included in a package?",
+          "answer": "A round-trip flight for everyone in your group and a hotel stay between your flight dates."
+        },
+        {
+          "id": "discount",
+          "question": "How does the discount work?",
+          "answer": "You get 6% off the combined price of the flight and the hotel. The package price is shown before you book."
+        },
+        {
+          "id": "payment",
+          "question": "Will I be charged when I book?",
+          "answer": "Online payment is not connected yet, so you will not be charged and no card details are needed."
+        },
+        {
+          "id": "dates",
+          "question": "Can I stay for different dates than my flights?",
+          "answer": "Not yet. Your check-in date is your departure date, and your check-out date is your return date."
+        }
+      ]
+    }
+  },
+  "planner": {
+    "heroImageUrl": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=2000&q=75"
+  },
+  "legal-terms": {
+    "slug": "terms",
+    "title": "Booking terms",
+    "summary": "The rules that apply when you use Hotel Jr and book a stay, flight or activity.",
+    "updatedOn": "November 4, 2026",
+    "isDraft": true,
+    "sections": [
+      {
+        "id": "about",
+        "title": "About these terms",
+        "paragraphs": [
+          "Hotel Jr is operated by [Company legal name], registered in [Country] at [Registered address]. In these terms, \"we\" means [Company legal name] and \"you\" means the person using the site.",
+          "By using the site or making a booking, you agree to these terms. If you book for other people, you confirm that you have their permission and that they accept these terms too."
+        ]
+      },
+      {
+        "id": "our-role",
+        "title": "Our role",
+        "paragraphs": [
+          "We help you find and book travel services provided by others, such as hotels, airlines and activity operators. The provider of each service is responsible for delivering it, and its own conditions also apply to your booking."
+        ]
+      },
+      {
+        "id": "booking",
+        "title": "Making a booking",
+        "paragraphs": [
+          "A booking is only confirmed when you receive a booking reference from us."
+        ],
+        "items": [
+          "You must be at least 18 years old to make a booking.",
+          "The details you give must be accurate. Names on flight bookings must match each traveler's passport.",
+          "Prices and availability can change until your booking is confirmed."
+        ]
+      },
+      {
+        "id": "prices",
+        "title": "Prices and payment",
+        "paragraphs": [
+          "Prices are shown in the currency displayed at checkout and include the taxes and fees we are told about, unless we say otherwise. Hotels may charge local taxes or deposits at the property.",
+          "Each booking shows how and when you pay. Some hotel bookings are paid at the property."
+        ]
+      },
+      {
+        "id": "changes",
+        "title": "Changes and cancellations",
+        "paragraphs": [
+          "The cancellation rules for your booking are shown before you confirm it. Where a booking is marked as free cancellation, you can cancel for free until the time stated. Non-refundable bookings cannot be refunded unless the law requires it.",
+          "If a provider changes or cancels your booking, we will tell you as soon as we can and help you with your options."
+        ]
+      },
+      {
+        "id": "your-trip",
+        "title": "Your responsibilities when traveling",
+        "paragraphs": [
+          "You are responsible for having everything you need for your trip."
+        ],
+        "items": [
+          "Valid passports, visas and any required vaccinations.",
+          "Arriving on time for check-in, departures and activities.",
+          "Following the rules of the hotel, airline or activity operator."
+        ]
+      },
+      {
+        "id": "liability",
+        "title": "Our responsibility to you",
+        "paragraphs": [
+          "We take care to show accurate information, but much of it comes from providers. Nothing in these terms limits any rights you have by law that cannot be limited. [Liability wording to be added by your lawyer.]"
+        ]
+      },
+      {
+        "id": "law",
+        "title": "Governing law and contact",
+        "paragraphs": [
+          "These terms are governed by the laws of [Country]. If you have a problem with a booking, contact us at [Support email] and we will try to put it right.",
+          "We may update these terms. The version that applies is the one shown when you made your booking."
+        ]
+      }
+    ]
+  },
+  "legal-privacy": {
+    "slug": "privacy",
+    "title": "Privacy statement",
+    "summary": "What personal information we collect, why we use it and the choices you have.",
+    "updatedOn": "November 4, 2026",
+    "isDraft": true,
+    "sections": [
+      {
+        "id": "who",
+        "title": "Who we are",
+        "paragraphs": [
+          "Hotel Jr is operated by [Company legal name], [Registered address]. We are responsible for your personal information. You can contact us about privacy at [Privacy email]."
+        ]
+      },
+      {
+        "id": "collect",
+        "title": "Information we collect",
+        "paragraphs": [
+          "We collect the information you give us when you use the site."
+        ],
+        "items": [
+          "Account details: your name, email address and password.",
+          "Booking details: names, email, phone number, travel dates, and any arrival time or special requests.",
+          "Flight bookings: the name and date of birth of each traveler, including children.",
+          "Car rentals: the main driver's name and date of birth, to check the driver's age.",
+          "Searches you make, such as destinations and dates."
+        ]
+      },
+      {
+        "id": "use",
+        "title": "How we use your information",
+        "paragraphs": [
+          "We use your information only for these purposes."
+        ],
+        "items": [
+          "To make and manage your bookings.",
+          "To sign you in and keep your account secure.",
+          "To contact you about your trip and answer your questions.",
+          "To meet our legal obligations."
+        ]
+      },
+      {
+        "id": "sharing",
+        "title": "Who we share it with",
+        "paragraphs": [
+          "We share your booking details with the hotel, airline or activity operator providing your service, because they need them to deliver it. We also use service providers that help us run the site: [List of hosting, email and payment providers].",
+          "We do not sell your personal information."
+        ]
+      },
+      {
+        "id": "payments",
+        "title": "Payments",
+        "paragraphs": [
+          "We do not store card numbers. When online payment is added, card details will be handled directly by [Payment provider]."
+        ]
+      },
+      {
+        "id": "cookies",
+        "title": "Cookies and third-party content",
+        "paragraphs": [
+          "We use one essential cookie named \"session\" to keep you signed in. It lasts for 7 days and cannot be read by scripts on the page.",
+          "Photos on the site load directly from Unsplash, so Unsplash receives your IP address and basic browser information when you view them. We do not currently use advertising or analytics cookies."
+        ]
+      },
+      {
+        "id": "retention",
+        "title": "How long we keep it",
+        "paragraphs": [
+          "We keep booking records for [Retention period] to meet accounting and legal requirements. Account details are kept until you ask us to delete your account."
+        ]
+      },
+      {
+        "id": "rights",
+        "title": "Your rights",
+        "paragraphs": [
+          "Depending on where you live, you may have the right to:"
+        ],
+        "items": [
+          "See the personal information we hold about you.",
+          "Correct information that is wrong.",
+          "Ask us to delete your information.",
+          "Object to how we use it, or complain to your data protection authority."
+        ]
+      },
+      {
+        "id": "changes",
+        "title": "Changes to this statement",
+        "paragraphs": [
+          "We may update this statement. We will change the date at the top when we do."
+        ]
+      }
+    ]
+  },
+  "app": {
+    "hero": {
+      "title": "Hotel Jr on your phone",
+      "subtitle": "We are planning a Hotel Jr app to keep your whole trip in your pocket.",
+      "status": "Not available yet. There is nothing to download today."
+    },
+    "planned": {
+      "title": "What we plan to include",
+      "moreLabel": "",
+      "items": [
+        {
+          "id": "trips",
+          "title": "All your trips",
+          "description": "See every booking in one place.",
+          "iconName": "ticket"
+        },
+        {
+          "id": "updates",
+          "title": "Trip updates",
+          "description": "Get news about your bookings as it happens.",
+          "iconName": "plane"
+        },
+        {
+          "id": "assistant",
+          "title": "Travel assistant",
+          "description": "Ask for ideas and tips wherever you are.",
+          "iconName": "robot"
+        },
+        {
+          "id": "planner",
+          "title": "Your trip plan",
+          "description": "Keep your day-by-day plan close at hand.",
+          "iconName": "route"
+        }
+      ]
+    },
+    "today": {
+      "title": "Use Hotel Jr on your phone today",
+      "items": [
+        {
+          "id": "bookings",
+          "title": "Find your booking",
+          "description": "Look up a trip in your phone's browser.",
+          "href": "/bookings",
+          "iconName": "ticket"
+        },
+        {
+          "id": "planner",
+          "title": "Plan your trip",
+          "description": "Build a day-by-day plan for free.",
+          "href": "/planner",
+          "iconName": "route"
+        },
+        {
+          "id": "assistant",
+          "title": "Ask the assistant",
+          "description": "Get ideas and tips for your trip.",
+          "href": "/assistant",
+          "iconName": "robot"
+        }
+      ]
+    }
+  }
+}

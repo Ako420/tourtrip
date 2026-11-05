@@ -8,7 +8,7 @@ The full plan for the Hotel Jr backend: everything needed to run a travel site l
 2. Build only that task. Check its "Done when" line, then tick its box.
 3. Stop and review before starting the next one.
 
-**Next task: 5.1**
+**Next task: 5.2**
 
 **Stack**
 
@@ -446,6 +446,7 @@ Response:
 | GET | `/trains/content` | none | 5.2 | `TrainsContent` for the trains page |
 | GET | `/planner/content` | none | 5.2 | Content for the planner page |
 | GET | `/packages/content` | none | 5.2 | `PackagesContent` for the Flight + Hotel page |
+| GET | `/app/content` | none | 5.2 | `MobileAppContent` for the App page |
 | GET | `/legal/:slug` | none | 5.2 | `LegalDocument` for `terms` or `privacy` |
 | GET | `/pages/:slug` | none | 21.6 | About, news and other info pages |
 
@@ -1281,21 +1282,21 @@ Folders are fixed in one list: `hotels`, `rooms`, `attractions`, `cars`, `conten
 
 ### Phase 5: Page content and support
 
-#### [ ] 5.1 Add `ContentBlock` and seed it
+#### [x] 5.1 Add `ContentBlock` and seed it
 
 - Add the model and migrate.
-- Export `homeContent`, `flightsContent`, `attractionsContent`, `carsContent`, `trainsContent`, `packagesContent`, `plannerContent` and `legalDocuments` from the frontend to `prisma/seed-data/content.json`, using the same one-off approach as task 4.2.
+- Export `homeContent`, `flightsContent`, `attractionsContent`, `carsContent`, `trainsContent`, `packagesContent`, `plannerContent`, `mobileAppContent` and `legalDocuments` from the frontend to `prisma/seed-data/content.json`, using the same one-off approach as task 4.2.
 - The legal text is a draft, with `[square bracket]` gaps for a lawyer to fill. Keep `isDraft: true`.
 - Pass the data through `hostImages`.
 - `iconName` values must exist in `frontend/src/constants/icons.ts`.
 
-**Done when:** rows exist for `home`, `flights`, `attractions`, `cars`, `trains`, `packages`, `planner`, `legal-terms` and `legal-privacy`.
+**Done when:** rows exist for `home`, `flights`, `attractions`, `cars`, `trains`, `packages`, `planner`, `app`, `legal-terms` and `legal-privacy`.
 
 #### [ ] 5.2 Build the page content endpoints
 
 **Files:** `services/content.service.js`, `controllers/content.controller.js`, `routers/content.router.js`
 
-- Cover `/home`, `/flights/content`, `/attractions/content`, `/cars/content`, `/trains/content`, `/packages/content`, `/planner/content` and `/legal/:slug`.
+- Cover `/home`, `/flights/content`, `/attractions/content`, `/cars/content`, `/trains/content`, `/packages/content`, `/planner/content`, `/app/content` and `/legal/:slug`.
 - Return `data` as is. `/legal/:slug` accepts `terms` or `privacy`, and returns 404 for anything else.
 - Mount this router before the product routers, so `content` isn't read as a `:slug`.
 
@@ -2410,6 +2411,7 @@ trip.com's flights page couldn't be read, so these come from search results abou
 #### [ ] 22.6 Manage content, offers and requests
 
 - Validate `ContentBlock` data with a Zod schema for each `key`.
+- Change `seedContent` to only create missing rows, because today a re-seed would overwrite an admin's edits.
 - Add promotions, campaigns, support tickets, Moments approval and partner applications.
 
 **Done when:** a change to the home content appears on the home page.
