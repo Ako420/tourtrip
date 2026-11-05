@@ -49,7 +49,7 @@ export type ToursContent = {
 export type EnquiryValues = z.infer<typeof enquirySchema>;
 
 export type EnquirySubject = {
-  type: "tour";
+  type: "tour" | "cruise";
   slug: string;
 };
 

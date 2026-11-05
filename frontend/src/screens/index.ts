@@ -11,6 +11,8 @@ export { default as CarBookingConfirmedScreen } from "./car-booking/CarBookingCo
 export { default as CarBookingScreen } from "./car-booking/CarBookingScreen";
 export { default as CarResultsScreen } from "./cars/CarResultsScreen";
 export { default as CarsScreen } from "./cars/CarsScreen";
+export { default as CruiseDetailsScreen } from "./cruise-details/CruiseDetailsScreen";
+export { default as CruisesScreen } from "./cruises/CruisesScreen";
 export { default as DealDetailsScreen } from "./deal-details/DealDetailsScreen";
 export { default as DealsScreen } from "./deals/DealsScreen";
 export { default as ErrorScreen } from "./error/ErrorScreen";

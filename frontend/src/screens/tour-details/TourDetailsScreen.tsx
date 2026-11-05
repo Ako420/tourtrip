@@ -4,15 +4,15 @@ import {
   Breadcrumb,
   EnquiryForm,
   HotelDetailsSkeleton,
+  InclusionLists,
   SectionHeading,
   TourDepartures,
   TourGrid,
-  TourHeader,
-  TourInclusions,
   TourItinerary,
+  TripHeader,
 } from "@/components";
 import { tourPaths, tourTypeLabels } from "@/constants";
-import { formatCount, formatShortDate, toContactDefaults } from "@/lib";
+import { formatCount, formatShortDate, formatTourLength, toContactDefaults } from "@/lib";
 import { getCurrentUser, getMoreTours, getTourBySlug } from "@/services";
 
 type TourDetailsScreenProps = {
@@ -45,8 +45,21 @@ const TourDetailsContent = async ({ params }: TourDetailsScreenProps) => {
         ]}
         current={tour.name}
       />
-      <TourHeader tour={tour} />
-      <TourInclusions included={tour.included} notIncluded={tour.notIncluded} />
+      <TripHeader
+        name={tour.name}
+        imageUrl={tour.imageUrl}
+        summary={tour.summary}
+        facts={[
+          { iconName: "location", label: `${tour.city}, ${tour.country}` },
+          { iconName: "clock", label: formatTourLength(tour.days) },
+          { iconName: tour.type === "private" ? "compass" : "users", label: tour.type === "private" ? "Private tour" : "Group tour" },
+        ]}
+        rating={tour.rating}
+        reviewCount={tour.reviewCount}
+        price={tour.price}
+        currency={tour.currency}
+      />
+      <InclusionLists included={tour.included} notIncluded={tour.notIncluded} />
       <TourItinerary days={tour.itinerary} />
       <TourDepartures tour={tour} />
 

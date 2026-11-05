@@ -8,7 +8,7 @@ The pages still to build. Every link below opens the "page not found" screen tod
 2. Build only that task. Check its "Done when" line, then tick its box.
 3. Stop and review before starting the next one.
 
-**Next task: 1.6**
+**Next task: 1.7**
 
 **Rules for every page**
 
@@ -17,6 +17,7 @@ The pages still to build. Every link below opens the "page not found" screen tod
 - Colours and fonts come from the global tokens in `src/app/globals.css`.
 - Icons come from Font Awesome, through `src/constants/icons.ts`. Images come from Unsplash.
 - Data comes through `src/services`, with sample data in `src/data` until the API exists. No data is hardcoded in components.
+- Each service checks `isApiLive("<area>")` before calling the API, so a page keeps its sample data until its area is listed in `API_AREAS`. New areas go in the `ApiArea` type in `src/services/http.ts`.
 - Forms use Zod in the browser, and again in a server action.
 - Keep Hotel Jr's own branding and wording.
 - Show only what is real. No invented phone numbers, addresses, awards or staff. Anything not connected yet says so on the page.
@@ -69,7 +70,7 @@ The pages still to build. Every link below opens the "page not found" screen tod
 
 **Done when:** both lists work and a tour opens its details page.
 
-#### [ ] 1.6 Cruises
+#### [x] 1.6 Cruises
 
 **Route:** `/cruises`, `/cruises/[slug]`. **API later:** `GET /cruises`, `GET /cruises/:slug` (backend 18.4).
 

@@ -11,3 +11,4 @@ export * from "./deals";
 export * from "./guides";
 export * from "./packages";
 export * from "./tours";
+export * from "./cruises";

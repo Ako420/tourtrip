@@ -1,7 +1,7 @@
 import type { IconName } from "@/constants";
-import Icon from "../ui/Icon";
+import Icon from "./Icon";
 
-type TourInclusionsProps = {
+type InclusionListsProps = {
   included: string[];
   notIncluded: string[];
 };
@@ -11,7 +11,7 @@ const groups: { title: string; key: "included" | "notIncluded"; iconName: IconNa
   { title: "Not included", key: "notIncluded", iconName: "info", iconClass: "text-muted" },
 ];
 
-const TourInclusions = (lists: TourInclusionsProps) => {
+const InclusionLists = (lists: InclusionListsProps) => {
   return (
     <section className="mt-10 grid gap-4 sm:grid-cols-2">
       {groups.map((group) => (
@@ -31,4 +31,4 @@ const TourInclusions = (lists: TourInclusionsProps) => {
   );
 };
 
-export default TourInclusions;
+export default InclusionLists;
