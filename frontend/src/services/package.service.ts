@@ -13,7 +13,7 @@ import type {
   PackageSelection,
   PackagesContent,
 } from "@/types";
-import { ApiError, apiGet, apiPost, isApiEnabled } from "./http";
+import { ApiError, apiGet, apiPost, isApiLive } from "./http";
 
 const toParams = (search: PackageSearch) => Object.fromEntries(new URLSearchParams(toPackageQuery(search)));
 
@@ -45,11 +45,11 @@ const getCheapestRoom = (hotel: HotelDetails, search: PackageSearch) => {
 };
 
 export const getPackagesContent = async (): Promise<PackagesContent> => {
-  return isApiEnabled ? apiGet<PackagesContent>("/packages/content") : packagesContent;
+  return isApiLive("content") ? apiGet<PackagesContent>("/packages/content") : packagesContent;
 };
 
 export const searchPackages = async (search: PackageSearch, flightId: string): Promise<PackageSearchResult> => {
-  if (isApiEnabled) {
+  if (isApiLive("packages")) {
     return apiGet<PackageSearchResult>("/packages/search", { ...toParams(search), flight: flightId || undefined });
   }
 
@@ -78,7 +78,7 @@ export const getPackageOffer = async (
   search: PackageSearch,
   { flightId, hotelSlug, roomId }: PackageSelection,
 ): Promise<PackageOffer | null> => {
-  if (!isApiEnabled) {
+  if (!isApiLive("packages")) {
     const flight = getBookableFlights(search).find((item) => item.id === flightId);
     const hotel = hotels.find((item) => item.slug === hotelSlug);
     const room = hotel && checkRoom(hotel, roomId, toPackageStay(search)).room;
@@ -98,7 +98,7 @@ export const getPackageOffer = async (
 };
 
 export const createPackageBooking = async (booking: PackageBookingRequest): Promise<BookingResponse> => {
-  if (isApiEnabled) {
+  if (isApiLive("packages")) {
     return apiPost<BookingResponse>("/packages/bookings", booking);
   }
 

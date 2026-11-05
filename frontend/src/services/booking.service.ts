@@ -1,18 +1,18 @@
 import { randomUUID } from "node:crypto";
 import { SAMPLE_BOOKING_EMAIL, sampleBookings } from "@/data";
 import type { BookingLookup, BookingRecord, BookingRequest, BookingResponse } from "@/types";
-import { ApiError, apiPost, isApiEnabled } from "./http";
+import { ApiError, apiPost, isApiLive } from "./http";
 
 export const createBooking = async (booking: BookingRequest): Promise<BookingResponse> => {
-  if (isApiEnabled) {
-    return apiPost<BookingResponse>("/bookings", booking);
+  if (isApiLive("bookings")) {
+    return apiPost<BookingResponse>("/bookings", booking, { auth: true });
   }
 
   return { reference: `DEMO-${randomUUID().slice(0, 8).toUpperCase()}` };
 };
 
 export const findBooking = async ({ reference, email }: BookingLookup): Promise<BookingRecord | null> => {
-  if (!isApiEnabled) {
+  if (!isApiLive("bookings")) {
     const isSampleEmail = email.toLowerCase() === SAMPLE_BOOKING_EMAIL;
 
     return (isSampleEmail && sampleBookings.find((booking) => booking.reference === reference)) || null;
@@ -30,7 +30,7 @@ export const findBooking = async ({ reference, email }: BookingLookup): Promise<
 };
 
 export const getSampleBookingHint = () => {
-  if (isApiEnabled) {
+  if (isApiLive("bookings")) {
     return null;
   }
 

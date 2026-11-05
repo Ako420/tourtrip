@@ -1,4 +1,3 @@
-export { isAccountApiEnabled } from "./accountApi";
 export * from "./attraction.service";
 export * from "./attractionBooking.service";
 export * from "./auth.service";
@@ -19,4 +18,4 @@ export * from "./support.service";
 export * from "./tour.service";
 export * from "./train.service";
 export * from "./hotel.service";
-export { ApiError, isApiEnabled } from "./http";
+export { ApiError, isApiLive } from "./http";

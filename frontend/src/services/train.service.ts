@@ -12,7 +12,7 @@ import type {
   TrainSearchResult,
   TrainsContent,
 } from "@/types";
-import { ApiError, apiGet, apiPost, isApiEnabled } from "./http";
+import { ApiError, apiGet, apiPost, isApiLive } from "./http";
 
 const getTravelMinutes = (offer: TrainOffer) => {
   return offer.outbound.durationMinutes + (offer.inbound?.durationMinutes ?? 0);
@@ -46,15 +46,15 @@ const matchesTrainFilters = (offer: TrainOffer, filters: TrainFilters) => {
 };
 
 export const getTrainsContent = async (): Promise<TrainsContent> => {
-  return isApiEnabled ? apiGet<TrainsContent>("/trains/content") : trainsContent;
+  return isApiLive("content") ? apiGet<TrainsContent>("/trains/content") : trainsContent;
 };
 
 export const getTrainStations = async (): Promise<string[]> => {
-  return isApiEnabled ? apiGet<string[]>("/trains/stations") : trainStations;
+  return isApiLive("trains") ? apiGet<string[]>("/trains/stations") : trainStations;
 };
 
 export const searchTrains = async (search: TrainSearch, filters: TrainFilters): Promise<TrainSearchResult> => {
-  if (isApiEnabled) {
+  if (isApiLive("trains")) {
     return apiGet<TrainSearchResult>(
       "/trains/search",
       Object.fromEntries(new URLSearchParams(toTrainQuery(search, filters))),
@@ -99,7 +99,7 @@ export const searchTrains = async (search: TrainSearch, filters: TrainFilters): 
 };
 
 export const getTrainOffer = async (search: TrainSearch, offerId: string): Promise<TrainOffer | null> => {
-  if (!isApiEnabled) {
+  if (!isApiLive("trains")) {
     return buildTrainOffers(search).find((offer) => offer.id === offerId) ?? null;
   }
 
@@ -117,8 +117,8 @@ export const getTrainOffer = async (search: TrainSearch, offerId: string): Promi
 };
 
 export const createTrainBooking = async (booking: TrainBookingRequest): Promise<BookingResponse> => {
-  if (isApiEnabled) {
-    return apiPost<BookingResponse>("/trains/bookings", booking);
+  if (isApiLive("bookings")) {
+    return apiPost<BookingResponse>("/trains/bookings", booking, { auth: true });
   }
 
   return { reference: `DEMO-${randomUUID().slice(0, 8).toUpperCase()}` };

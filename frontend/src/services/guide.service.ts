@@ -1,12 +1,12 @@
 import { GUIDES_PAGE_SIZE } from "@/constants";
 import { guides } from "@/data";
 import type { Guide, GuideFilters, GuideListResult } from "@/types";
-import { ApiError, apiGet, isApiEnabled } from "./http";
+import { ApiError, apiGet, isApiLive } from "./http";
 
 const MORE_GUIDE_COUNT = 3;
 
 export const getGuides = async ({ city, page }: GuideFilters): Promise<GuideListResult> => {
-  if (isApiEnabled) {
+  if (isApiLive("guides")) {
     return apiGet<GuideListResult>("/guides", { city, page });
   }
 
@@ -25,7 +25,7 @@ export const getGuides = async ({ city, page }: GuideFilters): Promise<GuideList
 };
 
 export const getGuideBySlug = async (slug: string): Promise<Guide | null> => {
-  if (!isApiEnabled) {
+  if (!isApiLive("guides")) {
     return guides.find((guide) => guide.slug === slug) ?? null;
   }
 

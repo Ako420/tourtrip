@@ -1,7 +1,7 @@
 import { connection } from "next/server";
 import { tours, toursContent } from "@/data";
 import type { Tour, TourDetails, ToursContent, TourType } from "@/types";
-import { ApiError, apiGet, isApiEnabled } from "./http";
+import { ApiError, apiGet, isApiLive } from "./http";
 
 const MORE_TOUR_COUNT = 3;
 
@@ -12,11 +12,11 @@ const matchesQuery = (tour: Tour, query?: string) => {
 };
 
 export const getToursContent = async (type: TourType): Promise<ToursContent> => {
-  return isApiEnabled ? apiGet<ToursContent>("/tours/content", { type }) : toursContent[type];
+  return isApiLive("tours") ? apiGet<ToursContent>("/tours/content", { type }) : toursContent[type];
 };
 
 export const searchTours = async (type: TourType, query?: string): Promise<Tour[]> => {
-  if (isApiEnabled) {
+  if (isApiLive("tours")) {
     return apiGet<Tour[]>("/tours", { type, q: query });
   }
 
@@ -24,7 +24,7 @@ export const searchTours = async (type: TourType, query?: string): Promise<Tour[
 };
 
 export const getTourBySlug = async (slug: string): Promise<TourDetails | null> => {
-  if (!isApiEnabled) {
+  if (!isApiLive("tours")) {
     const tour = tours.find((item) => item.slug === slug);
 
     if (!tour) return null;

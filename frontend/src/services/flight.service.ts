@@ -10,7 +10,7 @@ import type {
   FlightSort,
   FlightsContent,
 } from "@/types";
-import { apiGet, isApiEnabled } from "./http";
+import { apiGet, isApiLive } from "./http";
 
 const getTravelMinutes = (offer: FlightOffer) => {
   return offer.outbound.durationMinutes + (offer.inbound?.durationMinutes ?? 0);
@@ -48,7 +48,7 @@ const matchesFlightFilters = (offer: FlightOffer, filters: FlightFilters) => {
 };
 
 export const searchFlights = async (search: FlightSearch, filters: FlightFilters): Promise<FlightSearchResult> => {
-  if (isApiEnabled) {
+  if (isApiLive("flights")) {
     return apiGet<FlightSearchResult>("/flights/search", Object.fromEntries(new URLSearchParams(toFlightResultsQuery(search, filters))));
   }
 
@@ -96,11 +96,11 @@ const matches = (value: string, query?: string) => {
 };
 
 export const getFlightsContent = async (): Promise<FlightsContent> => {
-  return isApiEnabled ? apiGet<FlightsContent>("/flights/content") : flightsContent;
+  return isApiLive("content") ? apiGet<FlightsContent>("/flights/content") : flightsContent;
 };
 
 export const getFlightDeals = async ({ from, to, isNonstop }: Partial<FlightSearch> = {}): Promise<FlightDeal[]> => {
-  if (isApiEnabled) {
+  if (isApiLive("flights")) {
     return apiGet<FlightDeal[]>("/flights/deals", { from, to, nonstop: isNonstop ? "true" : undefined });
   }
 
@@ -110,5 +110,5 @@ export const getFlightDeals = async ({ from, to, isNonstop }: Partial<FlightSear
 };
 
 export const getAirports = async (): Promise<string[]> => {
-  return isApiEnabled ? apiGet<string[]>("/airports") : airports;
+  return isApiLive("flights") ? apiGet<string[]>("/airports") : airports;
 };

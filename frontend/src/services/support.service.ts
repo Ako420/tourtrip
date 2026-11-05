@@ -1,14 +1,14 @@
 import { randomUUID } from "node:crypto";
 import { supportFaqs } from "@/data";
 import type { SupportFaq, SupportTicketRequest, SupportTicketResponse } from "@/types";
-import { apiGet, apiPost, isApiEnabled } from "./http";
+import { apiGet, apiPost, isApiLive } from "./http";
 
 export const getSupportFaqs = async (): Promise<SupportFaq[]> => {
-  return isApiEnabled ? apiGet<SupportFaq[]>("/support/faqs") : supportFaqs;
+  return isApiLive("support") ? apiGet<SupportFaq[]>("/support/faqs") : supportFaqs;
 };
 
 export const createSupportTicket = async (ticket: SupportTicketRequest): Promise<SupportTicketResponse> => {
-  if (isApiEnabled) {
+  if (isApiLive("support")) {
     return apiPost<SupportTicketResponse>("/support/tickets", ticket);
   }
 

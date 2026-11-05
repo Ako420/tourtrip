@@ -1,7 +1,7 @@
 import { connection } from "next/server";
 import { attractions, dealCampaignLinks, dealCampaigns, dealPromotions, flightDeals, hotels } from "@/data";
 import type { DealCampaign, DealCampaignDetails, DealsContent, HotelSummary } from "@/types";
-import { ApiError, apiGet, isApiEnabled } from "./http";
+import { ApiError, apiGet, isApiLive } from "./http";
 
 const HOT_DEAL_COUNT = 4;
 
@@ -21,7 +21,7 @@ const getSaving = ({ originalPrice, pricePerNight }: HotelSummary) => {
 };
 
 export const getDeals = async (): Promise<DealsContent> => {
-  if (isApiEnabled) {
+  if (isApiLive("deals")) {
     return apiGet<DealsContent>("/deals");
   }
 
@@ -42,7 +42,7 @@ export const getDeals = async (): Promise<DealsContent> => {
 };
 
 export const getDealCampaign = async (slug: string): Promise<DealCampaignDetails | null> => {
-  if (!isApiEnabled) {
+  if (!isApiLive("deals")) {
     const today = await getToday();
     const campaign = dealCampaigns.find((item) => item.slug === slug && isLive(item, today));
 

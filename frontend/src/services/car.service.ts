@@ -2,7 +2,7 @@ import { CARS_PAGE_SIZE } from "@/constants";
 import { airports, buildCarOffers, carsContent } from "@/data";
 import { getRentalDays, toCarQuery } from "@/lib";
 import type { CarFilters, CarOffer, CarSearch, CarSearchResult, CarSort, CarsContent } from "@/types";
-import { apiGet, isApiEnabled } from "./http";
+import { apiGet, isApiLive } from "./http";
 
 const sorters: Partial<Record<CarSort, (a: CarOffer, b: CarOffer) => number>> = {
   cheapest: (a, b) => Number(a.totalPrice) - Number(b.totalPrice),
@@ -19,15 +19,15 @@ const matchesCarFilters = (offer: CarOffer, filters: CarFilters) => {
 };
 
 export const getCarsContent = async (): Promise<CarsContent> => {
-  return isApiEnabled ? apiGet<CarsContent>("/cars/content") : carsContent;
+  return isApiLive("content") ? apiGet<CarsContent>("/cars/content") : carsContent;
 };
 
 export const getCarLocations = async (): Promise<string[]> => {
-  return isApiEnabled ? apiGet<string[]>("/cars/locations") : airports;
+  return isApiLive("cars") ? apiGet<string[]>("/cars/locations") : airports;
 };
 
 export const searchCars = async (search: CarSearch, filters: CarFilters): Promise<CarSearchResult> => {
-  if (isApiEnabled) {
+  if (isApiLive("cars")) {
     return apiGet<CarSearchResult>("/cars/search", Object.fromEntries(new URLSearchParams(toCarQuery(search, filters))));
   }
 

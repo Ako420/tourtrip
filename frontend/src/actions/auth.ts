@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { getSafeNext } from "@/lib";
 import { loginSchema, signupSchema } from "@/schemas";
-import { ApiError, isAccountApiEnabled, login, signup } from "@/services";
+import { ApiError, isApiLive, login, signup } from "@/services";
 import type { AuthResponse, FormState } from "@/types";
 
 const SESSION_COOKIE = "session";
@@ -15,7 +15,7 @@ const startSession = async (
   errorMessages: Record<number, string>,
   next: unknown,
 ): Promise<FormState> => {
-  if (!isAccountApiEnabled) {
+  if (!isApiLive("accounts")) {
     return { message: "Accounts are not connected to the server yet." };
   }
 

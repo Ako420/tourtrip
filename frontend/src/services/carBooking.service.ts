@@ -2,10 +2,10 @@ import { randomUUID } from "node:crypto";
 import { buildCarOffers } from "@/data";
 import { getRentalDays, toCarQuery } from "@/lib";
 import type { BookingResponse, CarBookingRequest, CarOffer, CarSearch } from "@/types";
-import { ApiError, apiGet, apiPost, isApiEnabled } from "./http";
+import { ApiError, apiGet, apiPost, isApiLive } from "./http";
 
 export const getCarOffer = async (search: CarSearch, offerId: string): Promise<CarOffer | null> => {
-  if (!isApiEnabled) {
+  if (!isApiLive("cars")) {
     return buildCarOffers(search, getRentalDays(search)).find((offer) => offer.id === offerId) ?? null;
   }
 
@@ -23,8 +23,8 @@ export const getCarOffer = async (search: CarSearch, offerId: string): Promise<C
 };
 
 export const createCarBooking = async (booking: CarBookingRequest): Promise<BookingResponse> => {
-  if (isApiEnabled) {
-    return apiPost<BookingResponse>("/cars/bookings", booking);
+  if (isApiLive("bookings")) {
+    return apiPost<BookingResponse>("/cars/bookings", booking, { auth: true });
   }
 
   return { reference: `DEMO-${randomUUID().slice(0, 8).toUpperCase()}` };

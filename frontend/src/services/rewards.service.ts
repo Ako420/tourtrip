@@ -1,7 +1,7 @@
 import { rewardsProgram } from "@/data";
 import type { RewardsProgram } from "@/types";
-import { apiGet, isApiEnabled } from "./http";
+import { apiGet, isApiLive } from "./http";
 
 export const getRewardsProgram = async (): Promise<RewardsProgram> => {
-  return isApiEnabled ? apiGet<RewardsProgram>("/rewards/tiers") : rewardsProgram;
+  return isApiLive("rewards") ? apiGet<RewardsProgram>("/rewards/tiers") : rewardsProgram;
 };
