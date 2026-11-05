@@ -19,6 +19,7 @@ The pages still to build. Every link below opens the "page not found" screen tod
 - Data comes through `src/services`, with sample data in `src/data` until the API exists. No data is hardcoded in components.
 - Each service checks `isApiLive("<area>")` before calling the API, so a page keeps its sample data until its area is listed in `API_AREAS`. New areas go in the `ApiArea` type in `src/services/http.ts`.
 - Forms use Zod in the browser, and again in a server action.
+- A form with passwords or personal details spreads `formProps` from `useZodForm`. Its `method="dialog"` makes a submit before the page has loaded do nothing, instead of putting the fields in the address. Don't change it to `post`, because that comes back as a blank page.
 - Keep Hotel Jr's own branding and wording.
 - Show only what is real. No invented phone numbers, addresses, awards or staff. Anything not connected yet says so on the page.
 - Reads of the session cookie stay inside `<Suspense>`, so public pages stay cached.
