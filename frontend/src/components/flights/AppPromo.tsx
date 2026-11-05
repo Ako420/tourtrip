@@ -9,12 +9,12 @@ type AppPromoProps = {
 
 const AppPromo = ({ app }: AppPromoProps) => {
   return (
-    <section className="relative mt-12 overflow-hidden bg-primary-deep px-4 py-12 text-white sm:py-16">
+    <section className="relative mt-12 overflow-hidden bg-primary-deep px-4 py-12 text-white sm:py-16 lg:px-8">
       <AppImage src={app.imageUrl} alt="" fill sizes="100vw" className="object-cover" />
       <div className="absolute inset-0 bg-gradient-to-r from-primary-deep via-primary-deep/70 to-transparent" />
 
       <div className="relative mx-auto max-w-content">
-        <h2 className="text-3xl font-bold">
+        <h2 className="type-title font-bold">
           {app.title}
           <span className="text-accent">.</span>
         </h2>

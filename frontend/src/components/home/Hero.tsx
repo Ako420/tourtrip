@@ -19,7 +19,7 @@ const Hero = ({ hero, destinations }: HeroProps) => {
         <div className="absolute inset-0 bg-gradient-to-b from-primary-deep/65 to-primary/10" />
       </div>
 
-      <div className="relative px-3 pt-10 text-center text-white sm:pt-14">
+      <div className="relative px-3 pt-10 text-center text-white sm:px-8 sm:pt-14">
         <h1 className="type-title font-bold">{hero.title}</h1>
 
         <ul className="mt-3 flex flex-wrap items-center justify-center gap-x-6 gap-y-1 text-sm text-white/90">

@@ -1,5 +1,5 @@
 import { cabinOptions, defaultPassengers, passengerLimits } from "@/constants";
-import type { CabinClass, FlightSearch, RouteParams } from "@/types";
+import type { CabinClass, FlightDeal, FlightSearch, RouteParams } from "@/types";
 import { isIsoDate } from "./dates";
 
 const getParam = (params: RouteParams, key: string) => {
@@ -48,4 +48,10 @@ export const toFlightQuery = ({ isNonstop, ...search }: FlightSearch) => {
   }
 
   return query.toString();
+};
+
+export const toFlightDealHref = ({ from, to, departDate, returnDate, cabin }: FlightDeal) => {
+  const query = new URLSearchParams({ from, to, departDate, returnDate, cabin });
+
+  return `/flights/results?${query}`;
 };

@@ -1,4 +1,5 @@
 import type { IconName } from "@/constants";
+import type { HotelSummary } from "./hotel";
 
 export type HeroGuarantee = {
   id: string;
@@ -85,6 +86,26 @@ export type RecommendationTab = {
   links: LinkItem[];
 };
 
+export type HomeRoute = {
+  id: string;
+  from: string;
+  to: string;
+  date: string;
+  price: number | string;
+  currency: string;
+  imageUrl: string;
+  href: string;
+};
+
+export type HomeDestination = {
+  id: string;
+  name: string;
+  sights: Place[];
+  moments: TripMoment[];
+  hotels: HotelSummary[];
+  routes: HomeRoute[];
+};
+
 export type HomeContent = {
   hero: HeroContent;
   promotions: PromotionSection;
@@ -93,5 +114,6 @@ export type HomeContent = {
   places: Section<Place>;
   moments: Section<TripMoment>;
   handpickedHotels: { title: string; moreHref: string };
+  app: { title: string; imageUrl: string; benefits: string[]; ctaLabel: string; ctaHref: string };
   recommendations: Section<RecommendationTab>;
 };

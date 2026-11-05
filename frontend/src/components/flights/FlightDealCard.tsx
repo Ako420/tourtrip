@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { formatShortDate } from "@/lib";
+import { formatShortDate, toFlightDealHref } from "@/lib";
 import type { FlightDeal } from "@/types";
 import Icon from "../ui/Icon";
 import Price from "../ui/Price";
@@ -9,17 +9,8 @@ type FlightDealCardProps = {
 };
 
 const FlightDealCard = ({ deal }: FlightDealCardProps) => {
-  const query = new URLSearchParams({
-    from: deal.from,
-    to: deal.to,
-    departDate: deal.departDate,
-    returnDate: deal.returnDate,
-    cabin: deal.cabin,
-  });
-  const href = `/flights/results?${query}`;
-
   return (
-    <Link href={href} className="group block h-full rounded-card border border-line p-4 transition-shadow duration-300 ease-out hover:shadow-card">
+    <Link href={toFlightDealHref(deal)} className="group block h-full rounded-card border border-line p-4 transition-shadow duration-300 ease-out hover:shadow-card">
       <p className="flex items-center gap-2 text-xs text-muted">
         <span className="flex size-6 items-center justify-center rounded-full bg-primary-soft text-primary">
           <Icon name="plane" className="text-tiny" />

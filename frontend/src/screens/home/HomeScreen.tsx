@@ -1,22 +1,21 @@
 import { Suspense } from "react";
 import {
+  AppPromo,
   BannerGrid,
-  HandpickedHotels,
   Hero,
+  HomeExplorer,
   HomeSkeleton,
-  Inspiration,
-  Moments,
-  Places,
   PromotionSection,
   Recommendations,
 } from "@/components";
-import { getDestinations, getHomeContent, getHotels } from "@/services";
+import { getDestinations, getHomeContent, getHomeDestinations, getHotels } from "@/services";
 
 const HomeContent = async () => {
-  const [content, destinations, hotels] = await Promise.all([
+  const [content, destinations, hotels, homeDestinations] = await Promise.all([
     getHomeContent(),
     getDestinations(),
     getHotels(),
+    getHomeDestinations(),
   ]);
 
   return (
@@ -24,15 +23,15 @@ const HomeContent = async () => {
       <Hero hero={content.hero} destinations={destinations} />
       <PromotionSection section={content.promotions} />
       <BannerGrid banners={content.banners} />
-      <Inspiration section={content.inspiration} />
-      <Places section={content.places} />
-      <Moments section={content.moments} />
-      <HandpickedHotels
-        title={content.handpickedHotels.title}
-        moreHref={content.handpickedHotels.moreHref}
-        hotels={hotels.slice(0, 6)}
-      />
-      <Recommendations section={content.recommendations} />
+      <HomeExplorer content={content} hotels={hotels.slice(0, 6)} destinations={homeDestinations} />
+
+      {/* These two run edge to edge, so they cancel the page padding. */}
+      <div className="-mx-4 lg:-mx-8">
+        <AppPromo app={content.app} />
+      </div>
+      <div className="-mx-4 -mb-4 flow-root bg-surface-alt px-4 lg:-mx-8 lg:-mb-8 lg:px-8">
+        <Recommendations section={content.recommendations} />
+      </div>
     </>
   );
 };

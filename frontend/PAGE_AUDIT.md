@@ -10,7 +10,7 @@ Check every built page against its https://www.trip.com/ page, section by sectio
 4. Fix the page, check the "Done when" line, then tick the box.
 5. Stop and review before starting the next page.
 
-**Next task: B1**
+**Next task: B2**
 
 New pages in `TODO.md` section 3 wait until this audit is finished, so they are built to the corrected pattern.
 
@@ -98,7 +98,7 @@ Everything else builds on these.
 
 | Task | Our page | Reference |
 | --- | --- | --- |
-| [ ] B1 | `/` | https://www.trip.com/ |
+| [x] B1 | `/` | https://www.trip.com/ |
 | [ ] B2 | `/hotels` | https://www.trip.com/hotels/ |
 | [ ] B3 | `/flights` | https://www.trip.com/flights/ |
 | [ ] B4 | `/trains` | https://www.trip.com/trains/ |
@@ -116,7 +116,7 @@ Everything else builds on these.
 
 **Known structure of the reference, in order:**
 
-- **B1 Home:** hero with search, new user offers, inspiration, places, moments, handpicked hotels, app, recommendations.
+- **B1 Home:** hero with search, new user offers, inspiration, places, moments, handpicked hotels, app, recommendations. Choosing a destination tile swaps the next sections for that place, with a routes section added. Our routes use sample flight deals, because the tile sections only have those fares. Left out: the "Viewed" and haul tags, which need the visitor's location, and the QR code, store buttons and stats in the app band.
 - **B2 Hotels:** hero, welcome offer, what's new, top luxury hotels, budget-friendly properties, trending guest houses. **This is the biggest change:** `/hotels` becomes the landing page, and the current list moves to `/hotels/list`, as on Trip.com. Every link to the list changes too.
 - **B3 Flights:** hero, trust, partner airlines, status updates, what's happening, why book, how to book, recommendations.
 - **B4 Trains:** hero, operators, trust, Europe by country, Asia by country, popular European routes, popular Asian routes.

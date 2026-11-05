@@ -32,11 +32,12 @@ const HotelStayCard = ({ hotel }: HotelStayCardProps) => {
             {formatCount(hotel.reviewCount, "review")}
           </p>
           <p className="mt-auto pt-3 font-bold">
-            From{" "}
+            From <Price amount={hotel.pricePerNight} currency={hotel.currency} />
             {hotel.originalPrice && (
-              <s className="mr-1 text-sm font-normal text-muted"><Price amount={hotel.originalPrice} currency={hotel.currency} /></s>
+              <s className="ml-1 text-sm font-normal text-muted">
+                <Price amount={hotel.originalPrice} currency={hotel.currency} />
+              </s>
             )}
-            <Price amount={hotel.pricePerNight} currency={hotel.currency} />
           </p>
         </div>
       </Link>

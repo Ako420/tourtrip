@@ -26,7 +26,7 @@ const Recommendations = ({ section }: RecommendationsProps) => {
             aria-selected={tab.id === activeId}
             onClick={() => setActiveId(tab.id)}
             className={`shrink-0 rounded-md px-3 py-2 text-sm font-medium transition-colors duration-300 ease-out ${
-              tab.id === activeId ? "bg-ink text-white" : "bg-surface-alt text-ink-soft hover:text-primary"
+              tab.id === activeId ? "bg-ink text-white" : "bg-line/50 text-ink-soft hover:text-primary"
             }`}
           >
             {tab.label}
@@ -34,7 +34,7 @@ const Recommendations = ({ section }: RecommendationsProps) => {
         ))}
       </div>
 
-      <ul role="tabpanel" className="mt-4 grid grid-cols-2 gap-x-4 gap-y-3 rounded-card p-4 shadow-card sm:grid-cols-3 lg:grid-cols-5">
+      <ul role="tabpanel" className="mt-4 grid grid-cols-2 gap-x-4 gap-y-3 rounded-card bg-surface p-4 shadow-card sm:grid-cols-3 lg:grid-cols-5">
         {activeTab?.links.map((link) => (
           <li key={link.label}>
             <Link href={link.href} className="text-sm text-ink-soft hover:text-primary">

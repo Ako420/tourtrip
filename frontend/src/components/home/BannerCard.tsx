@@ -16,7 +16,7 @@ const BannerCard = ({ banner, className = "" }: BannerCardProps) => {
   return (
     <Link
       href={banner.href}
-      className={`group relative flex min-h-44 flex-col items-start justify-center overflow-hidden rounded-card bg-primary-deep p-6 text-white lg:min-h-48 ${className}`}
+      className={`group relative flex min-h-44 flex-col items-start justify-center overflow-hidden rounded-card bg-primary-deep p-6 text-white lg:min-h-47 ${className}`}
     >
       <AppImage
         src={banner.imageUrl}
