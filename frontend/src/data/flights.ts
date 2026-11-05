@@ -42,14 +42,11 @@ const flightsContent: FlightsContent = {
   },
   dealsTitle: "Popular flight deals",
   app: {
-    title: "Your whole trip in one app",
+    title: "A Hotel Jr app is planned",
     imageUrl: unsplashImage("photo-1573843981267-be1999ff37cd", 2000),
-    benefits: ["App-only deals", "Travel assistant"],
-    stats: [
-      { id: "routes", value: "500+", label: "Routes" },
-      { id: "support", value: "24/7", label: "Support" },
-      { id: "rating", value: "4.7", label: "Rating" },
-    ],
+    benefits: ["All your trips", "Trip updates", "Travel assistant"],
+    ctaLabel: "See what's planned",
+    ctaHref: "/app",
   },
   banners: {
     title: "Discover what's happening",

@@ -23,3 +23,4 @@ export { default as packagesContent } from "./packagesContent";
 export { tours, toursContent } from "./tours";
 export { cruises, cruisesContent } from "./cruises";
 export { default as mapPlaces } from "./mapPlaces";
+export { default as mobileAppContent } from "./mobileAppContent";

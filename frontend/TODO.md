@@ -8,7 +8,7 @@ The pages still to build. Every link below opens the "page not found" screen tod
 2. Build only that task. Check its "Done when" line, then tick its box.
 3. Stop and review before starting the next one.
 
-**Next task: 2.2**
+**Next task: 2.3**
 
 **Rules for every page**
 
@@ -98,7 +98,7 @@ The pages still to build. Every link below opens the "page not found" screen tod
 
 **Done when:** the "Ask" button leads to something that works and is honest about what it can do.
 
-#### [ ] 2.2 App download
+#### [x] 2.2 App download
 
 **Route:** `/app`.
 

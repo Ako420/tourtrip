@@ -1,6 +1,6 @@
 import { Suspense } from "react";
-import { ButtonLink, Skeleton, SupportFaqs, SupportForm, SupportHero, SupportOptions } from "@/components";
-import { authLinks } from "@/constants";
+import { ButtonLink, LinkCards, Skeleton, SupportFaqs, SupportForm, SupportHero } from "@/components";
+import { authLinks, supportOptions } from "@/constants";
 import { toContactDefaults } from "@/lib";
 import { getCurrentUser, getSupportFaqs } from "@/services";
 
@@ -47,7 +47,7 @@ const SupportScreen = () => {
         <FaqContent />
       </Suspense>
 
-      <SupportOptions />
+      <LinkCards title="More ways to get help" items={supportOptions} />
 
       <section id="contact" className="mx-auto mt-10 max-w-content scroll-mt-24">
         <h2 className="text-2xl font-bold sm:text-[1.75rem]">Send us a message</h2>

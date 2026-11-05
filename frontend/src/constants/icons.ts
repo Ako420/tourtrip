@@ -64,7 +64,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faCalendar, faHeart as faHeartOutline } from "@fortawesome/free-regular-svg-icons";
 import {
-  faApple,
   faCcAmex,
   faCcApplePay,
   faCcDiscover,
@@ -73,7 +72,6 @@ import {
   faCcPaypal,
   faCcVisa,
   faFacebookF,
-  faGooglePlay,
   faXTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
@@ -81,7 +79,6 @@ import {
 // The API and the data files refer to icons by these names, so a response never carries a component.
 export const icons = {
   amex: faCcAmex,
-  apple: faApple,
   "apple-pay": faCcApplePay,
   ban: faBan,
   beach: faUmbrellaBeach,
@@ -110,7 +107,6 @@ export const icons = {
   gem: faGem,
   gift: faGift,
   globe: faGlobe,
-  "google-play": faGooglePlay,
   gym: faDumbbell,
   headset: faHeadset,
   heart: faHeart,
