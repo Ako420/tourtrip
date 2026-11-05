@@ -8,6 +8,15 @@ export const defaultGuests = { rooms: 1, adults: 2, children: 0 };
 
 export const HOTELS_PAGE_SIZE = 5;
 
+// The API rejects anything outside these, so values typed into the address are limited first.
+export const hotelFilterLimits = {
+  destinationLength: 100,
+  price: 99_999_999.99,
+  rating: 10,
+  stars: { min: 1, max: 5 },
+  amenities: 20,
+};
+
 export const hotelSortOptions = [
   { value: "recommended", label: "Recommended" },
   { value: "price-asc", label: "Price: low to high" },

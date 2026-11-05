@@ -22,14 +22,106 @@ model User {
   emailVerifiedAt DateTime?
   createdAt       DateTime  @default(now())
   updatedAt       DateTime  @updatedAt
+  assets          Asset[]
+  reviews         Review[]
 }
 
-model Room {
-  id            Int      @id @default(autoincrement())
-  number        String   @unique
-  type          String
-  pricePerNight Decimal  @db.Decimal(10, 2)
-  isAvailable   Boolean  @default(true)
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
+model Asset {
+  id           String   @id @default(cuid())
+  publicId     String   @unique
+  url          String
+  folder       String
+  width        Int
+  height       Int
+  format       String
+  bytes        Int
+  uploadedById String?
+  uploadedBy   User?    @relation(fields: [uploadedById], references: [id], onDelete: SetNull)
+  createdAt    DateTime @default(now())
+
+  @@index([folder])
+}
+
+model Hotel {
+  id                String     @id @default(cuid())
+  slug              String     @unique
+  name              String
+  area              String
+  city              String
+  country           String
+  address           String
+  description       String
+  imageUrl          String
+  images            String[]
+  highlights        String[]
+  stars             Int
+  rating            Float      @default(0)
+  reviewCount       Int        @default(0)
+  pricePerNight     Decimal    @db.Decimal(10, 2)
+  originalPrice     Decimal?   @db.Decimal(10, 2)
+  currency          String     @default("USD")
+  freeCancellation  Boolean    @default(false)
+  breakfastIncluded Boolean    @default(false)
+  sortRank          Int        @default(0)
+  reviewScores      Json
+  policies          Json
+  nearby            Json
+  createdAt         DateTime   @default(now())
+  updatedAt         DateTime   @updatedAt
+  amenities         Amenity[]
+  rooms             RoomType[]
+  reviews           Review[]
+
+  @@index([city])
+  @@index([pricePerNight])
+  @@index([rating])
+}
+
+model Amenity {
+  id        String   @id
+  label     String
+  iconName  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  hotels    Hotel[]
+}
+
+model RoomType {
+  id                String   @id @default(cuid())
+  hotelId           String
+  hotel             Hotel    @relation(fields: [hotelId], references: [id], onDelete: Cascade)
+  name              String
+  beds              String
+  maxGuests         Int
+  pricePerNight     Decimal  @db.Decimal(10, 2)
+  isAvailable       Boolean  @default(true)
+  imageUrl          String
+  sizeSqm           Int
+  freeCancellation  Boolean  @default(false)
+  breakfastIncluded Boolean  @default(false)
+  totalRooms        Int      @default(5)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@index([hotelId])
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  hotelId   String
+  hotel     Hotel    @relation(fields: [hotelId], references: [id], onDelete: Cascade)
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  bookingId String?  @unique
+  author    String
+  country   String
+  score     Float
+  stayDate  String
+  title     String
+  text      String
+  photos    String[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([hotelId, createdAt])
 }

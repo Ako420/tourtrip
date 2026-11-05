@@ -1,5 +1,5 @@
 import type { HotelFilters, HotelSearch, HotelSort, RouteParams } from "@/types";
-import { hotelSortOptions } from "@/constants";
+import { hotelFilterLimits, hotelSortOptions } from "@/constants";
 import { toSearchQuery } from "./search";
 
 const getParam = (params: RouteParams, key: string) => {
@@ -8,13 +8,19 @@ const getParam = (params: RouteParams, key: string) => {
   return Array.isArray(value) ? value[0] : value;
 };
 
-const getNumber = (value: string | undefined) => {
+const getNumber = (value: string | undefined, max = Number.MAX_SAFE_INTEGER) => {
   const number = Number(value);
 
-  return value && Number.isFinite(number) && number >= 0 ? number : undefined;
+  return value && Number.isFinite(number) && number >= 0 ? Math.min(number, max) : undefined;
 };
 
 const getList = (value: string | undefined) => value?.split(",").filter(Boolean) ?? [];
+
+const isStarRating = (stars: number) => {
+  const { min, max } = hotelFilterLimits.stars;
+
+  return Number.isInteger(stars) && stars >= min && stars <= max;
+};
 
 export const defaultHotelFilters: HotelFilters = {
   stars: [],
@@ -29,11 +35,11 @@ export const parseHotelFilters = (params: RouteParams): HotelFilters => {
   const sort = getParam(params, "sort") as HotelSort;
 
   return {
-    minPrice: getNumber(getParam(params, "minPrice")),
-    maxPrice: getNumber(getParam(params, "maxPrice")),
-    stars: getList(getParam(params, "stars")).map(Number).filter(Number.isInteger),
-    minRating: getNumber(getParam(params, "minRating")),
-    amenities: getList(getParam(params, "amenities")),
+    minPrice: getNumber(getParam(params, "minPrice"), hotelFilterLimits.price),
+    maxPrice: getNumber(getParam(params, "maxPrice"), hotelFilterLimits.price),
+    stars: getList(getParam(params, "stars")).map(Number).filter(isStarRating),
+    minRating: getNumber(getParam(params, "minRating"), hotelFilterLimits.rating),
+    amenities: getList(getParam(params, "amenities")).slice(0, hotelFilterLimits.amenities),
     freeCancellation: getParam(params, "freeCancellation") === "true",
     breakfast: getParam(params, "breakfast") === "true",
     sort: hotelSortOptions.some((option) => option.value === sort) ? sort : "recommended",

@@ -1,5 +1,6 @@
 import axios, { type AxiosError } from "axios";
 import { cookies } from "next/headers";
+import { connection } from "next/server";
 
 const API_URL = process.env.API_URL?.replace(/\/$/, "");
 
@@ -63,6 +64,9 @@ const getConfig = async ({ auth, timeout }: RequestOptions) => {
 };
 
 export const apiGet = async <T>(path: string, params: QueryParams = {}, options: RequestOptions = {}): Promise<T> => {
+  // Axios reads the clock, which Next.js only allows once a page is rendering for a real request.
+  await connection();
+
   const query = Object.entries(params).filter(([, value]) => value !== undefined && value !== "");
   const { data } = await client.get<T>(path, { params: Object.fromEntries(query), ...(await getConfig(options)) });
 

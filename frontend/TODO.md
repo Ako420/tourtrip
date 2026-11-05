@@ -22,6 +22,7 @@ The pages still to build. Every link below opens the "page not found" screen tod
 - Keep Hotel Jr's own branding and wording.
 - Show only what is real. No invented phone numbers, addresses, awards or staff. Anything not connected yet says so on the page.
 - Reads of the session cookie stay inside `<Suspense>`, so public pages stay cached.
+- `apiGet` calls `connection()`, so a read from the API needs `<Suspense>` around it and can't go inside `"use cache"`. Without this, `next build` fails once the page's area is live.
 
 **Every "Done when" also includes:** `npx tsc --noEmit`, `npx eslint src` and `npx next build` pass, the page works in the browser, and it has no sideways scrolling at phone width.
 

@@ -8,7 +8,7 @@ The full plan for the Hotel Jr backend: everything needed to run a travel site l
 2. Build only that task. Check its "Done when" line, then tick its box.
 3. Stop and review before starting the next one.
 
-**Next task: 2.2**
+**Next task: 5.1**
 
 **Stack**
 
@@ -44,18 +44,17 @@ Where a page wasn't read, the plan is our own design. Flight basics come from th
 | Area | Status |
 | --- | --- |
 | Layers | `routers` → `controllers` → `services`, plus `middlewares`, `config` and `utils` |
-| Working endpoints | `GET /`, `GET /api/health`, `POST /api/auth/signup`, `POST /api/auth/login`, `GET /api/auth/me`, and `/api/rooms`, which task 4.1 removes |
-| Database | `hotel_jr` and `hotel_jr_test` each have a `User` table and an empty `Room` table |
-| Done | Phases 0 and 1, and task 2.1: project setup, tests, accounts, axios |
+| Working endpoints | `GET /`, `GET /api/health`, `POST /api/auth/signup`, `POST /api/auth/login`, `GET /api/auth/me`, and the `/api/admin/uploads` routes |
+| Database | `hotel_jr` and `hotel_jr_test` have the account, file and hotel tables. The hotel tables are empty until task 4.2 |
+| Done | Phases 0 to 3: project setup, tests, accounts, axios, Cloudinary uploads |
 | Missing | Seed data, and every travel endpoint the frontend calls |
 
 **Problems to fix along the way**
 
-- `Room` doesn't match the frontend. It's a physical room with a `number` and no hotel, while the frontend needs room types that belong to a hotel. The frontend never calls `/api/rooms`, so task 4.1 replaces both.
 - The frontend's `http.ts` doesn't send the session token yet (task 2.2).
 - `GET /hotels/:slug` is called without dates, so room availability can't reflect the guest's stay yet (task 10.5).
-- Setting `API_URL` in the frontend switches **every** service to the API at once. Until phases 1 to 10 exist, pages would fail, so that switch waits for task 10.12. Test earlier tasks with automated tests or `curl`.
-- Many sidebar and footer links have no page yet: packages, tours, cruises, deals, rewards, support and more. Their API and pages get built together in phases 11 to 21.
+- Setting `API_URL` in the frontend switches **every** service to the API at once, so one missing endpoint breaks its page. The frontend is also growing faster than the API. Task 2.3 fixes this by turning the API on one area at a time.
+- Some sidebar and footer links have no page yet, such as tours, cruises and the map. `frontend/TODO.md` tracks those pages, and it quotes this file's task numbers, so don't renumber existing tasks.
 
 ---
 
@@ -79,6 +78,7 @@ These are the defaults this plan uses. Tell me before the related task if you wa
 | 12 | Prices are always recalculated on the server | A client-sent `total` is only ever compared, never trusted |
 | 13 | USD only until task 15.5 | All sample data is USD |
 | 14 | trip.com's rewards numbers are starting values in database tables | Rules can change without code. Hotel Jr uses its own name, "Jr Coins" |
+| 15 | The frontend moves to the API one area at a time | Each area goes live as soon as its endpoints pass, and pages without an API yet keep their sample data |
 
 ---
 
@@ -129,6 +129,9 @@ Browser → Next.js server → axios → router → validate(schema) → require
 - **Register fixed paths before parameters.** `/hotels/search` must come before `/hotels/:slug`, `/attractions/search` before `/attractions/:slug`, and `/flights/search` before anything with `:id`.
 - **Query booleans:** use `queryBoolean` from `utils/validators.js`. `z.coerce.boolean()` turns the text `"false"` into `true`.
 - **Query lists:** use `commaList()` for hotel `stars` and `amenities`, and `pipeList()` for every flight, train and car list, such as `airlines`, `operators` and `supplier`, because the frontend's query builders do this. Pass a schema for items that aren't text, such as `commaList(z.coerce.number().int())`.
+- **List sizes:** a list that adds a join per item needs a limit. An `AND` of 160 amenities takes about 4 seconds, and longer lists can hold the database for minutes.
+- **Paging order:** end every paged `orderBy` with a unique field such as `id`, or a hotel can show up on two pages when values tie.
+- **Null bytes:** `validate` rejects them with a 400, because Postgres refuses them in text. Anything not passed through `validate`, such as a route param, still needs its own schema.
 - **Money:** `Decimal(10, 2)` columns. Do price sums with Prisma's `Decimal`, not JS floats. Prices may reach the frontend as strings, which it accepts.
 - **Ratings:** `Float` columns. The frontend compares `rating` as a number and calls `toFixed` on it, so it must not be a Decimal string. Hotels and car suppliers are rated out of 10, and attractions out of 5.
 - **Dates:** stay and flight dates are `@db.Date` and go over the API as `YYYY-MM-DD`. Timestamps are ISO 8601.
@@ -201,9 +204,13 @@ Indexes: `city`, `pricePerNight`, `rating`.
 
 **Review:** `id`, `hotelId`, `userId?`, `bookingId?` (unique), `author`, `country`, `score Float`, `stayDate` (text such as `October 2026`), `title`, `text`, `photos String[]`
 
-### Phase 5: page content
+### Phase 5: page content and support
 
 **ContentBlock:** `key` (unique, such as `home`, `flights`, `cars`, `legal-terms`), `data Json`
+
+**Faq:** `id` (text such as `hotel-find`), `product`, `question`, `answer`, `sortRank`
+
+**SupportTicket:** `id`, `reference` (unique), `userId?`, `fullName`, `email` (lowercase), `topic`, `bookingReference?`, `message`, `status` (`OPEN` or `CLOSED`)
 
 ### Phase 6: flights
 
@@ -292,7 +299,7 @@ The copied fields keep old bookings correct when prices or policies change later
 | 18 | `Tour`, `TourDeparture`, `Cruise`, `CruiseSailing`, `Enquiry` |
 | 19 | `Guide`, `Moment`, `Trip`, `TripItem` |
 | 20 | `PriceAlert`, `FlightExtra` |
-| 21 | `Faq`, `SupportTicket`, `SupportMessage`, `PropertyApplication`, `PartnerApplication` |
+| 21 | `SupportMessage`, `PropertyApplication`, `PartnerApplication` |
 
 ---
 
@@ -358,9 +365,12 @@ The JWT payload is `{ sub: user.id, role: user.role }`. Protected routes read `A
 {
   "id": "…", "publicId": "hotel-jr/hotels/abc123",
   "url": "https://res.cloudinary.com/<cloud>/image/upload/v1/hotel-jr/hotels/abc123.jpg",
-  "width": 2000, "height": 1333, "format": "jpg", "bytes": 482113
+  "folder": "hotels", "width": 2000, "height": 1333, "format": "jpg", "bytes": 482113,
+  "createdAt": "2026-11-05T01:30:00.000Z"
 }
 ```
+
+`GET /admin/uploads` returns `{ items, total, page, pageCount }`, newest first, 20 to a page.
 
 ### 5.4 Hotels
 
@@ -389,7 +399,7 @@ The JWT payload is `{ sub: user.id, role: user.role }`. Protected routes read `A
 | `minPrice`, `maxPrice` | number | On `pricePerNight` |
 | `stars` | list | Comma separated, `5,4` |
 | `minRating` | number | 0-10 |
-| `amenities` | list | Comma separated, hotel must have **all** of them |
+| `amenities` | list | Comma separated, up to 20, hotel must have **all** of them |
 | `freeCancellation`, `breakfast` | `true` | Sent only when on |
 | `sort` | text | `recommended` (default), `price-asc`, `price-desc`, `rating` |
 | `page` | number | Default 1, page size 5 |
@@ -435,6 +445,7 @@ Response:
 | GET | `/cars/content` | none | 5.2 | `CarsContent` for the cars page |
 | GET | `/trains/content` | none | 5.2 | `TrainsContent` for the trains page |
 | GET | `/planner/content` | none | 5.2 | Content for the planner page |
+| GET | `/packages/content` | none | 5.2 | `PackagesContent` for the Flight + Hotel page |
 | GET | `/legal/:slug` | none | 5.2 | `LegalDocument` for `terms` or `privacy` |
 | GET | `/pages/:slug` | none | 21.6 | About, news and other info pages |
 
@@ -657,6 +668,19 @@ Booking error codes, all status 409: `ROOM_SOLD_OUT`, `SEATS_UNAVAILABLE`, `TICK
 | GET | `/deals` | none | 13.5 | Sale campaigns and hot deals |
 | GET | `/deals/:slug` | none | 13.5 | One sale campaign |
 
+`GET /deals` returns `DealsContent`:
+
+```json
+{ "campaigns": [], "hotelDeals": [], "flightDeals": [], "promotions": [] }
+```
+
+- `campaigns` are live campaigns: `{ slug, title, subtitle, headline, imageUrl, product, startsAt, endsAt }`. `product` is `hotels`, `flights` or `attractions`.
+- `hotelDeals` are the 4 `HotelSummary` items with the biggest saving against `originalPrice`.
+- `flightDeals` are the 4 cheapest `FlightDeal` items that haven't departed.
+- `promotions` use the `Promotion` shape from `frontend/src/types/home.ts`.
+
+`GET /deals/:slug` returns the campaign plus `hotels`, `attractions` and `flightDeals`. A campaign that isn't live returns 404.
+
 ### 5.10 Rewards
 
 | Method | Path | Auth | Task | Purpose |
@@ -664,6 +688,16 @@ Booking error codes, all status 409: `ROOM_SOLD_OUT`, `SEATS_UNAVAILABLE`, `TICK
 | GET | `/rewards/tiers` | none | 14.9 | Tiers, rules and perks |
 | GET | `/rewards` | user | 14.9 | My tier, progress and coin balance |
 | GET | `/rewards/coins` | user | 14.9 | My coin history, `?page=` |
+
+`GET /rewards/tiers` returns `RewardsProgram`:
+
+```json
+{
+  "tiers": [{ "id": "gold", "name": "Gold", "coinBoost": 20, "howToReach": "1 eligible booking", "howToKeep": "Permanent", "plannedPerks": [] }],
+  "earnRates": [{ "id": "hotels", "label": "Hotels & Homes", "coinsPer100": 50, "iconName": "bed" }],
+  "faqs": [{ "id": "count", "question": "When does a booking count?", "answer": "…" }]
+}
+```
 
 Booking endpoints gain an optional `coins` field in task 14.6.
 
@@ -780,12 +814,47 @@ Response:
 | Method | Path | Auth | Task | Purpose |
 | --- | --- | --- | --- | --- |
 | GET | `/packages/search` | none | 17.1 | Flight + Hotel offers |
+| GET | `/packages/offer` | none | 17.1 | One chosen package |
 | POST | `/packages/bookings` | optional | 17.2 | Book a package |
+| GET | `/tours/content` | none | 18.2 | Page content for `?type=` |
 | GET | `/tours` | none | 18.2 | Private and group tours, `?type=`, `?q=` |
 | GET | `/tours/:slug` | none | 18.2 | Tour details and departures |
+| GET | `/cruises/content` | none | 18.4 | Page content for the cruises page |
 | GET | `/cruises` | none | 18.4 | Search by destination or cruise, and date |
 | GET | `/cruises/:slug` | none | 18.4 | Cruise details and sailings |
 | POST | `/enquiries` | optional | 18.5 | Ask about a tour or cruise |
+
+`GET /packages/search` query: `from`, `to`, `departDate`, `returnDate`, `adults`, `children`, `cabin`, `rooms`, and an optional `flight` holding a flight offer id. It returns `PackageSearchResult`:
+
+```json
+{
+  "flightChoices": [{ "label": "Cheapest", "flight": {} }],
+  "selectedFlightId": "…",
+  "offers": [{
+    "hotel": {}, "room": {}, "flight": {},
+    "flightTotal": 620, "hotelTotal": 567, "regularTotal": 1187,
+    "discount": 71, "totalPrice": 1116, "currency": "USD"
+  }]
+}
+```
+
+`GET /packages/offer` takes the same search values plus `flightId`, `hotelSlug` and `roomId`, and returns one `PackageOffer`, or 404.
+
+`POST /packages/bookings`
+
+```json
+// Body
+{
+  "flightId": "…", "hotelSlug": "azure-cliff-resort", "roomId": "…",
+  "from": "Lagos", "to": "Bali", "departDate": "2026-12-10", "returnDate": "2026-12-13",
+  "adults": 2, "children": 0, "cabin": "Economy", "rooms": 1,
+  "passengers": [{ "type": "adult", "firstName": "Ada", "lastName": "Obi", "birthDate": "1990-04-02" }],
+  "email": "ada@example.com", "phone": "+234 800 000 0000",
+  "total": 1116, "currency": "USD"
+}
+// 201
+{ "reference": "HJ-7K2M9QXA" }
+```
 
 ### 5.15 Explore
 
@@ -802,19 +871,37 @@ Response:
 | POST | `/trips/:id/items` | user | 19.4 | Add a stop to a plan |
 | DELETE | `/trips/:id/items/:itemId` | user | 19.4 | Remove a stop |
 
+`GET /guides` takes optional `city` and `page`, with 6 guides to a page. It returns `{ items, cities, total, page, pageCount }`. `cities` lists every guide's city, whatever the filter. Each guide is `{ id, slug, city, title, body, coverUrl, publishedAt }`, and `GET /guides/:slug` returns one, or 404.
+
 ### 5.16 Support and partners
 
 | Method | Path | Auth | Task | Purpose |
 | --- | --- | --- | --- | --- |
-| GET | `/support/faqs` | none | 21.1 | Help articles, `?q=`, `?product=` |
-| POST | `/support/tickets` | optional | 21.2 | Contact support |
+| GET | `/support/faqs` | none | 5.3 | Help articles as `SupportFaq[]` |
+| POST | `/support/tickets` | optional | 5.4 | Contact support |
 | POST | `/assistant/chat` | user | 21.7 | Chat with the travel assistant |
-| GET | `/support/tickets` | user | 21.2 | My support requests |
-| GET | `/support/tickets/:id` | user | 21.2 | One request and its messages |
-| POST | `/support/tickets/:id/messages` | user | 21.2 | Reply to a request |
+| GET | `/support/tickets` | user | 21.1 | My support requests |
+| GET | `/support/tickets/:id` | user | 21.1 | One request and its messages |
+| POST | `/support/tickets/:id/messages` | user | 21.1 | Reply to a request |
 | POST | `/support/tickets/:id/attachments` | user | 21.3 | Add an image |
 | POST | `/property-applications` | none | 21.4 | "List your property" form |
 | POST | `/partner-applications` | none | 21.5 | Supplier and affiliate forms |
+
+`SupportFaq` is `{ id, product, question, answer }`. `product` is `flights`, `hotels`, `trains`, `cars`, `attractions` or `account`.
+
+`POST /support/tickets`
+
+```json
+// Body
+{
+  "fullName": "Ada Obi", "email": "ada@example.com", "topic": "booking",
+  "bookingReference": "HJ-7K2M9QXA", "message": "I need to change the name on my booking, please."
+}
+// 201
+{ "reference": "SUP-7K2M9QXA" }
+```
+
+`topic` is `booking`, `change`, `payment`, `account` or `other`. `bookingReference` is optional, and can be empty.
 
 ### 5.17 Admin
 
@@ -843,10 +930,10 @@ All need the admin role.
 | --- | --- | --- |
 | 0 | 6 | Foundation |
 | 1 | 4 | Accounts with JWT and bcrypt |
-| 2 | 2 | axios connection in the frontend |
+| 2 | 3 | axios connection, and turning the API on by area |
 | 3 | 6 | Cloudinary file storage |
 | 4 | 8 | Hotels |
-| 5 | 2 | Page content |
+| 5 | 4 | Page content and support |
 | 6 | 9 | Flights |
 | 7 | 7 | Attractions |
 | 8 | 9 | Trains |
@@ -977,7 +1064,7 @@ All need the admin role.
 
 ### Phase 2: Connect the frontend with axios
 
-These tasks change `frontend/src/services/http.ts` only, so no other service needs editing. Everything still runs on sample data until task 10.12 sets `API_URL`.
+These tasks change how the frontend calls the API. Pages keep using sample data until their area is turned on.
 
 #### [x] 2.1 Replace `fetch` with axios
 
@@ -992,7 +1079,7 @@ These tasks change `frontend/src/services/http.ts` only, so no other service nee
 
 **Done when:** `npm run build` passes, the site still works on sample data, and a test call with `API_URL` set reaches `/health` and maps a 404 to `ApiError`.
 
-#### [ ] 2.2 Send the JWT with axios
+#### [x] 2.2 Send the JWT with axios
 
 **Files:** `frontend/src/services/http.ts`, `frontend/src/services/*.service.ts`
 
@@ -1003,13 +1090,44 @@ These tasks change `frontend/src/services/http.ts` only, so no other service nee
 
 **Done when:** the frontend builds, the header is sent on `auth` calls only, and public pages stay static. A full login test comes in task 10.12.
 
+#### [x] 2.3 Turn the API on one area at a time
+
+**Files:** `frontend/src/services/http.ts`, `frontend/src/services/*.service.ts`, `frontend/.env.example`
+
+- Add `API_AREAS`, a comma-separated list such as `API_AREAS=accounts,hotels`. `API_URL` stays as the base address.
+- Replace the `isApiEnabled` value with `isApiLive("hotels")`, so each service checks its own area. With no `API_URL`, nothing is live.
+- Move login and accounts onto the `accounts` area, then remove `ACCOUNT_API_URL` and `accountApi.ts`, so the frontend has one axios client. Keep the 5 second timeout for `/auth/me`, because every page calls it.
+- New frontend services must use the same check, with an area of their own.
+
+Turn each area on once its task passes. Run `npx next build` with the area on first, because a build can fail in ways `next dev` never shows:
+
+| Area | Covers | Turn on after |
+| --- | --- | --- |
+| `accounts` | Login, signup, `/auth/me` | This task |
+| `hotels` | Hotels, destinations | 4.8 |
+| `content` | Page content, legal pages | 5.2 |
+| `support` | FAQs, support tickets | 5.4 |
+| `flights` | Flight search, deals, offers | 6.9 |
+| `attractions` | Attractions, planner suggestions | 7.7 |
+| `trains` | Train search and offers | 8.9 |
+| `cars` | Car search and offers | 9.7 |
+| `bookings` | Booking POSTs for the areas above, booking lookup | 10.10 |
+| `deals` | Campaigns and hot deals | 13.5 |
+| `rewards` | The rewards programme | 14.9 |
+| `packages` | Flight + Hotel search, offers, bookings | 17.2 |
+| `tours` | Tours, tour content, enquiries | 18.5 |
+| `cruises` | Cruises | 18.4 |
+| `guides` | Travel guides | 19.1 |
+
+**Done when:** with `API_AREAS=accounts`, login uses the backend while every other page keeps its sample data, and the frontend builds.
+
 ---
 
 ### Phase 3: Cloudinary file storage
 
-Folders are fixed in one list: `hotels`, `rooms`, `attractions`, `content`, `deals`, `guides`, `avatars`, `reviews`, `moments`, `support`, `properties`. Each sits under `hotel-jr/`.
+Folders are fixed in one list: `hotels`, `rooms`, `attractions`, `cars`, `content`, `deals`, `guides`, `avatars`, `reviews`, `moments`, `support`, `properties`. Each sits under `hotel-jr/`.
 
-#### [ ] 3.1 Connect Cloudinary
+#### [x] 3.1 Connect Cloudinary
 
 **You need to do this part:** create a Cloudinary account, then add `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY` and `CLOUDINARY_API_SECRET` to `backend/.env`. I can't create the account or type those keys for you.
 
@@ -1021,7 +1139,7 @@ Folders are fixed in one list: `hotels`, `rooms`, `attractions`, `content`, `dea
 
 **Done when:** a small script calling `cloudinary.api.ping()` succeeds, and a missing key stops the server with a clear message.
 
-#### [ ] 3.2 Add `Asset` and the upload service
+#### [x] 3.2 Add `Asset` and the upload service
 
 **Files:** `prisma/schema.prisma`, `services/upload.service.js`, `tests/upload.service.test.js`
 
@@ -1033,27 +1151,28 @@ Folders are fixed in one list: `hotels`, `rooms`, `attractions`, `content`, `dea
 
 **Done when:** a real image uploads and shows at its URL, deleting removes it, and the tests pass offline.
 
-#### [ ] 3.3 Add the upload middleware
+#### [x] 3.3 Add the upload middleware
 
-**Files:** `middlewares/upload.js`, `middlewares/errorHandler.js`
+**Files:** `middlewares/upload.js`, `services/upload.service.js`
 
 - Install `multer` with memory storage, so nothing is written to disk.
-- `uploadImage` accepts one `file`, up to 5 MB, of type JPEG, PNG or WebP.
-- `uploadImages` accepts up to 6 files with the same rules.
-- Turn `MulterError` into 400, or 413 for a file that's too large, with code `UPLOAD_ERROR`.
+- `receiveImage` accepts one `file`, up to 5 MB, of type JPEG, PNG or WebP.
+- `receiveImages` accepts up to 6 `files` with the same rules.
+- Turn upload errors into 400, or 413 for a file that's too large, with code `UPLOAD_ERROR`. This includes broken multipart bodies, which aren't `MulterError`s.
+- A file's stated type can be faked, so also pass `allowed_formats` to Cloudinary.
 
 **Done when:** tests cover a good image, a large file, a wrong type and no file.
 
-#### [ ] 3.4 Build the admin upload endpoints
+#### [x] 3.4 Build the admin upload endpoints
 
-**Files:** `validators/upload.validator.js`, `controllers/upload.controller.js`, `routers/admin.router.js`
+**Files:** `validators/upload.validator.js`, `controllers/upload.controller.js`, `routers/admin.router.js`, `mappers/asset.mapper.js`, `utils/pagination.js`
 
 - Check `folder` against the fixed list.
 - Order of middleware: `requireAuth`, `requireAdmin`, upload, then validate. `multer` must run before the body can be read.
 
 **Done when:** an admin can upload, list and delete an image, and a normal user gets 403.
 
-#### [ ] 3.5 Add the seed image helper
+#### [x] 3.5 Add the seed image helper
 
 **Files:** `prisma/seed-images.js`, `prisma/seed-data/image-map.json`
 
@@ -1065,7 +1184,7 @@ Folders are fixed in one list: `hotels`, `rooms`, `attractions`, `content`, `dea
 
 **Done when:** two runs on the same sample URLs upload once and return the same result.
 
-#### [ ] 3.6 Show Cloudinary images in the frontend
+#### [x] 3.6 Show Cloudinary images in the frontend
 
 **Files:** `frontend/src/lib/imageLoader.ts`
 
@@ -1079,7 +1198,7 @@ Folders are fixed in one list: `hotels`, `rooms`, `attractions`, `content`, `dea
 
 ### Phase 4: Hotels
 
-#### [ ] 4.1 Replace `Room` with the hotel models
+#### [x] 4.1 Replace `Room` with the hotel models
 
 - Add `Hotel`, `Amenity`, `RoomType` and `Review` as in section 4, and remove `Room`. The table is empty, so nothing is lost.
 - Delete `room.router.js`, `room.controller.js` and `room.service.js`, and remove the route from `routers/index.js`.
@@ -1087,9 +1206,9 @@ Folders are fixed in one list: `hotels`, `rooms`, `attractions`, `content`, `dea
 
 **Done when:** the migration applies, the server starts, and `/api/rooms` returns 404.
 
-#### [ ] 4.2 Export the sample data and seed the database
+#### [x] 4.2 Export the sample data and seed the database
 
-**Files:** `prisma/seed-data/hotels.json`, `prisma/seed.js`, `prisma.config.js`
+**Files:** `prisma/seed-data/hotels.json`, `prisma/seed.js`, `prisma/seed-hotels.js`, `prisma.config.js`
 
 - With a one-off `npx tsx` script in `frontend`, write the `hotels` array to JSON. Don't keep the script.
 - Add `seed: "node prisma/seed.js"` under `migrations` in `prisma.config.js`.
@@ -1097,12 +1216,13 @@ Folders are fixed in one list: `hotels`, `rooms`, `attractions`, `content`, `dea
 - Seed amenities, hotels, room types and reviews with `upsert`, so running it twice is safe.
 - `pricePerNight` is the lowest room price. `sortRank` keeps the sample order. `totalRooms` starts at 5.
 - Keep the sample's `rating` and `reviewCount`.
+- Keep the sample ids, so upserts match and links stay the same. Running the seed again resets seeded rows to the sample values, and leaves other rows alone.
 
 **Done when:** `npx prisma db seed` runs twice with no duplicates, the row counts match the sample, and hotel images use Cloudinary URLs.
 
-#### [ ] 4.3 Build the hotel mapper
+#### [x] 4.3 Build the hotel mapper
 
-**Files:** `mappers/hotel.mapper.js`, `tests/hotel.mapper.test.js`
+**Files:** `mappers/hotel.mapper.js`, `utils/money.js`, `tests/hotel.mapper.test.js`
 
 - `toHotelSummary(hotel)` and `toHotelDetails(hotel)`.
 - `featuredRoom` is the cheapest available room.
@@ -1110,69 +1230,97 @@ Folders are fixed in one list: `hotels`, `rooms`, `attractions`, `content`, `dea
 
 **Done when:** a test confirms the keys match `HotelSummary` and `HotelDetails`.
 
-#### [ ] 4.4 Build `GET /hotels` and `GET /destinations`
+#### [x] 4.4 Build `GET /hotels` and `GET /destinations`
 
 **Files:** `services/hotel.service.js`, `controllers/hotel.controller.js`, `routers/hotel.router.js`, `routers/destination.router.js`
 
 - `destinations` is the sorted list of distinct hotel cities.
-- `hotels` matches `destination` case-insensitively on name, city or country.
+- `hotels` matches `destination` case-insensitively on name, city or country. `%`, `_` and `\` are escaped, because they're wildcards to the database.
 
 **Done when:** `?destination=bali` returns the Bali hotels and `/destinations` returns city names.
 
-#### [ ] 4.5 Build `GET /hotels/search` filters, sorting and paging
+#### [x] 4.5 Build `GET /hotels/search` filters, sorting and paging
 
-**Files:** `validators/hotel.validator.js`, `services/hotelSearch.service.js`, `utils/pagination.js`
+**Files:** `validators/hotel.validator.js`, `services/hotelSearch.service.js`
 
 - Build the Prisma `where` from each filter. For amenities use `AND: ids.map((id) => ({ amenities: { some: { id } } }))`, so a hotel needs all of them.
 - Sort `recommended` by `sortRank`, or by the price or rating field for the others.
-- Page size 5. Cap `page` at `pageCount`, and keep `pageCount` at 1 or more.
+- Page size 5, using `getPageInfo` from `utils/pagination.js`.
 - Register this route above `/:slug`.
 
 **Done when:** tests cover each filter, each sort, an empty result, and a `page` beyond the end.
 
-#### [ ] 4.6 Add `priceRange` and `amenities` to the search
+#### [x] 4.6 Add `priceRange` and `amenities` to the search
 
 - Run a second query on the destination alone, before filters.
+- Send `priceRange` as numbers, because the filter panel does sums on it and compares `max > min`.
+- List `amenities` by label, because the join table doesn't keep the sample order.
 - Return `{ min: 0, max: 0 }` and an empty list when no hotels match.
 
 **Done when:** applying a filter doesn't change `priceRange` or `amenities`.
 
-#### [ ] 4.7 Build `GET /hotels/:slug`
+#### [x] 4.7 Build `GET /hotels/:slug`
 
 - Include amenities, rooms and the latest 5 reviews. Throw 404 for an unknown slug.
+- List rooms by price, then id. The table has no order of its own, and booking links use the room ids.
+- List reviews by `createdAt`, then id. The seed dates each review by its stay, because `stayDate` is text that can't be sorted.
+- Check the slug only as text, so anything unknown gets a 404. The frontend shows its not-found page for a 404, and an error page for a 400.
 
 **Done when:** the response matches `HotelDetails` and an unknown slug returns 404.
 
-#### [ ] 4.8 Build `GET /hotels/:slug/similar`
+#### [x] 4.8 Build `GET /hotels/:slug/similar`
 
 - Six other hotels, closest in `pricePerNight`.
 - Order with raw SQL: `ORDER BY ABS("pricePerNight" - $1)`.
+- Settle ties by `sortRank`, then id, so the order matches the frontend's sample logic.
+- Frontend: limit every value the address can send, as `parseHotelSearch` does for guests. That's `stars`, `minRating`, both prices, `page`, the number of `amenities` and the length of `destination`. Otherwise a hand-edited address, or a long pasted destination, gets a 400 and shows an error page.
 
 **Done when:** the result leaves out the hotel itself and has 6 or fewer items.
 
 ---
 
-### Phase 5: Page content
+### Phase 5: Page content and support
 
 #### [ ] 5.1 Add `ContentBlock` and seed it
 
 - Add the model and migrate.
-- Export `homeContent`, `flightsContent`, `attractionsContent`, `carsContent`, `trainsContent`, `plannerContent` and `legalDocuments` from the frontend to `prisma/seed-data/content.json`, using the same one-off approach as task 4.2.
+- Export `homeContent`, `flightsContent`, `attractionsContent`, `carsContent`, `trainsContent`, `packagesContent`, `plannerContent` and `legalDocuments` from the frontend to `prisma/seed-data/content.json`, using the same one-off approach as task 4.2.
 - The legal text is a draft, with `[square bracket]` gaps for a lawyer to fill. Keep `isDraft: true`.
 - Pass the data through `hostImages`.
 - `iconName` values must exist in `frontend/src/constants/icons.ts`.
 
-**Done when:** rows exist for `home`, `flights`, `attractions`, `cars`, `trains`, `planner`, `legal-terms` and `legal-privacy`.
+**Done when:** rows exist for `home`, `flights`, `attractions`, `cars`, `trains`, `packages`, `planner`, `legal-terms` and `legal-privacy`.
 
 #### [ ] 5.2 Build the page content endpoints
 
 **Files:** `services/content.service.js`, `controllers/content.controller.js`, `routers/content.router.js`
 
-- Cover `/home`, `/flights/content`, `/attractions/content`, `/cars/content`, `/trains/content`, `/planner/content` and `/legal/:slug`.
+- Cover `/home`, `/flights/content`, `/attractions/content`, `/cars/content`, `/trains/content`, `/packages/content`, `/planner/content` and `/legal/:slug`.
 - Return `data` as is. `/legal/:slug` accepts `terms` or `privacy`, and returns 404 for anything else.
 - Mount this router before the product routers, so `content` isn't read as a `:slug`.
 
 **Done when:** every response matches the sample data, apart from image URLs.
+
+#### [ ] 5.3 Build `GET /support/faqs`
+
+- Add `Faq` and migrate. The `/support` page already calls this endpoint.
+- Seed the 16 entries from `frontend/src/data/supportFaqs.ts`, keeping their ids and order.
+- Return `{ id, product, question, answer }`.
+
+**Done when:** the response matches the sample data, and seeding twice creates no duplicates.
+
+#### [ ] 5.4 Build `POST /support/tickets`
+
+**Files:** `validators/support.validator.js`, `services/support.service.js`, `controllers/support.controller.js`, `routers/support.router.js`, `utils/reference.js`
+
+- Add `SupportTicket` and migrate.
+- Validate like `supportTicketSchema`: name 2-100, a known topic, and a message of 20-2000 characters. Store an empty `bookingReference` as null.
+- Add `generateReference(prefix)`, which returns the prefix, a dash and 8 random characters from `crypto.randomInt`, leaving out `0`, `O`, `1` and `I`. Tickets use `SUP`.
+- Use `optionalAuth`, and pass `{ auth: true }` in `frontend/src/services/support.service.ts`, so tickets link to the account.
+- This form is public, so rate limit it by email: 5 tickets an hour.
+- Return 201 with `{ reference }`.
+
+**Done when:** tests cover a guest ticket, a linked ticket, an empty reference, a short message and the rate limit.
 
 ---
 
@@ -1299,7 +1447,7 @@ Folders are fixed in one list: `hotels`, `rooms`, `attractions`, `content`, `dea
 
 - Match `q` case-insensitively on name, city or country.
 - Sort `recommended` by `sortRank`, `rating` highest first, and `price-asc` lowest first.
-- Page size 8, using `utils/pagination.js` from task 4.5.
+- Page size 8, using `getPageInfo` from `utils/pagination.js`.
 - Register this route above `/:slug`.
 
 **Done when:** tests cover `q`, each category, `freeCancellation`, each sort, and a `page` beyond the end.
@@ -1482,9 +1630,9 @@ The frontend's car pages already call these endpoints, so they must exist before
 
 #### [ ] 10.2 Add the booking helpers
 
-**Files:** `utils/reference.js`, `utils/dates.js`, `utils/money.js`
+**Files:** `utils/dates.js`, `utils/money.js`
 
-- `generateReference()` returns `HJ-` plus 8 random characters from `crypto.randomInt`, leaving out `0`, `O`, `1` and `I`.
+- Bookings use `generateReference("HJ")` from task 5.4.
 - `nightsBetween`, `isoToDate`, `dateToIso` and `isPastDate`, which compares against yesterday so guests ahead of the server's time zone can book today, as the frontend does.
 - `samePrice(a, b)` allows a 1 cent difference.
 
@@ -1521,6 +1669,7 @@ Steps, in order:
 
 - With `checkIn` and `checkOut`, `GET /hotels/:slug` sets each room's `isAvailable` from `getRoomsLeft`, using the requested `rooms` count.
 - `GET /hotels/search` leaves out hotels with no room available for those dates and party size.
+- Reject a `checkOut` that isn't after `checkIn`. Until now the search has only checked that each is a real date.
 - Frontend: pass dates in `getHotelBySlug`, so the booking page's `checkRoom` sees real availability.
 
 **Done when:** after filling a room for a date, it shows unavailable for those dates and available for others.
@@ -1594,18 +1743,18 @@ Steps, in order:
 
 #### [ ] 10.11 Show real booking errors in the frontend
 
-**Files:** `frontend/src/actions/booking.ts`, `flightBooking.ts`, `attractionBooking.ts`, `trainBooking.ts`, `carBooking.ts`, `auth.ts`
+**Files:** `frontend/src/actions/booking.ts`, `flightBooking.ts`, `attractionBooking.ts`, `trainBooking.ts`, `carBooking.ts`
 
 - Read `code` from `ApiError`, which task 2.1 added.
 - Show specific messages for `ROOM_SOLD_OUT`, `SEATS_UNAVAILABLE`, `TICKETS_UNAVAILABLE`, `CARS_UNAVAILABLE` and `PRICE_CHANGED`.
-- Show a "too many attempts" message when login returns 429.
+- If a booking returns 401 `INVALID_TOKEN`, delete the `session` cookie and ask the person to log in again. Otherwise a stale cookie blocks booking, because `/auth/me` quietly shows them as signed out while `optionalAuth` rejects the token.
 
-**Done when:** a sold-out room shows a clear message on the booking page.
+**Done when:** a sold-out room shows a clear message on the booking page, and a stale session can't block a booking.
 
-#### [ ] 10.12 Switch the frontend to the API
+#### [ ] 10.12 Check every live area together
 
-- Add `API_URL=http://localhost:5000/api` to `frontend/.env.local`.
-- Test in the browser: home, hotel search, details and booking, flight search and booking, attraction search, details and booking, train search and booking, car search and booking, find a booking, the planner, terms and privacy, sign up, log in.
+- By now `accounts`, `hotels`, `content`, `support`, `flights`, `attractions`, `trains`, `cars` and `bookings` are all on.
+- Test in the browser: home, hotel search, details and booking, flight search and booking, attraction search, details and booking, train search and booking, car search and booking, find a booking, the planner, terms and privacy, customer support, sign up, log in, the account page.
 - Fix any shape differences on the backend.
 
 **Done when:** every flow above works with the data coming from PostgreSQL, and images from Cloudinary.
@@ -1651,7 +1800,6 @@ Steps, in order:
 #### [ ] 11.5 Build the frontend pages
 
 - `/bookings` already has the lookup form. Add a list for logged-in users, booking details and a cancel button.
-- Add logging out, which deletes the `session` cookie. The server keeps no session to end.
 
 **Done when:** a user can find, view and cancel a booking in the browser.
 
@@ -1720,15 +1868,14 @@ Steps, in order:
 
 #### [ ] 12.9 Add review photos
 
-- Up to 6 images through `uploadImages`, into the `reviews` folder. Only the review's author can add them.
+- Up to 6 images through `receiveImages`, into the `reviews` folder. Only the review's author can add them.
 - Return `photos` with each review, and add the field to the frontend's `HotelReview` type.
 
 **Done when:** photos appear with the review, and another user gets 403.
 
 #### [ ] 12.10 Build the account pages
 
-- Add `/account` for profile, password and saved hotels.
-- Show the logged-in user in the navbar from `GET /auth/me`, without making public pages dynamic.
+- `/account` and the signed-in menu already exist. Add forms for the profile and password, and a list of saved hotels.
 
 **Done when:** a user can edit their profile and see their saved hotels in the browser.
 
@@ -1767,17 +1914,18 @@ trip.com's offers vary by product: 10% for new users, 8% on another page, 5% cap
 
 #### [ ] 13.5 Build sale campaigns and `GET /deals`
 
-- `Campaign`: `slug`, `title`, `subtitle`, `headline` (such as `Up to 50% off`), `imageUrl`, `startsAt`, `endsAt`, `isActive`, and linked promotions, hotels and attractions.
-- Banner images use the `deals` folder.
-- `GET /deals` returns active campaigns, plus hot hotel and flight deals.
+- `Campaign`: `slug`, `title`, `subtitle`, `headline` (such as `Up to 50% off`), `imageUrl`, `product`, `startsAt @db.Date`, `endsAt @db.Date`, `isActive`, linked to hotels, attractions and flight deals.
+- Seed the 5 sample campaigns and their links from `frontend/src/data/deals.ts`, using the `deals` folder for images.
+- `GET /deals` returns live campaigns, the 4 hotels with the biggest saving, the 4 cheapest upcoming flight deals, and active promotions.
+- `GET /deals/:slug` adds the linked hotels, attractions and flight deals. A campaign outside its dates returns 404.
 
-**Done when:** an ended campaign disappears without a code change.
+**Done when:** an ended campaign disappears without a code change, and the response matches `DealsContent`.
 
-#### [ ] 13.6 Build the deals page
+#### [ ] 13.6 Connect the deals pages
 
-- Add `/deals` with campaign tiles, and `/deals/:slug` for one campaign.
+- `/deals` and `/deals/:slug` already exist. Turn on the `deals` area and check both pages.
 
-**Done when:** `/deals` shows offers from each product in the browser.
+**Done when:** `/deals` shows campaigns and offers from the database in the browser.
 
 ---
 
@@ -1869,7 +2017,7 @@ Coins earned per US$100 of final payment: hotels 50, cruises 50, Flight + Hotel 
 
 #### [ ] 14.9 Build the rewards endpoints
 
-- `GET /rewards/tiers` is public, and returns tiers, rules and perks.
+- `GET /rewards/tiers` is public, and returns `RewardsProgram`. `plannedPerks` comes from `TierPerk`, and `faqs` from `ContentBlock`.
 - `GET /rewards` returns tier, progress to the next tier, balance and coins expiring soon.
 - `GET /rewards/coins` is paginated history.
 
@@ -1877,7 +2025,7 @@ Coins earned per US$100 of final payment: hotels 50, cruises 50, Flight + Hotel 
 
 #### [ ] 14.10 Build the rewards page
 
-- Add `/rewards` and a coins box at checkout.
+- `/rewards` already shows the programme. Add the member's tier, balance and progress, and a coins box at checkout.
 - `TierPerk` rows are shown as information only. See section 7.
 
 **Done when:** a user can see their tier and spend coins on a booking in the browser.
@@ -2026,15 +2174,21 @@ The core train and car journeys are in phases 8 to 10. These tasks add what else
 
 trip.com's page couldn't be read, so this design is ours, using the rules on its rewards page.
 
-#### [ ] 17.1 Build `GET /packages/search`
+#### [ ] 17.1 Build `GET /packages/search` and `GET /packages/offer`
 
-- Combine flight offers and hotels for the same route and dates, with a package discount.
+- Search round-trip flights, leaving out any without enough seats.
+- `flightChoices` holds up to 3 flights, labelled `Cheapest`, `Nonstop` and `Fastest`, with repeats removed.
+- Use the `flight` param if it's one of the choices, otherwise the first choice.
+- Offers are hotels in the `to` city, each with its cheapest room that fits the group, sorted by `totalPrice`.
+- `discount` is 6% of `regularTotal`, rounded, and `totalPrice = regularTotal - discount`.
+- `GET /packages/offer` builds one offer from `flightId`, `hotelSlug` and `roomId`, or returns 404.
 
-**Done when:** the package price is lower than booking each part alone.
+**Done when:** the package price is lower than booking each part alone, and results match the frontend's sample logic.
 
 #### [ ] 17.2 Build `POST /packages/bookings`
 
 - Add `PackageBooking` and the `PACKAGE` type. One reference covers both parts.
+- Add `package` to `BookingRecord.type` in the frontend, so lookups can show these bookings.
 - Reuse the checks from tasks 10.4 and 10.6 inside a single transaction, so if either part fails, neither is booked.
 
 **Done when:** a sold-out room fails the whole package, and no seats are held.
@@ -2046,11 +2200,11 @@ trip.com's page couldn't be read, so this design is ours, using the rules on its
 
 **Done when:** tests cover both rules.
 
-#### [ ] 17.4 Build the package pages
+#### [ ] 17.4 Connect the package pages
 
-- Add `/packages`, results and booking pages.
+- `/packages`, its results and booking pages already exist. Turn on the `packages` area and check the full journey.
 
-**Done when:** a user can book a package in the browser.
+**Done when:** a user can book a package in the browser, and it appears in Find bookings.
 
 ---
 
@@ -2102,9 +2256,10 @@ trip.com's tours page couldn't be read, and its cruises page only shows a search
 
 #### [ ] 19.1 Build travel guides
 
-- `Guide`: `slug`, `city`, `title`, `body`, `coverUrl`, `images String[]`, `publishedAt`.
+- `Guide`: `slug`, `city`, `title`, `body`, `coverUrl`, `publishedAt`. Seed the sample guides from `frontend/src/data/guides.ts`.
+- Page size 6. `cities` lists every guide's city, whatever the filter.
 
-**Done when:** `GET /guides?city=` returns published guides only.
+**Done when:** `GET /guides?city=` returns published guides only, and the `guides` area can be turned on.
 
 #### [ ] 19.2 Build Moments
 
@@ -2130,7 +2285,7 @@ trip.com's tours page couldn't be read, and its cruises page only shows a search
 
 #### [ ] 19.5 Build the explore pages
 
-- Add `/inspiration` and `/map`, and let logged-in users save `/planner` plans to their account.
+- `/inspiration` already exists. Add `/map`, and let logged-in users save `/planner` plans to their account.
 
 **Done when:** a user can browse guides, use the map, and reopen a saved plan on another device.
 
@@ -2172,18 +2327,18 @@ trip.com's flights page couldn't be read, so these come from search results abou
 
 ### Phase 21: Support, partners and info pages
 
-#### [ ] 21.1 Build FAQs
+#### [ ] 21.1 Show support requests in accounts
 
-- `Faq`: `question`, `answer`, `product`, `sortRank`. Seed common questions on bookings, refunds and payments.
+- Add `SupportMessage`, then `GET /support/tickets`, `GET /support/tickets/:id` and `POST /support/tickets/:id/messages`.
+- Only the owner can see or reply to a ticket.
 
-**Done when:** `GET /support/faqs?q=refund` returns matching help articles.
+**Done when:** a logged-in user can see their tickets and reply, and another user gets 404.
 
-#### [ ] 21.2 Build support tickets
+#### [ ] 21.2 Email support updates
 
-- `SupportTicket` with an optional booking, plus `SupportMessage`.
-- Guests get replies by email. Rate limit by email.
+- Send a confirmation when a ticket is created, and email replies to guests, using the email service from task 11.4.
 
-**Done when:** a ticket can be submitted and shows under the user's account.
+**Done when:** a guest's ticket and a reply each send one email.
 
 #### [ ] 21.3 Add support attachments
 
@@ -2203,10 +2358,10 @@ trip.com's flights page couldn't be read, so these come from search results abou
 
 **Done when:** an application shows up for admins.
 
-#### [ ] 21.6 Build the info and support pages
+#### [ ] 21.6 Build the info pages
 
 - `GET /pages/:slug` reads `ContentBlock` for about, news, careers, accessibility, security, guarantee and service info. Terms and privacy already use `/legal/:slug`.
-- Add `/support`, `/list-property`, `/suppliers`, `/affiliates` and the footer pages.
+- Add `/list-property`, `/suppliers`, `/affiliates` and the footer pages.
 
 **Done when:** no sidebar or footer link leads to a missing page.
 
