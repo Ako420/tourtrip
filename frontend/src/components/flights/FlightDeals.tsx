@@ -21,6 +21,7 @@ const FlightDeals = ({ title, deals }: FlightDealsProps) => {
   return (
     <section id="deals" className="mx-auto mt-12 max-w-content scroll-mt-4">
       <SectionHeading>{title}</SectionHeading>
+      <p className="-mt-3 mb-4 text-sm text-muted">Airlines and fares are samples.</p>
 
       {deals.length > 0 ? (
         <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -43,7 +44,7 @@ const FlightDeals = ({ title, deals }: FlightDealsProps) => {
           type="button"
           aria-expanded={isExpanded}
           onClick={() => setIsExpanded((current) => !current)}
-          className="mx-auto mt-4 flex items-center gap-2 text-sm font-medium hover:text-primary"
+          className="mx-auto mt-4 flex items-center gap-2 text-sm font-bold hover:text-primary"
         >
           {isExpanded ? "Show less" : "Show more"}
           <Icon name="chevron-down" className={`text-xs transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`} />

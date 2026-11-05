@@ -15,7 +15,7 @@ const WhyBook = ({ section }: WhyBookProps) => {
     <section className="mx-auto mt-12 max-w-content">
       <SectionHeading>{section.title}</SectionHeading>
 
-      <div className="rounded-card p-5 shadow-card">
+      <div className="rounded-card border border-line bg-surface p-5">
         <h3 className="font-semibold">{section.heading}</h3>
         <p className={`mt-2 text-sm text-ink-soft ${isExpanded ? "" : "line-clamp-2"}`}>{section.body}</p>
         <button

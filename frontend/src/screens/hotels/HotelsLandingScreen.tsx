@@ -11,8 +11,9 @@ import {
   HotelsHero,
   HotelStats,
   Recommendations,
+  SearchForm,
   SectionHeading,
-  StickyHotelSearch,
+  StickyBar,
 } from "@/components";
 import { getDeals, getDestinations, getHomeContent, getHotels, getHotelsContent } from "@/services";
 
@@ -34,7 +35,9 @@ const HotelsLandingContent = async () => {
   return (
     <>
       <HotelsHero hero={content.hero} destinations={destinations} />
-      <StickyHotelSearch destinations={destinations} />
+      <StickyBar>
+        <SearchForm destinations={destinations} />
+      </StickyBar>
 
       <div className="page-sheet bg-surface! px-4 pt-16">
         <HotelOfferBanner offer={content.offer} />

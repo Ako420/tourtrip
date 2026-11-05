@@ -4,9 +4,11 @@ import {
   BannerCarousel,
   FlightDeals,
   FlightHero,
+  FlightSearchForm,
   FlightsSkeleton,
   FlightTips,
   Recommendations,
+  StickyBar,
   TrendingSection,
   TrustSection,
   WhyBook,
@@ -39,6 +41,10 @@ const FlightsContent = async ({ searchParams }: FlightsScreenProps) => {
   return (
     <>
       <FlightHero key={query} hero={content.hero} quickLinks={content.quickLinks} search={search} airports={airports} />
+
+      <StickyBar>
+        <FlightSearchForm key={query} initialValues={search} airports={airports} compact />
+      </StickyBar>
 
       <div className="page-sheet pt-10">
         <div className="px-4">

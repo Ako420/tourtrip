@@ -1,16 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import SearchForm from "../search/SearchForm";
+import { useEffect, useState, type ReactNode } from "react";
 
-type StickyHotelSearchProps = {
-  destinations: string[];
+type StickyBarProps = {
+  children: ReactNode;
 };
 
 const SHOW_AFTER_SCROLL = 320;
 
 // The hero search scrolls away, so a copy stays pinned to the top of the page.
-const StickyHotelSearch = ({ destinations }: StickyHotelSearchProps) => {
+const StickyBar = ({ children }: StickyBarProps) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -26,11 +25,9 @@ const StickyHotelSearch = ({ destinations }: StickyHotelSearchProps) => {
 
   return (
     <div className="fixed inset-x-0 top-0 z-40 hidden bg-surface px-4 py-6 text-ink shadow-card xl:block">
-      <div className="mx-auto max-w-content">
-        <SearchForm destinations={destinations} />
-      </div>
+      <div className="mx-auto max-w-content">{children}</div>
     </div>
   );
 };
 
-export default StickyHotelSearch;
+export default StickyBar;

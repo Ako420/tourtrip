@@ -9,7 +9,7 @@ const flightLinks = (cities: string[]) => {
   }));
 };
 
-// Same shape as GET /flights/content. Used until API_URL is set. App stats are sample values.
+// Same shape as GET /flights/content. Used until API_URL is set.
 const flightsContent: FlightsContent = {
   hero: {
     title: "Find your next flight",
@@ -28,9 +28,9 @@ const flightsContent: FlightsContent = {
     moreHref: "/signup",
     items: [
       { id: "travelers", title: "Made for travelers", description: "Search, compare and book every part of your trip in one place.", iconName: "thumbs-up" },
-      { id: "support", title: "Support around the clock", description: "Our team is ready to help before, during and after your trip.", iconName: "headset" },
+      { id: "support", title: "Help when you need it", description: "Find answers on our support page, or send us a message about your trip.", iconName: "headset" },
       { id: "pricing", title: "Transparent pricing", description: "No surprises. Taxes and fees are included in the price you see.", iconName: "tag" },
-      { id: "rewards", title: "Earn on every trip", description: "Collect rewards each time you book and use them on your next journey.", iconName: "coins" },
+      { id: "planner", title: "Plan the whole trip", description: "Add hotels and things to do, and keep your plans in one place.", iconName: "route" },
     ],
   },
   trending: {
@@ -46,9 +46,9 @@ const flightsContent: FlightsContent = {
   banners: {
     title: "Discover what's happening",
     items: [
-      { id: "winter", eyebrow: "Limited time", title: "Winter fare sale", subtitle: "Save on selected routes this month", href: "/flights#deals", ctaLabel: "Book now", imageUrl: unsplashImage("photo-1529074963764-98f45c47344b", 800), theme: "primary" },
+      { id: "new-york", eyebrow: "Limited time", title: "Fares from $229", subtitle: "Sample fares to and from New York", href: "/deals/new-york-fares", ctaLabel: "See deals", imageUrl: unsplashImage("photo-1529074963764-98f45c47344b", 800), theme: "primary" },
       { id: "egypt", eyebrow: "Stay inspired", title: "Wonders of Egypt", subtitle: "History on a grand scale", href: "/inspiration/cairo", ctaLabel: "Read guide", imageUrl: unsplashImage("photo-1553913861-c0fddf2619ee", 800), theme: "sunset" },
-      { id: "japan", eyebrow: "City breaks", title: "Tokyo after dark", subtitle: "Neon nights and great food", href: "/flights?to=Tokyo#deals", ctaLabel: "Book now", imageUrl: unsplashImage("photo-1540959733332-eab4deabeeaf", 800), theme: "sunset" },
+      { id: "japan", eyebrow: "City breaks", title: "Tokyo after dark", subtitle: "Neon nights and great food", href: "/flights?to=Tokyo#deals", ctaLabel: "See flights", imageUrl: unsplashImage("photo-1540959733332-eab4deabeeaf", 800), theme: "sunset" },
       { id: "greece", eyebrow: "Sun seekers", title: "Island hop in Greece", subtitle: "White walls and blue seas", href: "/inspiration/santorini", ctaLabel: "Read guide", imageUrl: unsplashImage("photo-1570077188670-e3a8d69ac5ff", 800), theme: "sunset" },
     ],
   },
