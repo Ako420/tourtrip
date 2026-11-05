@@ -1,5 +1,6 @@
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
+  faArrowRight,
   faArrowRightArrowLeft,
   faBars,
   faBan,
@@ -80,6 +81,7 @@ import {
 // The API and the data files refer to icons by these names, so a response never carries a component.
 export const icons = {
   amex: faCcAmex,
+  "arrow-right": faArrowRight,
   "apple-pay": faCcApplePay,
   ban: faBan,
   beach: faUmbrellaBeach,

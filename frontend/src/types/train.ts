@@ -1,6 +1,6 @@
 import type { seatClasses } from "@/constants";
 import type { FlightLeg, FlightSort, FlightTip, FareDay, TripType, TrustItem } from "./flight";
-import type { Section } from "./home";
+import type { LinkItem, Section } from "./home";
 
 export type SeatClass = (typeof seatClasses)[number];
 
@@ -50,18 +50,47 @@ export type TrainSearchResult = {
 };
 
 export type TrainRoute = {
-  id: string;
   from: string;
   to: string;
-  duration: string;
   fromPrice: number | string;
   currency: string;
+};
+
+export type TrainRouteGroup = {
+  id: string;
+  title: string;
   imageUrl: string;
+  routes: TrainRoute[];
+};
+
+export type TrainTravelCard = {
+  id: string;
+  title: string;
+  imageUrl: string;
+  links: LinkItem[];
+  searches: LinkItem[];
+};
+
+export type TrainJourneyColumn = {
+  id: string;
+  title: string;
+  links: LinkItem[];
+};
+
+export type TrainGuideTab = {
+  id: string;
+  label: string;
+  cities: string[];
 };
 
 export type TrainsContent = {
   hero: { title: string; subtitle: string; imageUrl: string };
-  trust: Section<TrustItem> & { moreLabel: string };
-  routes: Section<TrainRoute>;
-  faqs: Section<FlightTip>;
+  benefits: TrustItem[];
+  sectionLinks: LinkItem[];
+  operators: Section<string> & { note: string };
+  regions: (Section<TrainTravelCard> & { id: string })[];
+  routeSections: (Section<TrainRouteGroup> & { id: string })[];
+  steps: Section<FlightTip>;
+  guides: { title: string; moreLabel: string; moreHref: string; tabs: TrainGuideTab[] };
+  journeys: Section<TrainJourneyColumn>;
 };

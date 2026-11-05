@@ -10,7 +10,7 @@ Check every built page against its https://www.trip.com/ page, section by sectio
 4. Fix the page, check the "Done when" line, then tick the box.
 5. Stop and review before starting the next page.
 
-**Next task: B4**
+**Next task: B5**
 
 New pages in `TODO.md` section 3 wait until this audit is finished, so they are built to the corrected pattern.
 
@@ -101,7 +101,7 @@ Everything else builds on these.
 | [x] B1 | `/` | https://www.trip.com/ |
 | [x] B2 | `/hotels` | https://www.trip.com/hotels/ |
 | [x] B3 | `/flights` | https://www.trip.com/flights/ |
-| [ ] B4 | `/trains` | https://www.trip.com/trains/ |
+| [x] B4 | `/trains` | https://www.trip.com/trains/ |
 | [ ] B5 | `/attractions` | https://www.trip.com/things-to-do/ |
 | [ ] B6 | `/cars` | https://www.trip.com/carhire/ |
 | [ ] B7 | `/packages` | https://www.trip.com/packages/ |
@@ -119,7 +119,7 @@ Everything else builds on these.
 - **B1 Home:** hero with search, new user offers, inspiration, places, moments, handpicked hotels, app, recommendations. Choosing a destination tile swaps the next sections for that place, with a routes section added. Our routes use sample flight deals, because the tile sections only have those fares. Left out: the "Viewed" and haul tags, which need the visitor's location, and the QR code, store buttons and stats in the app band.
 - **B2 Hotels:** hero, welcome offer, what's new, top luxury hotels, budget-friendly properties, trending guest houses. **This is the biggest change:** `/hotels` becomes the landing page, and the current list moves to `/hotels/list`, as on Trip.com. Every link to the list changes too. Done: the old `/hotels?destination=` links redirect to the list. Left out: the app ratings, the price match promise and the discount offer, which we can't back up, and the "Read Reviews" toggle on cards, because sample reviews are only on hotel pages. The offer banner lists what a free account really gives. Our sample data has no guest houses, so that row shows top-rated stays.
 - **B3 Flights:** hero, trust, trending, partner airlines, status updates, what's happening, why book, how to book, recommendations. Done with a sticky search. Airlines are sample names, marked as samples. The flight status band is left out and the planned app band sits there instead. The multi-city search option is left out, because booking it needs its own flow.
-- **B4 Trains:** hero, operators, trust, Europe by country, Asia by country, popular European routes, popular Asian routes.
+- **B4 Trains:** hero, operators, trust, Europe by country, Asia by country, popular European routes, popular Asian routes. Done, with a sticky section menu, how to book, guides and a journeys link block, and Africa added as a third region because our sample routes include it. Operators are sample names, marked as samples, so they have no region tabs and no logos. Left out: the Buses tab, the open return option, the no booking fees and price promise strip, the Trustpilot reviews and usage stats, and rail passes and airport express, which we don't sell. The old FAQ is replaced by how to book, because the reference has no FAQ here. Country flags are left out because Font Awesome has none. The Nigeria cards use a general rail photo until a better one is chosen.
 - **B5 Attractions:** hero, trending destinations, recommended for you.
 - **B6 Cars:** hero, promo codes, types, cities, reviews, brands, FAQs, guide, why book, selection, tips, recommendations.
 - **B7 Packages:** hero, three benefits, daily deals.

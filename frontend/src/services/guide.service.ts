@@ -24,6 +24,12 @@ export const getGuides = async ({ city, page }: GuideFilters): Promise<GuideList
   };
 };
 
+export const getGuidesByCity = async (cities: string[]): Promise<Guide[]> => {
+  const results = await Promise.all(cities.map((city) => getGuides({ city, page: 1 })));
+
+  return results.flatMap((result) => result.items);
+};
+
 export const getGuideBySlug = async (slug: string): Promise<Guide | null> => {
   if (!isApiLive("guides")) {
     return guides.find((guide) => guide.slug === slug) ?? null;

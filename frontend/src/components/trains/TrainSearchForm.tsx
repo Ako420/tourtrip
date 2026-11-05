@@ -84,7 +84,7 @@ const TrainSearchForm = ({ initialValues, stations }: TrainSearchFormProps) => {
 
   return (
     <form onSubmit={handleSubmit} role="search" noValidate className="rounded-panel bg-surface p-4 text-ink shadow-card sm:p-5">
-      <div className="mb-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+      <div className="mb-4 flex flex-wrap gap-x-5 gap-y-2">
         {tripTypes.map((type) => (
           <label key={type.value} className="flex cursor-pointer items-center gap-2">
             <input
@@ -99,7 +99,7 @@ const TrainSearchForm = ({ initialValues, stations }: TrainSearchFormProps) => {
         ))}
       </div>
 
-      <div className="grid gap-3 xl:grid-cols-[1fr_auto_auto]">
+      <div className="grid gap-3 xl:grid-cols-[1fr_auto_auto_auto]">
         <div className="relative rounded-card border border-line sm:grid sm:grid-cols-2">
           <div className="border-b border-line sm:border-r sm:border-b-0">
             <label className="flex h-14 items-center gap-3 px-4">
@@ -166,7 +166,7 @@ const TrainSearchForm = ({ initialValues, stations }: TrainSearchFormProps) => {
           <FieldError message={errors.departDate?.[0] ?? errors.returnDate?.[0]} />
         </div>
 
-        <div className="flex h-14 items-center rounded-card border border-line px-4 text-sm xl:w-60">
+        <div className="flex h-14 items-center rounded-card border border-line px-4 text-sm xl:w-56">
           <PickerPopover iconName="user" summary={`${formatCount(adults + children, "traveler")} · ${seatClass}`}>
             <CounterRow label="Adults" value={adults} {...passengerLimits.adults} onChange={setAdults} />
             <CounterRow label="Children" value={children} {...passengerLimits.children} onChange={setChildren} />
@@ -184,10 +184,8 @@ const TrainSearchForm = ({ initialValues, stations }: TrainSearchFormProps) => {
             </label>
           </PickerPopover>
         </div>
-      </div>
 
-      <div className="mt-3 flex justify-end">
-        <Button type="submit" size="lg" className="w-full sm:w-auto sm:px-10">
+        <Button type="submit" size="lg" className="w-full sm:ml-auto sm:w-auto sm:px-8">
           <Icon name="search" />
           Search
         </Button>

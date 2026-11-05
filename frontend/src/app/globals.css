@@ -100,6 +100,17 @@
   }
 }
 
+/* The larger section title on the long landing pages. */
+@utility type-section-lg {
+  font-size: var(--text-2xl);
+  line-height: var(--text-2xl--line-height);
+
+  @variant sm {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+
 @utility type-price {
   font-size: var(--text-2xl);
   line-height: var(--text-2xl--line-height);

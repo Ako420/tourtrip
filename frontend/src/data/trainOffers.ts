@@ -4,8 +4,22 @@ export const trainStations = [
   "Abuja",
   "Amsterdam",
   "Barcelona",
+  "Beijing",
+  "Berlin",
+  "Bordeaux",
   "Brussels",
+  "Busan",
   "Cape Town",
+  "Daegu",
+  "Durban",
+  "Edinburgh",
+  "Florence",
+  "Frankfurt",
+  "Guangzhou",
+  "Gyeongju",
+  "Hamburg",
+  "Hiroshima",
+  "Hong Kong",
   "Ibadan",
   "Johannesburg",
   "Kaduna",
@@ -13,18 +27,30 @@ export const trainStations = [
   "Lagos",
   "Lisbon",
   "London",
+  "Lyon",
   "Madrid",
+  "Manchester",
+  "Marseille",
   "Milan",
   "Mombasa",
+  "Munich",
   "Nairobi",
+  "Naples",
   "Osaka",
   "Paris",
   "Porto",
   "Rome",
+  "Seoul",
+  "Seville",
+  "Shanghai",
   "Tokyo",
+  "Valencia",
+  "Venice",
+  "Xi'an",
+  "York",
 ];
 
-const operators = [
+export const trainOperators = [
   { name: "Meridian Rail", code: "MR" },
   { name: "Coastline Express", code: "CE" },
   { name: "Highland Lines", code: "HL" },
@@ -46,12 +72,14 @@ const hash = (text: string) => {
 
 const roundToFive = (minutes: number) => minutes - (minutes % 5);
 
+const getBaseFare = (from?: string, to?: string) => 14 + (hash(`${from}|${to}`) % 80);
+
 const getDayFactor = (search: TrainSearch, date: string) => {
   return 1 + ((hash(`${search.from}|${search.to}|${date}`) % 31) - 15) / 100;
 };
 
 const getTripPrice = (search: TrainSearch, date: string, factor = 1) => {
-  const baseFare = 14 + (hash(`${search.from}|${search.to}`) % 80);
+  const baseFare = getBaseFare(search.from, search.to);
   const tripFactor = search.tripType === "round-trip" ? 1.8 : 1;
 
   return Math.round(baseFare * classMultipliers[search.seatClass] * tripFactor * getDayFactor(search, date) * factor);
@@ -63,6 +91,9 @@ const getFareFactor = (index: number, changes: number) => {
 
 // The lowest adult fare for a date, used by the date strip.
 export const getTrainFareForDate = (search: TrainSearch, date: string) => getTripPrice(search, date, 0.9);
+
+// The lowest one-way fare on any date, used by the route lists.
+export const getTrainRouteFare = (from: string, to: string) => Math.round(getBaseFare(from, to) * 0.9 * 0.85);
 
 const buildLeg = (from: string, to: string, date: string, index: number, changes: number, offset: number): FlightLeg => {
   const routeHash = hash([from, to].sort().join("|"));
@@ -85,7 +116,7 @@ const buildTrainOffers = (search: TrainSearch): TrainOffer[] => {
   const { from = "", to = "", departDate = "", returnDate, tripType, seatClass, adults, children } = search;
 
   return Array.from({ length: OFFER_COUNT }, (_, index) => {
-    const operator = operators[index % operators.length];
+    const operator = trainOperators[index % trainOperators.length];
     const changes = index % 2 === 0 ? 0 : index % 5 === 3 ? 2 : 1;
     const pricePerAdult = getTripPrice(search, departDate, getFareFactor(index, changes));
 
