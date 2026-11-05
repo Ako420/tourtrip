@@ -1,10 +1,5 @@
 import { z } from "zod";
-
-const emailField = z
-  .string("Enter your email address")
-  .trim()
-  .toLowerCase()
-  .pipe(z.email("Enter a valid email address"));
+import { emailField } from "../utils/validators.js";
 
 // bcrypt only reads the first 72 bytes, and some characters take more than one byte.
 const newPasswordField = z

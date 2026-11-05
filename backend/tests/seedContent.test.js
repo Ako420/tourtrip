@@ -10,7 +10,8 @@ const samples = JSON.parse(readFileSync(new URL("../prisma/seed-data/content.jso
 const iconsFile = readFileSync(new URL("../../frontend/src/constants/icons.ts", import.meta.url), "utf8");
 
 const KEYS = [
-  "app", "attractions", "cars", "flights", "home", "legal-privacy", "legal-terms", "packages", "planner", "trains",
+  "app", "attractions", "cars", "flights", "home", "hotels", "legal-privacy", "legal-terms", "packages", "planner",
+  "trains",
 ];
 
 const IMAGE_FIELDS = ["heroImageUrl", "imageUrl", "mapImageUrl"];

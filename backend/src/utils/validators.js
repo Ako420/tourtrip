@@ -10,6 +10,12 @@ const listOf = (separator) => {
   };
 };
 
+export const emailField = z
+  .string("Enter your email address")
+  .trim()
+  .toLowerCase()
+  .pipe(z.email("Enter a valid email address"));
+
 export const isoDate = z.iso.date("Enter a valid date");
 
 // z.coerce.boolean() would turn the text "false" into true.

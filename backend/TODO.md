@@ -8,7 +8,7 @@ The full plan for the Hotel Jr backend: everything needed to run a travel site l
 2. Build only that task. Check its "Done when" line, then tick its box.
 3. Stop and review before starting the next one.
 
-**Next task: 5.2**
+**Next task: 6.2** (5.5 waits for the page audit)
 
 **Stack**
 
@@ -138,7 +138,7 @@ Browser → Next.js server → axios → router → validate(schema) → require
 - **Trusted data:** prices, room details and availability always come from the database, never from the request.
 - **Images:** the database stores Cloudinary URLs. Secrets stay on the backend, and uploads go through the API.
 - **Logs:** `morgan` writes every URL to the log, so personal details and tokens never go in a query string.
-- **Tests:** files run one at a time, because they share the test database.
+- **Tests:** files run one at a time, because they share the test database. Two sessions running `npm test` at once wipe each other's rows, and the failures look random.
 - **Migrations:** after `prisma migrate dev`, run `npm run db:generate` to update the Prisma client, and `npm run test:db` so tests get the new tables.
 - **Every request comes from the Next.js server**, so all requests share one IP. Rate limits on sensitive routes must key on something else, such as the email address.
 
@@ -447,6 +447,8 @@ Response:
 | GET | `/planner/content` | none | 5.2 | Content for the planner page |
 | GET | `/packages/content` | none | 5.2 | `PackagesContent` for the Flight + Hotel page |
 | GET | `/app/content` | none | 5.2 | `MobileAppContent` for the App page |
+| GET | `/home/destinations` | none | 5.5 | `HomeDestination[]` for the home page's explorer |
+| GET | `/hotels/content` | none | 5.5 | `HotelsContent` for the Hotels landing page |
 | GET | `/legal/:slug` | none | 5.2 | `LegalDocument` for `terms` or `privacy` |
 | GET | `/pages/:slug` | none | 21.6 | About, news and other info pages |
 
@@ -902,7 +904,7 @@ Response:
 { "reference": "SUP-7K2M9QXA" }
 ```
 
-`topic` is `booking`, `change`, `payment`, `account` or `other`. `bookingReference` is optional, and can be empty.
+`topic` is `booking`, `change`, `payment`, `account` or `other`. `bookingReference` is optional, and can be empty. It returns 429 `TOO_MANY_TICKETS` after 5 tickets in an hour from one email.
 
 ### 5.17 Admin
 
@@ -934,7 +936,7 @@ All need the admin role.
 | 2 | 3 | axios connection, and turning the API on by area |
 | 3 | 6 | Cloudinary file storage |
 | 4 | 8 | Hotels |
-| 5 | 4 | Page content and support |
+| 5 | 5 | Page content and support |
 | 6 | 9 | Flights |
 | 7 | 7 | Attractions |
 | 8 | 9 | Trains |
@@ -1106,7 +1108,7 @@ Turn each area on once its task passes. Run `npx next build` with the area on fi
 | --- | --- | --- |
 | `accounts` | Login, signup, `/auth/me` | This task |
 | `hotels` | Hotels, destinations | 4.8 |
-| `content` | Page content, legal pages | 5.2 |
+| `content` | Page content, legal pages | 5.5 |
 | `support` | FAQs, support tickets | 5.4 |
 | `flights` | Flight search, deals, offers | 6.9 |
 | `attractions` | Attractions, planner suggestions | 7.7 |
@@ -1292,7 +1294,7 @@ Folders are fixed in one list: `hotels`, `rooms`, `attractions`, `cars`, `conten
 
 **Done when:** rows exist for `home`, `flights`, `attractions`, `cars`, `trains`, `packages`, `planner`, `app`, `legal-terms` and `legal-privacy`.
 
-#### [ ] 5.2 Build the page content endpoints
+#### [x] 5.2 Build the page content endpoints
 
 **Files:** `services/content.service.js`, `controllers/content.controller.js`, `routers/content.router.js`
 
@@ -1302,7 +1304,7 @@ Folders are fixed in one list: `hotels`, `rooms`, `attractions`, `cars`, `conten
 
 **Done when:** every response matches the sample data, apart from image URLs.
 
-#### [ ] 5.3 Build `GET /support/faqs`
+#### [x] 5.3 Build `GET /support/faqs`
 
 - Add `Faq` and migrate. The `/support` page already calls this endpoint.
 - Seed the 16 entries from `frontend/src/data/supportFaqs.ts`, keeping their ids and order.
@@ -1310,24 +1312,36 @@ Folders are fixed in one list: `hotels`, `rooms`, `attractions`, `cars`, `conten
 
 **Done when:** the response matches the sample data, and seeding twice creates no duplicates.
 
-#### [ ] 5.4 Build `POST /support/tickets`
+#### [x] 5.4 Build `POST /support/tickets`
 
 **Files:** `validators/support.validator.js`, `services/support.service.js`, `controllers/support.controller.js`, `routers/support.router.js`, `utils/reference.js`
 
 - Add `SupportTicket` and migrate.
 - Validate like `supportTicketSchema`: name 2-100, a known topic, and a message of 20-2000 characters. Store an empty `bookingReference` as null.
 - Add `generateReference(prefix)`, which returns the prefix, a dash and 8 random characters from `crypto.randomInt`, leaving out `0`, `O`, `1` and `I`. Tickets use `SUP`.
-- Use `optionalAuth`, and pass `{ auth: true }` in `frontend/src/services/support.service.ts`, so tickets link to the account.
+- Use `optionalAuth`, and pass `{ auth: true }` in `frontend/src/services/support.service.ts`, so tickets link to the account. `optionalAuth` rejects a bad token, so the frontend sends the ticket again as a guest after a 401. A session that has run out shouldn't stop someone from asking for help.
 - This form is public, so rate limit it by email: 5 tickets an hour.
 - Return 201 with `{ reference }`.
 
 **Done when:** tests cover a guest ticket, a linked ticket, an empty reference, a short message and the rate limit.
 
+#### [ ] 5.5 Turn on the `content` area
+
+Task 5.2 passed against the committed frontend data, and a build with `content` on worked before the home page redesign. It stays off for now, because the home page reads `/home/destinations`, which doesn't exist yet, and the frontend's pages are still being changed one at a time in `PAGE_AUDIT.md`.
+
+- Build `GET /home/destinations`. Each destination includes `hotels` as `HotelSummary`, so read those from the hotel tables instead of copying them into a block.
+- Check `frontend/src/services` for any other `isApiLive("content")` call added since.
+- Export `prisma/seed-data/content.json` again, then re-seed.
+- Run `npx next build` with `content` on, then add it to `API_AREAS`.
+- Do this once the page audit is finished, because after this, edits to these pages' `src/data` files no longer reach the site.
+
+**Done when:** every content page reads the API, and `/home/destinations` matches the sample data apart from image URLs.
+
 ---
 
 ### Phase 6: Flights
 
-#### [ ] 6.1 Add the flight models
+#### [x] 6.1 Add the flight models
 
 - Add `Airport`, `Airline`, `FlightSchedule`, `FlightDeparture` and `FlightDeal`, then migrate.
 
