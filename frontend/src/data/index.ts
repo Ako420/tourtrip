@@ -15,3 +15,4 @@ export { default as buildFlightOffers, getFareForDate } from "./flightOffers";
 export { default as flightsContent } from "./flights";
 export { default as homeContent } from "./home";
 export { default as hotels } from "./hotels";
+export { default as supportFaqs } from "./supportFaqs";

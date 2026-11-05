@@ -10,6 +10,7 @@ export * from "./flightBooking.service";
 export * from "./home.service";
 export * from "./legal.service";
 export * from "./planner.service";
+export * from "./support.service";
 export * from "./train.service";
 export * from "./hotel.service";
 export { ApiError, isApiEnabled } from "./http";

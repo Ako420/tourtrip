@@ -15,3 +15,4 @@ export { default as flightBookingTripSchema } from "./flightBookingTrip";
 export { default as flightSearchSchema } from "./flightSearch";
 export { default as loginSchema } from "./login";
 export { default as signupSchema } from "./signup";
+export { default as supportTicketSchema } from "./supportTicket";

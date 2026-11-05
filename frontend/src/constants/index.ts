@@ -6,3 +6,4 @@ export * from "./navigation";
 export * from "./planner";
 export * from "./search";
 export * from "./trains";
+export * from "./support";
