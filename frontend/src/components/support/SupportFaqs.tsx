@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { supportProducts } from "@/constants";
 import type { SupportFaq, SupportProductId } from "@/types";
-import FaqList from "../ui/FaqList";
 import Icon from "../ui/Icon";
 import PillTabs from "../ui/PillTabs";
 import SectionHeading from "../ui/SectionHeading";
@@ -11,6 +10,8 @@ import SectionHeading from "../ui/SectionHeading";
 type SupportFaqsProps = {
   faqs: SupportFaq[];
 };
+
+const tileClass = "rounded-card bg-surface-alt p-4 transition-colors duration-300 ease-out hover:text-primary";
 
 const SupportFaqs = ({ faqs }: SupportFaqsProps) => {
   const [productId, setProductId] = useState<SupportProductId>(supportProducts[0].id);
@@ -23,7 +24,7 @@ const SupportFaqs = ({ faqs }: SupportFaqsProps) => {
     : faqs.filter((faq) => faq.product === productId);
 
   return (
-    <section className="mx-auto mt-10 max-w-content">
+    <section className="mx-auto max-w-content rounded-card bg-surface p-4 shadow-card sm:p-6">
       <SectionHeading>How can we help?</SectionHeading>
 
       <label className="mb-4 flex h-12 items-center gap-3 rounded-md border border-line px-3 transition-colors duration-200 focus-within:border-primary">
@@ -44,17 +45,21 @@ const SupportFaqs = ({ faqs }: SupportFaqsProps) => {
         </div>
       )}
 
-      {visibleFaqs.length > 0 ? (
-        <FaqList key={search || productId} items={visibleFaqs} />
-      ) : (
-        <p className="rounded-card border border-line p-5 text-sm text-muted">
-          No answers match your search.{" "}
-          <a href="#contact" className="font-medium text-primary hover:underline">
-            Send us a message
-          </a>{" "}
-          instead.
-        </p>
-      )}
+      <div key={search || productId} className="grid items-start gap-2 md:grid-cols-2">
+        {visibleFaqs.map((faq) => (
+          <details key={faq.id} className={`group ${tileClass}`}>
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
+              {faq.question}
+              <Icon name="chevron-right" className="text-sm transition-transform duration-300 group-open:rotate-90" />
+            </summary>
+            <p className="mt-2 text-sm text-ink-soft">{faq.answer}</p>
+          </details>
+        ))}
+        <a href="#contact" className={`flex items-center justify-between gap-4 ${tileClass}`}>
+          Have a different question? Send us a message.
+          <Icon name="chevron-right" className="text-sm" />
+        </a>
+      </div>
     </section>
   );
 };

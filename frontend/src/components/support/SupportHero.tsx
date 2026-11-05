@@ -8,14 +8,14 @@ type SupportHeroProps = {
 
 const SupportHero = ({ accountLink }: SupportHeroProps) => {
   return (
-    <section className="overflow-hidden rounded-card bg-primary-deep px-6 py-10 text-white sm:px-10 sm:py-14">
+    <section className="bg-primary-deep px-4 pt-32 pb-16 text-white xl:pt-22 xl:pb-20">
       <div className="mx-auto flex max-w-content items-center justify-between gap-8">
         <div>
           <h1 className="type-hero font-bold">
             Customer support<span className="text-accent">.</span>
           </h1>
-          <p className="mt-3 text-white/80">Find an answer, check your booking or send us a message.</p>
-          <div className="mt-6 flex flex-wrap gap-3">
+          <p className="mt-1 text-white/90">Find an answer, check your booking or send us a message.</p>
+          <div className="mt-4 flex flex-wrap gap-2">
             <ButtonLink href="/bookings" variant="inverse" size="sm">
               Find bookings
             </ButtonLink>

@@ -1,11 +1,13 @@
 import { randomUUID } from "node:crypto";
-import { supportFaqs } from "@/data";
+import { appPromo, supportFaqs } from "@/data";
 import type { SupportFaq, SupportTicketRequest, SupportTicketResponse } from "@/types";
 import { ApiError, apiGet, apiPost, isApiLive } from "./http";
 
 export const getSupportFaqs = async (): Promise<SupportFaq[]> => {
   return isApiLive("support") ? apiGet<SupportFaq[]>("/support/faqs") : supportFaqs;
 };
+
+export const getSupportApp = async () => appPromo;
 
 export const createSupportTicket = async (ticket: SupportTicketRequest): Promise<SupportTicketResponse> => {
   if (!isApiLive("support")) {
