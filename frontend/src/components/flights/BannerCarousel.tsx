@@ -4,13 +4,13 @@ import Carousel from "../ui/Carousel";
 import SectionHeading from "../ui/SectionHeading";
 
 type BannerCarouselProps = {
-  section: Section<Banner>;
+  section: Pick<Section<Banner>, "items"> & { title?: string };
 };
 
 const BannerCarousel = ({ section }: BannerCarouselProps) => {
   return (
     <section className="mx-auto mt-12 max-w-content">
-      <SectionHeading>{section.title}</SectionHeading>
+      {section.title && <SectionHeading>{section.title}</SectionHeading>}
 
       <Carousel label="promotions" slideClassName="w-72 lg:w-[calc((100%-2rem)/3)]">
         {section.items.map((banner) => (

@@ -1,6 +1,7 @@
 import type { attractionCategories, attractionSortOptions } from "@/constants";
+import type { TrustItem } from "./flight";
 import type { HotelPolicy, HotelReview, NearbyPlace, ReviewScore } from "./hotel";
-import type { RecommendationTab, Section } from "./home";
+import type { Banner, LinkItem, RecommendationTab, Section } from "./home";
 
 export type AttractionCategory = (typeof attractionCategories)[number]["id"];
 export type AttractionSort = (typeof attractionSortOptions)[number]["value"];
@@ -25,6 +26,14 @@ export type TrendingDestination = {
   id: string;
   name: string;
   imageUrl: string;
+  links?: LinkItem[];
+};
+
+export type AttractionRow = {
+  id: string;
+  title: string;
+  category: AttractionCategory;
+  imageUrl: string;
 };
 
 export type AttractionFilters = {
@@ -46,7 +55,11 @@ export type AttractionsContent = {
   hero: { title: string; subtitle: string; imageUrl: string };
   quickSearches: string[];
   trending: Section<TrendingDestination>;
+  offer: { title: string; points: string[]; ctaLabel: string; ctaHref: string };
+  banners: Banner[];
+  recommended: Section<AttractionRow>;
   resultsTitle: string;
+  benefits: TrustItem[];
   recommendations: Section<RecommendationTab>;
 };
 

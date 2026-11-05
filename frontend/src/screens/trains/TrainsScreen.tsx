@@ -1,10 +1,10 @@
 import { Suspense } from "react";
 import {
+  BenefitColumns,
   Breadcrumb,
   FlightsSkeleton,
   SectionNav,
   StickyBar,
-  TrainBenefits,
   TrainGuides,
   TrainHero,
   TrainJourneys,
@@ -39,7 +39,7 @@ const TrainsContent = async ({ searchParams }: TrainsScreenProps) => {
           <Breadcrumb links={[{ label: "Hotel Jr", href: "/" }]} current="Trains" />
         </div>
 
-        <TrainBenefits items={content.benefits} />
+        <BenefitColumns items={content.benefits} />
         <TrainOperators section={content.operators} />
         {content.regions.map((region) => (
           <TrainRegion key={region.id} region={region} />

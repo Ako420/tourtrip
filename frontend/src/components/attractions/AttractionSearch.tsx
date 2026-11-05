@@ -22,17 +22,17 @@ const AttractionSearch = ({ initialQuery = "" }: AttractionSearchProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} role="search" className="flex h-14 items-center rounded-full bg-surface pr-1.5 pl-5 text-ink shadow-card">
-      <Icon name="search" className="text-ink-soft" />
+    <form onSubmit={handleSubmit} role="search" className="flex items-center gap-3">
       <input
         value={query}
         onChange={(event) => setQuery(event.target.value)}
         placeholder="Search places and things to do"
         aria-label="Search places and things to do"
-        className="mx-3 min-w-0 flex-1 bg-transparent outline-none placeholder:text-muted"
+        className="h-14 min-w-0 flex-1 rounded-2xl border border-line bg-transparent px-4 font-medium outline-none transition-colors duration-300 ease-out placeholder:text-muted focus:border-primary"
       />
-      <Button type="submit" className="rounded-full">
-        Search
+      <Button type="submit" size="lg" aria-label="Search" className="shrink-0 rounded-full sm:px-6">
+        <Icon name="search" />
+        <span className="hidden sm:inline">Search</span>
       </Button>
     </form>
   );
