@@ -11,7 +11,7 @@ const carDetails: Record<CarCategory, { name: string; photoId: string; seats: nu
   luxury: { name: "Porsche Panamera or similar", photoId: "photo-1503376780353-7e6692767b70", seats: 4, bags: 2, dayPrice: 145 },
 };
 
-const suppliers = [
+export const carSuppliers = [
   { name: "Roadway Rentals", rating: 8.8, factor: 1 },
   { name: "CityDrive", rating: 8.3, factor: 0.92 },
   { name: "Atlas Car Hire", rating: 9.1, factor: 1.12 },
@@ -29,7 +29,7 @@ const buildCarOffers = (search: CarSearch, days: number): CarOffer[] => {
   const ageFactor = search.isStandardAge ? 1 : NON_STANDARD_AGE_FACTOR;
 
   // Grouped by supplier so the default order shows a mix of car types.
-  return suppliers.flatMap((supplier, supplierIndex) => {
+  return carSuppliers.flatMap((supplier, supplierIndex) => {
     return carCategories.map(({ id, label }, categoryIndex) => {
       const car = carDetails[id];
       const pricePerDay = Math.round(car.dayPrice * supplier.factor * locationFactor * ageFactor);

@@ -1,5 +1,5 @@
 import type { carCategories, carSortOptions, carTransmissions } from "@/constants";
-import type { Section } from "./home";
+import type { LinkItem, RecommendationTab, Section } from "./home";
 import type { FlightTip, TrustItem } from "./flight";
 
 export type CarCategory = (typeof carCategories)[number]["id"];
@@ -67,10 +67,32 @@ export type CarCity = {
   imageUrl: string;
 };
 
+export type CarReview = {
+  id: string;
+  author: string;
+  score: number;
+  date: string;
+  carType: string;
+  text: string;
+};
+
+export type CarGuideSection = {
+  id: string;
+  title: string;
+  paragraphs: string[];
+  points: { label: string; text: string }[];
+};
+
 export type CarsContent = {
   hero: { title: string; imageUrl: string };
-  trust: Section<TrustItem> & { moreLabel: string };
+  offer: { title: string; points: string[]; ctaLabel: string; ctaHref: string };
+  benefits: TrustItem[];
+  sectionLinks: LinkItem[];
   types: Section<CarTypeTile>;
   cities: Section<CarCity>;
+  reviews: Section<CarReview> & { note: string };
+  suppliers: Section<string> & { note: string };
   faqs: Section<FlightTip>;
+  guide: Section<CarGuideSection>;
+  recommendations: Section<RecommendationTab>;
 };
