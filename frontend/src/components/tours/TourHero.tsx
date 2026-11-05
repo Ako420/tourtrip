@@ -1,9 +1,10 @@
 import Form from "next/form";
 import Link from "next/link";
-import { tourPaths } from "@/constants";
+import { tourPaths, tourTypeLabels } from "@/constants";
 import type { ToursContent, TourType } from "@/types";
 import AppImage from "../ui/AppImage";
 import Button from "../ui/Button";
+import ButtonLink from "../ui/ButtonLink";
 import Icon from "../ui/Icon";
 
 type TourHeroProps = {
@@ -12,11 +13,13 @@ type TourHeroProps = {
   query?: string;
 };
 
+const tourTypes = Object.keys(tourPaths) as TourType[];
+
 const TourHero = ({ type, content, query }: TourHeroProps) => {
   const path = tourPaths[type];
 
   return (
-    <section className="relative bg-primary-deep px-4 pt-32 pb-16 text-white sm:pb-20 xl:pt-24">
+    <section className="relative bg-primary-deep px-4 pt-32 pb-16 text-white sm:pb-20">
       <AppImage src={content.imageUrl} alt="" fill priority sizes="100vw" className="object-cover" />
       <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/40 to-ink/20" />
 
@@ -25,44 +28,60 @@ const TourHero = ({ type, content, query }: TourHeroProps) => {
           {content.title}
           <span className="text-accent">.</span>
         </h1>
-        <p className="mt-1 mb-5 text-sm text-white/90">{content.subtitle}</p>
+        <p className="mt-1 mb-4 text-lg">{content.subtitle}</p>
 
-        <Form
-          action={path}
-          scroll={false}
-          role="search"
-          className="flex flex-col gap-3 rounded-panel bg-surface p-4 text-ink shadow-card sm:flex-row sm:items-center"
-        >
-          <label className="flex h-14 min-w-0 items-center gap-3 rounded-card border border-line px-4 sm:flex-1">
-            <Icon name="location" className="text-ink-soft" />
-            <span className="sr-only">Where do you want to visit?</span>
-            <input
-              key={query}
-              name="q"
-              defaultValue={query}
-              placeholder="Where do you want to visit?"
-              className="w-full min-w-0 bg-transparent font-medium outline-none placeholder:text-muted"
-            />
-          </label>
-          <Button type="submit" size="lg" className="sm:px-10">
-            <Icon name="search" />
-            Search
-          </Button>
-        </Form>
+        <div className="rounded-panel bg-surface p-4 text-ink shadow-card">
+          <nav aria-label="Tour types" className="mb-4 flex gap-6">
+            {tourTypes.map((tourType) => (
+              <Link
+                key={tourType}
+                href={tourPaths[tourType]}
+                aria-current={tourType === type ? "page" : undefined}
+                className={`border-b-2 pb-2 transition-colors duration-300 ease-out hover:text-primary ${
+                  tourType === type ? "border-ink font-semibold" : "border-transparent text-ink-soft"
+                }`}
+              >
+                {tourTypeLabels[tourType]}
+              </Link>
+            ))}
+          </nav>
 
-        <p className="mt-4 flex flex-wrap items-center gap-2 text-sm">
-          <span className="font-medium">Popular:</span>
-          {content.popular.map((place) => (
-            <Link
-              key={place}
-              href={`${path}?q=${encodeURIComponent(place)}`}
-              scroll={false}
-              className="rounded-md bg-ink/40 px-2.5 py-1 transition-colors duration-300 ease-out hover:bg-ink/70"
-            >
-              {place}
-            </Link>
-          ))}
-        </p>
+          <Form action={path} scroll={false} role="search" className="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <label className="block min-w-0 rounded-card border border-line px-4 py-2 sm:flex-1">
+              <span className="block text-xs text-ink-soft">Where do you want to visit?</span>
+              <input
+                key={query}
+                name="q"
+                defaultValue={query}
+                placeholder="Enter a destination or keyword"
+                className="w-full min-w-0 bg-transparent font-medium outline-none placeholder:text-muted"
+              />
+            </label>
+            {content.customize && (
+              <ButtonLink href={content.customize.href} variant="outline" size="lg">
+                {content.customize.label}
+              </ButtonLink>
+            )}
+            <Button type="submit" size="lg" className="sm:px-8">
+              <Icon name="search" />
+              Search
+            </Button>
+          </Form>
+
+          <p className="mt-3 flex flex-wrap items-center gap-2 text-sm">
+            <span className="font-medium">Popular:</span>
+            {content.popular.map((place) => (
+              <Link
+                key={place}
+                href={`${path}?q=${encodeURIComponent(place)}`}
+                scroll={false}
+                className="rounded-md bg-surface-alt px-3 py-1.5 transition-colors duration-300 ease-out hover:bg-primary-soft hover:text-primary"
+              >
+                {place}
+              </Link>
+            ))}
+          </p>
+        </div>
       </div>
     </section>
   );

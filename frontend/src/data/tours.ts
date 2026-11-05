@@ -1,4 +1,5 @@
-import type { TourDay, TourDeparture, TourDetails, ToursContent, TourType } from "@/types";
+import { tourPaths } from "@/constants";
+import type { TourDay, TourDeparture, TourDetails, TourPlace, ToursContent, TourType } from "@/types";
 import unsplashImage from "./unsplashImage";
 
 type TourInput = {
@@ -275,6 +276,36 @@ export const tours: TourDetails[] = rows.map(({ photoId, firstDeparture, itinera
   departures: toDepartures(tour.slug, tour.price, firstDeparture),
 }));
 
+const place = (path: string, name: string, photoId: string): TourPlace => {
+  return { id: name.toLowerCase().replaceAll(" ", "-"), name, imageUrl: unsplashImage(photoId, 500), href: `${path}?q=${encodeURIComponent(name)}` };
+};
+
+const placeLinks = (path: string, label: string, places: string[]) => {
+  return places.map((name) => ({ label: `${label} in ${name}`, href: `${path}?q=${encodeURIComponent(name)}` }));
+};
+
+const recommendations: ToursContent["recommendations"] = {
+  title: "Hotel Jr recommended",
+  items: [
+    {
+      id: "cities",
+      label: "Popular cities",
+      links: [
+        ...placeLinks(tourPaths.private, "Private tours", ["Tokyo", "Beijing", "Bali", "Marrakech", "Cape Town", "Rome"]),
+        ...placeLinks(tourPaths.group, "Group tours", ["Nairobi", "Cairo", "Tokyo", "Santorini", "Cappadocia", "Tromso"]),
+      ],
+    },
+    {
+      id: "countries",
+      label: "Popular countries",
+      links: [
+        ...placeLinks(tourPaths.private, "Private tours", ["Japan", "China", "Indonesia", "Morocco", "South Africa", "Italy"]),
+        ...placeLinks(tourPaths.group, "Group tours", ["Kenya", "Egypt", "Japan", "Greece", "Turkey", "Norway"]),
+      ],
+    },
+  ],
+};
+
 // Same shape as GET /tours/content. Used until API_URL is set.
 export const toursContent: Record<TourType, ToursContent> = {
   private: {
@@ -282,11 +313,74 @@ export const toursContent: Record<TourType, ToursContent> = {
     subtitle: "Your own guide and car, on the dates you choose.",
     imageUrl: unsplashImage("photo-1476514525535-07fb3b4ae5f1", 2000),
     popular: ["Tokyo", "Bali", "Rome", "Cape Town", "Marrakech", "Beijing"],
+    customize: { label: "Customize my trip", href: "/planner" },
+    recommended: {
+      title: "Recommended destinations",
+      tabs: [
+        { id: "all", label: "All", cities: ["Tokyo", "Beijing", "Bali", "Marrakech", "Cape Town", "Rome"] },
+        { id: "asia", label: "Asia", cities: ["Tokyo", "Beijing", "Bali"] },
+        { id: "africa", label: "Africa", cities: ["Marrakech", "Cape Town"] },
+        { id: "europe", label: "Europe", cities: ["Rome"] },
+      ],
+    },
+    cities: {
+      title: "Popular cities",
+      items: [
+        place(tourPaths.private, "Tokyo", "photo-1540959733332-eab4deabeeaf"),
+        place(tourPaths.private, "Beijing", "photo-1508804185872-d7badad00f7d"),
+        place(tourPaths.private, "Bali", "photo-1537996194471-e657df975ab4"),
+        place(tourPaths.private, "Marrakech", "photo-1597212618440-806262de4f6b"),
+        place(tourPaths.private, "Cape Town", "photo-1580060839134-75a5edca2e99"),
+        place(tourPaths.private, "Rome", "photo-1552832230-c0197dd311b5"),
+      ],
+    },
+    countries: {
+      title: "Popular global destinations",
+      items: [
+        place(tourPaths.group, "Kenya", "photo-1516426122078-c23e76319801"),
+        place(tourPaths.group, "Egypt", "photo-1553913861-c0fddf2619ee"),
+        place(tourPaths.group, "Greece", "photo-1570077188670-e3a8d69ac5ff"),
+        place(tourPaths.group, "Turkey", "photo-1641128324972-af3212f0f6bd"),
+        place(tourPaths.group, "Norway", "photo-1531366936337-7c912a4589a7"),
+      ],
+    },
+    recommendations,
   },
   group: {
     title: "Group Tours",
     subtitle: "Set departures, shared with fellow travelers.",
     imageUrl: unsplashImage("photo-1516426122078-c23e76319801", 2000),
     popular: ["Nairobi", "Cairo", "Tokyo", "Santorini", "Cappadocia", "Tromso"],
+    recommended: {
+      title: "Recommended destinations",
+      tabs: [
+        { id: "all", label: "All", cities: ["Nairobi", "Cairo", "Tokyo", "Santorini", "Cappadocia", "Tromso"] },
+        { id: "africa", label: "Africa", cities: ["Nairobi", "Cairo"] },
+        { id: "asia", label: "Asia", cities: ["Tokyo", "Cappadocia"] },
+        { id: "europe", label: "Europe", cities: ["Santorini", "Tromso"] },
+      ],
+    },
+    cities: {
+      title: "Popular cities",
+      items: [
+        place(tourPaths.group, "Nairobi", "photo-1516426122078-c23e76319801"),
+        place(tourPaths.group, "Cairo", "photo-1553913861-c0fddf2619ee"),
+        place(tourPaths.group, "Tokyo", "photo-1540959733332-eab4deabeeaf"),
+        place(tourPaths.group, "Santorini", "photo-1570077188670-e3a8d69ac5ff"),
+        place(tourPaths.group, "Cappadocia", "photo-1641128324972-af3212f0f6bd"),
+        place(tourPaths.group, "Tromso", "photo-1531366936337-7c912a4589a7"),
+      ],
+    },
+    countries: {
+      title: "Popular global destinations",
+      items: [
+        place(tourPaths.private, "China", "photo-1508804185872-d7badad00f7d"),
+        place(tourPaths.private, "Indonesia", "photo-1537996194471-e657df975ab4"),
+        place(tourPaths.private, "Morocco", "photo-1597212618440-806262de4f6b"),
+        place(tourPaths.private, "South Africa", "photo-1580060839134-75a5edca2e99"),
+        place(tourPaths.private, "Italy", "photo-1552832230-c0197dd311b5"),
+      ],
+    },
+    recommendations,
   },
 };

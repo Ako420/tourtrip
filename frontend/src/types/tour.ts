@@ -1,6 +1,7 @@
 import type { z } from "zod";
 import type { enquirySchema } from "@/schemas";
 import type { tourPaths } from "@/constants";
+import type { LinkItem, RecommendationTab, Section } from "./home";
 
 export type TourType = keyof typeof tourPaths;
 
@@ -39,11 +40,29 @@ export type TourDetails = Tour & {
   departures: TourDeparture[];
 };
 
+export type TourPlace = {
+  id: string;
+  name: string;
+  imageUrl: string;
+  href: string;
+};
+
+export type TourDestinationTab = {
+  id: string;
+  label: string;
+  cities: string[];
+};
+
 export type ToursContent = {
   title: string;
   subtitle: string;
   imageUrl: string;
   popular: string[];
+  customize?: LinkItem;
+  recommended: { title: string; tabs: TourDestinationTab[] };
+  cities: Section<TourPlace>;
+  countries: Section<TourPlace>;
+  recommendations: Section<RecommendationTab>;
 };
 
 export type EnquiryValues = z.infer<typeof enquirySchema>;
