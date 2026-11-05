@@ -8,7 +8,7 @@ The pages still to build. Every link below opens the "page not found" screen tod
 2. Build only that task. Check its "Done when" line, then tick its box.
 3. Stop and review before starting the next one.
 
-**Next task: 1.7**
+**Next task: 2.1**
 
 **Rules for every page**
 
@@ -78,7 +78,7 @@ The pages still to build. Every link below opens the "page not found" screen tod
 
 **Done when:** a search shows matching cruises and one opens its details page.
 
-#### [ ] 1.7 Map
+#### [x] 1.7 Map
 
 **Route:** `/map`. **API later:** backend phase 19.
 

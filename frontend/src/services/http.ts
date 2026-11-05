@@ -25,6 +25,7 @@ export type ApiArea =
   | "flights"
   | "guides"
   | "hotels"
+  | "map"
   | "packages"
   | "rewards"
   | "support"

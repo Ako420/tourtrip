@@ -9,6 +9,7 @@ export * from "./deal.service";
 export * from "./enquiry.service";
 export * from "./flight.service";
 export * from "./guide.service";
+export * from "./map.service";
 export * from "./package.service";
 export * from "./flightBooking.service";
 export * from "./home.service";

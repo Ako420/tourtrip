@@ -27,6 +27,7 @@ export { default as HotelsScreen } from "./hotels/HotelsScreen";
 export { default as InspirationScreen } from "./inspiration/InspirationScreen";
 export { default as LegalScreen } from "./legal/LegalScreen";
 export { default as LoginScreen } from "./login/LoginScreen";
+export { default as MapScreen } from "./map/MapScreen";
 export { default as NotFoundContent } from "./not-found/NotFoundContent";
 export { default as NotFoundScreen } from "./not-found/NotFoundScreen";
 export { default as PackageBookingConfirmedScreen } from "./package-booking/PackageBookingConfirmedScreen";

@@ -94,3 +94,17 @@ body {
   background: var(--color-surface);
   cursor: grab;
 }
+
+.map-pin {
+  border: 2px solid var(--color-surface);
+  border-radius: 9999px;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.4);
+}
+
+.map-pin-hotel {
+  background: var(--color-primary);
+}
+
+.map-pin-attraction {
+  background: var(--color-accent);
+}
