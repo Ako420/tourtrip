@@ -8,6 +8,7 @@ export * from "./carBooking.service";
 export * from "./deal.service";
 export * from "./flight.service";
 export * from "./guide.service";
+export * from "./package.service";
 export * from "./flightBooking.service";
 export * from "./home.service";
 export * from "./legal.service";

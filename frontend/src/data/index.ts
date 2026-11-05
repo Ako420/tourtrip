@@ -19,3 +19,4 @@ export { default as supportFaqs } from "./supportFaqs";
 export { dealCampaignLinks, dealCampaigns, dealPromotions } from "./deals";
 export { default as rewardsProgram } from "./rewards";
 export { default as guides } from "./guides";
+export { default as packagesContent } from "./packagesContent";

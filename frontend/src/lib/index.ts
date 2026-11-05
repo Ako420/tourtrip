@@ -13,3 +13,4 @@ export * from "./search";
 export * from "./tripPlan";
 export * from "./trainSearch";
 export * from "./guide";
+export * from "./packageSearch";

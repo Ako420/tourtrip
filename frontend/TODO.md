@@ -8,7 +8,7 @@ The pages still to build. Every link below opens the "page not found" screen tod
 2. Build only that task. Check its "Done when" line, then tick its box.
 3. Stop and review before starting the next one.
 
-**Next task: 1.4**
+**Next task: 1.5**
 
 **Rules for every page**
 
@@ -52,7 +52,7 @@ The pages still to build. Every link below opens the "page not found" screen tod
 
 **Done when:** the 11 links to this page work, and a guide opens from the list.
 
-#### [ ] 1.4 Flight + Hotel
+#### [x] 1.4 Flight + Hotel
 
 **Route:** `/packages`, plus results and booking. **API later:** `GET /packages/search`, `POST /packages/bookings` (backend 17.1, 17.2).
 

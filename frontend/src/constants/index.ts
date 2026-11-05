@@ -9,3 +9,4 @@ export * from "./trains";
 export * from "./support";
 export * from "./deals";
 export * from "./guides";
+export * from "./packages";
