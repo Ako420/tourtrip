@@ -10,7 +10,7 @@ Check every built page against its https://www.trip.com/ page, section by sectio
 4. Fix the page, check the "Done when" line, then tick the box.
 5. Stop and review before starting the next page.
 
-**Next task: D3**
+**Next task: D4**
 
 New pages in `TODO.md` section 3 wait until this audit is finished, so they are built to the corrected pattern.
 
@@ -159,7 +159,7 @@ Everything else builds on these.
 | --- | --- | --- |
 | [x] D1 | `/hotels/[slug]` | Hotel details |
 | [x] D2 | `/attractions/[slug]` | Attraction details |
-| [ ] D3 | `/tours/[slug]` | Tour details |
+| [x] D3 | `/tours/[slug]` | Tour details |
 | [ ] D4 | `/cruises/[slug]` | Cruise details |
 | [ ] D5 | `/deals/[slug]` | Campaign page |
 | [ ] D6 | `/inspiration/[slug]` | Guide article |
@@ -170,6 +170,7 @@ Everything else builds on these.
 
 - **D1:** Compared with a Trip hotel page while signed in. Search bar, back link, gallery, overview with price card, offer bar, tabs with price, room filters, reviews, location, amenities, policies and description now follow Trip's order. Left out because we have no data for them: several rates per room, photo sets per room, review summary, restaurant, fine print, questions, price match and a real map. Trip's Save and Share: we have Save only. Only two room filters are real for our data. The top search bar goes to the hotel list, and the bar above the rooms changes dates on this page. Tested with sample data, as the backend was off.
 - **D2:** Compared with a Trip tour page while signed in. Now a grey page with white cards: photo, title, price, tags, rating and highlights, then tabs with price, then two columns. Left: date, ticket options, quantity and total, then details and reviews. Right: know before you go, location, and a sticky ticket card. Left out because we have no data for them: more photos (the backend stores one), itinerary timeline, what's not included, booked count, review filters and review photos, questions. Location is kept, though Trip shows it inside the itinerary.
+- **D3:** Compared with a Trip group tour while signed in. Now a grey page with white cards: name, rating, photo, facts and highlights on the left, then tabs, a day-by-day itinerary that opens and closes, and what's included. On the right a sticky trip options panel: a calendar of departures with prices (or a start date for private tours), travelers, price, Check availability and Ask about this trip. Tours stay enquiry-only, so Check availability fills the enquiry form below. Left out because we have no data for them: more photos, details with photos, adult and child inclusion tabs, tour reviews, notice, itinerary PDF. Trip's blue band behind the page is also left out, as on the attraction page.
 
 ## E. Booking pages
 

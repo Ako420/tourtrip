@@ -4,7 +4,7 @@ import { sendEnquiryAction } from "@/actions/enquiry";
 import { enquiryLimits } from "@/constants";
 import { useToday, useZodForm } from "@/hooks";
 import { enquirySchema } from "@/schemas";
-import type { ContactDefaults, EnquiryResponse, EnquirySubject } from "@/types";
+import type { ContactDefaults, EnquiryDefaults, EnquiryResponse, EnquirySubject } from "@/types";
 import FormField from "../auth/FormField";
 import FormMessage from "../auth/FormMessage";
 import Button from "../ui/Button";
@@ -14,12 +14,13 @@ type EnquiryFormProps = {
   subject: EnquirySubject;
   dateOptions?: { value: string; label: string }[];
   contact?: ContactDefaults;
+  defaults?: EnquiryDefaults;
 };
 
 const inputClass =
   "w-full rounded-md border bg-surface px-3 outline-none transition-colors duration-200 focus:border-primary";
 
-const EnquiryForm = ({ subject, dateOptions, contact }: EnquiryFormProps) => {
+const EnquiryForm = ({ subject, dateOptions, contact, defaults }: EnquiryFormProps) => {
   const today = useToday();
   const { formProps, getError, isPending, message, result } = useZodForm<EnquiryResponse>(
     enquirySchema,
@@ -76,7 +77,7 @@ const EnquiryForm = ({ subject, dateOptions, contact }: EnquiryFormProps) => {
             <select
               id="date"
               name="date"
-              defaultValue=""
+              defaultValue={defaults?.date ?? ""}
               aria-invalid={Boolean(dateError)}
               className={`${inputClass} h-12 ${dateError ? "border-danger" : "border-line"}`}
             >
@@ -92,7 +93,14 @@ const EnquiryForm = ({ subject, dateOptions, contact }: EnquiryFormProps) => {
             {dateError && <p className="mt-1.5 text-sm text-danger">{dateError}</p>}
           </div>
         ) : (
-          <FormField name="date" label="Preferred start date" type="date" min={today ?? undefined} error={dateError} />
+          <FormField
+            name="date"
+            label="Preferred start date"
+            type="date"
+            min={today ?? undefined}
+            defaultValue={defaults?.date}
+            error={dateError}
+          />
         )}
 
         <FormField
@@ -102,7 +110,7 @@ const EnquiryForm = ({ subject, dateOptions, contact }: EnquiryFormProps) => {
           inputMode="numeric"
           min={enquiryLimits.minTravelers}
           max={enquiryLimits.maxTravelers}
-          defaultValue={2}
+          defaultValue={defaults?.travelers ?? 2}
           error={getError("travelers")}
         />
       </div>

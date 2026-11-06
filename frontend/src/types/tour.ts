@@ -79,3 +79,8 @@ export type EnquiryRequest = EnquiryValues & {
 export type EnquiryResponse = {
   reference: string;
 };
+
+export type EnquiryDefaults = {
+  date?: string;
+  travelers?: number;
+};

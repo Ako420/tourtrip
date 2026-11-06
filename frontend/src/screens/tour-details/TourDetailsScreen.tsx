@@ -6,21 +6,30 @@ import {
   HotelDetailsSkeleton,
   InclusionLists,
   SectionHeading,
-  TourDepartures,
+  SectionTabs,
   TourGrid,
+  TourHeader,
   TourItinerary,
-  TripHeader,
+  TourOptions,
 } from "@/components";
 import { tourPaths, tourTypeLabels } from "@/constants";
-import { formatCount, formatShortDate, formatTourLength, toContactDefaults } from "@/lib";
+import { formatCount, formatShortDate, parseEnquiryDefaults, toContactDefaults } from "@/lib";
 import { getCurrentUser, getMoreTours, getTourBySlug } from "@/services";
+import type { RouteParams } from "@/types";
 
 type TourDetailsScreenProps = {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<RouteParams>;
 };
 
-const TourDetailsContent = async ({ params }: TourDetailsScreenProps) => {
-  const { slug } = await params;
+const sections = [
+  { id: "itinerary", label: "Itinerary" },
+  { id: "included", label: "What's included" },
+  { id: "enquire", label: "Enquire" },
+];
+
+const TourDetailsContent = async ({ params, searchParams }: TourDetailsScreenProps) => {
+  const [{ slug }, query] = await Promise.all([params, searchParams]);
   const tour = await getTourBySlug(slug);
 
   if (!tour) {
@@ -28,6 +37,7 @@ const TourDetailsContent = async ({ params }: TourDetailsScreenProps) => {
   }
 
   const moreTours = await getMoreTours(tour);
+  const defaults = parseEnquiryDefaults(query);
   const dateOptions =
     tour.type === "group"
       ? tour.departures.map(({ date, seatsLeft }) => ({
@@ -45,33 +55,34 @@ const TourDetailsContent = async ({ params }: TourDetailsScreenProps) => {
         ]}
         current={tour.name}
       />
-      <TripHeader
-        name={tour.name}
-        imageUrl={tour.imageUrl}
-        summary={tour.summary}
-        facts={[
-          { iconName: "location", label: `${tour.city}, ${tour.country}` },
-          { iconName: "clock", label: formatTourLength(tour.days) },
-          { iconName: tour.type === "private" ? "compass" : "users", label: tour.type === "private" ? "Private tour" : "Group tour" },
-        ]}
-        rating={tour.rating}
-        reviewCount={tour.reviewCount}
-        price={tour.price}
-        currency={tour.currency}
-      />
-      <InclusionLists included={tour.included} notIncluded={tour.notIncluded} />
-      <TourItinerary days={tour.itinerary} />
-      <TourDepartures tour={tour} />
 
-      <section id="enquire" className="mt-10 scroll-mt-24">
-        <h2 className="text-xl font-bold">Enquire about this tour</h2>
-        <p className="mt-1 mb-4 text-sm text-muted">Tours are not booked instantly. Send your details and we will confirm with you.</p>
-        <EnquiryForm
-          subject={{ type: "tour", slug: tour.slug }}
-          dateOptions={dateOptions}
-          contact={toContactDefaults(await getCurrentUser())}
-        />
-      </section>
+      <div className="mt-4 grid gap-4 lg:grid-cols-[minmax(0,1fr)_23rem]">
+        <div className="min-w-0">
+          <TourHeader tour={tour} />
+        </div>
+
+        <div className="lg:col-start-2 lg:row-span-2 lg:row-start-1">
+          <TourOptions tour={tour} />
+        </div>
+
+        <div className="min-w-0 rounded-card bg-surface p-6">
+          <SectionTabs sections={sections} className="" />
+          <TourItinerary days={tour.itinerary} />
+          <InclusionLists included={tour.included} notIncluded={tour.notIncluded} />
+
+          <section id="enquire" className="mt-8 scroll-mt-32">
+            <h2 className="type-section font-bold">Enquire about this tour</h2>
+            <p className="mt-1 mb-4 text-sm text-ink-soft">Tours are not booked instantly. Send your details and we will confirm with you.</p>
+            <EnquiryForm
+              key={`${defaults.date}-${defaults.travelers}`}
+              subject={{ type: "tour", slug: tour.slug }}
+              dateOptions={dateOptions}
+              contact={toContactDefaults(await getCurrentUser())}
+              defaults={defaults}
+            />
+          </section>
+        </div>
+      </div>
 
       <section className="mt-12">
         <SectionHeading>More {tourTypeLabels[tour.type].toLowerCase()}</SectionHeading>
@@ -81,12 +92,14 @@ const TourDetailsContent = async ({ params }: TourDetailsScreenProps) => {
   );
 };
 
-const TourDetailsScreen = ({ params }: TourDetailsScreenProps) => {
+const TourDetailsScreen = ({ params, searchParams }: TourDetailsScreenProps) => {
   return (
-    <div className="mx-auto max-w-content pb-8">
-      <Suspense fallback={<HotelDetailsSkeleton />}>
-        <TourDetailsContent params={params} />
-      </Suspense>
+    <div className="-mx-4 -my-4 bg-surface-alt px-4 py-4 lg:-mx-8 lg:-my-8 lg:px-8 lg:py-6">
+      <div className="mx-auto max-w-content pb-8">
+        <Suspense fallback={<HotelDetailsSkeleton />}>
+          <TourDetailsContent params={params} searchParams={searchParams} />
+        </Suspense>
+      </div>
     </div>
   );
 };
