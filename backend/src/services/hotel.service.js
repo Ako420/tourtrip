@@ -1,4 +1,5 @@
 import { prisma } from "../config/db.js";
+import { toContains } from "../utils/escapeLike.js";
 import { HttpError } from "../utils/httpError.js";
 
 const LATEST_REVIEWS = 5;
@@ -11,9 +12,6 @@ const DETAILS_INCLUDE = {
   rooms: { orderBy: [{ pricePerNight: "asc" }, { id: "asc" }] },
   reviews: { orderBy: [{ createdAt: "desc" }, { id: "desc" }], take: LATEST_REVIEWS },
 };
-
-// % and _ are wildcards to the database, so they're escaped to match as plain text.
-const toContains = (text) => ({ contains: text.replace(/[\\%_]/g, "\\$&"), mode: "insensitive" });
 
 export const matchDestination = (destination) => {
   if (!destination) {

@@ -8,7 +8,7 @@ The full plan for the Hotel Jr backend: everything needed to run a travel site l
 2. Build only that task. Check its "Done when" line, then tick its box.
 3. Stop and review before starting the next one.
 
-**Next task: 6.4** (5.5 waits for the page audit)
+**Next task: 6.7** (5.5 waits for the page audit)
 
 **Stack**
 
@@ -105,7 +105,7 @@ backend/
     mappers/              <name>.mapper.js, database row → API shape
     middlewares/          errorHandler, notFound, validate, auth, rateLimit, upload
     jobs/                 Scheduled work, such as coin expiry
-    utils/                hash.js, httpError.js, dates.js, money.js, pagination.js, reference.js, token.js
+    utils/                escapeLike.js, hash.js, httpError.js, dates.js, money.js, pagination.js, reference.js, token.js
   tests/                  <name>.test.js
 ```
 
@@ -1376,28 +1376,31 @@ Task 5.2 passed against the committed frontend data, and a build with `content` 
 
 Fares match the sample on 99.85% of prices. The rest are $1 off, because `baseFare` is stored to the cent.
 
-#### [ ] 6.4 Build the offer builder
+#### [x] 6.4 Build the offer builder
 
 **Files:** `services/flightOffer.service.js`, `mappers/flight.mapper.js`
 
 - Turn schedules into `FlightOffer` objects for a given search.
 - Offer id is `<outboundScheduleId>` for one-way and `<outboundScheduleId>_<inboundScheduleId>` for round trips, so it stays the same between requests.
-- `seatsLeft` comes from `FlightDeparture`, and is only included when 5 or fewer remain.
+- `seatsLeft` comes from `FlightDeparture`, and is only included when 5 or fewer remain. A round trip uses its fuller leg.
+- Leave out a flight without enough seats for the party, because it can't be booked, and the frontend's card would show a `seatsLeft` of 0 as a stray "0".
+- Match cities through `escapeLike`, because a case-insensitive `equals` is an `ILIKE`, so `%` would match every airport.
 
 **Done when:** the same search always gives the same ids and prices, and the shape matches `FlightOffer`.
 
-#### [ ] 6.5 Build `GET /airports` and `GET /flights/deals`
+#### [x] 6.5 Build `GET /airports` and `GET /flights/deals`
 
 - Airports return sorted city strings.
-- Deals filter on `from` and `to` with case-insensitive text matching, and on `nonstop`. Leave out inactive and past deals.
+- Deals filter on `from` and `to` with case-insensitive text matching, and on `nonstop`. Leave out inactive and past deals. A deal leaving today still counts.
+- List deals soonest first, then by id.
 
 **Done when:** `?from=lagos&nonstop=true` returns only matching deals.
 
-#### [ ] 6.6 Build the basic `GET /flights/search`
+#### [x] 6.6 Build the basic `GET /flights/search`
 
 **Files:** `validators/flight.validator.js`, `services/flightSearch.service.js`, `controllers/flight.controller.js`, `routers/flight.router.js`
 
-- Require `from`, `to` and `departDate`, and require `returnDate` after `departDate` for round trips. `from` and `to` must differ.
+- Require `from`, `to` and `departDate`, and require `returnDate` after `departDate` for round trips. `from` and `to` must differ, in any letter case. The frontend's `flightSearchSchema` has the same rules, and checks them before calling this, so visitors see a message and not a 400.
 - Return empty results for an unknown city, not an error.
 - Apply `nonstop` first.
 - Return all offers with paging, size 6.
@@ -1428,7 +1431,9 @@ Fares match the sample on 99.85% of prices. The rest are $1 off, because `baseFa
 #### [ ] 6.9 Build `GET /flights/offers/:id`
 
 - Takes the same search params as the search, and rebuilds the offer from its schedule ids.
+- Don't apply the search's seat filter here. A flight that has just sold out should reach the booking step, which returns 409, not a 404.
 - Returns 404 for a bad id or a schedule that doesn't match the route.
+- Frontend, before `flights` goes in `API_AREAS`: limit what the address can send, as task 4.8 did for hotels. That's `from` and `to` to 100 characters in `parseFlightSearch`, and `page`, `maxPrice` and the lists in `parseFlightFilters`. Otherwise a hand-edited address gets a 400 and shows an error page.
 
 **Done when:** an id from a search returns the same offer at the same price.
 

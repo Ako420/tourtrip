@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { commaList, isoDate, page, queryBoolean } from "../utils/validators.js";
+import { commaList, dropEmpty, isoDate, number, page, queryBoolean, wholeNumber } from "../utils/validators.js";
 
 // The most a Decimal(10, 2) column can hold.
 const MAX_PRICE = 99999999.99;
@@ -8,18 +8,6 @@ const MAX_PRICE = 99999999.99;
 const MAX_AMENITIES = 20;
 
 const SORTS = ["recommended", "price-asc", "price-desc", "rating"];
-
-const number = (label, { min, max }) => {
-  return z.coerce
-    .number(`${label} must be a number`)
-    .min(min, `${label} must be ${min} or higher`)
-    .max(max, `${label} must be ${max} or lower`);
-};
-
-const wholeNumber = (label, limits) => number(label, limits).int(`${label} must be a whole number`);
-
-// An empty value means the filter isn't set, but coercing it would give 0.
-const dropEmpty = (query) => Object.fromEntries(Object.entries(query).filter(([, value]) => value !== ""));
 
 export const hotelListSchema = z.object({
   destination: z.string("Enter a destination").trim().max(100, "Destination must be 100 characters or fewer").optional(),
