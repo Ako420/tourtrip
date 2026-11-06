@@ -14,12 +14,12 @@ type TravelerSectionsProps = {
 const TravelerSections = ({ adultCount, childCount, getError, contact }: TravelerSectionsProps) => {
   return (
     <>
-      <section className="rounded-card border border-line p-5">
-        <div className="mb-1 flex flex-wrap items-center justify-between gap-2">
-          <h2 className="text-lg font-bold">Who is flying?</h2>
+      <section>
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <h2 className="text-2xl font-bold">Who&apos;s traveling?</h2>
           {!contact && <SignInToBookLink />}
         </div>
-        <p className="mb-4 text-sm text-muted">Enter names exactly as they appear on each passport.</p>
+        <p className="mt-1 mb-4 text-sm">Names must match ID. Enter them exactly as they appear on each passport.</p>
         <div className="flex flex-col gap-4">
           {getPassengerSlots(adultCount, childCount).map((slot, index) => (
             <PassengerFields key={slot.key} slot={slot} getError={getError} contact={index === 0 ? contact : undefined} />
@@ -27,9 +27,9 @@ const TravelerSections = ({ adultCount, childCount, getError, contact }: Travele
         </div>
       </section>
 
-      <section className="rounded-card border border-line p-5">
-        <h2 className="mb-4 text-lg font-bold">Contact details</h2>
-        <div className="grid gap-4 sm:grid-cols-2">
+      <section>
+        <h2 className="mb-4 text-2xl font-bold">Contact details</h2>
+        <div className="grid gap-4 rounded-card border border-line bg-surface p-5 sm:grid-cols-2">
           <FormField name="email" label="Email" type="email" autoComplete="email" defaultValue={contact?.email} error={getError("email")} />
           <FormField name="phone" label="Phone number" type="tel" autoComplete="tel" defaultValue={contact?.phone} error={getError("phone")} />
         </div>

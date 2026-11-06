@@ -32,6 +32,7 @@ export { default as CarBookingSummary } from "./booking/CarBookingSummary";
 export { default as ChargeNotice } from "./booking/ChargeNotice";
 export { default as FlightBookingForm } from "./booking/FlightBookingForm";
 export { default as FlightBookingSummary } from "./booking/FlightBookingSummary";
+export { default as FlightTripCard } from "./booking/FlightTripCard";
 export { default as LeadTravelerFields } from "./booking/LeadTravelerFields";
 export { default as OnlinePaymentNote } from "./booking/OnlinePaymentNote";
 export { default as PackageBookingForm } from "./booking/PackageBookingForm";

@@ -12,8 +12,8 @@ const PassengerFields = ({ slot, getError, contact }: PassengerFieldsProps) => {
   const { key, label, type } = slot;
 
   return (
-    <fieldset className="border-t border-line pt-4 first:border-t-0 first:pt-0">
-      <legend className="mb-3 float-left w-full font-semibold">{label}</legend>
+    <fieldset className="rounded-card border border-line bg-surface p-5">
+      <legend className="mb-3 float-left w-full font-bold">{label}</legend>
       <div className="clear-both grid gap-4 sm:grid-cols-3">
         <FormField
           name={`${key}FirstName`}

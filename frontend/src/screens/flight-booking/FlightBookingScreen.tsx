@@ -5,9 +5,10 @@ import {
   FlightBookingForm,
   FlightBookingSummary,
   FlightResultsSkeleton,
+  FlightTripCard,
   StatusMessage,
 } from "@/components";
-import { getSeatProblem, parseFlightBookingParams, parseFlightSearch, toFlightQuery, toContactDefaults } from "@/lib";
+import { formatPrice, getSeatProblem, parseFlightBookingParams, parseFlightSearch, toFlightQuery, toContactDefaults } from "@/lib";
 import { flightSearchSchema } from "@/schemas";
 import { getCurrentUser, getFlightOffer } from "@/services";
 import type { RouteParams } from "@/types";
@@ -47,17 +48,18 @@ const FlightBookingContent = async ({ searchParams }: FlightBookingScreenProps) 
 
   return (
     <>
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <h1 className="text-2xl font-bold">Complete your booking</h1>
-        <BookingSteps current={2} />
-      </div>
-      <div className="mt-6 grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
-        <div className="order-2 lg:order-1">
-          <FlightBookingForm trip={trip} contact={toContactDefaults(await getCurrentUser())} />
-        </div>
-        <div className="order-1 lg:order-2">
+      <h1 className="sr-only">Complete your booking</h1>
+      <BookingSteps current={2} />
+      <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_20.5rem] lg:gap-x-10">
+        <FlightTripCard offer={offer} search={search} changeable />
+        <div className="lg:col-start-2 lg:row-span-2 lg:row-start-1">
           <FlightBookingSummary offer={offer} search={search} />
         </div>
+        <FlightBookingForm
+          trip={trip}
+          total={formatPrice(offer.totalPrice, offer.currency)}
+          contact={toContactDefaults(await getCurrentUser())}
+        />
       </div>
     </>
   );
@@ -65,10 +67,12 @@ const FlightBookingContent = async ({ searchParams }: FlightBookingScreenProps) 
 
 const FlightBookingScreen = ({ searchParams }: FlightBookingScreenProps) => {
   return (
-    <div className="mx-auto max-w-content pb-8">
-      <Suspense fallback={<FlightResultsSkeleton />}>
-        <FlightBookingContent searchParams={searchParams} />
-      </Suspense>
+    <div className="-mx-4 -my-4 bg-surface-alt px-4 py-4 lg:-mx-8 lg:-my-8 lg:px-8 lg:py-6">
+      <div className="mx-auto max-w-content pb-8">
+        <Suspense fallback={<FlightResultsSkeleton />}>
+          <FlightBookingContent searchParams={searchParams} />
+        </Suspense>
+      </div>
     </div>
   );
 };
