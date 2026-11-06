@@ -10,11 +10,11 @@ type DealCampaignHeroProps = {
 
 const DealCampaignHero = ({ campaign }: DealCampaignHeroProps) => {
   return (
-    <section className="relative overflow-hidden rounded-card bg-primary-deep px-6 py-10 text-white sm:px-10 sm:py-16">
+    <section className="relative -mx-4 -mt-4 flex min-h-64 items-center overflow-hidden bg-primary-deep px-4 py-8 text-white sm:min-h-87.5 lg:-mx-8 lg:-mt-8 lg:px-8">
       <AppImage src={campaign.imageUrl} alt="" fill priority sizes="100vw" className="object-cover" />
       <div className="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/60 to-ink/30" />
 
-      <div className="relative mx-auto max-w-content">
+      <div className="relative mx-auto w-full max-w-content">
         <Link href="/deals" className="inline-flex items-center gap-2 text-sm font-medium text-white/85 hover:text-white">
           <Icon name="chevron-left" className="text-xs" />
           All deals

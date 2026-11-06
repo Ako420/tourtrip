@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
-import { AttractionGrid, DealCampaignHero, DealFlights, HotelGrid, Skeleton } from "@/components";
+import { BenefitColumns, DealCampaignHero, DealProducts, Skeleton } from "@/components";
+import { dealBenefits } from "@/constants";
 import { getDealCampaign } from "@/services";
 
 type DealDetailsScreenProps = {
@@ -18,9 +19,9 @@ const DealDetailsContent = async ({ params }: DealDetailsScreenProps) => {
   return (
     <>
       <DealCampaignHero campaign={campaign} />
-      <HotelGrid title="Hotels in this deal" hotels={campaign.hotels} />
-      <DealFlights title="Flights in this deal" deals={campaign.flightDeals} />
-      <AttractionGrid title="Tickets in this deal" attractions={campaign.attractions} />
+      <DealProducts campaign={campaign} />
+      <h2 className="mt-12 text-center text-2xl font-bold">Why book with Hotel Jr?</h2>
+      <BenefitColumns items={dealBenefits} columns={3} />
     </>
   );
 };
