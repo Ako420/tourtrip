@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { formatShortDate, getGuideExcerpt } from "@/lib";
+import { formatShortDate } from "@/lib";
 import type { Guide } from "@/types";
 import AppImage from "../ui/AppImage";
-import Icon from "../ui/Icon";
 
 type GuideCardProps = {
   guide: Guide;
@@ -12,9 +11,9 @@ const GuideCard = ({ guide }: GuideCardProps) => {
   return (
     <Link
       href={`/inspiration/${guide.slug}`}
-      className="group flex h-full flex-col overflow-hidden rounded-card border border-line transition-shadow duration-300 ease-out hover:shadow-card"
+      className="group flex h-full flex-col overflow-hidden rounded-card bg-surface shadow-card"
     >
-      <div className="relative aspect-[3/2] overflow-hidden bg-surface-alt">
+      <div className="relative aspect-[2/1] overflow-hidden bg-surface-alt">
         <AppImage
           src={guide.coverUrl}
           alt=""
@@ -23,14 +22,11 @@ const GuideCard = ({ guide }: GuideCardProps) => {
           className="object-cover transition-transform duration-300 group-hover:scale-105"
         />
       </div>
-      <div className="flex flex-1 flex-col p-4">
-        <p className="flex items-center gap-1.5 text-xs text-muted">
-          <Icon name="location" />
-          {guide.city}
+      <div className="flex flex-1 flex-col px-5 py-4">
+        <h3 className="line-clamp-2 text-lg font-semibold group-hover:text-primary">{guide.title}</h3>
+        <p className="mt-auto pt-2 text-sm text-muted">
+          {guide.city} · {formatShortDate(guide.publishedAt)}
         </p>
-        <h3 className="mt-1 font-semibold group-hover:text-primary">{guide.title}</h3>
-        <p className="mt-1 line-clamp-2 text-sm text-ink-soft">{getGuideExcerpt(guide.body)}</p>
-        <p className="mt-auto pt-3 text-xs text-muted">{formatShortDate(guide.publishedAt)}</p>
       </div>
     </Link>
   );

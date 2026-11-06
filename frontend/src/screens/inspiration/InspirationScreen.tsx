@@ -1,11 +1,38 @@
 import { Suspense } from "react";
-import { GuideCityFilter, GuideGrid, GuidePagination, Skeleton } from "@/components";
+import {
+  Breadcrumb,
+  GuideCityFilter,
+  GuideFeatured,
+  GuideGrid,
+  GuidePagination,
+  GuideSectionLinks,
+  Skeleton,
+} from "@/components";
+import { FEATURED_GUIDE_CITIES, RECENT_GUIDE_COUNT } from "@/constants";
 import { parseGuideFilters } from "@/lib";
-import { getGuides } from "@/services";
+import { getGuides, getGuidesByCity } from "@/services";
 import type { RouteParams } from "@/types";
 
 type InspirationScreenProps = {
   searchParams: Promise<RouteParams>;
+};
+
+const headingClass = "mb-5 scroll-mt-24 text-2xl font-semibold";
+
+const GuideHighlights = async () => {
+  const [featured, { items }] = await Promise.all([getGuidesByCity(FEATURED_GUIDE_CITIES), getGuides({ page: 1 })]);
+
+  return (
+    <>
+      <GuideFeatured guides={featured} />
+      <GuideSectionLinks />
+
+      <section className="mt-8">
+        <h2 id="recent" className={headingClass}>Most recent articles</h2>
+        <GuideGrid guides={items.slice(0, RECENT_GUIDE_COUNT)} />
+      </section>
+    </>
+  );
 };
 
 const GuideResults = async ({ searchParams }: InspirationScreenProps) => {
@@ -30,12 +57,19 @@ const GuideResults = async ({ searchParams }: InspirationScreenProps) => {
 const InspirationScreen = ({ searchParams }: InspirationScreenProps) => {
   return (
     <div className="mx-auto max-w-content pb-8">
-      <h1 className="type-title font-bold">Travel Inspiration</h1>
-      <p className="mt-1 mb-6 text-muted">City guides to help you plan your next trip.</p>
+      <Breadcrumb links={[{ label: "Hotel Jr", href: "/" }]} current="Travel Inspiration" />
+      <h1 className="mt-5 text-4xl">Travel Inspiration &amp; Tips</h1>
 
-      <Suspense fallback={<Skeleton className="h-96" />}>
-        <GuideResults searchParams={searchParams} />
+      <Suspense fallback={<Skeleton className="mt-8 h-96" />}>
+        <GuideHighlights />
       </Suspense>
+
+      <section className="mt-10">
+        <h2 id="all" className={headingClass}>All articles</h2>
+        <Suspense fallback={<Skeleton className="h-96" />}>
+          <GuideResults searchParams={searchParams} />
+        </Suspense>
+      </section>
     </div>
   );
 };

@@ -14,7 +14,7 @@ const GuidePagination = ({ city, page, pageCount }: GuidePaginationProps) => {
   const router = useRouter();
 
   return (
-    <Pagination page={page} pageCount={pageCount} onChange={(nextPage) => router.push(toGuideHref({ city, page: nextPage }))} />
+    <Pagination page={page} pageCount={pageCount} onChange={(nextPage) => router.push(`${toGuideHref({ city, page: nextPage })}#all`)} />
   );
 };
 
