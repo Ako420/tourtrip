@@ -10,7 +10,7 @@ Check every built page against its https://www.trip.com/ page, section by sectio
 4. Fix the page, check the "Done when" line, then tick the box.
 5. Stop and review before starting the next page.
 
-**Next task: C1**
+**Next task: C2**
 
 New pages in `TODO.md` section 3 wait until this audit is finished, so they are built to the corrected pattern.
 
@@ -137,13 +137,17 @@ Everything else builds on these.
 
 | Task | Our page | Reference |
 | --- | --- | --- |
-| [ ] C1 | `/hotels/list` | https://www.trip.com/hotels/list?city=58 |
+| [x] C1 | `/hotels/list` | https://www.trip.com/hotels/list?city=58 |
 | [ ] C2 | `/flights/results` | Flight search results |
 | [ ] C3 | `/trains/results` | Train search results |
 | [ ] C4 | `/cars/results` | Car search results |
 | [ ] C5 | `/packages/results` | Package search results |
 
 **Done when, for each:** filters, sort, card layout, and prices match, with the same sample search on both sites.
+
+**Notes:**
+
+- **C1 Hotel list:** blue search bar that stays on screen, map card, popular filters named after the place, budget, stars, guest rating and amenities, sort box, and Trip-style cards with hotel names at 20. The first booking offer is replaced by what a free account really gives, because we can't back up the discounts. Left out, because our data has none: property type, location, meals, bed type and the other long filter groups, per-card photo slides, per-card map links, Trip Coins lines, "last booked" and "only N left" notes, awards, and the "why book" box with its price match claim. Prices show per night and the stay total, not taxes and fees. Paging stays, not endless scroll.
 
 ## D. Details pages
 

@@ -39,6 +39,6 @@ export const priceBrackets = [
 ];
 
 export const bookingOffers = [
-  { id: "promo", label: "Up to $12 off", detail: "Welcome code", iconName: "ticket" },
-  { id: "first", label: "Up to 20% off", detail: "First booking", iconName: "tag" },
+  { id: "details", label: "Saved details", detail: "Faster booking forms", iconName: "user" },
+  { id: "assistant", label: "Travel assistant", detail: "Help with your trip", iconName: "robot" },
 ] as const;

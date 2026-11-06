@@ -106,7 +106,6 @@ export { default as PromotionSection } from "./home/PromotionSection";
 export { default as Recommendations } from "./home/Recommendations";
 export { default as RouteCard } from "./home/RouteCard";
 export { default as RouteCarousel } from "./home/RouteCarousel";
-export { default as AmenityList } from "./hotels/AmenityList";
 export { default as BookingOffers } from "./hotels/BookingOffers";
 export { default as FilterPanel } from "./hotels/FilterPanel";
 export { default as HotelAmenities } from "./hotels/HotelAmenities";

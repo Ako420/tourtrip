@@ -1,5 +1,6 @@
 import { hotelSortOptions } from "@/constants";
 import type { HotelSort } from "@/types";
+import Icon from "../ui/Icon";
 
 type HotelSortSelectProps = {
   value: HotelSort;
@@ -8,12 +9,13 @@ type HotelSortSelectProps = {
 
 const HotelSortSelect = ({ value, onChange }: HotelSortSelectProps) => {
   return (
-    <label className="flex items-center gap-2 text-sm">
-      <span className="sr-only sm:not-sr-only sm:whitespace-nowrap sm:text-muted">Sort by</span>
+    <label className="flex h-9 items-center gap-2 rounded-md border border-line px-3 text-sm focus-within:border-primary">
+      <Icon name="swap" className="rotate-90 text-xs" />
+      <span className="sr-only">Sort by</span>
       <select
         value={value}
         onChange={(event) => onChange(event.target.value as HotelSort)}
-        className="h-10 rounded-md border border-line bg-surface px-2 font-medium outline-none focus:border-primary"
+        className="bg-surface outline-none"
       >
         {hotelSortOptions.map((option) => (
           <option key={option.value} value={option.value}>
