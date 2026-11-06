@@ -35,11 +35,17 @@ const TrainResults = async ({ searchParams }: TrainResultsScreenProps) => {
 
 const TrainResultsScreen = ({ searchParams }: TrainResultsScreenProps) => {
   return (
-    <div className="mx-auto max-w-content pb-8">
-      <Suspense fallback={<FlightResultsSkeleton />}>
-        <TrainResults searchParams={searchParams} />
-      </Suspense>
-    </div>
+    <>
+      <div className="h-48 bg-primary xl:h-37" />
+
+      <div className="page-sheet px-4 pt-px pb-8">
+        <div className="relative mx-auto -mt-12 max-w-content">
+          <Suspense fallback={<FlightResultsSkeleton />}>
+            <TrainResults searchParams={searchParams} />
+          </Suspense>
+        </div>
+      </div>
+    </>
   );
 };
 

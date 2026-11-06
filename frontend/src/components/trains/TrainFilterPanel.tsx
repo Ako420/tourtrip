@@ -17,7 +17,7 @@ const toggle = <T,>(list: T[], value: T) => {
 const TrainFilterPanel = ({ filters, result, onChange }: TrainFilterPanelProps) => {
   return (
     <div>
-      <FilterGroup title="Changes">
+      <FilterGroup title="Changes" small>
         {trainChangeFilters.map((option) => (
           <FilterCheckbox
             key={option.value}
@@ -29,7 +29,7 @@ const TrainFilterPanel = ({ filters, result, onChange }: TrainFilterPanelProps) 
         ))}
       </FilterGroup>
 
-      <FilterGroup title="Departure time">
+      <FilterGroup title="Departure time" small>
         {departureWindows.map((window) => (
           <FilterCheckbox
             key={window.id}
@@ -41,7 +41,7 @@ const TrainFilterPanel = ({ filters, result, onChange }: TrainFilterPanelProps) 
         ))}
       </FilterGroup>
 
-      <FilterGroup title="Operators">
+      <FilterGroup title="Operators" small>
         {result.operators.map((operator) => (
           <FilterCheckbox
             key={operator.name}
@@ -50,13 +50,13 @@ const TrainFilterPanel = ({ filters, result, onChange }: TrainFilterPanelProps) 
           >
             <span className="flex w-full justify-between gap-2">
               {operator.name}
-              <span className="text-xs text-muted"><Price amount={operator.lowestPrice} currency={result.currency} /></span>
+              <span><Price amount={operator.lowestPrice} currency={result.currency} /></span>
             </span>
           </FilterCheckbox>
         ))}
       </FilterGroup>
 
-      <FilterGroup title="Ticket options">
+      <FilterGroup title="Ticket options" small>
         <FilterCheckbox checked={filters.refundable} onChange={() => onChange({ refundable: !filters.refundable })}>
           Refundable
         </FilterCheckbox>
