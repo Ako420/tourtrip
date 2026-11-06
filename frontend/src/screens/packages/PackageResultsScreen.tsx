@@ -1,10 +1,10 @@
 import { Suspense } from "react";
 import {
-  ButtonLink,
   FlightResultsSkeleton,
+  Icon,
   PackageFlightChoices,
   PackageOfferCard,
-  SectionHeading,
+  PackageSearchForm,
   StatusMessage,
 } from "@/components";
 import {
@@ -17,7 +17,7 @@ import {
   toPackageQuery,
 } from "@/lib";
 import { packageSearchSchema } from "@/schemas";
-import { searchPackages } from "@/services";
+import { getAirports, getDestinations, searchPackages } from "@/services";
 import type { RouteParams } from "@/types";
 
 type PackageResultsScreenProps = {
@@ -27,13 +27,17 @@ type PackageResultsScreenProps = {
 const PackageResultsContent = async ({ searchParams }: PackageResultsScreenProps) => {
   const params = await searchParams;
   const search = parsePackageSearch(params);
-  const editHref = `/packages?${toPackageQuery(search)}`;
+  const [airports, destinations] = await Promise.all([getAirports(), getDestinations()]);
+  const form = (
+    <PackageSearchForm key={toPackageQuery(search)} initialValues={search} airports={airports} destinations={destinations} />
+  );
 
   if (!packageSearchSchema.safeParse(search).success) {
     return (
-      <StatusMessage iconName="building" title="Choose your trip" description="Add your cities and dates to see packages.">
-        <ButtonLink href="/packages">Search Flight + Hotel</ButtonLink>
-      </StatusMessage>
+      <>
+        {form}
+        <StatusMessage iconName="building" title="Choose your trip" description="Add your cities and dates above to see packages." />
+      </>
     );
   }
 
@@ -43,28 +47,33 @@ const PackageResultsContent = async ({ searchParams }: PackageResultsScreenProps
 
   return (
     <>
-      <header className="mb-6 flex flex-wrap items-center justify-between gap-3">
-        <div>
-          <h1 className="text-2xl font-bold">
-            {search.from} to {search.to}
-          </h1>
-          <p className="text-sm text-muted">
-            {formatShortDate(search.departDate ?? "")} - {formatShortDate(search.returnDate ?? "")} ·{" "}
-            {formatCount(nights, "night")} · {formatCount(travelers, "traveler")} · {formatCount(search.rooms, "room")}
-          </p>
-        </div>
-        <ButtonLink href={editHref} variant="outline" size="sm">
-          Change search
-        </ButtonLink>
+      {form}
+
+      <header className="mt-6 mb-4">
+        <h1 className="text-lg font-bold">
+          {search.from} to {search.to}
+        </h1>
+        <p className="text-sm text-ink-soft">
+          {formatShortDate(search.departDate ?? "")} - {formatShortDate(search.returnDate ?? "")} ·{" "}
+          {formatCount(nights, "night")} · {formatCount(travelers, "traveler")} · {formatCount(search.rooms, "room")}
+        </p>
       </header>
 
       {offers.length > 0 ? (
         <>
           <PackageFlightChoices choices={flightChoices} selectedId={selectedFlightId} search={search} />
 
-          <section className="mt-8">
-            <SectionHeading>Choose your stay</SectionHeading>
-            <ul className="flex flex-col gap-4">
+          <section className="mt-4">
+            <div className="rounded-card bg-surface p-4 sm:p-6">
+              <h2 className="flex items-center gap-3 font-bold">
+                <span className="flex size-7 items-center justify-center rounded-sm bg-primary text-sm text-white">
+                  <Icon name="bed" />
+                </span>
+                Hotel ({formatCount(nights, "night")})
+              </h2>
+            </div>
+
+            <ul className="mt-3 flex flex-col gap-3">
               {offers.map((offer) => (
                 <li key={offer.hotel.id}>
                   <PackageOfferCard offer={offer} bookHref={toPackageBookHref(search, offer)} travelers={travelers} />
@@ -78,9 +87,7 @@ const PackageResultsContent = async ({ searchParams }: PackageResultsScreenProps
           iconName="building"
           title="No packages found"
           description={`We have no stays in ${search.to} that fit your group yet. Try another city, or add a room.`}
-        >
-          <ButtonLink href={editHref}>Change search</ButtonLink>
-        </StatusMessage>
+        />
       )}
     </>
   );
@@ -88,11 +95,17 @@ const PackageResultsContent = async ({ searchParams }: PackageResultsScreenProps
 
 const PackageResultsScreen = ({ searchParams }: PackageResultsScreenProps) => {
   return (
-    <div className="mx-auto max-w-content pb-8">
-      <Suspense fallback={<FlightResultsSkeleton />}>
-        <PackageResultsContent searchParams={searchParams} />
-      </Suspense>
-    </div>
+    <>
+      <div className="h-48 bg-primary xl:h-37" />
+
+      <div className="page-sheet px-4 pt-px pb-8">
+        <div className="relative mx-auto -mt-12 max-w-content">
+          <Suspense fallback={<FlightResultsSkeleton />}>
+            <PackageResultsContent searchParams={searchParams} />
+          </Suspense>
+        </div>
+      </div>
+    </>
   );
 };
 
