@@ -10,7 +10,7 @@ Check every built page against its https://www.trip.com/ page, section by sectio
 4. Fix the page, check the "Done when" line, then tick the box.
 5. Stop and review before starting the next page.
 
-**Next task: C2**
+**Next task: C3**
 
 New pages in `TODO.md` section 3 wait until this audit is finished, so they are built to the corrected pattern.
 
@@ -138,7 +138,7 @@ Everything else builds on these.
 | Task | Our page | Reference |
 | --- | --- | --- |
 | [x] C1 | `/hotels/list` | https://www.trip.com/hotels/list?city=58 |
-| [ ] C2 | `/flights/results` | Flight search results |
+| [x] C2 | `/flights/results` | Flight search results |
 | [ ] C3 | `/trains/results` | Train search results |
 | [ ] C4 | `/cars/results` | Car search results |
 | [ ] C5 | `/packages/results` | Package search results |
@@ -148,6 +148,7 @@ Everything else builds on these.
 **Notes:**
 
 - **C1 Hotel list:** blue search bar that stays on screen, map card, popular filters named after the place, budget, stars, guest rating and amenities, sort box, and Trip-style cards with hotel names at 20. The first booking offer is replaced by what a free account really gives, because we can't back up the discounts. Left out, because our data has none: property type, location, meals, bed type and the other long filter groups, per-card photo slides, per-card map links, Trip Coins lines, "last booked" and "only N left" notes, awards, and the "why book" box with its price match claim. Prices show per night and the stay total, not taxes and fees. Paging stays, not endless scroll.
+- **C2 Flight results:** the page moved to the transparent header, with a blue band, a one-row search panel, a full-width date strip, filters on the left, and a dark title bar, sort tabs and compact flight rows on the right. Times are 20 and prices 20. Departure and return stay in one row, not two steps, because our booking takes both legs together. The date strip keeps its "lowest fare per adult" note, because the prices need it. Left out: multi-city, nearby airports, the price graph, price alerts, alliances, stopover and duration filters, airline logos, and row tags such as "Cheapest nonstop" and CO2 figures, which our data doesn't have. Filters stay Recommended, Airlines, Departure time, Stops and Max price.
 
 ## D. Details pages
 

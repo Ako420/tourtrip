@@ -25,7 +25,7 @@ const FlightResults = async ({ searchParams }: FlightResultsScreenProps) => {
 
   return (
     <>
-      <FlightSearchForm key={toFlightQuery(search)} initialValues={search} airports={airports} />
+      <FlightSearchForm key={toFlightQuery(search)} initialValues={search} airports={airports} inline />
       {isValid ? (
         <FlightResultsView search={search} filters={filters} result={await searchFlights(search, filters)} />
       ) : (
@@ -37,11 +37,17 @@ const FlightResults = async ({ searchParams }: FlightResultsScreenProps) => {
 
 const FlightResultsScreen = ({ searchParams }: FlightResultsScreenProps) => {
   return (
-    <div className="mx-auto max-w-content pb-8">
-      <Suspense fallback={<FlightResultsSkeleton />}>
-        <FlightResults searchParams={searchParams} />
-      </Suspense>
-    </div>
+    <>
+      <div className="h-48 bg-primary xl:h-37" />
+
+      <div className="page-sheet px-4 pt-px pb-8">
+        <div className="relative mx-auto -mt-12 max-w-content">
+          <Suspense fallback={<FlightResultsSkeleton />}>
+            <FlightResults searchParams={searchParams} />
+          </Suspense>
+        </div>
+      </div>
+    </>
   );
 };
 

@@ -19,43 +19,44 @@ const FlightOfferCard = ({ offer, bookHref, travelers }: FlightOfferCardProps) =
   const legs = offer.inbound ? [offer.outbound, offer.inbound] : [offer.outbound];
 
   return (
-    <article className="rounded-card border border-line transition-shadow duration-300 ease-out hover:shadow-card">
-      <div className="flex flex-col sm:flex-row">
-        <div className="flex-1 p-4">
-          <p className="mb-3 flex items-center gap-2 text-sm">
-            <span className="flex size-6 items-center justify-center rounded-full bg-primary-soft text-primary">
-              <Icon name="plane" className="text-tiny" />
-            </span>
-            <span className="font-medium">{offer.airline}</span>
-            <span className="text-muted">{offer.flightNumber}</span>
-          </p>
-          <div className="flex flex-col gap-3">
-            {legs.map((leg) => (
-              <FlightLegRow key={`${leg.from}-${leg.date}`} leg={leg} />
-            ))}
-          </div>
+    <article className="bg-surface px-4 py-3">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+        <p className="flex items-center gap-3 text-sm sm:w-36 sm:shrink-0">
+          <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary-soft text-primary">
+            <Icon name="plane" />
+          </span>
+          <span>
+            {offer.airline}
+            <span className="block text-xs text-muted">{offer.flightNumber}</span>
+          </span>
+        </p>
+
+        <div className="flex min-w-0 flex-1 flex-col gap-3">
+          {legs.map((leg) => (
+            <FlightLegRow key={`${leg.from}-${leg.date}`} leg={leg} large />
+          ))}
         </div>
 
-        <div className="flex shrink-0 items-center justify-between gap-3 border-t border-line p-4 sm:w-44 sm:flex-col sm:items-stretch sm:justify-center sm:border-t-0 sm:border-l sm:text-right">
-          <div>
-            <p className="type-price font-bold text-primary"><Price amount={offer.totalPrice} currency={offer.currency} /></p>
-            <p className="text-xs text-muted">
-              {travelers > 1 ? `total, ${formatCount(travelers, "traveler")}` : "per traveler"}
+        <div className="flex shrink-0 items-center justify-between gap-4 sm:w-56 sm:justify-end">
+          <div className="sm:text-right">
+            <p className="text-xl font-bold text-primary"><Price amount={offer.totalPrice} currency={offer.currency} /></p>
+            <p className="text-sm text-ink-soft">
+              {travelers > 1 ? `Total, ${formatCount(travelers, "traveler")}` : "Per traveler"}
             </p>
             {offer.seatsLeft && <p className="text-xs text-promo">{formatCount(offer.seatsLeft, "seat")} left</p>}
           </div>
-          <ButtonLink href={bookHref} size="sm">
+          <ButtonLink href={bookHref} className="px-6">
             Select
           </ButtonLink>
         </div>
       </div>
 
-      <div className="border-t border-line px-4 py-2">
+      <div className="mt-2">
         <button
           type="button"
           aria-expanded={isOpen}
           onClick={() => setIsOpen((current) => !current)}
-          className="flex items-center gap-2 text-sm font-medium text-primary"
+          className="flex items-center gap-2 text-sm text-primary"
         >
           Flight details
           <Icon name="chevron-down" className={`text-xs transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
