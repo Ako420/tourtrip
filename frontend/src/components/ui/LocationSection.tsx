@@ -7,17 +7,18 @@ type LocationSectionProps = {
   address: string;
   nearby: NearbyPlace[];
   children?: ReactNode;
+  compact?: boolean;
 };
 
-const LocationSection = ({ address, nearby, children }: LocationSectionProps) => {
+const LocationSection = ({ address, nearby, children, compact = false }: LocationSectionProps) => {
   return (
-    <section id="location" className="mt-10 scroll-mt-32">
-      <h2 className="mb-1 text-2xl font-bold">Location</h2>
+    <section id="location" className={`scroll-mt-32 ${compact ? "rounded-card bg-surface p-5" : "mt-10"}`}>
+      <h2 className={`mb-1 font-bold ${compact ? "text-xl" : "text-2xl"}`}>Location</h2>
       <p className="mb-4 flex items-center gap-1.5 text-sm">
         <Icon name="location" />
         {address}
       </p>
-      <ul className="grid gap-x-10 gap-y-3 text-sm sm:grid-cols-2 lg:grid-cols-3">
+      <ul className={`grid gap-x-10 gap-y-3 text-sm ${compact ? "" : "sm:grid-cols-2 lg:grid-cols-3"}`}>
         {nearby.map((place) => (
           <li key={place.id} className="flex items-center justify-between gap-3">
             <span className="flex min-w-0 items-center gap-3">

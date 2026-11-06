@@ -1,6 +1,7 @@
 export { default as AccountDetails } from "./account/AccountDetails";
 export { default as AccountMenu } from "./account/AccountMenu";
 export { default as AssistantChat } from "./assistant/AssistantChat";
+export { default as AttractionBookCard } from "./attractions/AttractionBookCard";
 export { default as AttractionCard } from "./attractions/AttractionCard";
 export { default as AttractionGrid } from "./attractions/AttractionGrid";
 export { default as AttractionHeader } from "./attractions/AttractionHeader";
