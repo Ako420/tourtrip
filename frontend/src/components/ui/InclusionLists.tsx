@@ -3,12 +3,13 @@ import Icon from "./Icon";
 type InclusionListsProps = {
   included: string[];
   notIncluded: string[];
+  titleClassName?: string;
 };
 
-const InclusionLists = ({ included, notIncluded }: InclusionListsProps) => {
+const InclusionLists = ({ included, notIncluded, titleClassName = "type-section" }: InclusionListsProps) => {
   return (
     <section id="included" className="mt-8 scroll-mt-32">
-      <h2 className="mb-4 type-section font-bold">What&apos;s included</h2>
+      <h2 className={`mb-4 font-bold ${titleClassName}`}>What&apos;s included</h2>
       <ul className="flex flex-col gap-3 text-sm">
         {included.map((item) => (
           <li key={item} className="flex items-start gap-3">
