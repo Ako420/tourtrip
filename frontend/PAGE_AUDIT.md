@@ -10,7 +10,7 @@ Check every built page against its https://www.trip.com/ page, section by sectio
 4. Fix the page, check the "Done when" line, then tick the box.
 5. Stop and review before starting the next page.
 
-**Next task: D6**
+**Next task: E1**
 
 New pages in `TODO.md` section 3 wait until this audit is finished, so they are built to the corrected pattern.
 
@@ -162,7 +162,7 @@ Everything else builds on these.
 | [x] D3 | `/tours/[slug]` | Tour details |
 | [x] D4 | `/cruises/[slug]` | Cruise details |
 | [x] D5 | `/deals/[slug]` | Campaign page |
-| [ ] D6 | `/inspiration/[slug]` | Guide article |
+| [x] D6 | `/inspiration/[slug]` | Guide article |
 
 **Done when, for each:** gallery, section tabs, sections and booking panel match.
 
@@ -173,6 +173,7 @@ Everything else builds on these.
 - **D3:** Compared with a Trip group tour while signed in. Now a grey page with white cards: name, rating, photo, facts and highlights on the left, then tabs, a day-by-day itinerary that opens and closes, and what's included. On the right a sticky trip options panel: a calendar of departures with prices (or a start date for private tours), travelers, price, Check availability and Ask about this trip. Tours stay enquiry-only, so Check availability fills the enquiry form below. Left out because we have no data for them: more photos, details with photos, adult and child inclusion tabs, tour reviews, notice, itinerary PDF. Trip's blue band behind the page is also left out, as on the attraction page.
 - **D4:** Compared with a Trip cruise while signed in. Now a grey page with white cards: photo beside name, line, rating, departure date and city with more dates to pick from, price and Check availability. Then full-width tabs, highlights, an itinerary table, what's included and the enquiry form. Cruises stay enquiry-only, so Check availability fills the form below. The itinerary shows stops only, as we have no dates or times for each port. Left out because we have no data for them: staterooms and their prices, ship details, travel documents, fee details, policies, cruise reviews and more photos.
 - **D5:** Compared with a Trip campaign page while signed in. Now a full-width banner 350 tall, tinted panels with a centred heading, four-across cards and a More link, then a three-column "Why book with Hotel Jr?" row. Trip's cards are all one product with region tabs. Ours group by hotels, flights and tickets, so no tabs. Note: Trip's `/sale/deals/` shows promo codes, hotel, tickets and flight deals when signed in, which B11 did not see.
+- **D6:** Compared with a Trip guide while signed in. The dark photo banner is gone. Now the title, byline and date, a line, the intro, a large photo, then the article at full content width with 24px headings, followed by places to stay and things to do. Our title is 32 where Trip's is 34, to stay on the type scale. Left out because we have no data for them: the sale banner at the top, photos through the article, hotel filters, questions and trending searches. More travel guides is kept in place of trending searches.
 
 ## E. Booking pages
 

@@ -1,6 +1,5 @@
-import { formatShortDate } from "@/lib";
+import { formatLongDate } from "@/lib";
 import type { Guide } from "@/types";
-import AppImage from "../ui/AppImage";
 import Breadcrumb from "../ui/Breadcrumb";
 
 type GuideHeaderProps = {
@@ -12,16 +11,16 @@ const GuideHeader = ({ guide }: GuideHeaderProps) => {
     <header className="mx-auto max-w-content">
       <Breadcrumb links={[{ label: "Travel Inspiration", href: "/inspiration" }]} current={guide.city} />
 
-      <div className="relative mt-4 overflow-hidden rounded-card bg-primary-deep px-6 pt-24 pb-8 text-white sm:px-10 sm:pt-40 sm:pb-10">
-        <AppImage src={guide.coverUrl} alt="" fill priority sizes="100vw" className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/40 to-ink/10" />
+      <h1 className="mt-6 type-section-lg font-bold">{guide.title}</h1>
 
-        <div className="relative">
-          <p className="text-sm text-white/85">
-            {guide.city} · {formatShortDate(guide.publishedAt)}
-          </p>
-          <h1 className="mt-1 max-w-3xl type-hero font-bold">{guide.title}</h1>
-        </div>
+      <div className="mt-4 flex items-center gap-3 border-b border-line pb-4">
+        <span aria-hidden className="flex size-10 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+          Jr
+        </span>
+        <p className="text-sm text-ink-soft">
+          by Hotel Jr
+          <span className="block">{formatLongDate(guide.publishedAt)}</span>
+        </p>
       </div>
     </header>
   );

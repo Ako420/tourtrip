@@ -1,6 +1,5 @@
 import type { Attraction } from "@/types";
 import AttractionCard from "./AttractionCard";
-import SectionHeading from "../ui/SectionHeading";
 
 type AttractionGridProps = {
   title: string;
@@ -12,7 +11,7 @@ const AttractionGrid = ({ title, attractions }: AttractionGridProps) => {
 
   return (
     <section className="mx-auto mt-12 max-w-content">
-      <SectionHeading>{title}</SectionHeading>
+      <h2 className="mb-4 text-2xl font-bold">{title}</h2>
 
       <ul className="grid grid-cols-2 gap-4 lg:grid-cols-4">
         {attractions.map((attraction) => (

@@ -35,6 +35,10 @@ export const formatShortDate = (isoDate: string) => {
   }).format(new Date(`${isoDate}T00:00:00Z`));
 };
 
+export const formatLongDate = (isoDate: string) => {
+  return new Intl.DateTimeFormat("en-US", { dateStyle: "long", timeZone: "UTC" }).format(new Date(`${isoDate}T00:00:00Z`));
+};
+
 export const formatCount = (count: number, singular: string, plural = `${singular}s`) => {
   return `${count.toLocaleString("en-US")} ${count === 1 ? singular : plural}`;
 };

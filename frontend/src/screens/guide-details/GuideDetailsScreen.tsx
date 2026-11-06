@@ -24,7 +24,7 @@ const GuideDetailsContent = async ({ params }: GuideDetailsScreenProps) => {
   return (
     <>
       <GuideHeader guide={guide} />
-      <GuideArticle body={guide.body} />
+      <GuideArticle body={guide.body} imageUrl={guide.coverUrl} />
       <HotelGrid title={`Places to stay in ${guide.city}`} hotels={hotels.slice(0, 4)} />
       <AttractionGrid title={`Things to do in ${guide.city}`} attractions={attractions.items.slice(0, 4)} />
       <MoreGuides guides={moreGuides} />
