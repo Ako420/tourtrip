@@ -10,7 +10,7 @@ Check every built page against its https://www.trip.com/ page, section by sectio
 4. Fix the page, check the "Done when" line, then tick the box.
 5. Stop and review before starting the next page.
 
-**Next task: E3**
+**Next task: E4**
 
 New pages in `TODO.md` section 3 wait until this audit is finished, so they are built to the corrected pattern.
 
@@ -183,7 +183,7 @@ Each form and its confirmation page.
 | --- | --- |
 | [x] E1 | `/hotels/[slug]/book`, `/hotels/[slug]/book/confirmed` |
 | [x] E2 | `/flights/book`, `/flights/book/confirmed` |
-| [ ] E3 | `/trains/book`, `/trains/book/confirmed` |
+| [x] E3 | `/trains/book`, `/trains/book/confirmed` |
 | [ ] E4 | `/cars/book`, `/cars/book/confirmed` |
 | [ ] E5 | `/attractions/[slug]/book`, `/attractions/[slug]/book/confirmed` |
 | [ ] E6 | `/packages/book`, `/packages/book/confirmed` |
@@ -194,6 +194,7 @@ Each form and its confirmation page.
 
 - **E1:** Compared with Trip's booking form while signed in, stopping before payment. Now three steps, plain form sections with 24px headings, and four summary cards: stay, dates, price details, cancellation policy. All booking pages now show the three steps. Hotel bookings stay pay at the property. Left out because we have no data for them: savings and rooms-left note, bed preference, promo code, card payment, price change per night and room selectors, rewards, fine print and extra guests. Trip's confirmation page cannot be seen without booking, so ours only got the new steps and summary.
 - **E2:** Compared with Trip's flight form while signed in, stopping at the first step. Now a grey page with a trip card and Change flight, a sticky price details card, a card for each passenger, contact details, and a total above Book now. Trip splits this over four steps with seats and extras. We have one form, so ours keeps the three steps. Left out because we have no data for them: gender and nationality, frequent flyer, adding passengers here, seat selection, extras, promo codes and member offers. The passenger and payment sections are shared, so package booking changes too until E6.
+- **E3:** **not compared with Trip's train booking page.** That page only opens by submitting their train search form, which needs your OK, the same as C3. Ours uses the E2 layout: trip card with Change train, sticky price details, lead traveler, a total above Book now. The trip card and total card are now shared with flights. The lead traveler section is shared, so attraction booking changes too until E5.
 
 ## F. Other pages
 

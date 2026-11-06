@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
-import { BookingSteps, ButtonLink, FlightBookingSummary, FlightResultsSkeleton, FlightTripCard, Icon } from "@/components";
+import { BookingSteps, BookingTripCard, ButtonLink, FlightBookingSummary, FlightResultsSkeleton, Icon } from "@/components";
 import { parseFlightBookingParams, parseFlightSearch } from "@/lib";
 import { getFlightOffer } from "@/services";
 import type { RouteParams } from "@/types";
@@ -53,7 +53,12 @@ const FlightBookingConfirmedContent = async ({ searchParams }: FlightBookingConf
         <div className="lg:col-start-2 lg:row-span-2 lg:row-start-1">
           <FlightBookingSummary offer={offer} search={search} />
         </div>
-        <FlightTripCard offer={offer} search={search} />
+        <BookingTripCard
+          destination={search.to}
+          carrier={offer.airline}
+          detail={`${offer.flightNumber} · ${offer.cabin}`}
+          legs={offer.inbound ? [offer.outbound, offer.inbound] : [offer.outbound]}
+        />
       </div>
     </>
   );

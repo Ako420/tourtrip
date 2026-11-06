@@ -1,11 +1,11 @@
 import { Suspense } from "react";
 import {
   BookingSteps,
+  BookingTripCard,
   ButtonLink,
   FlightBookingForm,
   FlightBookingSummary,
   FlightResultsSkeleton,
-  FlightTripCard,
   StatusMessage,
 } from "@/components";
 import { formatPrice, getSeatProblem, parseFlightBookingParams, parseFlightSearch, toFlightQuery, toContactDefaults } from "@/lib";
@@ -51,7 +51,13 @@ const FlightBookingContent = async ({ searchParams }: FlightBookingScreenProps) 
       <h1 className="sr-only">Complete your booking</h1>
       <BookingSteps current={2} />
       <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_20.5rem] lg:gap-x-10">
-        <FlightTripCard offer={offer} search={search} changeable />
+        <BookingTripCard
+          destination={search.to}
+          carrier={offer.airline}
+          detail={`${offer.flightNumber} · ${offer.cabin}`}
+          legs={offer.inbound ? [offer.outbound, offer.inbound] : [offer.outbound]}
+          change={{ href: `/flights/results?${toFlightQuery(search)}`, label: "Change flight" }}
+        />
         <div className="lg:col-start-2 lg:row-span-2 lg:row-start-1">
           <FlightBookingSummary offer={offer} search={search} />
         </div>

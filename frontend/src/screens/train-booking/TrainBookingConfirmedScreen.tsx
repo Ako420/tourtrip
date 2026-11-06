@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
-import { BookingSteps, ButtonLink, FlightResultsSkeleton, Icon, TrainBookingSummary } from "@/components";
+import { BookingSteps, BookingTripCard, ButtonLink, FlightResultsSkeleton, Icon, TrainBookingSummary } from "@/components";
 import { parseTrainBookingParams, parseTrainSearch } from "@/lib";
 import { getTrainOffer } from "@/services";
 import type { RouteParams } from "@/types";
@@ -25,8 +25,8 @@ const TrainBookingConfirmedContent = async ({ searchParams }: TrainBookingConfir
     <>
       <BookingSteps current={3} />
 
-      <div className="mt-6 grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
-        <section className="rounded-card border border-line p-6">
+      <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_20.5rem] lg:gap-x-10">
+        <section className="rounded-card bg-surface p-6">
           <span className="flex size-14 items-center justify-center rounded-full bg-primary-soft text-2xl text-success">
             <Icon name="check" />
           </span>
@@ -50,7 +50,16 @@ const TrainBookingConfirmedContent = async ({ searchParams }: TrainBookingConfir
           </div>
         </section>
 
-        <TrainBookingSummary offer={offer} search={search} />
+        <div className="lg:col-start-2 lg:row-span-2 lg:row-start-1">
+          <TrainBookingSummary offer={offer} search={search} />
+        </div>
+        <BookingTripCard
+          destination={search.to}
+          carrier={offer.operator}
+          detail={`${offer.trainNumber} · ${offer.seatClass} class`}
+          legs={offer.inbound ? [offer.outbound, offer.inbound] : [offer.outbound]}
+          vehicle="train"
+        />
       </div>
     </>
   );
@@ -58,10 +67,12 @@ const TrainBookingConfirmedContent = async ({ searchParams }: TrainBookingConfir
 
 const TrainBookingConfirmedScreen = ({ searchParams }: TrainBookingConfirmedScreenProps) => {
   return (
-    <div className="mx-auto max-w-content pb-8">
-      <Suspense fallback={<FlightResultsSkeleton />}>
-        <TrainBookingConfirmedContent searchParams={searchParams} />
-      </Suspense>
+    <div className="-mx-4 -my-4 bg-surface-alt px-4 py-4 lg:-mx-8 lg:-my-8 lg:px-8 lg:py-6">
+      <div className="mx-auto max-w-content pb-8">
+        <Suspense fallback={<FlightResultsSkeleton />}>
+          <TrainBookingConfirmedContent searchParams={searchParams} />
+        </Suspense>
+      </div>
     </div>
   );
 };

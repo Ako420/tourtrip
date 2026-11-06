@@ -9,13 +9,13 @@ type LeadTravelerFieldsProps = {
 
 const LeadTravelerFields = ({ getError, contact }: LeadTravelerFieldsProps) => {
   return (
-    <section className="rounded-card border border-line p-5">
-      <div className="mb-1 flex flex-wrap items-center justify-between gap-2">
-        <h2 className="text-lg font-bold">Lead traveler</h2>
+    <section>
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <h2 className="text-2xl font-bold">Lead traveler</h2>
         {!contact && <SignInToBookLink />}
       </div>
-      <p className="mb-4 text-sm text-muted">We only need one person&apos;s details for the whole group.</p>
-      <div className="grid gap-4 sm:grid-cols-2">
+      <p className="mt-1 mb-4 text-sm">We only need one person&apos;s details for the whole group.</p>
+      <div className="grid gap-4 rounded-card border border-line bg-surface p-5 sm:grid-cols-2">
         <FormField name="firstName" label="First name" autoComplete="given-name" defaultValue={contact?.firstName} error={getError("firstName")} />
         <FormField name="lastName" label="Last name" autoComplete="family-name" defaultValue={contact?.lastName} error={getError("lastName")} />
         <FormField name="email" label="Email" type="email" autoComplete="email" defaultValue={contact?.email} error={getError("email")} />
