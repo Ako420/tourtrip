@@ -17,6 +17,7 @@ type CarSearchFormProps = {
   locations: string[];
   preselectedType?: CarCategory;
   compact?: boolean;
+  highlighted?: boolean;
 };
 
 type FieldErrors = Record<string, string[] | undefined>;
@@ -31,7 +32,13 @@ const FieldError = ({ message }: { message?: string }) => {
   return <p className="mt-1 text-left text-sm text-danger">{message}</p>;
 };
 
-const CarSearchForm = ({ initialValues, locations, preselectedType, compact = false }: CarSearchFormProps) => {
+const CarSearchForm = ({
+  initialValues,
+  locations,
+  preselectedType,
+  compact = false,
+  highlighted = false,
+}: CarSearchFormProps) => {
   const router = useRouter();
   const today = useToday();
 
@@ -92,7 +99,11 @@ const CarSearchForm = ({ initialValues, locations, preselectedType, compact = fa
       noValidate
       className={compact ? "text-ink" : "rounded-panel bg-surface p-4 text-ink shadow-card sm:p-5"}
     >
-      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-[1fr_auto_auto_auto]">
+      <div
+        className={`grid gap-3 sm:grid-cols-2 xl:grid-cols-[1fr_auto_auto_auto] ${
+          highlighted ? "rounded-card border-3 border-primary p-1" : ""
+        }`}
+      >
         <div className={`grid gap-3 sm:col-span-2 xl:col-span-1 ${hasDifferentDropoff ? "sm:grid-cols-2" : ""}`}>
           <div>
             <label className={boxClass}>
@@ -127,7 +138,7 @@ const CarSearchForm = ({ initialValues, locations, preselectedType, compact = fa
               <FieldError message={errors.dropoffLocation?.[0]} />
             </div>
           )}
-          {!compact && (
+          {(!compact || highlighted) && (
             <datalist id="car-locations">
               {locations.map((option) => (
                 <option key={option} value={option} />

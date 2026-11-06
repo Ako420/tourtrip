@@ -5,9 +5,12 @@ import { carSortOptions } from "@/constants";
 import { useCarFilters } from "@/hooks";
 import { countCarFilters, formatCount, toCarQuery } from "@/lib";
 import type { CarFilters, CarSearch, CarSearchResult, CarSort } from "@/types";
+import BookingOffers from "../hotels/BookingOffers";
+import AppImage from "../ui/AppImage";
 import Button from "../ui/Button";
 import Icon from "../ui/Icon";
 import Pagination from "../ui/Pagination";
+import Price from "../ui/Price";
 import StatusMessage from "../ui/StatusMessage";
 import CarFilterPanel from "./CarFilterPanel";
 import CarOfferCard from "./CarOfferCard";
@@ -28,18 +31,22 @@ const CarResultsView = ({ search, filters, result }: CarResultsViewProps) => {
     </button>
   );
 
+  const toggleCategory = (id: string) => {
+    const isActive = filters.categories.includes(id);
+
+    updateFilters({ categories: isActive ? filters.categories.filter((item) => item !== id) : [...filters.categories, id] });
+  };
+
   return (
-    <div className="mt-6 grid gap-6 lg:grid-cols-[17rem_minmax(0,1fr)]">
+    <div className="grid gap-5 lg:grid-cols-[17.3rem_minmax(0,1fr)]">
       <aside
         aria-label="Filters"
-        className={`fixed inset-0 z-50 overflow-y-auto bg-surface p-4 lg:static lg:z-auto lg:block lg:overflow-visible lg:p-0 ${
+        className={`fixed inset-0 z-50 overflow-y-auto bg-surface p-4 lg:static lg:z-auto lg:block lg:self-start lg:overflow-visible lg:rounded-card ${
           isPanelOpen ? "block" : "hidden"
         }`}
       >
-        <div className="mb-4 flex items-center justify-between">
-          <h2 className="font-bold">Filters</h2>
-          {clearButton}
-        </div>
+        {clearButton && <div className="mb-2 flex justify-end">{clearButton}</div>}
+        <h2 className="mb-4 font-bold lg:hidden">Filters</h2>
         <CarFilterPanel filters={filters} suppliers={result.suppliers} onChange={updateFilters} />
         <Button type="button" onClick={() => setIsPanelOpen(false)} className="sticky bottom-0 mt-4 w-full lg:hidden">
           Show {formatCount(result.total, "car")}
@@ -47,26 +54,29 @@ const CarResultsView = ({ search, filters, result }: CarResultsViewProps) => {
       </aside>
 
       <div className="min-w-0">
-        <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-          <h1 className="text-xl font-bold" aria-live="polite">
+        <BookingOffers />
+
+        <div className="mt-3 mb-3 flex flex-wrap items-center justify-between gap-3">
+          <h1 className="text-lg font-bold" aria-live="polite">
             {formatCount(result.total, "car")} in {search.location}
-            <span className="ml-2 text-sm font-normal text-muted">{formatCount(result.days, "day")}</span>
+            <span className="ml-2 text-sm font-normal text-ink-soft">{formatCount(result.days, "day")}</span>
           </h1>
           <div className="flex items-center gap-2">
             <button
               type="button"
               onClick={() => setIsPanelOpen(true)}
-              className="flex h-10 items-center gap-2 rounded-md border border-line px-3 text-sm font-medium lg:hidden"
+              className="flex h-9 items-center gap-2 rounded-md bg-surface px-3 text-sm font-medium lg:hidden"
             >
               <Icon name="filter" />
               Filters{activeCount > 0 && ` (${activeCount})`}
             </button>
-            <label className="flex items-center gap-2 text-sm">
-              <span className="sr-only sm:not-sr-only sm:text-muted">Sort by</span>
+            <label className="flex h-9 items-center gap-2 rounded-md bg-surface px-3 text-sm">
+              <Icon name="swap" className="rotate-90 text-xs" />
+              <span className="sr-only">Sort by</span>
               <select
                 value={filters.sort}
                 onChange={(event) => updateFilters({ sort: event.target.value as CarSort })}
-                className="h-10 rounded-md border border-line bg-surface px-2 font-medium outline-none focus:border-primary"
+                className="bg-surface font-medium outline-none"
               >
                 {carSortOptions.map((option) => (
                   <option key={option.value} value={option.value}>
@@ -77,6 +87,33 @@ const CarResultsView = ({ search, filters, result }: CarResultsViewProps) => {
             </label>
           </div>
         </div>
+
+        <ul aria-label="Car types" className="scrollbar-none mb-4 flex divide-x divide-line overflow-x-auto rounded-card bg-surface py-3">
+          {result.categories.map((category) => {
+            const isActive = filters.categories.includes(category.id);
+
+            return (
+              <li key={category.id} className="min-w-28 flex-1 px-2">
+                <button
+                  type="button"
+                  aria-pressed={isActive}
+                  onClick={() => toggleCategory(category.id)}
+                  className={`w-full rounded-md p-1 text-center transition-colors duration-300 ease-out hover:text-primary ${
+                    isActive ? "bg-primary-soft" : ""
+                  }`}
+                >
+                  <span className="block text-sm font-bold">{category.label}</span>
+                  <span className="block text-xs text-ink-soft">
+                    From <Price amount={category.fromPrice} currency={category.currency} />
+                  </span>
+                  <span className="relative mt-1 block h-12 overflow-hidden rounded-sm bg-surface-alt">
+                    <AppImage src={category.imageUrl} alt="" fill sizes="7rem" className="object-cover" />
+                  </span>
+                </button>
+              </li>
+            );
+          })}
+        </ul>
 
         {!search.isStandardAge && (
           <p className="mb-4 rounded-md bg-accent-soft p-3 text-sm">

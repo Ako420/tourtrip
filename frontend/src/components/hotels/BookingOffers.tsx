@@ -4,7 +4,7 @@ import Icon from "../ui/Icon";
 
 const BookingOffers = () => {
   return (
-    <section aria-label="Free account" className="rounded-card border border-line p-4">
+    <section aria-label="Free account" className="rounded-card border border-line bg-surface p-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="font-bold">Join Hotel Jr for free</p>
         <ButtonLink href={authLinks.signup} size="sm">

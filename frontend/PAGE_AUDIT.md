@@ -10,7 +10,7 @@ Check every built page against its https://www.trip.com/ page, section by sectio
 4. Fix the page, check the "Done when" line, then tick the box.
 5. Stop and review before starting the next page.
 
-**Next task: C4**
+**Next task: C5**
 
 New pages in `TODO.md` section 3 wait until this audit is finished, so they are built to the corrected pattern.
 
@@ -140,7 +140,7 @@ Everything else builds on these.
 | [x] C1 | `/hotels/list` | https://www.trip.com/hotels/list?city=58 |
 | [x] C2 | `/flights/results` | Flight search results |
 | [x] C3 | `/trains/results` | Train search results |
-| [ ] C4 | `/cars/results` | Car search results |
+| [x] C4 | `/cars/results` | Car search results |
 | [ ] C5 | `/packages/results` | Package search results |
 
 **Done when, for each:** filters, sort, card layout, and prices match, with the same sample search on both sites.
@@ -150,6 +150,7 @@ Everything else builds on these.
 - **C1 Hotel list:** blue search bar that stays on screen, map card, popular filters named after the place, budget, stars, guest rating and amenities, sort box, and Trip-style cards with hotel names at 20. The first booking offer is replaced by what a free account really gives, because we can't back up the discounts. Left out, because our data has none: property type, location, meals, bed type and the other long filter groups, per-card photo slides, per-card map links, Trip Coins lines, "last booked" and "only N left" notes, awards, and the "why book" box with its price match claim. Prices show per night and the stay total, not taxes and fees. Paging stays, not endless scroll.
 - **C2 Flight results:** the page moved to the transparent header, with a blue band, a one-row search panel, a full-width date strip, filters on the left, and a dark title bar, sort tabs and compact flight rows on the right. Times are 20 and prices 20. Departure and return stay in one row, not two steps, because our booking takes both legs together. The date strip keeps its "lowest fare per adult" note, because the prices need it. Left out: multi-city, nearby airports, the price graph, price alerts, alliances, stopover and duration filters, airline logos, and row tags such as "Cheapest nonstop" and CO2 figures, which our data doesn't have. Filters stay Recommended, Airlines, Departure time, Stops and Max price.
 - **C3 Train results:** **not compared with the real Trip.com results list.** That list only opens by submitting their search form, and there is no public link to it. The page uses the C2 layout, and the rows follow the train times table on their London to Manchester route page: bold times, stations, duration and a button on the right. To check it properly, send a screenshot of their results, or approve one search there. Both legs stay in one row, as in C2, and operators are sample names.
+- **C4 Car results:** compared with Trip's real list for Seoul, reached from the "View All" button on their public city page. Blue search bar, grey page, filters in a white card, offer bar, count and sort, car type tiles with real lowest prices, and cards with car name at 20, supplier and rating, features, price per day at 24, total and View deal. Left out, because our data has none: the price histogram, seats, baggage, location, specification, extras and payment filters, pick-up location notes, promotions and the members banner. Driver age stays a checkbox and license country stays out, as in B6. `GET /cars/search` in `backend/TODO.md` now also needs `categories`.
 
 ## D. Details pages
 

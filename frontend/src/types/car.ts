@@ -43,6 +43,14 @@ export type CarOffer = {
   currency: string;
 };
 
+export type CarCategoryDeal = {
+  id: CarCategory;
+  label: string;
+  fromPrice: number | string;
+  currency: string;
+  imageUrl: string;
+};
+
 export type CarSearchResult = {
   items: CarOffer[];
   total: number;
@@ -50,6 +58,7 @@ export type CarSearchResult = {
   pageCount: number;
   days: number;
   suppliers: string[];
+  categories: CarCategoryDeal[];
 };
 
 export type CarTypeTile = {

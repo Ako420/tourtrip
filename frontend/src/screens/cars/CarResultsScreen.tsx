@@ -24,23 +24,28 @@ const CarResults = async ({ searchParams }: CarResultsScreenProps) => {
 
   return (
     <>
-      <CarSearchForm key={toCarQuery(search)} initialValues={search} locations={locations} />
-      {isValid ? (
-        <CarResultsView search={search} filters={filters} result={await searchCars(search, filters)} />
-      ) : (
-        <StatusMessage iconName="car" title="Finish your search" description="Add your location and dates above to see cars." />
-      )}
+      <div className="mx-auto max-w-content">
+        <CarSearchForm key={toCarQuery(search)} initialValues={search} locations={locations} compact highlighted />
+      </div>
+
+      <div className="-mx-4 -mb-4 mt-4 bg-surface-alt px-4 py-6 lg:-mx-8 lg:-mb-8 lg:px-8">
+        <div className="mx-auto max-w-content">
+          {isValid ? (
+            <CarResultsView search={search} filters={filters} result={await searchCars(search, filters)} />
+          ) : (
+            <StatusMessage iconName="car" title="Finish your search" description="Add your location and dates above to see cars." />
+          )}
+        </div>
+      </div>
     </>
   );
 };
 
 const CarResultsScreen = ({ searchParams }: CarResultsScreenProps) => {
   return (
-    <div className="mx-auto max-w-content pb-8">
-      <Suspense fallback={<FlightResultsSkeleton />}>
-        <CarResults searchParams={searchParams} />
-      </Suspense>
-    </div>
+    <Suspense fallback={<FlightResultsSkeleton />}>
+      <CarResults searchParams={searchParams} />
+    </Suspense>
   );
 };
 
