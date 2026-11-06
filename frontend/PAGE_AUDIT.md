@@ -10,7 +10,7 @@ Check every built page against its https://www.trip.com/ page, section by sectio
 4. Fix the page, check the "Done when" line, then tick the box.
 5. Stop and review before starting the next page.
 
-**Next task: D1**
+**Next task: D2**
 
 New pages in `TODO.md` section 3 wait until this audit is finished, so they are built to the corrected pattern.
 
@@ -157,7 +157,7 @@ Everything else builds on these.
 
 | Task | Our page | Reference |
 | --- | --- | --- |
-| [ ] D1 | `/hotels/[slug]` | Hotel details. Redirected to sign-in when last tried |
+| [x] D1 | `/hotels/[slug]` | Hotel details |
 | [ ] D2 | `/attractions/[slug]` | Attraction details |
 | [ ] D3 | `/tours/[slug]` | Tour details |
 | [ ] D4 | `/cruises/[slug]` | Cruise details |
@@ -165,6 +165,10 @@ Everything else builds on these.
 | [ ] D6 | `/inspiration/[slug]` | Guide article |
 
 **Done when, for each:** gallery, section tabs, sections and booking panel match.
+
+**Notes:**
+
+- **D1:** Compared with a Trip hotel page while signed in. Search bar, back link, gallery, overview with price card, offer bar, tabs with price, room filters, reviews, location, amenities, policies and description now follow Trip's order. Left out because we have no data for them: several rates per room, photo sets per room, review summary, restaurant, fine print, questions, price match and a real map. Trip's Save and Share: we have Save only. Only two room filters are real for our data. The top search bar goes to the hotel list, and the bar above the rooms changes dates on this page. Tested with sample data, as the backend was off.
 
 ## E. Booking pages
 
