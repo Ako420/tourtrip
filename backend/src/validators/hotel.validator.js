@@ -1,8 +1,5 @@
 import { z } from "zod";
-import { commaList, dropEmpty, isoDate, number, page, queryBoolean, wholeNumber } from "../utils/validators.js";
-
-// The most a Decimal(10, 2) column can hold.
-const MAX_PRICE = 99999999.99;
+import { commaList, dropEmpty, isoDate, MAX_PRICE, number, page, queryBoolean, wholeNumber } from "../utils/validators.js";
 
 // Each amenity adds a join to the search, and the time grows quickly: 20 takes about 30ms, 160 takes about 4s.
 const MAX_AMENITIES = 20;

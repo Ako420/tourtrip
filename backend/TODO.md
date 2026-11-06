@@ -8,7 +8,7 @@ The full plan for the Hotel Jr backend: everything needed to run a travel site l
 2. Build only that task. Check its "Done when" line, then tick its box.
 3. Stop and review before starting the next one.
 
-**Next task: 6.7** (5.5 waits for the page audit)
+**Next task: 7.1** (5.5 waits for the page audit)
 
 **Stack**
 
@@ -493,11 +493,11 @@ Response:
   "priceRange": { "min": 310, "max": 980 },
   "airlines": [{ "name": "Savanna Air", "lowestPrice": 310 }],
   "fareCalendar": [{ "date": "2026-12-03", "lowestPrice": 290 }],
-  "sortSummary": { "best": "$420", "cheapest": "$310", "fastest": "6h 20m" }
+  "sortSummary": { "best": 420, "cheapest": 310, "fastest": "6h 20m" }
 }
 ```
 
-`items` are `FlightOffer`. `priceRange` and `airlines` use all offers before filters, except `nonstop`. `fareCalendar` covers 3 days either side of `departDate`. `sortSummary` uses filtered offers and is omitted when nothing matches.
+`items` are `FlightOffer`. `priceRange` and `airlines` use all offers before filters, except `nonstop`. `fareCalendar` covers 3 days either side of `departDate`, leaving out a day with no seats. `sortSummary` uses filtered offers, and is `{}` when nothing matches, because the page reads it.
 
 ### 5.7 Attractions
 
@@ -747,7 +747,7 @@ Response:
   "total": 12, "page": 1, "pageCount": 2, "currency": "USD",
   "operators": [{ "name": "Meridian Rail", "lowestPrice": 58 }],
   "fareCalendar": [{ "date": "2026-12-07", "lowestPrice": 52 }],
-  "sortSummary": { "best": "$64", "cheapest": "$58", "fastest": "2h 20m" }
+  "sortSummary": { "best": 64, "cheapest": 58, "fastest": "2h 20m" }
 }
 ```
 
@@ -1407,7 +1407,7 @@ Fares match the sample on 99.85% of prices. The rest are $1 off, because `baseFa
 
 **Done when:** a Lagos to London search returns offers, and bad dates return 400.
 
-#### [ ] 6.7 Add flight filters and sorting
+#### [x] 6.7 Add flight filters and sorting
 
 - Filter in memory, because prices are calculated rather than stored.
 - `stops`: `min(stops, 2)` must be in the list, on the outbound leg.
@@ -1417,18 +1417,19 @@ Fares match the sample on 99.85% of prices. The rest are $1 off, because `baseFa
   - `cheapest`: lowest `totalPrice`
   - `fastest`: lowest `travelMinutes`, both legs combined
   - `earliest`: lowest `outbound.departMinutes`
+- Ties keep the flight order, because `toSorted` is stable and offers arrive in that order.
 
 **Done when:** tests cover each filter and sort, with results matching the frontend's sample logic.
 
-#### [ ] 6.8 Add the flight search summaries
+#### [x] 6.8 Add the flight search summaries
 
-- `priceRange` and `airlines` come from offers before filters.
-- `fareCalendar` is 7 days, using 90% of the cheapest fare per day.
-- `sortSummary` holds strings such as `$1,204` and `6h 20m`, built from filtered offers.
+- `priceRange` and `airlines` come from offers before filters, but after `nonstop`, which also applies to `fareCalendar`.
+- `fareCalendar` is 7 days, using the cheapest real adult fare per day. Don't take 90% of it: the sample's 0.9 is already the cheapest flight, so that would show fares that can't be booked.
+- `sortSummary` has `best` and `cheapest` as numbers, because the frontend's `Price` component converts them and a string like `$1,204` shows as `$NaN`. `fastest` is text such as `6h 20m`, using the outbound leg of the fastest trip. All built from filtered offers.
 
 **Done when:** the response has all the fields of `FlightSearchResult`.
 
-#### [ ] 6.9 Build `GET /flights/offers/:id`
+#### [x] 6.9 Build `GET /flights/offers/:id`
 
 - Takes the same search params as the search, and rebuilds the offer from its schedule ids.
 - Don't apply the search's seat filter here. A flight that has just sold out should reach the booking step, which returns 409, not a 404.
@@ -1436,6 +1437,8 @@ Fares match the sample on 99.85% of prices. The rest are $1 off, because `baseFa
 - Frontend, before `flights` goes in `API_AREAS`: limit what the address can send, as task 4.8 did for hotels. That's `from` and `to` to 100 characters in `parseFlightSearch`, and `page`, `maxPrice` and the lists in `parseFlightFilters`. Otherwise a hand-edited address gets a 400 and shows an error page.
 
 **Done when:** an id from a search returns the same offer at the same price.
+
+`flights` is live in `API_AREAS`. Edits to `airports.ts`, `flightDeals.ts` and `flightOffers.ts` no longer reach those pages, so change the seed data instead.
 
 ---
 
@@ -1569,7 +1572,7 @@ The frontend's train pages already call these endpoints, so they must exist befo
 #### [ ] 8.8 Add the train search summaries
 
 - `operators` lists each operator's lowest price, from offers before filters.
-- `fareCalendar` is 7 days, using 90% of the cheapest fare per day.
+- `fareCalendar` is 7 days, using the cheapest real adult fare per day. Don't take 90% of it: the sample's 0.9 is already the cheapest flight, so that would show fares that can't be booked.
 - `sortSummary` uses filtered offers, like flights.
 
 **Done when:** the response has all the fields of `TrainSearchResult`.

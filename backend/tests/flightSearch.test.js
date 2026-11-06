@@ -19,7 +19,7 @@ const search = (query) => api.get(`/api/flights/search?${query}`);
 
 const ids = ({ body }) => body.items.map(({ id }) => id);
 
-const allIds = async (query) => {
+const allOffers = async (query) => {
   const first = await search(query);
   const pages = [first];
 
@@ -27,8 +27,10 @@ const allIds = async (query) => {
     pages.push(await search(`${query}&page=${page}`));
   }
 
-  return pages.flatMap(ids);
+  return pages.flatMap(({ body }) => body.items);
 };
+
+const findOffer = async (query, id) => (await allOffers(query)).find((offer) => offer.id === id);
 
 let log;
 
@@ -57,27 +59,22 @@ describe("GET /api/flights/search results", () => {
   });
 
   it("returns a round trip with both legs", async () => {
-    const { body } = await search(ROUND_TRIP);
-    const [offer] = body.items;
+    const offer = await findOffer(ROUND_TRIP, "LOS-LHR-1_LHR-LOS-1");
 
-    assert.equal(offer.id, "LOS-LHR-1_LHR-LOS-1");
     assert.equal(offer.outbound.date, DEPART_DATE);
     assert.equal(offer.inbound.date, RETURN_DATE);
     assert.equal(offer.pricePerAdult, 441);
   });
 
   it("returns a one-way trip with no inbound leg", async () => {
-    const { body } = await search(ONE_WAY);
-    const [offer] = body.items;
+    const offer = await findOffer(ONE_WAY, "LOS-LHR-1");
 
-    assert.equal(offer.id, "LOS-LHR-1");
     assert.equal("inbound" in offer, false);
     assert.equal(offer.pricePerAdult, 245);
   });
 
   it("passes on the cabin and the party", async () => {
-    const { body } = await search(`${ONE_WAY}&cabin=Business&adults=2&children=1`);
-    const [offer] = body.items;
+    const offer = await findOffer(`${ONE_WAY}&cabin=Business&adults=2&children=1`, "LOS-LHR-1");
 
     assert.equal(offer.cabin, "Business");
     assert.equal(offer.pricePerAdult, 784);
@@ -112,15 +109,9 @@ describe("GET /api/flights/search results", () => {
       data: { scheduleId: "LOS-LHR-1", date: new Date(DEPART_DATE), cabin: "Economy", seatsBooked: 38 },
     });
 
-    const { body } = await search(ONE_WAY);
+    const offer = await findOffer(ONE_WAY, "LOS-LHR-1");
 
-    assert.equal(body.items[0].seatsLeft, 2);
-  });
-
-  it("accepts the frontend's filters until they're built", async () => {
-    const response = await search(`${ROUND_TRIP}&stops=0|1&airlines=Savanna Air&departure=morning&maxPrice=900&refundable=true&sort=cheapest`);
-
-    assert.equal(response.status, 200);
+    assert.equal(offer.seatsLeft, 2);
   });
 
   it("needs no sign-in", async () => {
@@ -145,7 +136,10 @@ describe("GET /api/flights/search unknown cities", () => {
       const response = await search(`${route}&departDate=${DEPART_DATE}&tripType=one-way`);
 
       assert.equal(response.status, 200);
-      assert.deepEqual(response.body, { items: [], total: 0, page: 1, pageCount: 1 });
+      assert.deepEqual(response.body.items, []);
+      assert.equal(response.body.total, 0);
+      assert.equal(response.body.page, 1);
+      assert.equal(response.body.pageCount, 1);
     });
   }
 });
@@ -181,20 +175,22 @@ describe("GET /api/flights/search paging", () => {
   });
 
   it("returns the next flights on page 2", async () => {
-    const response = await search(`${ONE_WAY}&page=2`);
+    const first = await search(ONE_WAY);
+    const second = await search(`${ONE_WAY}&page=2`);
 
-    assert.equal(response.body.page, 2);
-    assert.deepEqual(ids(response), [7, 8, 9, 10, 11, 12].map((number) => `LOS-LHR-${number}`));
+    assert.equal(second.body.page, 2);
+    assert.equal(second.body.items.length, PAGE_SIZE);
+    assert.ok(ids(second).every((id) => !ids(first).includes(id)));
   });
 
   it("returns what's left on the last page", async () => {
     const response = await search(`${ONE_WAY}&page=3`);
 
-    assert.deepEqual(ids(response), [13, 14, 15].map((number) => `LOS-LHR-${number}`));
+    assert.equal(response.body.items.length, FLIGHTS_ON_A_ROUTE - PAGE_SIZE * 2);
   });
 
   it("shows every flight exactly once across the pages", async () => {
-    const found = await allIds(ONE_WAY);
+    const found = (await allOffers(ONE_WAY)).map(({ id }) => id);
 
     assert.equal(found.length, FLIGHTS_ON_A_ROUTE);
     assert.equal(new Set(found).size, FLIGHTS_ON_A_ROUTE);

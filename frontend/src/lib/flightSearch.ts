@@ -1,4 +1,4 @@
-import { cabinOptions, defaultPassengers, passengerLimits } from "@/constants";
+import { cabinOptions, defaultPassengers, flightFilterLimits, passengerLimits } from "@/constants";
 import type { CabinClass, FlightDeal, FlightSearch, RouteParams } from "@/types";
 import { isIsoDate } from "./dates";
 
@@ -22,8 +22,8 @@ export const parseFlightSearch = (params: RouteParams): FlightSearch => {
   const cabin = getParam(params, "cabin") as CabinClass;
 
   return {
-    from: getParam(params, "from")?.trim() || undefined,
-    to: getParam(params, "to")?.trim() || undefined,
+    from: getParam(params, "from")?.trim().slice(0, flightFilterLimits.cityLength) || undefined,
+    to: getParam(params, "to")?.trim().slice(0, flightFilterLimits.cityLength) || undefined,
     tripType: getParam(params, "tripType") === "one-way" ? "one-way" : "round-trip",
     isNonstop: getParam(params, "nonstop") === "true",
     departDate: getDate(getParam(params, "departDate")),

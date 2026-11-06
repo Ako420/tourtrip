@@ -1,6 +1,6 @@
 import { toMoney } from "../utils/money.js";
 
-const CURRENCY = "USD";
+export const CURRENCY = "USD";
 
 const toDateText = (date) => date.toISOString().slice(0, 10);
 

@@ -1,4 +1,4 @@
-import { flightSortOptions } from "@/constants";
+import { departureWindows, flightFilterLimits, flightSortOptions } from "@/constants";
 import type { FlightFilters, FlightSearch, FlightSort, RouteParams } from "@/types";
 import { toFlightQuery } from "./flightSearch";
 
@@ -10,10 +10,10 @@ const getParam = (params: RouteParams, key: string) => {
 
 const getList = (value: string | undefined) => value?.split("|").filter(Boolean) ?? [];
 
-const getNumber = (value: string | undefined) => {
+const getNumber = (value: string | undefined, max = Number.MAX_SAFE_INTEGER) => {
   const number = Number(value);
 
-  return value && Number.isFinite(number) && number >= 0 ? number : undefined;
+  return value && Number.isFinite(number) && number >= 0 ? Math.min(number, max) : undefined;
 };
 
 export const defaultFlightFilters: FlightFilters = {
@@ -26,14 +26,22 @@ export const defaultFlightFilters: FlightFilters = {
   page: 1,
 };
 
+const isStopCount = (stops: number) => {
+  const { min, max } = flightFilterLimits.stops;
+
+  return Number.isInteger(stops) && stops >= min && stops <= max;
+};
+
+const isDepartureWindow = (id: string) => departureWindows.some((window) => window.id === id);
+
 export const parseFlightFilters = (params: RouteParams): FlightFilters => {
   const sort = getParam(params, "sort") as FlightSort;
 
   return {
-    stops: getList(getParam(params, "stops")).map(Number).filter(Number.isInteger),
+    stops: getList(getParam(params, "stops")).map(Number).filter(isStopCount),
     airlines: getList(getParam(params, "airlines")),
-    departureWindows: getList(getParam(params, "departure")),
-    maxPrice: getNumber(getParam(params, "maxPrice")),
+    departureWindows: getList(getParam(params, "departure")).filter(isDepartureWindow),
+    maxPrice: getNumber(getParam(params, "maxPrice"), flightFilterLimits.price),
     refundable: getParam(params, "refundable") === "true",
     checkedBag: getParam(params, "checkedBag") === "true",
     sort: flightSortOptions.some((option) => option.value === sort) ? sort : "best",
