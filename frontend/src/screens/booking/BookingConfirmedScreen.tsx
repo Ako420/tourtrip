@@ -25,9 +25,9 @@ const BookingConfirmedContent = async ({ params, searchParams }: BookingConfirme
 
   return (
     <>
-      <BookingSteps current={2} />
+      <BookingSteps current={3} />
 
-      <div className="mt-6 grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
+      <div className="mt-6 grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_24.5rem] xl:gap-20">
         <section className="rounded-card border border-line p-6">
           <span className="flex size-14 items-center justify-center rounded-full bg-primary-soft text-2xl text-success">
             <Icon name="check" />

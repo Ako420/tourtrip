@@ -50,11 +50,9 @@ const BookingContent = async ({ params, searchParams }: BookingScreenProps) => {
 
   return (
     <>
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <h1 className="text-2xl font-bold">Complete your booking</h1>
-        <BookingSteps current={1} />
-      </div>
-      <div className="mt-6 grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
+      <h1 className="sr-only">Complete your booking</h1>
+      <BookingSteps current={2} />
+      <div className="mt-6 grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_24.5rem] xl:gap-20">
         <div className="order-2 lg:order-1">
           <BookingForm stay={stay} contact={toContactDefaults(await getCurrentUser())} />
         </div>

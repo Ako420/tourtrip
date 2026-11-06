@@ -10,7 +10,7 @@ Check every built page against its https://www.trip.com/ page, section by sectio
 4. Fix the page, check the "Done when" line, then tick the box.
 5. Stop and review before starting the next page.
 
-**Next task: E1**
+**Next task: E2**
 
 New pages in `TODO.md` section 3 wait until this audit is finished, so they are built to the corrected pattern.
 
@@ -181,7 +181,7 @@ Each form and its confirmation page.
 
 | Task | Our pages |
 | --- | --- |
-| [ ] E1 | `/hotels/[slug]/book`, `/hotels/[slug]/book/confirmed` |
+| [x] E1 | `/hotels/[slug]/book`, `/hotels/[slug]/book/confirmed` |
 | [ ] E2 | `/flights/book`, `/flights/book/confirmed` |
 | [ ] E3 | `/trains/book`, `/trains/book/confirmed` |
 | [ ] E4 | `/cars/book`, `/cars/book/confirmed` |
@@ -189,6 +189,10 @@ Each form and its confirmation page.
 | [ ] E6 | `/packages/book`, `/packages/book/confirmed` |
 
 **Done when, for each:** form sections, summary and steps match what can be seen without signing in, or your screenshots. No real booking is made on Trip.com.
+
+**Notes:**
+
+- **E1:** Compared with Trip's booking form while signed in, stopping before payment. Now three steps, plain form sections with 24px headings, and four summary cards: stay, dates, price details, cancellation policy. All booking pages now show the three steps. Hotel bookings stay pay at the property. Left out because we have no data for them: savings and rooms-left note, bed preference, promo code, card payment, price change per night and room selectors, rewards, fine print and extra guests. Trip's confirmation page cannot be seen without booking, so ours only got the new steps and summary.
 
 ## F. Other pages
 

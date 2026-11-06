@@ -23,7 +23,7 @@ const TrainBookingConfirmedContent = async ({ searchParams }: TrainBookingConfir
 
   return (
     <>
-      <BookingSteps current={2} />
+      <BookingSteps current={3} />
 
       <div className="mt-6 grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
         <section className="rounded-card border border-line p-6">

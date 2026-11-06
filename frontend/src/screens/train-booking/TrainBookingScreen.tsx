@@ -48,7 +48,7 @@ const TrainBookingContent = async ({ searchParams }: TrainBookingScreenProps) =>
     <>
       <div className="flex flex-wrap items-center justify-between gap-3">
         <h1 className="text-2xl font-bold">Complete your booking</h1>
-        <BookingSteps current={1} />
+        <BookingSteps current={2} />
       </div>
       <div className="mt-6 grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
         <div className="order-2 lg:order-1">
