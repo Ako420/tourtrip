@@ -8,7 +8,7 @@ The full plan for the Hotel Jr backend: everything needed to run a travel site l
 2. Build only that task. Check its "Done when" line, then tick its box.
 3. Stop and review before starting the next one.
 
-**Next task: 7.1** (5.5 waits for the page audit)
+**Next task: 8.1** (5.5 waits for the page audit)
 
 **Stack**
 
@@ -1444,24 +1444,25 @@ Fares match the sample on 99.85% of prices. The rest are $1 off, because `baseFa
 
 ### Phase 7: Attractions
 
-#### [ ] 7.1 Add the attraction models
+#### [x] 7.1 Add the attraction models
 
 - Add `Attraction` and `TicketOption`, and update `Review`, as in section 4.
-- Run `npx prisma migrate dev --name add_attractions`.
+- Run `npx prisma migrate dev --name add_attractions`. `category` is an enum, because its list of values is closed.
 
 **Done when:** the migration applies and hotel details still return their reviews.
 
-#### [ ] 7.2 Seed the attractions
+#### [x] 7.2 Seed the attractions
 
 - With a one-off `npx tsx` script in `frontend`, pass each item in `attractions` through `withAttractionDetails` and write the result to `prisma/seed-data/attractions.json`.
 - Pass the data through `hostImages`.
 - The sample ticket ids `standard`, `guided` and `private` repeat across attractions, so let the database create ids, and `upsert` on `(attractionId, name)`.
-- `price` is the standard ticket's adult price. `sortRank` keeps the sample order. `dailyLimit` starts at 200.
+- `price` is the standard ticket's adult price. `sortRank` keeps the sample order. `dailyLimit` starts at 200, and a re-seed leaves it alone.
+- Hotel and attraction reviews share a table, so their ids must not overlap. They don't: `1-0` and `1-Amara O.`. A test keeps it that way.
 - Keep the sample's `rating`, which is out of 5, and its `reviewCount`.
 
 **Done when:** seeding twice creates no duplicates and the row counts match the sample.
 
-#### [ ] 7.3 Build the attraction mapper
+#### [x] 7.3 Build the attraction mapper
 
 **Files:** `mappers/attraction.mapper.js`, `tests/attraction.mapper.test.js`
 
@@ -1469,37 +1470,41 @@ Fares match the sample on 99.85% of prices. The rest are $1 off, because `baseFa
 - Reviews use the same shape as hotel reviews, so reuse that part of `hotel.mapper.js`.
 - Hide `sortRank`, `dailyLimit` and other internal fields.
 
-**Done when:** a test confirms the keys match `Attraction` and `AttractionDetails`.
+**Done when:** a test confirms the keys match `Attraction` and `AttractionDetails`. The test reads them from `frontend/src/types/attraction.ts`, so a new field there fails it.
 
-#### [ ] 7.4 Build `GET /attractions/search`
+#### [x] 7.4 Build `GET /attractions/search`
 
 **Files:** `validators/attraction.validator.js`, `services/attraction.service.js`, `controllers/attraction.controller.js`, `routers/attraction.router.js`
 
 - Match `q` case-insensitively on name, city or country.
-- Sort `recommended` by `sortRank`, `rating` highest first, and `price-asc` lowest first.
+- Sort `recommended` by `sortRank`, `rating` highest first, and `price-asc` lowest first. Settle ties by `sortRank`, then id, so an attraction can't show up on two pages.
 - Page size 8, using `getPageInfo` from `utils/pagination.js`.
 - Register this route above `/:slug`.
 
 **Done when:** tests cover `q`, each category, `freeCancellation`, each sort, and a `page` beyond the end.
 
-#### [ ] 7.5 Build `GET /attractions/:slug`
+#### [x] 7.5 Build `GET /attractions/:slug`
 
 - Include tickets, cheapest first, and the latest 5 reviews. Throw 404 for an unknown slug.
+- Check the slug only as text, so anything unknown gets a 404, which the frontend shows as its not-found page.
 
 **Done when:** the response matches `AttractionDetails` and an unknown slug returns 404.
 
-#### [ ] 7.6 Build `GET /attractions/:slug/similar`
+#### [x] 7.6 Build `GET /attractions/:slug/similar`
 
 - Up to six other attractions, same category first, then by `sortRank`.
 
 **Done when:** the result leaves out the attraction itself and lists same-category items first.
 
-#### [ ] 7.7 Build `GET /planner/suggestions`
+#### [x] 7.7 Build `GET /planner/suggestions`
 
 - Return every attraction as `{ id, slug, name, city, country, imageUrl, duration, price, currency }`.
 - `price` must be a number here, because `PlannerSuggestion` doesn't accept a Decimal string.
+- Frontend, before `attractions` goes in `API_AREAS`: limit `q` to 100 characters and `page` to a safe whole number in `parseAttractionFilters`, as task 4.8 did for hotels. Then run `npx next build` with the area on.
 
 **Done when:** the `/planner` page can list attractions from the API.
+
+`attractions` is live in `API_AREAS`. Edits to `attractions.ts` and `attractionDetails.ts` no longer reach those pages, so change the seed data instead.
 
 ---
 

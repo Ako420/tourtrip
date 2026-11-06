@@ -1,4 +1,5 @@
 import { prisma } from "../src/config/db.js";
+import { seedAttractions } from "./seed-attractions.js";
 import { seedContent } from "./seed-content.js";
 import { seedFaqs } from "./seed-faqs.js";
 import { seedFlights } from "./seed-flights.js";
@@ -9,6 +10,7 @@ try {
   await seedContent();
   await seedFaqs();
   await seedFlights();
+  await seedAttractions();
 } finally {
   await prisma.$disconnect();
 }

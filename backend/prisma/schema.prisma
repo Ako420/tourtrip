@@ -108,23 +108,26 @@ model RoomType {
 }
 
 model Review {
-  id        String   @id @default(cuid())
-  hotelId   String
-  hotel     Hotel    @relation(fields: [hotelId], references: [id], onDelete: Cascade)
-  userId    String?
-  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
-  bookingId String?  @unique
-  author    String
-  country   String
-  score     Float
-  stayDate  String
-  title     String
-  text      String
-  photos    String[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id           String      @id @default(cuid())
+  hotelId      String?
+  hotel        Hotel?      @relation(fields: [hotelId], references: [id], onDelete: Cascade)
+  attractionId String?
+  attraction   Attraction? @relation(fields: [attractionId], references: [id], onDelete: Cascade)
+  userId       String?
+  user         User?       @relation(fields: [userId], references: [id], onDelete: SetNull)
+  bookingId    String?     @unique
+  author       String
+  country      String
+  score        Float
+  stayDate     String
+  title        String
+  text         String
+  photos       String[]
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
 
   @@index([hotelId, createdAt])
+  @@index([attractionId, createdAt])
 }
 
 model ContentBlock {
@@ -243,4 +246,58 @@ model FlightDeal {
   isActive   Boolean  @default(true)
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
+}
+
+enum AttractionCategory {
+  landmarks
+  nature
+  adventure
+  city
+}
+
+model Attraction {
+  id               String             @id @default(cuid())
+  slug             String             @unique
+  name             String
+  city             String
+  country          String
+  category         AttractionCategory
+  imageUrl         String
+  rating           Float              @default(0)
+  reviewCount      Int                @default(0)
+  duration         String
+  price            Decimal            @db.Decimal(10, 2)
+  currency         String             @default("USD")
+  freeCancellation Boolean            @default(false)
+  sortRank         Int                @default(0)
+  description      String
+  highlights       String[]
+  address          String
+  reviewScores     Json
+  policies         Json
+  nearby           Json
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+  tickets          TicketOption[]
+  reviews          Review[]
+
+  @@index([city])
+  @@index([category])
+  @@index([rating])
+}
+
+model TicketOption {
+  id           String     @id @default(cuid())
+  attractionId String
+  attraction   Attraction @relation(fields: [attractionId], references: [id], onDelete: Cascade)
+  name         String
+  description  String
+  includes     String[]
+  adultPrice   Decimal    @db.Decimal(10, 2)
+  childPrice   Decimal    @db.Decimal(10, 2)
+  dailyLimit   Int        @default(200)
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  @@unique([attractionId, name])
 }

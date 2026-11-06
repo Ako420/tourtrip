@@ -1,4 +1,4 @@
-import { attractionCategories, attractionSortOptions } from "@/constants";
+import { ATTRACTION_QUERY_LENGTH, attractionCategories, attractionSortOptions } from "@/constants";
 import type { AttractionCategory, AttractionFilters, AttractionSort, RouteParams } from "@/types";
 
 const getParam = (params: RouteParams, key: string) => {
@@ -13,11 +13,11 @@ export const parseAttractionFilters = (params: RouteParams): AttractionFilters =
   const page = Number.parseInt(getParam(params, "page") ?? "", 10);
 
   return {
-    query: getParam(params, "q")?.trim() || undefined,
+    query: getParam(params, "q")?.trim().slice(0, ATTRACTION_QUERY_LENGTH) || undefined,
     category: attractionCategories.some((item) => item.id === category) ? category : "all",
     freeCancellation: getParam(params, "freeCancellation") === "true",
     sort: attractionSortOptions.some((option) => option.value === sort) ? sort : "recommended",
-    page: page > 0 ? page : 1,
+    page: page > 0 ? Math.min(page, Number.MAX_SAFE_INTEGER) : 1,
   };
 };
 
