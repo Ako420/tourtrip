@@ -301,3 +301,60 @@ model TicketOption {
 
   @@unique([attractionId, name])
 }
+
+model Station {
+  id                String          @id @default(cuid())
+  name              String          @unique
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+  outgoingSchedules TrainSchedule[] @relation("TrainScheduleFrom")
+  incomingSchedules TrainSchedule[] @relation("TrainScheduleTo")
+}
+
+model TrainOperator {
+  id        String          @id @default(cuid())
+  code      String          @unique
+  name      String
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+  schedules TrainSchedule[]
+}
+
+model TrainSchedule {
+  id                String           @id @default(cuid())
+  operatorId        String
+  operator          TrainOperator    @relation(fields: [operatorId], references: [id])
+  trainNumber       String
+  fromStationId     String
+  fromStation       Station          @relation("TrainScheduleFrom", fields: [fromStationId], references: [id])
+  toStationId       String
+  toStation         Station          @relation("TrainScheduleTo", fields: [toStationId], references: [id])
+  departMinutes     Int
+  durationMinutes   Int
+  changes           Int              @default(0)
+  changeCity        String?
+  baseFare          Decimal          @db.Decimal(10, 2)
+  refundable        Boolean          @default(false)
+  seatsPerClass     Int
+  returnScheduleId  String?
+  returnSchedule    TrainSchedule?   @relation("TrainReturnSchedule", fields: [returnScheduleId], references: [id], onDelete: SetNull)
+  outboundSchedules TrainSchedule[]  @relation("TrainReturnSchedule")
+  createdAt         DateTime         @default(now())
+  updatedAt         DateTime         @updatedAt
+  departures        TrainDeparture[]
+
+  @@index([fromStationId, toStationId])
+}
+
+model TrainDeparture {
+  id          String        @id @default(cuid())
+  scheduleId  String
+  schedule    TrainSchedule @relation(fields: [scheduleId], references: [id], onDelete: Cascade)
+  date        DateTime      @db.Date
+  seatClass   String
+  seatsBooked Int           @default(0)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@unique([scheduleId, date, seatClass])
+}

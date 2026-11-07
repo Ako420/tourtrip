@@ -8,7 +8,7 @@ The full plan for the Hotel Jr backend: everything needed to run a travel site l
 2. Build only that task. Check its "Done when" line, then tick its box.
 3. Stop and review before starting the next one.
 
-**Next task: 8.1** (5.5 waits for the page audit)
+**Next task: 8.2** (5.5 waits for the page audit)
 
 **Stack**
 
@@ -1512,7 +1512,7 @@ Fares match the sample on 99.85% of prices. The rest are $1 off, because `baseFa
 
 The frontend's train pages already call these endpoints, so they must exist before task 10.12. Trains work like flights, so follow the same patterns.
 
-#### [ ] 8.1 Add the train models
+#### [x] 8.1 Add the train models
 
 - Add `Station`, `TrainOperator`, `TrainSchedule` and `TrainDeparture`, then migrate.
 
@@ -1520,7 +1520,7 @@ The frontend's train pages already call these endpoints, so they must exist befo
 
 #### [ ] 8.2 Seed the train data
 
-- The 21 stations and 3 fictional operators from `frontend/src/data/trainOffers.ts`.
+- The 47 stations and 3 fictional operators from `frontend/src/data/trainOffers.ts`. With 12 trains per route that's 25,944 schedules, so save them in bulk, as the flight seed does.
 - For each pair of stations, create schedules each way, linked with `returnScheduleId`.
 - Move the sample's repeatable `hash` logic into the seed, so times and fares look the same.
 
@@ -1577,7 +1577,7 @@ The frontend's train pages already call these endpoints, so they must exist befo
 #### [ ] 8.8 Add the train search summaries
 
 - `operators` lists each operator's lowest price, from offers before filters.
-- `fareCalendar` is 7 days, using the cheapest real adult fare per day. Don't take 90% of it: the sample's 0.9 is already the cheapest flight, so that would show fares that can't be booked.
+- `fareCalendar` is 7 days, using the cheapest real adult fare per day. Don't copy the sample's 0.9 of the fare: the cheapest real train is 1.08 times the base fare, so the sample's date strip shows fares that can't be booked. Our strip will show higher prices than the sample, and they'll match the cheapest train listed.
 - `sortSummary` uses filtered offers, like flights.
 
 **Done when:** the response has all the fields of `TrainSearchResult`.
