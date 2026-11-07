@@ -21,17 +21,18 @@ const AttractionBookingForm = ({ trip, contact }: AttractionBookingFormProps) =>
   );
 
   return (
-    <form {...formProps} className="flex flex-col gap-6">
+    <form {...formProps} className="flex flex-col gap-5">
       <FormMessage message={message} />
 
-      <LeadTravelerFields getError={getError} contact={contact} />
+      <LeadTravelerFields getError={getError} contact={contact} boxed />
 
-      <OnlinePaymentNote />
-      <TermsCheckbox error={getError("acceptTerms")} />
-
-      <Button type="submit" size="lg" disabled={isPending} className="disabled:opacity-60">
-        {isPending ? "Confirming..." : "Confirm booking"}
-      </Button>
+      <section className="flex flex-col gap-4 rounded-card bg-surface p-5">
+        <OnlinePaymentNote compact />
+        <TermsCheckbox error={getError("acceptTerms")} />
+        <Button type="submit" size="lg" disabled={isPending} className="w-full text-lg disabled:opacity-60">
+          {isPending ? "Booking..." : "Book now"}
+        </Button>
+      </section>
     </form>
   );
 };

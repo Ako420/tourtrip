@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import {
   AttractionBookingForm,
   AttractionBookingSummary,
+  AttractionTripCard,
   BookingSteps,
   ButtonLink,
   HotelDetailsSkeleton,
@@ -42,17 +43,14 @@ const AttractionBookingContent = async ({ params, searchParams }: AttractionBook
 
   return (
     <>
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <h1 className="text-2xl font-bold">Complete your booking</h1>
-        <BookingSteps current={2} />
-      </div>
-      <div className="mt-6 grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
-        <div className="order-2 lg:order-1">
-          <AttractionBookingForm trip={trip} contact={toContactDefaults(await getCurrentUser())} />
-        </div>
-        <div className="order-1 lg:order-2">
+      <h1 className="sr-only">Complete your booking</h1>
+      <BookingSteps current={2} />
+      <div className="mt-6 grid gap-5 lg:grid-cols-[minmax(0,1fr)_23.5rem]">
+        <AttractionTripCard attraction={attraction} ticket={ticket} trip={trip} />
+        <div className="lg:col-start-2 lg:row-span-2 lg:row-start-1">
           <AttractionBookingSummary attraction={attraction} ticket={ticket} trip={trip} />
         </div>
+        <AttractionBookingForm trip={trip} contact={toContactDefaults(await getCurrentUser())} />
       </div>
     </>
   );
@@ -60,10 +58,12 @@ const AttractionBookingContent = async ({ params, searchParams }: AttractionBook
 
 const AttractionBookingScreen = ({ params, searchParams }: AttractionBookingScreenProps) => {
   return (
-    <div className="mx-auto max-w-content pb-8">
-      <Suspense fallback={<HotelDetailsSkeleton />}>
-        <AttractionBookingContent params={params} searchParams={searchParams} />
-      </Suspense>
+    <div className="-mx-4 -my-4 bg-surface-alt px-4 py-4 lg:-mx-8 lg:-my-8 lg:px-8 lg:py-6">
+      <div className="mx-auto max-w-content pb-8">
+        <Suspense fallback={<HotelDetailsSkeleton />}>
+          <AttractionBookingContent params={params} searchParams={searchParams} />
+        </Suspense>
+      </div>
     </div>
   );
 };

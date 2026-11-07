@@ -22,6 +22,7 @@ export { default as PasswordField } from "./auth/PasswordField";
 export { default as SignupForm } from "./auth/SignupForm";
 export { default as AttractionBookingForm } from "./booking/AttractionBookingForm";
 export { default as AttractionBookingSummary } from "./booking/AttractionBookingSummary";
+export { default as AttractionTripCard } from "./booking/AttractionTripCard";
 export { default as BookingForm } from "./booking/BookingForm";
 export { default as BookingLookupForm } from "./booking/BookingLookupForm";
 export { default as BookingRecordCard } from "./booking/BookingRecordCard";

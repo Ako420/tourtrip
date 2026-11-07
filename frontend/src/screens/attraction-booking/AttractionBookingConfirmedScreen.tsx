@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
-import { AttractionBookingSummary, BookingSteps, ButtonLink, HotelDetailsSkeleton, Icon } from "@/components";
+import { AttractionBookingSummary, AttractionTripCard, BookingSteps, ButtonLink, HotelDetailsSkeleton, Icon } from "@/components";
 import { parseAttractionBooking } from "@/lib";
 import { getAttractionBySlug } from "@/services";
 import type { RouteParams } from "@/types";
@@ -26,8 +26,8 @@ const AttractionBookingConfirmedContent = async ({ params, searchParams }: Attra
     <>
       <BookingSteps current={3} />
 
-      <div className="mt-6 grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
-        <section className="rounded-card border border-line p-6">
+      <div className="mt-6 grid gap-5 lg:grid-cols-[minmax(0,1fr)_23.5rem]">
+        <section className="rounded-card bg-surface p-6">
           <span className="flex size-14 items-center justify-center rounded-full bg-primary-soft text-2xl text-success">
             <Icon name="check" />
           </span>
@@ -51,7 +51,10 @@ const AttractionBookingConfirmedContent = async ({ params, searchParams }: Attra
           </div>
         </section>
 
-        <AttractionBookingSummary attraction={attraction} ticket={ticket} trip={trip} />
+        <div className="lg:col-start-2 lg:row-span-2 lg:row-start-1">
+          <AttractionBookingSummary attraction={attraction} ticket={ticket} trip={trip} />
+        </div>
+        <AttractionTripCard attraction={attraction} ticket={ticket} trip={trip} />
       </div>
     </>
   );
@@ -59,10 +62,12 @@ const AttractionBookingConfirmedContent = async ({ params, searchParams }: Attra
 
 const AttractionBookingConfirmedScreen = ({ params, searchParams }: AttractionBookingConfirmedScreenProps) => {
   return (
-    <div className="mx-auto max-w-content pb-8">
-      <Suspense fallback={<HotelDetailsSkeleton />}>
-        <AttractionBookingConfirmedContent params={params} searchParams={searchParams} />
-      </Suspense>
+    <div className="-mx-4 -my-4 bg-surface-alt px-4 py-4 lg:-mx-8 lg:-my-8 lg:px-8 lg:py-6">
+      <div className="mx-auto max-w-content pb-8">
+        <Suspense fallback={<HotelDetailsSkeleton />}>
+          <AttractionBookingConfirmedContent params={params} searchParams={searchParams} />
+        </Suspense>
+      </div>
     </div>
   );
 };
