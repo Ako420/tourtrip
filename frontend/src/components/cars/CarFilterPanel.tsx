@@ -9,6 +9,8 @@ type CarFilterPanelProps = {
   onChange: (changes: Partial<CarFilters>) => void;
 };
 
+const POPULAR_TRANSMISSION = carTransmissions[0];
+
 const toggle = (list: string[], value: string) => {
   return list.includes(value) ? list.filter((item) => item !== value) : [...list, value];
 };
@@ -16,19 +18,22 @@ const toggle = (list: string[], value: string) => {
 const CarFilterPanel = ({ filters, suppliers, onChange }: CarFilterPanelProps) => {
   return (
     <div>
-      <FilterGroup title="Car type">
-        {carCategories.map((category) => (
-          <FilterCheckbox
-            key={category.id}
-            checked={filters.categories.includes(category.id)}
-            onChange={() => onChange({ categories: toggle(filters.categories, category.id) })}
-          >
-            {category.label}
-          </FilterCheckbox>
-        ))}
+      <FilterGroup title="Popular filters" small>
+        <FilterCheckbox
+          checked={filters.transmissions.includes(POPULAR_TRANSMISSION)}
+          onChange={() => onChange({ transmissions: toggle(filters.transmissions, POPULAR_TRANSMISSION) })}
+        >
+          {POPULAR_TRANSMISSION}
+        </FilterCheckbox>
+        <FilterCheckbox
+          checked={filters.freeCancellation}
+          onChange={() => onChange({ freeCancellation: !filters.freeCancellation })}
+        >
+          Free cancellation
+        </FilterCheckbox>
       </FilterGroup>
 
-      <FilterGroup title="Transmission">
+      <FilterGroup title="Transmission" small>
         {carTransmissions.map((transmission) => (
           <FilterCheckbox
             key={transmission}
@@ -40,7 +45,19 @@ const CarFilterPanel = ({ filters, suppliers, onChange }: CarFilterPanelProps) =
         ))}
       </FilterGroup>
 
-      <FilterGroup title="Supplier">
+      <FilterGroup title="Car type" small>
+        {carCategories.map((category) => (
+          <FilterCheckbox
+            key={category.id}
+            checked={filters.categories.includes(category.id)}
+            onChange={() => onChange({ categories: toggle(filters.categories, category.id) })}
+          >
+            {category.label}
+          </FilterCheckbox>
+        ))}
+      </FilterGroup>
+
+      <FilterGroup title="Car rental supplier" small>
         {suppliers.map((supplier) => (
           <FilterCheckbox
             key={supplier}
@@ -50,15 +67,6 @@ const CarFilterPanel = ({ filters, suppliers, onChange }: CarFilterPanelProps) =
             {supplier}
           </FilterCheckbox>
         ))}
-      </FilterGroup>
-
-      <FilterGroup title="Rental options">
-        <FilterCheckbox
-          checked={filters.freeCancellation}
-          onChange={() => onChange({ freeCancellation: !filters.freeCancellation })}
-        >
-          Free cancellation
-        </FilterCheckbox>
       </FilterGroup>
     </div>
   );

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { useHotelFilters } from "@/hooks";
 import { countActiveFilters, formatCount, nightsBetween, toSearchQuery } from "@/lib";
@@ -32,18 +33,30 @@ const HotelResultsView = ({ search, filters, result }: HotelResultsViewProps) =>
   );
 
   return (
-    <div className="mt-6 grid gap-6 lg:grid-cols-[17rem_minmax(0,1fr)]">
+    <div className="mt-6 grid gap-8 lg:grid-cols-[16.375rem_minmax(0,1fr)]">
       <aside
         aria-label="Filters"
-        className={`fixed inset-0 z-50 overflow-y-auto bg-surface p-4 lg:static lg:z-auto lg:block lg:overflow-visible lg:p-0 ${
+        className={`fixed inset-0 z-50 overflow-y-auto bg-surface p-4 lg:sticky lg:top-28 lg:z-auto lg:block lg:self-start lg:overflow-visible lg:p-0 ${
           isPanelOpen ? "block" : "hidden"
         }`}
       >
-        <div className="mb-4 flex items-center justify-between">
+        <Link
+          href="/map"
+          className="mb-5 hidden h-25 items-center justify-center rounded-card bg-primary-soft transition-opacity duration-300 ease-out hover:opacity-80 lg:flex"
+        >
+          <span className="flex items-center gap-2 rounded-md bg-surface px-4 py-2 font-medium text-primary">
+            <Icon name="map" />
+            Show on map
+          </span>
+        </Link>
+
+        <div className="mb-4 flex items-center justify-between lg:hidden">
           <h2 className="font-bold">Filters</h2>
           {clearButton}
         </div>
+        <div className="mb-2 hidden justify-end lg:flex">{clearButton}</div>
         <FilterPanel
+          destination={search.destination}
           filters={filters}
           priceRange={result.priceRange}
           amenities={result.amenities}
@@ -58,7 +71,7 @@ const HotelResultsView = ({ search, filters, result }: HotelResultsViewProps) =>
         <BookingOffers />
 
         <div className="mt-4 mb-4 flex flex-wrap items-center justify-between gap-3">
-          <h1 className="text-xl font-bold" aria-live="polite">
+          <h1 className="text-lg font-bold" aria-live="polite">
             {formatCount(result.total, "stay")} found
             {search.destination && ` for "${search.destination}"`}
           </h1>

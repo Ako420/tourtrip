@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState, type SubmitEvent } from "react";
+import { useId, useState, type SubmitEvent } from "react";
 import { defaultGuests } from "@/constants";
 import { useToday } from "@/hooks";
 import { addDays, formatCount, nightsBetween, toSearchQuery } from "@/lib";
@@ -14,12 +14,14 @@ import GuestsPicker from "./GuestsPicker";
 type SearchFormProps = {
   initialValues?: HotelSearch;
   destinations?: string[];
+  highlighted?: boolean;
 };
 
 const groupClass = "flex h-14 items-center gap-3 border-b border-line px-4 xl:h-full xl:border-b-0 xl:border-r";
 
-const SearchForm = ({ initialValues, destinations = [] }: SearchFormProps) => {
+const SearchForm = ({ initialValues, destinations = [], highlighted = false }: SearchFormProps) => {
   const router = useRouter();
+  const listId = useId();
   const today = useToday();
 
   const [destination, setDestination] = useState(initialValues?.destination ?? "");
@@ -45,14 +47,16 @@ const SearchForm = ({ initialValues, destinations = [] }: SearchFormProps) => {
   const handleSubmit = (event: SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    router.push(`/hotels?${toSearchQuery({ destination, checkIn, checkOut, ...guests })}`);
+    router.push(`/hotels/list?${toSearchQuery({ destination, checkIn, checkOut, ...guests })}`);
   };
 
   return (
     <form
       onSubmit={handleSubmit}
       role="search"
-      className="flex flex-col rounded-card border border-line text-left xl:h-16 xl:flex-row xl:items-stretch"
+      className={`flex flex-col rounded-card text-left xl:h-16 xl:flex-row xl:items-stretch ${
+        highlighted ? "border-3 border-primary bg-surface" : "border border-line"
+      }`}
     >
       <div className={`${groupClass} xl:min-w-0 xl:flex-1`}>
         <Icon name="location" className="text-lg text-ink-soft" />
@@ -61,10 +65,10 @@ const SearchForm = ({ initialValues, destinations = [] }: SearchFormProps) => {
           onChange={(event) => setDestination(event.target.value)}
           placeholder="Where to?"
           aria-label="Destination"
-          list="destination-options"
+          list={listId}
           className="min-w-0 flex-1 bg-transparent font-medium outline-none placeholder:text-muted"
         />
-        <datalist id="destination-options">
+        <datalist id={listId}>
           {destinations.map((option) => (
             <option key={option} value={option} />
           ))}

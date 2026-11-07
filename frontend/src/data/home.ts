@@ -1,4 +1,5 @@
 import type { HomeContent, LinkItem } from "@/types";
+import appPromo from "./appPromo";
 import unsplashImage from "./unsplashImage";
 
 const toLinks = (labels: string[], getHref: (label: string) => string): LinkItem[] => {
@@ -6,7 +7,7 @@ const toLinks = (labels: string[], getHref: (label: string) => string): LinkItem
 };
 
 const hotelLinks = (cities: string[]) => {
-  return toLinks(cities, (city) => `/hotels?destination=${encodeURIComponent(city)}`).map((link) => ({
+  return toLinks(cities, (city) => `/hotels/list?destination=${encodeURIComponent(city)}`).map((link) => ({
     ...link,
     label: `Hotels in ${link.label}`,
   }));
@@ -18,9 +19,9 @@ const homeContent: HomeContent = {
     title: "Your next stay starts here",
     imageUrl: unsplashImage("photo-1542314831-068cd1dbfeeb", 2000),
     guarantees: [
-      { id: "price", label: "Best price promise", iconName: "tag" },
-      { id: "booking", label: "Secure booking", iconName: "shield" },
-      { id: "stay", label: "Stay protection", iconName: "check" },
+      { id: "price", label: "Clear pricing", iconName: "tag" },
+      { id: "compare", label: "Hotels, flights and more", iconName: "compass" },
+      { id: "planner", label: "Free trip planner", iconName: "route" },
     ],
   },
   promotions: {
@@ -80,12 +81,12 @@ const homeContent: HomeContent = {
   },
   banners: [
     {
-      id: "year-end",
+      id: "winter-sun",
       eyebrow: "Limited time",
-      title: "Year-End Getaway Sale",
-      subtitle: "Up to 30% off selected stays this month",
-      href: "/hotels",
-      ctaLabel: "Book now",
+      title: "Winter sun escapes",
+      subtitle: "Up to 18% off warm beach and city stays",
+      href: "/deals/winter-sun",
+      ctaLabel: "See deals",
       imageUrl: unsplashImage("photo-1436491865332-7a61a109cc05", 1400),
       theme: "primary",
     },
@@ -94,8 +95,8 @@ const homeContent: HomeContent = {
       eyebrow: "Stay inspired",
       title: "Escape to the coast",
       subtitle: "Quiet beaches and slow mornings",
-      href: "/hotels?destination=Bali",
-      ctaLabel: "Book now",
+      href: "/hotels/list?destination=Bali",
+      ctaLabel: "See stays",
       imageUrl: unsplashImage("photo-1507525428034-b723cf961d3e", 900),
       theme: "sunset",
     },
@@ -103,13 +104,16 @@ const homeContent: HomeContent = {
   inspiration: {
     title: "Get inspired for your next trip",
     items: [
-      { id: "anywhere", name: "Anywhere", imageUrl: unsplashImage("photo-1451187580459-43490279c0fa", 500), href: "/hotels" },
-      { id: "cape-town", name: "Cape Town", tag: "Long haul", imageUrl: unsplashImage("photo-1580060839134-75a5edca2e99", 500), href: "/hotels?destination=Cape%20Town" },
-      { id: "marrakech", name: "Marrakech", tag: "Medium haul", imageUrl: unsplashImage("photo-1597212618440-806262de4f6b", 500), href: "/hotels?destination=Marrakech" },
-      { id: "hong-kong", name: "Hong Kong", tag: "Long haul", imageUrl: unsplashImage("photo-1536599018102-9f803c140fc1", 500), href: "/hotels?destination=Hong%20Kong" },
-      { id: "dubai", name: "Dubai", tag: "Medium haul", imageUrl: unsplashImage("photo-1512453979798-5ea266f8880c", 500), href: "/hotels?destination=Dubai" },
-      { id: "singapore", name: "Singapore", tag: "Long haul", imageUrl: unsplashImage("photo-1525625293386-3f8f99389edd", 500), href: "/hotels?destination=Singapore" },
-      { id: "istanbul", name: "Istanbul", tag: "Short haul", imageUrl: unsplashImage("photo-1524231757912-21f4fe3a7200", 500), href: "/hotels?destination=Istanbul" },
+      { id: "anywhere", name: "Anywhere", imageUrl: unsplashImage("photo-1451187580459-43490279c0fa", 500), href: "/hotels/list" },
+      { id: "bali", name: "Bali", imageUrl: unsplashImage("photo-1537996194471-e657df975ab4", 500), href: "/hotels/list?destination=Bali" },
+      { id: "tokyo", name: "Tokyo", imageUrl: unsplashImage("photo-1540959733332-eab4deabeeaf", 500), href: "/hotels/list?destination=Tokyo" },
+      { id: "paris", name: "Paris", imageUrl: unsplashImage("photo-1511739001486-6bfe10ce785f", 500), href: "/hotels/list?destination=Paris" },
+      { id: "rome", name: "Rome", imageUrl: unsplashImage("photo-1552832230-c0197dd311b5", 500), href: "/hotels/list?destination=Rome" },
+      { id: "dubai", name: "Dubai", imageUrl: unsplashImage("photo-1512453979798-5ea266f8880c", 500), href: "/hotels/list?destination=Dubai" },
+      { id: "cape-town", name: "Cape Town", imageUrl: unsplashImage("photo-1580060839134-75a5edca2e99", 500), href: "/hotels/list?destination=Cape%20Town" },
+      { id: "marrakech", name: "Marrakech", imageUrl: unsplashImage("photo-1597212618440-806262de4f6b", 500), href: "/hotels/list?destination=Marrakech" },
+      { id: "singapore", name: "Singapore", imageUrl: unsplashImage("photo-1525625293386-3f8f99389edd", 500), href: "/hotels/list?destination=Singapore" },
+      { id: "nairobi", name: "Nairobi", imageUrl: unsplashImage("photo-1516426122078-c23e76319801", 500), href: "/hotels/list?destination=Nairobi" },
     ],
   },
   places: {
@@ -128,17 +132,18 @@ const homeContent: HomeContent = {
     title: "Magical trip moments that last",
     moreHref: "/inspiration",
     items: [
-      { id: "balloons", title: "Sunrise over Cappadocia by hot air balloon", location: "Cappadocia", imageUrl: unsplashImage("photo-1641128324972-af3212f0f6bd"), href: "/inspiration" },
-      { id: "temple", title: "A quiet morning at a lakeside temple", location: "Bali", imageUrl: unsplashImage("photo-1537996194471-e657df975ab4"), href: "/inspiration" },
-      { id: "safari", title: "Golden hour on a savanna safari", location: "East Africa", imageUrl: unsplashImage("photo-1516426122078-c23e76319801"), href: "/inspiration" },
-      { id: "aurora", title: "Chasing the northern lights", location: "Arctic Circle", imageUrl: unsplashImage("photo-1531366936337-7c912a4589a7"), href: "/inspiration" },
-      { id: "lake", title: "Rowing across a mountain lake", location: "The Alps", imageUrl: unsplashImage("photo-1476514525535-07fb3b4ae5f1"), href: "/inspiration" },
+      { id: "balloons", title: "Sunrise over Cappadocia by hot air balloon", location: "Cappadocia", imageUrl: unsplashImage("photo-1641128324972-af3212f0f6bd"), href: "/inspiration/cappadocia" },
+      { id: "temple", title: "A quiet morning at a lakeside temple", location: "Bali", imageUrl: unsplashImage("photo-1537996194471-e657df975ab4"), href: "/inspiration/bali" },
+      { id: "safari", title: "Golden hour on a savanna safari", location: "East Africa", imageUrl: unsplashImage("photo-1516426122078-c23e76319801"), href: "/inspiration/nairobi" },
+      { id: "aurora", title: "Chasing the northern lights", location: "Arctic Circle", imageUrl: unsplashImage("photo-1531366936337-7c912a4589a7"), href: "/inspiration/tromso" },
+      { id: "lake", title: "Rowing across a mountain lake", location: "The Alps", imageUrl: unsplashImage("photo-1476514525535-07fb3b4ae5f1"), href: "/inspiration/the-alps" },
     ],
   },
   handpickedHotels: {
     title: "Stay cozy at our handpicked hotels",
-    moreHref: "/hotels",
+    moreHref: "/hotels/list",
   },
+  app: appPromo,
   recommendations: {
     title: "Hotel Jr recommendations",
     items: [
@@ -163,7 +168,7 @@ const homeContent: HomeContent = {
         label: "Featured guides",
         links: toLinks(
           ["Tokyo travel guide", "Bali travel guide", "Paris travel guide", "Rome travel guide", "Marrakech travel guide", "Cape Town travel guide"],
-          () => "/inspiration",
+          (label) => `/inspiration/${label.replace(" travel guide", "").toLowerCase().replace(" ", "-")}`,
         ),
       },
       {

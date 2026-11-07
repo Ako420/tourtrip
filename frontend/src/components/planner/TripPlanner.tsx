@@ -32,7 +32,7 @@ const TripPlanner = ({ suggestions, heroImageUrl }: TripPlannerProps) => {
       <div className="absolute inset-0 bg-gradient-to-b from-ink/75 to-ink/40" />
 
       <div className="relative mx-auto max-w-3xl">
-        <h1 className="text-3xl font-bold sm:text-4xl">
+        <h1 className="type-title font-bold">
           Plan your trip<span className="text-accent">.</span>
         </h1>
         <p className="mt-1 mb-6 text-white/90">Build your days, add activities and see what it could cost.</p>

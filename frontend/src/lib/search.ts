@@ -1,4 +1,4 @@
-import { defaultGuests, guestLimits } from "@/constants";
+import { defaultGuests, guestLimits, hotelFilterLimits } from "@/constants";
 import type { HotelSearch, RouteParams } from "@/types";
 import { isIsoDate } from "./dates";
 
@@ -24,7 +24,7 @@ export const parseHotelSearch = (params: RouteParams): HotelSearch => {
   const hasValidStay = Boolean(checkIn && checkOut && checkOut > checkIn);
 
   return {
-    destination: getParam(params, "destination")?.trim() || undefined,
+    destination: getParam(params, "destination")?.trim().slice(0, hotelFilterLimits.destinationLength) || undefined,
     checkIn: hasValidStay ? checkIn : undefined,
     checkOut: hasValidStay ? checkOut : undefined,
     rooms: getCount(getParam(params, "rooms"), defaultGuests.rooms, guestLimits.rooms),

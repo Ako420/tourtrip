@@ -1,0 +1,249 @@
+{
+  "airports": [
+    {
+      "code": "ACC",
+      "city": "Accra",
+      "country": "Ghana"
+    },
+    {
+      "code": "BKK",
+      "city": "Bangkok",
+      "country": "Thailand"
+    },
+    {
+      "code": "CPT",
+      "city": "Cape Town",
+      "country": "South Africa"
+    },
+    {
+      "code": "DXB",
+      "city": "Dubai",
+      "country": "United Arab Emirates"
+    },
+    {
+      "code": "HKG",
+      "city": "Hong Kong",
+      "country": "China"
+    },
+    {
+      "code": "JNB",
+      "city": "Johannesburg",
+      "country": "South Africa"
+    },
+    {
+      "code": "LOS",
+      "city": "Lagos",
+      "country": "Nigeria"
+    },
+    {
+      "code": "LHR",
+      "city": "London",
+      "country": "United Kingdom"
+    },
+    {
+      "code": "MIA",
+      "city": "Miami",
+      "country": "United States"
+    },
+    {
+      "code": "NBO",
+      "city": "Nairobi",
+      "country": "Kenya"
+    },
+    {
+      "code": "JFK",
+      "city": "New York",
+      "country": "United States"
+    },
+    {
+      "code": "CDG",
+      "city": "Paris",
+      "country": "France"
+    },
+    {
+      "code": "SIN",
+      "city": "Singapore",
+      "country": "Singapore"
+    },
+    {
+      "code": "HND",
+      "city": "Tokyo",
+      "country": "Japan"
+    }
+  ],
+  "airlines": [
+    {
+      "code": "SB",
+      "name": "Skybridge Air",
+      "aircraft": "Airbus A350"
+    },
+    {
+      "code": "PC",
+      "name": "Pacific Crest",
+      "aircraft": "Boeing 787"
+    },
+    {
+      "code": "SV",
+      "name": "Savanna Air",
+      "aircraft": "Airbus A330"
+    },
+    {
+      "code": "SS",
+      "name": "Southern Star",
+      "aircraft": "Boeing 777"
+    }
+  ],
+  "stopCities": [
+    "Dubai",
+    "Istanbul",
+    "Doha",
+    "Frankfurt",
+    "Singapore"
+  ],
+  "deals": [
+    {
+      "id": "1",
+      "airline": "Skybridge Air",
+      "from": "New York",
+      "to": "Miami",
+      "departDate": "2026-12-02",
+      "returnDate": "2026-12-05",
+      "cabin": "Economy",
+      "isNonstop": true,
+      "price": 229,
+      "currency": "USD"
+    },
+    {
+      "id": "2",
+      "airline": "Skybridge Air",
+      "from": "New York",
+      "to": "London",
+      "departDate": "2026-12-06",
+      "returnDate": "2026-12-16",
+      "cabin": "Economy",
+      "isNonstop": true,
+      "price": 805,
+      "currency": "USD"
+    },
+    {
+      "id": "3",
+      "airline": "Pacific Crest",
+      "from": "Hong Kong",
+      "to": "Bangkok",
+      "departDate": "2026-11-16",
+      "returnDate": "2026-11-20",
+      "cabin": "Economy",
+      "isNonstop": true,
+      "price": 310,
+      "currency": "USD"
+    },
+    {
+      "id": "4",
+      "airline": "Pacific Crest",
+      "from": "Hong Kong",
+      "to": "Tokyo",
+      "departDate": "2026-11-28",
+      "returnDate": "2026-11-29",
+      "cabin": "Economy",
+      "isNonstop": true,
+      "price": 331,
+      "currency": "USD"
+    },
+    {
+      "id": "5",
+      "airline": "Savanna Air",
+      "from": "Nairobi",
+      "to": "Dubai",
+      "departDate": "2026-12-20",
+      "returnDate": "2026-12-28",
+      "cabin": "Economy",
+      "isNonstop": false,
+      "price": 433,
+      "currency": "USD"
+    },
+    {
+      "id": "6",
+      "airline": "Savanna Air",
+      "from": "Lagos",
+      "to": "London",
+      "departDate": "2026-11-19",
+      "returnDate": "2026-11-25",
+      "cabin": "Economy",
+      "isNonstop": true,
+      "price": 638,
+      "currency": "USD"
+    },
+    {
+      "id": "7",
+      "airline": "Savanna Air",
+      "from": "Accra",
+      "to": "Paris",
+      "departDate": "2026-11-24",
+      "returnDate": "2026-12-02",
+      "cabin": "Economy",
+      "isNonstop": false,
+      "price": 597,
+      "currency": "USD"
+    },
+    {
+      "id": "8",
+      "airline": "Southern Star",
+      "from": "Cape Town",
+      "to": "Johannesburg",
+      "departDate": "2026-11-05",
+      "returnDate": "2026-11-10",
+      "cabin": "Economy",
+      "isNonstop": true,
+      "price": 195,
+      "currency": "USD"
+    },
+    {
+      "id": "9",
+      "airline": "Southern Star",
+      "from": "Johannesburg",
+      "to": "Dubai",
+      "departDate": "2026-12-10",
+      "returnDate": "2026-12-18",
+      "cabin": "Economy",
+      "isNonstop": true,
+      "price": 512,
+      "currency": "USD"
+    },
+    {
+      "id": "10",
+      "airline": "Pacific Crest",
+      "from": "Singapore",
+      "to": "Tokyo",
+      "departDate": "2026-12-12",
+      "returnDate": "2026-12-19",
+      "cabin": "Economy",
+      "isNonstop": false,
+      "price": 420,
+      "currency": "USD"
+    },
+    {
+      "id": "11",
+      "airline": "Skybridge Air",
+      "from": "London",
+      "to": "New York",
+      "departDate": "2027-01-08",
+      "returnDate": "2027-01-15",
+      "cabin": "Economy",
+      "isNonstop": true,
+      "price": 548,
+      "currency": "USD"
+    },
+    {
+      "id": "12",
+      "airline": "Savanna Air",
+      "from": "Lagos",
+      "to": "Nairobi",
+      "departDate": "2026-12-03",
+      "returnDate": "2026-12-08",
+      "cabin": "Economy",
+      "isNonstop": false,
+      "price": 365,
+      "currency": "USD"
+    }
+  ]
+}

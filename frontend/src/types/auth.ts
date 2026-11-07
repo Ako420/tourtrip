@@ -8,6 +8,22 @@ export type AuthResponse = {
   token: string;
 };
 
+export type AccountUser = {
+  id: string;
+  fullName: string;
+  email: string;
+  phone: string | null;
+  avatarUrl: string | null;
+  role: string;
+};
+
+export type ContactDefaults = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+};
+
 export type FormState<Result = unknown> = {
   message?: string;
   result?: Result;

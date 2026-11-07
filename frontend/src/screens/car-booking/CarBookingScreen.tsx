@@ -7,9 +7,9 @@ import {
   FlightResultsSkeleton,
   StatusMessage,
 } from "@/components";
-import { parseCarBookingParams, parseCarSearch, toCarQuery } from "@/lib";
+import { parseCarBookingParams, parseCarSearch, toCarQuery, toContactDefaults } from "@/lib";
 import { carSearchSchema } from "@/schemas";
-import { getCarOffer } from "@/services";
+import { getCurrentUser, getCarOffer } from "@/services";
 import type { RouteParams } from "@/types";
 
 type CarBookingScreenProps = {
@@ -50,13 +50,11 @@ const CarBookingContent = async ({ searchParams }: CarBookingScreenProps) => {
 
   return (
     <>
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <h1 className="text-2xl font-bold">Complete your booking</h1>
-        <BookingSteps current={1} />
-      </div>
-      <div className="mt-6 grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
+      <h1 className="sr-only">Complete your booking</h1>
+      <BookingSteps current={2} />
+      <div className="mt-4 grid items-start gap-4 lg:grid-cols-[minmax(0,1fr)_18.75rem]">
         <div className="order-2 lg:order-1">
-          <CarBookingForm trip={trip} />
+          <CarBookingForm trip={trip} contact={toContactDefaults(await getCurrentUser())} />
         </div>
         <div className="order-1 lg:order-2">
           <CarBookingSummary offer={offer} search={search} />
@@ -68,10 +66,12 @@ const CarBookingContent = async ({ searchParams }: CarBookingScreenProps) => {
 
 const CarBookingScreen = ({ searchParams }: CarBookingScreenProps) => {
   return (
-    <div className="mx-auto max-w-content pb-8">
-      <Suspense fallback={<FlightResultsSkeleton />}>
-        <CarBookingContent searchParams={searchParams} />
-      </Suspense>
+    <div className="-mx-4 -my-4 bg-surface-alt px-4 py-4 lg:-mx-8 lg:-my-8 lg:px-8 lg:py-6">
+      <div className="mx-auto max-w-content pb-8">
+        <Suspense fallback={<FlightResultsSkeleton />}>
+          <CarBookingContent searchParams={searchParams} />
+        </Suspense>
+      </div>
     </div>
   );
 };

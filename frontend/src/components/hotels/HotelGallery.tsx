@@ -9,12 +9,17 @@ type HotelGalleryProps = {
   images: string[];
 };
 
+const GALLERY_SIZE = 7;
+const MAX_LAST_TILE_SPAN = 2;
+
 const stepClass =
   "absolute top-1/2 flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-surface text-ink shadow-card transition-colors duration-200 hover:text-primary";
 
 const HotelGallery = ({ name, images }: HotelGalleryProps) => {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const visibleImages = images.slice(0, GALLERY_SIZE);
+  const emptyTiles = Math.min(GALLERY_SIZE - visibleImages.length, MAX_LAST_TILE_SPAN);
 
   const open = (index: number) => {
     setActiveIndex(index);
@@ -32,15 +37,16 @@ const HotelGallery = ({ name, images }: HotelGalleryProps) => {
 
   return (
     <section aria-label={`Photos of ${name}`} className="relative mt-4">
-      <div className="grid h-64 grid-cols-1 gap-2 overflow-hidden rounded-panel sm:h-96 md:grid-cols-4 md:grid-rows-2">
-        {images.slice(0, 5).map((image, index) => (
+      <div className="grid h-64 grid-cols-1 gap-2 overflow-hidden rounded-card sm:h-72.5 md:grid-cols-[2fr_1fr_1fr_1fr] md:grid-rows-2">
+        {visibleImages.map((image, index) => (
           <button
             key={image}
             type="button"
             aria-label={`View photo ${index + 1} of ${images.length}`}
             onClick={() => open(index)}
+            style={index === visibleImages.length - 1 ? { gridColumnEnd: `span ${emptyTiles + 1}` } : undefined}
             className={`group relative overflow-hidden bg-surface-alt ${
-              index === 0 ? "md:col-span-2 md:row-span-2" : "hidden md:block"
+              index === 0 ? "md:row-span-2" : "hidden md:block"
             }`}
           >
             <AppImage
@@ -48,7 +54,7 @@ const HotelGallery = ({ name, images }: HotelGalleryProps) => {
               alt=""
               fill
               priority={index === 0}
-              sizes={index === 0 ? "(min-width: 768px) 50vw, 100vw" : "25vw"}
+              sizes={index === 0 ? "(min-width: 768px) 40vw, 100vw" : "20vw"}
               className="object-cover transition-transform duration-300 group-hover:scale-105"
             />
           </button>

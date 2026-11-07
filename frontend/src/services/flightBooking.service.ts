@@ -2,10 +2,10 @@ import { randomUUID } from "node:crypto";
 import { buildFlightOffers } from "@/data";
 import { toFlightQuery } from "@/lib";
 import type { BookingResponse, FlightBookingRequest, FlightOffer, FlightSearch } from "@/types";
-import { ApiError, apiGet, apiPost, isApiEnabled } from "./http";
+import { ApiError, apiGet, apiPost, isApiLive } from "./http";
 
 export const getFlightOffer = async (search: FlightSearch, offerId: string): Promise<FlightOffer | null> => {
-  if (!isApiEnabled) {
+  if (!isApiLive("flights")) {
     return buildFlightOffers(search).find((offer) => offer.id === offerId) ?? null;
   }
 
@@ -23,8 +23,8 @@ export const getFlightOffer = async (search: FlightSearch, offerId: string): Pro
 };
 
 export const createFlightBooking = async (booking: FlightBookingRequest): Promise<BookingResponse> => {
-  if (isApiEnabled) {
-    return apiPost<BookingResponse>("/flights/bookings", booking);
+  if (isApiLive("bookings")) {
+    return apiPost<BookingResponse>("/flights/bookings", booking, { auth: true });
   }
 
   return { reference: `DEMO-${randomUUID().slice(0, 8).toUpperCase()}` };

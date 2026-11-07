@@ -9,7 +9,7 @@ import type {
   AttractionSort,
   AttractionsContent,
 } from "@/types";
-import { ApiError, apiGet, isApiEnabled } from "./http";
+import { ApiError, apiGet, isApiLive } from "./http";
 
 const sorters: Partial<Record<AttractionSort, (a: Attraction, b: Attraction) => number>> = {
   rating: (a, b) => b.rating - a.rating,
@@ -26,11 +26,11 @@ const matchesQuery = (attraction: Attraction, query?: string) => {
 };
 
 export const getAttractionsContent = async (): Promise<AttractionsContent> => {
-  return isApiEnabled ? apiGet<AttractionsContent>("/attractions/content") : attractionsContent;
+  return isApiLive("content") ? apiGet<AttractionsContent>("/attractions/content") : attractionsContent;
 };
 
 export const getAttractionBySlug = async (slug: string): Promise<AttractionDetails | null> => {
-  if (!isApiEnabled) {
+  if (!isApiLive("attractions")) {
     const attraction = attractions.find((item) => item.slug === slug);
 
     return attraction ? withAttractionDetails(attraction) : null;
@@ -48,7 +48,7 @@ export const getAttractionBySlug = async (slug: string): Promise<AttractionDetai
 };
 
 export const getSimilarAttractions = async (attraction: Attraction): Promise<Attraction[]> => {
-  if (isApiEnabled) {
+  if (isApiLive("attractions")) {
     return apiGet<Attraction[]>(`/attractions/${encodeURIComponent(attraction.slug)}/similar`);
   }
 
@@ -59,7 +59,7 @@ export const getSimilarAttractions = async (attraction: Attraction): Promise<Att
 };
 
 export const searchAttractions = async (filters: AttractionFilters): Promise<AttractionSearchResult> => {
-  if (isApiEnabled) {
+  if (isApiLive("attractions")) {
     return apiGet<AttractionSearchResult>(
       "/attractions/search",
       Object.fromEntries(new URLSearchParams(toAttractionQuery(filters))),

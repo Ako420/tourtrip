@@ -14,7 +14,7 @@ export const getPassengerSlots = (adults: number, children: number): PassengerSl
     return Array.from({ length: count }, (_, index) => ({
       key: `passenger${offset + index}`,
       type,
-      label: `${label} ${index + 1}`,
+      label: `Passenger ${offset + index + 1}: ${label}`,
     }));
   };
 

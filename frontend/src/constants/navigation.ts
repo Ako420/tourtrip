@@ -39,13 +39,17 @@ export const sidebarGroups: NavGroup[] = [
   },
 ];
 
-export const navbarLinks: NavItem[] = [
+export const navbarLeadLinks: NavItem[] = [
   { label: "App", href: "/app", iconName: "phone" },
   { label: "List your property", href: "/list-property" },
-  { label: "USD", href: "/currency", iconName: "globe" },
+];
+
+export const navbarLinks: NavItem[] = [
   { label: "Customer support", href: "/support" },
   { label: "Find bookings", href: "/bookings" },
 ];
+
+export const TOP_NAV_VISIBLE_LINKS = 5;
 
 export const serviceTabs: NavItem[] = [
   { label: "Hotels & Homes", href: "/", iconName: "bed" },
@@ -58,6 +62,7 @@ export const serviceTabs: NavItem[] = [
 
 export const authLinks = {
   login: "/login",
+  account: "/account",
   signup: "/signup",
   support: "/support",
   assistant: "/assistant",
@@ -89,7 +94,7 @@ export const footerColumns: FooterColumn[] = [
       { label: "Rewards", href: "/rewards" },
       { label: "Affiliate program", href: "/affiliates" },
       { label: "List your property", href: "/list-property" },
-      { label: "All hotels", href: "/hotels" },
+      { label: "All hotels", href: "/hotels/list" },
       { label: "Become a supplier", href: "/suppliers" },
       { label: "Security", href: "/security" },
     ],

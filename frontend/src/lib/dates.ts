@@ -1,7 +1,10 @@
 const DAY_IN_MS = 86_400_000;
 
 export const isIsoDate = (value: string) => {
-  return /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(`${value}T00:00:00Z`));
+  const time = Date.parse(`${value}T00:00:00Z`);
+
+  // Date.parse rolls 30 February on to March, so a real date has to come back unchanged.
+  return !Number.isNaN(time) && new Date(time).toISOString().slice(0, 10) === value;
 };
 
 export const toLocalIsoDate = (date: Date) => {

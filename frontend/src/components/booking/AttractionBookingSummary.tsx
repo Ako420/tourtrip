@@ -2,6 +2,7 @@ import { formatCount, formatPrice, formatShortDate, getTicketTotal } from "@/lib
 import type { AttractionBookingTrip, AttractionDetails, TicketOption } from "@/types";
 import AppImage from "../ui/AppImage";
 import Icon from "../ui/Icon";
+import ChargeNotice from "./ChargeNotice";
 
 type AttractionBookingSummaryProps = {
   attraction: AttractionDetails;
@@ -75,9 +76,10 @@ const AttractionBookingSummary = ({ attraction, ticket, trip }: AttractionBookin
           </div>
           <div className="mt-2 flex items-baseline justify-between border-t border-line pt-2">
             <dt className="font-semibold">Total</dt>
-            <dd className="text-2xl font-bold text-primary">{formatPrice(getTicketTotal(ticket, trip), currency)}</dd>
+            <dd className="type-price font-bold text-primary">{formatPrice(getTicketTotal(ticket, trip), currency)}</dd>
           </div>
         </dl>
+        <ChargeNotice />
       </div>
     </aside>
   );

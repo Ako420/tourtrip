@@ -1,9 +1,12 @@
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import {
-  Breadcrumb,
+  BookingOffers,
+  ButtonLink,
   HandpickedHotels,
   HotelAmenities,
+  HotelBestPrice,
+  HotelDescription,
   HotelDetailsSkeleton,
   HotelGallery,
   HotelHeader,
@@ -11,18 +14,20 @@ import {
   HotelRooms,
   LocationSection,
   PolicyList,
+  Price,
   ReviewsSection,
+  SearchForm,
   SectionTabs,
 } from "@/components";
-import { parseHotelSearch } from "@/lib";
-import { getHotelBySlug, getSimilarHotels } from "@/services";
+import { getLowestRoom, parseHotelSearch, toSearchQuery } from "@/lib";
+import { getDestinations, getHotelBySlug, getSimilarHotels } from "@/services";
 import type { RouteParams } from "@/types";
 
 const sections = [
   { id: "overview", label: "Overview" },
   { id: "rooms", label: "Rooms" },
-  { id: "amenities", label: "Amenities" },
-  { id: "reviews", label: "Reviews" },
+  { id: "reviews", label: "Guest Reviews" },
+  { id: "amenities", label: "Services & Amenities" },
   { id: "policies", label: "Policies" },
   { id: "location", label: "Location" },
 ];
@@ -40,33 +45,57 @@ const HotelDetailsContent = async ({ params, searchParams }: HotelDetailsScreenP
     notFound();
   }
 
-  const similarHotels = await getSimilarHotels(hotel);
+  const [similarHotels, destinations] = await Promise.all([getSimilarHotels(hotel), getDestinations()]);
+  const search = parseHotelSearch(query);
+  const lowestRoom = getLowestRoom(hotel);
 
   return (
     <>
-      <Breadcrumb
-        links={[
-          { label: "Home", href: "/" },
-          { label: "Hotels", href: "/hotels" },
-          { label: hotel.city, href: `/hotels?destination=${encodeURIComponent(hotel.city)}` },
-        ]}
-        current={hotel.name}
+      <SearchForm
+        key={toSearchQuery(search)}
+        initialValues={{ ...search, destination: hotel.city }}
+        destinations={destinations}
+        highlighted
       />
-      <HotelGallery name={hotel.name} images={hotel.images} />
       <HotelHeader hotel={hotel} />
-      <SectionTabs sections={sections} />
-      <HotelOverview hotel={hotel} />
-      <HotelRooms hotel={hotel} search={parseHotelSearch(query)} />
-      <HotelAmenities amenities={hotel.amenities} />
+      <HotelGallery name={hotel.name} images={hotel.images} />
+
+      <div id="overview" className="mt-6 grid scroll-mt-32 gap-8 lg:grid-cols-[minmax(0,1fr)_23.5rem]">
+        <HotelOverview hotel={hotel} />
+        <HotelBestPrice hotel={hotel} search={search} />
+      </div>
+
+      <div className="mt-8">
+        <BookingOffers />
+      </div>
+
+      <SectionTabs
+        sections={sections}
+        action={
+          lowestRoom && (
+            <div className="hidden shrink-0 items-center gap-4 lg:flex">
+              <span className="text-2xl font-bold text-primary">
+                <Price amount={lowestRoom.pricePerNight} currency={hotel.currency} />
+              </span>
+              <ButtonLink href="#rooms" size="sm">
+                Select rooms
+              </ButtonLink>
+            </div>
+          )
+        }
+      />
+      <HotelRooms hotel={hotel} search={search} />
       <ReviewsSection
         rating={hotel.rating}
         reviewCount={hotel.reviewCount}
         scores={hotel.reviewScores}
         reviews={hotel.reviews}
       />
-      <PolicyList policies={hotel.policies} />
       <LocationSection address={`${hotel.address}, ${hotel.city}, ${hotel.country}`} nearby={hotel.nearby} />
-      <HandpickedHotels title="You may also like" moreHref="/hotels" hotels={similarHotels} />
+      <HotelAmenities amenities={hotel.amenities} />
+      <PolicyList policies={hotel.policies} title="Property policies" />
+      <HotelDescription hotel={hotel} />
+      <HandpickedHotels title="You may also like" moreHref="/hotels/list" hotels={similarHotels} />
     </>
   );
 };

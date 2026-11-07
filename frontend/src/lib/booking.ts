@@ -32,6 +32,15 @@ export const checkRoom = (hotel: HotelDetails, roomId: string, stay: BookableSta
   return { room };
 };
 
+export const getLowestRoom = (hotel: HotelDetails) => {
+  const rooms = hotel.rooms.filter((room) => room.isAvailable);
+
+  return rooms.reduce<HotelRoom | undefined>(
+    (lowest, room) => (!lowest || Number(room.pricePerNight) < Number(lowest.pricePerNight) ? room : lowest),
+    undefined,
+  );
+};
+
 export const getStayTotal = (room: HotelRoom, stay: Pick<HotelSearch, "checkIn" | "checkOut" | "rooms">) => {
   return Number(room.pricePerNight) * nightsBetween(stay.checkIn ?? "", stay.checkOut ?? "") * stay.rooms;
 };

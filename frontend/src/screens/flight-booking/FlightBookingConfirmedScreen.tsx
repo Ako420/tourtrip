@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
-import { BookingSteps, ButtonLink, FlightBookingSummary, FlightResultsSkeleton, Icon } from "@/components";
+import { BookingSteps, BookingTripCard, ButtonLink, FlightBookingSummary, FlightResultsSkeleton, Icon } from "@/components";
 import { parseFlightBookingParams, parseFlightSearch } from "@/lib";
 import { getFlightOffer } from "@/services";
 import type { RouteParams } from "@/types";
@@ -23,10 +23,10 @@ const FlightBookingConfirmedContent = async ({ searchParams }: FlightBookingConf
 
   return (
     <>
-      <BookingSteps current={2} />
+      <BookingSteps current={3} />
 
-      <div className="mt-6 grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
-        <section className="rounded-card border border-line p-6">
+      <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_20.5rem] lg:gap-x-10">
+        <section className="rounded-card bg-surface p-6">
           <span className="flex size-14 items-center justify-center rounded-full bg-primary-soft text-2xl text-success">
             <Icon name="check" />
           </span>
@@ -44,13 +44,21 @@ const FlightBookingConfirmedContent = async ({ searchParams }: FlightBookingConf
 
           <div className="mt-6 flex flex-wrap gap-3">
             <ButtonLink href="/">Back to home</ButtonLink>
-            <ButtonLink href={`/hotels?destination=${encodeURIComponent(search.to ?? "")}`} variant="outline">
+            <ButtonLink href={`/hotels/list?destination=${encodeURIComponent(search.to ?? "")}`} variant="outline">
               Find a hotel in {search.to}
             </ButtonLink>
           </div>
         </section>
 
-        <FlightBookingSummary offer={offer} search={search} />
+        <div className="lg:col-start-2 lg:row-span-2 lg:row-start-1">
+          <FlightBookingSummary offer={offer} search={search} />
+        </div>
+        <BookingTripCard
+          destination={search.to}
+          carrier={offer.airline}
+          detail={`${offer.flightNumber} · ${offer.cabin}`}
+          legs={offer.inbound ? [offer.outbound, offer.inbound] : [offer.outbound]}
+        />
       </div>
     </>
   );
@@ -58,10 +66,12 @@ const FlightBookingConfirmedContent = async ({ searchParams }: FlightBookingConf
 
 const FlightBookingConfirmedScreen = ({ searchParams }: FlightBookingConfirmedScreenProps) => {
   return (
-    <div className="mx-auto max-w-content pb-8">
-      <Suspense fallback={<FlightResultsSkeleton />}>
-        <FlightBookingConfirmedContent searchParams={searchParams} />
-      </Suspense>
+    <div className="-mx-4 -my-4 bg-surface-alt px-4 py-4 lg:-mx-8 lg:-my-8 lg:px-8 lg:py-6">
+      <div className="mx-auto max-w-content pb-8">
+        <Suspense fallback={<FlightResultsSkeleton />}>
+          <FlightBookingConfirmedContent searchParams={searchParams} />
+        </Suspense>
+      </div>
     </div>
   );
 };

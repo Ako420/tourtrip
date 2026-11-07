@@ -1,0 +1,2394 @@
+[
+  {
+    "id": "1",
+    "slug": "azure-cliff-resort",
+    "area": "Uluwatu",
+    "originalPrice": 229,
+    "freeCancellation": true,
+    "breakfastIncluded": true,
+    "featuredRoom": {
+      "name": "Garden Room",
+      "beds": "1 king bed"
+    },
+    "name": "Azure Cliff Resort",
+    "city": "Bali",
+    "country": "Indonesia",
+    "address": "12 Sunset Ridge, Uluwatu",
+    "description": "A clifftop retreat with sea-facing suites, an infinity pool and long, unhurried evenings above the ocean.",
+    "imageUrl": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=75",
+    "stars": 5,
+    "rating": 9.2,
+    "reviewCount": 1284,
+    "pricePerNight": 189,
+    "currency": "USD",
+    "amenities": [
+      {
+        "id": "pool",
+        "label": "Pool",
+        "iconName": "pool"
+      },
+      {
+        "id": "spa",
+        "label": "Spa",
+        "iconName": "spa"
+      },
+      {
+        "id": "wifi",
+        "label": "Free Wi-Fi",
+        "iconName": "wifi"
+      },
+      {
+        "id": "beach",
+        "label": "Beach access",
+        "iconName": "beach"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "1-1",
+        "name": "Garden Room",
+        "beds": "1 king bed",
+        "maxGuests": 2,
+        "pricePerNight": 189,
+        "isAvailable": true,
+        "imageUrl": "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=75",
+        "sizeSqm": 24,
+        "freeCancellation": true,
+        "breakfastIncluded": true
+      },
+      {
+        "id": "1-2",
+        "name": "Ocean Suite",
+        "beds": "1 king bed",
+        "maxGuests": 3,
+        "pricePerNight": 279,
+        "isAvailable": true,
+        "imageUrl": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1000&q=75",
+        "sizeSqm": 36,
+        "freeCancellation": true,
+        "breakfastIncluded": true
+      },
+      {
+        "id": "1-3",
+        "name": "Cliff Villa",
+        "beds": "2 king beds",
+        "maxGuests": 5,
+        "pricePerNight": 460,
+        "isAvailable": false,
+        "imageUrl": "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=1000&q=75",
+        "sizeSqm": 48,
+        "freeCancellation": true,
+        "breakfastIncluded": true
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=75",
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=1000&q=75"
+    ],
+    "highlights": [
+      "Exceptional stays in Uluwatu",
+      "Free cancellation on most rooms",
+      "Breakfast included"
+    ],
+    "reviewScores": [
+      {
+        "id": "cleanliness",
+        "label": "Cleanliness",
+        "score": 9.4
+      },
+      {
+        "id": "location",
+        "label": "Location",
+        "score": 9.3
+      },
+      {
+        "id": "service",
+        "label": "Service",
+        "score": 9.2
+      },
+      {
+        "id": "facilities",
+        "label": "Facilities",
+        "score": 8.9
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Lovely stay",
+        "text": "The room was spotless and the staff remembered our names from the second day. We would happily come back.",
+        "id": "1-0",
+        "score": 8.9
+      },
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "Great location",
+        "text": "Easy to get around from here, and quiet at night. Check-in was quick even though we arrived late.",
+        "id": "1-1",
+        "score": 9.2
+      },
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Comfortable bed, strong Wi-Fi and friendly service. It felt like more than we paid for.",
+        "id": "1-2",
+        "score": 9.5
+      },
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Relaxing break",
+        "text": "Calm atmosphere and thoughtful touches throughout. The team helped us plan our days out.",
+        "id": "1-3",
+        "score": 8.9
+      },
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would recommend",
+        "text": "Everything worked as promised. A few small things could be newer, but the people made the stay.",
+        "id": "1-4",
+        "score": 9.2
+      }
+    ],
+    "policies": [
+      {
+        "id": "check-in",
+        "title": "Check-in and check-out",
+        "description": "Check-in from 2:00 PM. Check-out by 12:00 PM.",
+        "iconName": "clock"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "Free cancellation up to 48 hours before check-in.",
+        "iconName": "ban"
+      },
+      {
+        "id": "children",
+        "title": "Children",
+        "description": "Children of all ages are welcome. Extra beds depend on the room.",
+        "iconName": "child"
+      },
+      {
+        "id": "pets",
+        "title": "Pets",
+        "description": "Pets are not allowed, except for assistance animals.",
+        "iconName": "paw"
+      },
+      {
+        "id": "payment",
+        "title": "Payment",
+        "description": "Major cards are accepted at the property.",
+        "iconName": "credit-card"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Bali city centre",
+        "distance": "1.0 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest station",
+        "distance": "300 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "12 km",
+        "iconName": "plane"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "slug": "casa-do-rio",
+    "area": "Chiado",
+    "freeCancellation": true,
+    "breakfastIncluded": false,
+    "featuredRoom": {
+      "name": "Classic Double",
+      "beds": "1 queen bed"
+    },
+    "name": "Casa do Rio",
+    "city": "Lisbon",
+    "country": "Portugal",
+    "address": "48 Rua das Flores, Chiado",
+    "description": "A restored townhouse in the old city, with tiled courtyards, a rooftop bar and the river a short walk away.",
+    "imageUrl": "https://images.unsplash.com/photo-1455587734955-081b22074882?auto=format&fit=crop&w=800&q=75",
+    "stars": 4,
+    "rating": 8.8,
+    "reviewCount": 932,
+    "pricePerNight": 132,
+    "currency": "USD",
+    "amenities": [
+      {
+        "id": "wifi",
+        "label": "Free Wi-Fi",
+        "iconName": "wifi"
+      },
+      {
+        "id": "restaurant",
+        "label": "Restaurant",
+        "iconName": "restaurant"
+      },
+      {
+        "id": "gym",
+        "label": "Gym",
+        "iconName": "gym"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "2-1",
+        "name": "Classic Double",
+        "beds": "1 queen bed",
+        "maxGuests": 2,
+        "pricePerNight": 132,
+        "isAvailable": true,
+        "imageUrl": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1000&q=75",
+        "sizeSqm": 24,
+        "freeCancellation": true,
+        "breakfastIncluded": false
+      },
+      {
+        "id": "2-2",
+        "name": "Courtyard Suite",
+        "beds": "1 king bed",
+        "maxGuests": 3,
+        "pricePerNight": 198,
+        "isAvailable": true,
+        "imageUrl": "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=1000&q=75",
+        "sizeSqm": 36,
+        "freeCancellation": true,
+        "breakfastIncluded": false
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1455587734955-081b22074882?auto=format&fit=crop&w=800&q=75",
+      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1000&q=75"
+    ],
+    "highlights": [
+      "Well-rated stays in Chiado",
+      "Free cancellation on most rooms",
+      "Cafes and restaurants close by"
+    ],
+    "reviewScores": [
+      {
+        "id": "cleanliness",
+        "label": "Cleanliness",
+        "score": 9
+      },
+      {
+        "id": "location",
+        "label": "Location",
+        "score": 8.9
+      },
+      {
+        "id": "service",
+        "label": "Service",
+        "score": 8.8
+      },
+      {
+        "id": "facilities",
+        "label": "Facilities",
+        "score": 8.5
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "Great location",
+        "text": "Easy to get around from here, and quiet at night. Check-in was quick even though we arrived late.",
+        "id": "2-0",
+        "score": 8.5
+      },
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Comfortable bed, strong Wi-Fi and friendly service. It felt like more than we paid for.",
+        "id": "2-1",
+        "score": 8.8
+      },
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Relaxing break",
+        "text": "Calm atmosphere and thoughtful touches throughout. The team helped us plan our days out.",
+        "id": "2-2",
+        "score": 9.1
+      },
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would recommend",
+        "text": "Everything worked as promised. A few small things could be newer, but the people made the stay.",
+        "id": "2-3",
+        "score": 8.5
+      },
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Lovely stay",
+        "text": "The room was spotless and the staff remembered our names from the second day. We would happily come back.",
+        "id": "2-4",
+        "score": 8.8
+      }
+    ],
+    "policies": [
+      {
+        "id": "check-in",
+        "title": "Check-in and check-out",
+        "description": "Check-in from 2:00 PM. Check-out by 12:00 PM.",
+        "iconName": "clock"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "Free cancellation up to 48 hours before check-in.",
+        "iconName": "ban"
+      },
+      {
+        "id": "children",
+        "title": "Children",
+        "description": "Children of all ages are welcome. Extra beds depend on the room.",
+        "iconName": "child"
+      },
+      {
+        "id": "pets",
+        "title": "Pets",
+        "description": "Pets are not allowed, except for assistance animals.",
+        "iconName": "paw"
+      },
+      {
+        "id": "payment",
+        "title": "Payment",
+        "description": "Major cards are accepted at the property.",
+        "iconName": "credit-card"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Lisbon city centre",
+        "distance": "2.1 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest station",
+        "distance": "400 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "15 km",
+        "iconName": "plane"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "slug": "sakura-house-tokyo",
+    "area": "Nakameguro",
+    "originalPrice": 178,
+    "freeCancellation": false,
+    "breakfastIncluded": true,
+    "featuredRoom": {
+      "name": "City Twin",
+      "beds": "2 single beds"
+    },
+    "name": "Sakura House Tokyo",
+    "city": "Tokyo",
+    "country": "Japan",
+    "address": "3-7 Nakameguro, Meguro City",
+    "description": "Calm, compact rooms beside the canal, with a hot-spring bath on the top floor and trains a minute away.",
+    "imageUrl": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=75",
+    "stars": 4,
+    "rating": 9,
+    "reviewCount": 2110,
+    "pricePerNight": 156,
+    "currency": "USD",
+    "amenities": [
+      {
+        "id": "wifi",
+        "label": "Free Wi-Fi",
+        "iconName": "wifi"
+      },
+      {
+        "id": "spa",
+        "label": "Spa",
+        "iconName": "spa"
+      },
+      {
+        "id": "restaurant",
+        "label": "Restaurant",
+        "iconName": "restaurant"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "3-1",
+        "name": "City Twin",
+        "beds": "2 single beds",
+        "maxGuests": 2,
+        "pricePerNight": 156,
+        "isAvailable": true,
+        "imageUrl": "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=1000&q=75",
+        "sizeSqm": 24,
+        "freeCancellation": false,
+        "breakfastIncluded": true
+      },
+      {
+        "id": "3-2",
+        "name": "Canal Room",
+        "beds": "1 king bed",
+        "maxGuests": 2,
+        "pricePerNight": 212,
+        "isAvailable": true,
+        "imageUrl": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1000&q=75",
+        "sizeSqm": 36,
+        "freeCancellation": false,
+        "breakfastIncluded": true
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=75",
+      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1000&q=75"
+    ],
+    "highlights": [
+      "Exceptional stays in Nakameguro",
+      "Great rates when you book ahead",
+      "Breakfast included"
+    ],
+    "reviewScores": [
+      {
+        "id": "cleanliness",
+        "label": "Cleanliness",
+        "score": 9.2
+      },
+      {
+        "id": "location",
+        "label": "Location",
+        "score": 9.1
+      },
+      {
+        "id": "service",
+        "label": "Service",
+        "score": 9
+      },
+      {
+        "id": "facilities",
+        "label": "Facilities",
+        "score": 8.7
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Comfortable bed, strong Wi-Fi and friendly service. It felt like more than we paid for.",
+        "id": "3-0",
+        "score": 8.7
+      },
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Relaxing break",
+        "text": "Calm atmosphere and thoughtful touches throughout. The team helped us plan our days out.",
+        "id": "3-1",
+        "score": 9
+      },
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would recommend",
+        "text": "Everything worked as promised. A few small things could be newer, but the people made the stay.",
+        "id": "3-2",
+        "score": 9.3
+      },
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Lovely stay",
+        "text": "The room was spotless and the staff remembered our names from the second day. We would happily come back.",
+        "id": "3-3",
+        "score": 8.7
+      },
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "Great location",
+        "text": "Easy to get around from here, and quiet at night. Check-in was quick even though we arrived late.",
+        "id": "3-4",
+        "score": 9
+      }
+    ],
+    "policies": [
+      {
+        "id": "check-in",
+        "title": "Check-in and check-out",
+        "description": "Check-in from 2:00 PM. Check-out by 12:00 PM.",
+        "iconName": "clock"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "This rate cannot be cancelled or changed after booking.",
+        "iconName": "ban"
+      },
+      {
+        "id": "children",
+        "title": "Children",
+        "description": "Children of all ages are welcome. Extra beds depend on the room.",
+        "iconName": "child"
+      },
+      {
+        "id": "pets",
+        "title": "Pets",
+        "description": "Pets are not allowed, except for assistance animals.",
+        "iconName": "paw"
+      },
+      {
+        "id": "payment",
+        "title": "Payment",
+        "description": "Major cards are accepted at the property.",
+        "iconName": "credit-card"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Tokyo city centre",
+        "distance": "3.2 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest station",
+        "distance": "500 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "18 km",
+        "iconName": "plane"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "slug": "savanna-lodge-nairobi",
+    "area": "Karen",
+    "freeCancellation": true,
+    "breakfastIncluded": true,
+    "featuredRoom": {
+      "name": "Garden Cottage",
+      "beds": "1 king bed"
+    },
+    "name": "Savanna Lodge",
+    "city": "Nairobi",
+    "country": "Kenya",
+    "address": "21 Karen Road, Karen",
+    "description": "A garden lodge on the edge of the city, with open-air dining and easy day trips to the national park.",
+    "imageUrl": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=75",
+    "stars": 5,
+    "rating": 9.4,
+    "reviewCount": 648,
+    "pricePerNight": 214,
+    "currency": "USD",
+    "amenities": [
+      {
+        "id": "pool",
+        "label": "Pool",
+        "iconName": "pool"
+      },
+      {
+        "id": "restaurant",
+        "label": "Restaurant",
+        "iconName": "restaurant"
+      },
+      {
+        "id": "parking",
+        "label": "Parking",
+        "iconName": "parking"
+      },
+      {
+        "id": "wifi",
+        "label": "Free Wi-Fi",
+        "iconName": "wifi"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "4-1",
+        "name": "Garden Cottage",
+        "beds": "1 king bed",
+        "maxGuests": 2,
+        "pricePerNight": 214,
+        "isAvailable": true,
+        "imageUrl": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1000&q=75",
+        "sizeSqm": 24,
+        "freeCancellation": true,
+        "breakfastIncluded": true
+      },
+      {
+        "id": "4-2",
+        "name": "Family Lodge",
+        "beds": "2 queen beds",
+        "maxGuests": 5,
+        "pricePerNight": 340,
+        "isAvailable": true,
+        "imageUrl": "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1000&q=75",
+        "sizeSqm": 36,
+        "freeCancellation": true,
+        "breakfastIncluded": true
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=75",
+      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=75"
+    ],
+    "highlights": [
+      "Exceptional stays in Karen",
+      "Free cancellation on most rooms",
+      "Breakfast included"
+    ],
+    "reviewScores": [
+      {
+        "id": "cleanliness",
+        "label": "Cleanliness",
+        "score": 9.6
+      },
+      {
+        "id": "location",
+        "label": "Location",
+        "score": 9.5
+      },
+      {
+        "id": "service",
+        "label": "Service",
+        "score": 9.4
+      },
+      {
+        "id": "facilities",
+        "label": "Facilities",
+        "score": 9.1
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Relaxing break",
+        "text": "Calm atmosphere and thoughtful touches throughout. The team helped us plan our days out.",
+        "id": "4-0",
+        "score": 9.1
+      },
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would recommend",
+        "text": "Everything worked as promised. A few small things could be newer, but the people made the stay.",
+        "id": "4-1",
+        "score": 9.4
+      },
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Lovely stay",
+        "text": "The room was spotless and the staff remembered our names from the second day. We would happily come back.",
+        "id": "4-2",
+        "score": 9.7
+      },
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "Great location",
+        "text": "Easy to get around from here, and quiet at night. Check-in was quick even though we arrived late.",
+        "id": "4-3",
+        "score": 9.1
+      },
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Comfortable bed, strong Wi-Fi and friendly service. It felt like more than we paid for.",
+        "id": "4-4",
+        "score": 9.4
+      }
+    ],
+    "policies": [
+      {
+        "id": "check-in",
+        "title": "Check-in and check-out",
+        "description": "Check-in from 2:00 PM. Check-out by 12:00 PM.",
+        "iconName": "clock"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "Free cancellation up to 48 hours before check-in.",
+        "iconName": "ban"
+      },
+      {
+        "id": "children",
+        "title": "Children",
+        "description": "Children of all ages are welcome. Extra beds depend on the room.",
+        "iconName": "child"
+      },
+      {
+        "id": "pets",
+        "title": "Pets",
+        "description": "Pets are not allowed, except for assistance animals.",
+        "iconName": "paw"
+      },
+      {
+        "id": "payment",
+        "title": "Payment",
+        "description": "Major cards are accepted at the property.",
+        "iconName": "credit-card"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Nairobi city centre",
+        "distance": "4.3 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest station",
+        "distance": "600 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "21 km",
+        "iconName": "plane"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "slug": "palm-court-marrakech",
+    "area": "Palmeraie",
+    "originalPrice": 289,
+    "freeCancellation": true,
+    "breakfastIncluded": true,
+    "featuredRoom": {
+      "name": "Patio Room",
+      "beds": "1 king bed"
+    },
+    "name": "Palm Court Marrakech",
+    "city": "Marrakech",
+    "country": "Morocco",
+    "address": "9 Avenue des Palmiers, Palmeraie",
+    "description": "White walls, tall palms and a long reflecting pool, a short drive from the old medina and its markets.",
+    "imageUrl": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=800&q=75",
+    "stars": 5,
+    "rating": 9.3,
+    "reviewCount": 815,
+    "pricePerNight": 248,
+    "currency": "USD",
+    "amenities": [
+      {
+        "id": "pool",
+        "label": "Pool",
+        "iconName": "pool"
+      },
+      {
+        "id": "spa",
+        "label": "Spa",
+        "iconName": "spa"
+      },
+      {
+        "id": "restaurant",
+        "label": "Restaurant",
+        "iconName": "restaurant"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "5-1",
+        "name": "Patio Room",
+        "beds": "1 king bed",
+        "maxGuests": 2,
+        "pricePerNight": 248,
+        "isAvailable": true,
+        "imageUrl": "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1000&q=75",
+        "sizeSqm": 24,
+        "freeCancellation": true,
+        "breakfastIncluded": true
+      },
+      {
+        "id": "5-2",
+        "name": "Riad Suite",
+        "beds": "1 king bed",
+        "maxGuests": 4,
+        "pricePerNight": 372,
+        "isAvailable": true,
+        "imageUrl": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=75",
+        "sizeSqm": 36,
+        "freeCancellation": true,
+        "breakfastIncluded": true
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=800&q=75",
+      "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=75"
+    ],
+    "highlights": [
+      "Exceptional stays in Palmeraie",
+      "Free cancellation on most rooms",
+      "Breakfast included"
+    ],
+    "reviewScores": [
+      {
+        "id": "cleanliness",
+        "label": "Cleanliness",
+        "score": 9.5
+      },
+      {
+        "id": "location",
+        "label": "Location",
+        "score": 9.4
+      },
+      {
+        "id": "service",
+        "label": "Service",
+        "score": 9.3
+      },
+      {
+        "id": "facilities",
+        "label": "Facilities",
+        "score": 9
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would recommend",
+        "text": "Everything worked as promised. A few small things could be newer, but the people made the stay.",
+        "id": "5-0",
+        "score": 9
+      },
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Lovely stay",
+        "text": "The room was spotless and the staff remembered our names from the second day. We would happily come back.",
+        "id": "5-1",
+        "score": 9.3
+      },
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "Great location",
+        "text": "Easy to get around from here, and quiet at night. Check-in was quick even though we arrived late.",
+        "id": "5-2",
+        "score": 9.6
+      },
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Comfortable bed, strong Wi-Fi and friendly service. It felt like more than we paid for.",
+        "id": "5-3",
+        "score": 9
+      },
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Relaxing break",
+        "text": "Calm atmosphere and thoughtful touches throughout. The team helped us plan our days out.",
+        "id": "5-4",
+        "score": 9.3
+      }
+    ],
+    "policies": [
+      {
+        "id": "check-in",
+        "title": "Check-in and check-out",
+        "description": "Check-in from 2:00 PM. Check-out by 12:00 PM.",
+        "iconName": "clock"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "Free cancellation up to 48 hours before check-in.",
+        "iconName": "ban"
+      },
+      {
+        "id": "children",
+        "title": "Children",
+        "description": "Children of all ages are welcome. Extra beds depend on the room.",
+        "iconName": "child"
+      },
+      {
+        "id": "pets",
+        "title": "Pets",
+        "description": "Pets are not allowed, except for assistance animals.",
+        "iconName": "paw"
+      },
+      {
+        "id": "payment",
+        "title": "Payment",
+        "description": "Major cards are accepted at the property.",
+        "iconName": "credit-card"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Marrakech city centre",
+        "distance": "1.4 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest station",
+        "distance": "700 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "24 km",
+        "iconName": "plane"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "slug": "mirror-pool-villas",
+    "area": "Kamala Beach",
+    "originalPrice": 215,
+    "freeCancellation": false,
+    "breakfastIncluded": false,
+    "featuredRoom": {
+      "name": "Pool Villa",
+      "beds": "1 king bed"
+    },
+    "name": "Mirror Pool Villas",
+    "city": "Phuket",
+    "country": "Thailand",
+    "address": "77 Moo 2, Kamala Beach",
+    "description": "Glass-walled villas around a mosaic pool, with evening storms over the bay and breakfast on your terrace.",
+    "imageUrl": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=75",
+    "stars": 5,
+    "rating": 8.9,
+    "reviewCount": 1032,
+    "pricePerNight": 176,
+    "currency": "USD",
+    "amenities": [
+      {
+        "id": "pool",
+        "label": "Pool",
+        "iconName": "pool"
+      },
+      {
+        "id": "beach",
+        "label": "Beach access",
+        "iconName": "beach"
+      },
+      {
+        "id": "gym",
+        "label": "Gym",
+        "iconName": "gym"
+      },
+      {
+        "id": "wifi",
+        "label": "Free Wi-Fi",
+        "iconName": "wifi"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "6-1",
+        "name": "Pool Villa",
+        "beds": "1 king bed",
+        "maxGuests": 2,
+        "pricePerNight": 176,
+        "isAvailable": true,
+        "imageUrl": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=75",
+        "sizeSqm": 24,
+        "freeCancellation": false,
+        "breakfastIncluded": false
+      },
+      {
+        "id": "6-2",
+        "name": "Family Villa",
+        "beds": "2 queen beds",
+        "maxGuests": 5,
+        "pricePerNight": 298,
+        "isAvailable": true,
+        "imageUrl": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=75",
+        "sizeSqm": 36,
+        "freeCancellation": false,
+        "breakfastIncluded": false
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=75",
+      "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=75"
+    ],
+    "highlights": [
+      "Well-rated stays in Kamala Beach",
+      "Great rates when you book ahead",
+      "Cafes and restaurants close by"
+    ],
+    "reviewScores": [
+      {
+        "id": "cleanliness",
+        "label": "Cleanliness",
+        "score": 9.1
+      },
+      {
+        "id": "location",
+        "label": "Location",
+        "score": 9
+      },
+      {
+        "id": "service",
+        "label": "Service",
+        "score": 8.9
+      },
+      {
+        "id": "facilities",
+        "label": "Facilities",
+        "score": 8.6
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Lovely stay",
+        "text": "The room was spotless and the staff remembered our names from the second day. We would happily come back.",
+        "id": "6-0",
+        "score": 8.6
+      },
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "Great location",
+        "text": "Easy to get around from here, and quiet at night. Check-in was quick even though we arrived late.",
+        "id": "6-1",
+        "score": 8.9
+      },
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Comfortable bed, strong Wi-Fi and friendly service. It felt like more than we paid for.",
+        "id": "6-2",
+        "score": 9.2
+      },
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Relaxing break",
+        "text": "Calm atmosphere and thoughtful touches throughout. The team helped us plan our days out.",
+        "id": "6-3",
+        "score": 8.6
+      },
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would recommend",
+        "text": "Everything worked as promised. A few small things could be newer, but the people made the stay.",
+        "id": "6-4",
+        "score": 8.9
+      }
+    ],
+    "policies": [
+      {
+        "id": "check-in",
+        "title": "Check-in and check-out",
+        "description": "Check-in from 2:00 PM. Check-out by 12:00 PM.",
+        "iconName": "clock"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "This rate cannot be cancelled or changed after booking.",
+        "iconName": "ban"
+      },
+      {
+        "id": "children",
+        "title": "Children",
+        "description": "Children of all ages are welcome. Extra beds depend on the room.",
+        "iconName": "child"
+      },
+      {
+        "id": "pets",
+        "title": "Pets",
+        "description": "Pets are not allowed, except for assistance animals.",
+        "iconName": "paw"
+      },
+      {
+        "id": "payment",
+        "title": "Payment",
+        "description": "Major cards are accepted at the property.",
+        "iconName": "credit-card"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Phuket city centre",
+        "distance": "2.5 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest station",
+        "distance": "300 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "27 km",
+        "iconName": "plane"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "slug": "marina-sky-hotel",
+    "area": "Dubai Marina",
+    "originalPrice": 320,
+    "freeCancellation": true,
+    "breakfastIncluded": true,
+    "featuredRoom": {
+      "name": "Marina View Room",
+      "beds": "1 king bed"
+    },
+    "name": "Marina Sky Hotel",
+    "city": "Dubai",
+    "country": "United Arab Emirates",
+    "address": "5 Marina Walk, Dubai Marina",
+    "description": "A bright, white-walled retreat around a long outdoor pool, moments from the marina promenade.",
+    "imageUrl": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=800&q=75",
+    "stars": 5,
+    "rating": 9.1,
+    "reviewCount": 1764,
+    "pricePerNight": 265,
+    "currency": "USD",
+    "amenities": [
+      {
+        "id": "pool",
+        "label": "Pool",
+        "iconName": "pool"
+      },
+      {
+        "id": "gym",
+        "label": "Gym",
+        "iconName": "gym"
+      },
+      {
+        "id": "spa",
+        "label": "Spa",
+        "iconName": "spa"
+      },
+      {
+        "id": "wifi",
+        "label": "Free Wi-Fi",
+        "iconName": "wifi"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "7-1",
+        "name": "Marina View Room",
+        "beds": "1 king bed",
+        "maxGuests": 2,
+        "pricePerNight": 265,
+        "isAvailable": true,
+        "imageUrl": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=75",
+        "sizeSqm": 24,
+        "freeCancellation": true,
+        "breakfastIncluded": true
+      },
+      {
+        "id": "7-2",
+        "name": "Sky Suite",
+        "beds": "1 king bed",
+        "maxGuests": 4,
+        "pricePerNight": 410,
+        "isAvailable": true,
+        "imageUrl": "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=75",
+        "sizeSqm": 36,
+        "freeCancellation": true,
+        "breakfastIncluded": true
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=800&q=75",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1000&q=75"
+    ],
+    "highlights": [
+      "Exceptional stays in Dubai Marina",
+      "Free cancellation on most rooms",
+      "Breakfast included"
+    ],
+    "reviewScores": [
+      {
+        "id": "cleanliness",
+        "label": "Cleanliness",
+        "score": 9.3
+      },
+      {
+        "id": "location",
+        "label": "Location",
+        "score": 9.2
+      },
+      {
+        "id": "service",
+        "label": "Service",
+        "score": 9.1
+      },
+      {
+        "id": "facilities",
+        "label": "Facilities",
+        "score": 8.8
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "Great location",
+        "text": "Easy to get around from here, and quiet at night. Check-in was quick even though we arrived late.",
+        "id": "7-0",
+        "score": 8.8
+      },
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Comfortable bed, strong Wi-Fi and friendly service. It felt like more than we paid for.",
+        "id": "7-1",
+        "score": 9.1
+      },
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Relaxing break",
+        "text": "Calm atmosphere and thoughtful touches throughout. The team helped us plan our days out.",
+        "id": "7-2",
+        "score": 9.4
+      },
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would recommend",
+        "text": "Everything worked as promised. A few small things could be newer, but the people made the stay.",
+        "id": "7-3",
+        "score": 8.8
+      },
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Lovely stay",
+        "text": "The room was spotless and the staff remembered our names from the second day. We would happily come back.",
+        "id": "7-4",
+        "score": 9.1
+      }
+    ],
+    "policies": [
+      {
+        "id": "check-in",
+        "title": "Check-in and check-out",
+        "description": "Check-in from 2:00 PM. Check-out by 12:00 PM.",
+        "iconName": "clock"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "Free cancellation up to 48 hours before check-in.",
+        "iconName": "ban"
+      },
+      {
+        "id": "children",
+        "title": "Children",
+        "description": "Children of all ages are welcome. Extra beds depend on the room.",
+        "iconName": "child"
+      },
+      {
+        "id": "pets",
+        "title": "Pets",
+        "description": "Pets are not allowed, except for assistance animals.",
+        "iconName": "paw"
+      },
+      {
+        "id": "payment",
+        "title": "Payment",
+        "description": "Major cards are accepted at the property.",
+        "iconName": "credit-card"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Dubai city centre",
+        "distance": "3.6 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest station",
+        "distance": "400 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "30 km",
+        "iconName": "plane"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "slug": "table-view-lodge",
+    "area": "Camps Bay",
+    "freeCancellation": true,
+    "breakfastIncluded": false,
+    "featuredRoom": {
+      "name": "Ocean Deck Room",
+      "beds": "1 queen bed"
+    },
+    "name": "Table View Lodge",
+    "city": "Cape Town",
+    "country": "South Africa",
+    "address": "18 Victoria Road, Camps Bay",
+    "description": "Timber decks and tropical gardens between the mountain and the Atlantic, ten minutes from the beach.",
+    "imageUrl": "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=800&q=75",
+    "stars": 4,
+    "rating": 8.7,
+    "reviewCount": 576,
+    "pricePerNight": 148,
+    "currency": "USD",
+    "amenities": [
+      {
+        "id": "pool",
+        "label": "Pool",
+        "iconName": "pool"
+      },
+      {
+        "id": "parking",
+        "label": "Parking",
+        "iconName": "parking"
+      },
+      {
+        "id": "wifi",
+        "label": "Free Wi-Fi",
+        "iconName": "wifi"
+      },
+      {
+        "id": "beach",
+        "label": "Beach access",
+        "iconName": "beach"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "8-1",
+        "name": "Ocean Deck Room",
+        "beds": "1 queen bed",
+        "maxGuests": 2,
+        "pricePerNight": 148,
+        "isAvailable": true,
+        "imageUrl": "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=75",
+        "sizeSqm": 24,
+        "freeCancellation": true,
+        "breakfastIncluded": false
+      },
+      {
+        "id": "8-2",
+        "name": "Garden Suite",
+        "beds": "2 queen beds",
+        "maxGuests": 4,
+        "pricePerNight": 224,
+        "isAvailable": true,
+        "imageUrl": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1000&q=75",
+        "sizeSqm": 36,
+        "freeCancellation": true,
+        "breakfastIncluded": false
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=800&q=75",
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=1000&q=75"
+    ],
+    "highlights": [
+      "Well-rated stays in Camps Bay",
+      "Free cancellation on most rooms",
+      "Cafes and restaurants close by"
+    ],
+    "reviewScores": [
+      {
+        "id": "cleanliness",
+        "label": "Cleanliness",
+        "score": 8.9
+      },
+      {
+        "id": "location",
+        "label": "Location",
+        "score": 8.8
+      },
+      {
+        "id": "service",
+        "label": "Service",
+        "score": 8.7
+      },
+      {
+        "id": "facilities",
+        "label": "Facilities",
+        "score": 8.4
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Comfortable bed, strong Wi-Fi and friendly service. It felt like more than we paid for.",
+        "id": "8-0",
+        "score": 8.4
+      },
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Relaxing break",
+        "text": "Calm atmosphere and thoughtful touches throughout. The team helped us plan our days out.",
+        "id": "8-1",
+        "score": 8.7
+      },
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would recommend",
+        "text": "Everything worked as promised. A few small things could be newer, but the people made the stay.",
+        "id": "8-2",
+        "score": 9
+      },
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Lovely stay",
+        "text": "The room was spotless and the staff remembered our names from the second day. We would happily come back.",
+        "id": "8-3",
+        "score": 8.4
+      },
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "Great location",
+        "text": "Easy to get around from here, and quiet at night. Check-in was quick even though we arrived late.",
+        "id": "8-4",
+        "score": 8.7
+      }
+    ],
+    "policies": [
+      {
+        "id": "check-in",
+        "title": "Check-in and check-out",
+        "description": "Check-in from 2:00 PM. Check-out by 12:00 PM.",
+        "iconName": "clock"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "Free cancellation up to 48 hours before check-in.",
+        "iconName": "ban"
+      },
+      {
+        "id": "children",
+        "title": "Children",
+        "description": "Children of all ages are welcome. Extra beds depend on the room.",
+        "iconName": "child"
+      },
+      {
+        "id": "pets",
+        "title": "Pets",
+        "description": "Pets are not allowed, except for assistance animals.",
+        "iconName": "paw"
+      },
+      {
+        "id": "payment",
+        "title": "Payment",
+        "description": "Major cards are accepted at the property.",
+        "iconName": "credit-card"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Cape Town city centre",
+        "distance": "4.7 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest station",
+        "distance": "500 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "33 km",
+        "iconName": "plane"
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "slug": "maison-lumiere",
+    "area": "Le Marais",
+    "freeCancellation": false,
+    "breakfastIncluded": true,
+    "featuredRoom": {
+      "name": "Classic Room",
+      "beds": "1 queen bed"
+    },
+    "name": "Maison Lumiere",
+    "city": "Paris",
+    "country": "France",
+    "address": "22 Rue des Archives, Le Marais",
+    "description": "Warm, classic rooms in a quiet corner of the Marais, with galleries and cafes on the doorstep.",
+    "imageUrl": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=75",
+    "stars": 4,
+    "rating": 8.5,
+    "reviewCount": 1422,
+    "pricePerNight": 224,
+    "currency": "USD",
+    "amenities": [
+      {
+        "id": "wifi",
+        "label": "Free Wi-Fi",
+        "iconName": "wifi"
+      },
+      {
+        "id": "restaurant",
+        "label": "Restaurant",
+        "iconName": "restaurant"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "9-1",
+        "name": "Classic Room",
+        "beds": "1 queen bed",
+        "maxGuests": 2,
+        "pricePerNight": 224,
+        "isAvailable": true,
+        "imageUrl": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1000&q=75",
+        "sizeSqm": 24,
+        "freeCancellation": false,
+        "breakfastIncluded": true
+      },
+      {
+        "id": "9-2",
+        "name": "Junior Suite",
+        "beds": "1 king bed",
+        "maxGuests": 3,
+        "pricePerNight": 318,
+        "isAvailable": true,
+        "imageUrl": "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=1000&q=75",
+        "sizeSqm": 36,
+        "freeCancellation": false,
+        "breakfastIncluded": true
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=75",
+      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1000&q=75"
+    ],
+    "highlights": [
+      "Well-rated stays in Le Marais",
+      "Great rates when you book ahead",
+      "Breakfast included"
+    ],
+    "reviewScores": [
+      {
+        "id": "cleanliness",
+        "label": "Cleanliness",
+        "score": 8.7
+      },
+      {
+        "id": "location",
+        "label": "Location",
+        "score": 8.6
+      },
+      {
+        "id": "service",
+        "label": "Service",
+        "score": 8.5
+      },
+      {
+        "id": "facilities",
+        "label": "Facilities",
+        "score": 8.2
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Relaxing break",
+        "text": "Calm atmosphere and thoughtful touches throughout. The team helped us plan our days out.",
+        "id": "9-0",
+        "score": 8.2
+      },
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would recommend",
+        "text": "Everything worked as promised. A few small things could be newer, but the people made the stay.",
+        "id": "9-1",
+        "score": 8.5
+      },
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Lovely stay",
+        "text": "The room was spotless and the staff remembered our names from the second day. We would happily come back.",
+        "id": "9-2",
+        "score": 8.8
+      },
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "Great location",
+        "text": "Easy to get around from here, and quiet at night. Check-in was quick even though we arrived late.",
+        "id": "9-3",
+        "score": 8.2
+      },
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Comfortable bed, strong Wi-Fi and friendly service. It felt like more than we paid for.",
+        "id": "9-4",
+        "score": 8.5
+      }
+    ],
+    "policies": [
+      {
+        "id": "check-in",
+        "title": "Check-in and check-out",
+        "description": "Check-in from 2:00 PM. Check-out by 12:00 PM.",
+        "iconName": "clock"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "This rate cannot be cancelled or changed after booking.",
+        "iconName": "ban"
+      },
+      {
+        "id": "children",
+        "title": "Children",
+        "description": "Children of all ages are welcome. Extra beds depend on the room.",
+        "iconName": "child"
+      },
+      {
+        "id": "pets",
+        "title": "Pets",
+        "description": "Pets are not allowed, except for assistance animals.",
+        "iconName": "paw"
+      },
+      {
+        "id": "payment",
+        "title": "Payment",
+        "description": "Major cards are accepted at the property.",
+        "iconName": "credit-card"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Paris city centre",
+        "distance": "1.8 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest station",
+        "distance": "600 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "36 km",
+        "iconName": "plane"
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "slug": "trevi-garden-suites",
+    "area": "Centro Storico",
+    "freeCancellation": true,
+    "breakfastIncluded": false,
+    "featuredRoom": {
+      "name": "Garden Double",
+      "beds": "1 queen bed"
+    },
+    "name": "Trevi Garden Suites",
+    "city": "Rome",
+    "country": "Italy",
+    "address": "11 Via del Lavatore, Centro Storico",
+    "description": "A small, friendly guesthouse a short walk from the fountains, with a shaded courtyard for slow breakfasts.",
+    "imageUrl": "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=75",
+    "stars": 3,
+    "rating": 7.9,
+    "reviewCount": 389,
+    "pricePerNight": 118,
+    "currency": "USD",
+    "amenities": [
+      {
+        "id": "wifi",
+        "label": "Free Wi-Fi",
+        "iconName": "wifi"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "10-1",
+        "name": "Garden Double",
+        "beds": "1 queen bed",
+        "maxGuests": 2,
+        "pricePerNight": 118,
+        "isAvailable": true,
+        "imageUrl": "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=1000&q=75",
+        "sizeSqm": 24,
+        "freeCancellation": true,
+        "breakfastIncluded": false
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=75",
+      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1000&q=75"
+    ],
+    "highlights": [
+      "Well-rated stays in Centro Storico",
+      "Free cancellation on most rooms",
+      "Cafes and restaurants close by"
+    ],
+    "reviewScores": [
+      {
+        "id": "cleanliness",
+        "label": "Cleanliness",
+        "score": 8.1
+      },
+      {
+        "id": "location",
+        "label": "Location",
+        "score": 8
+      },
+      {
+        "id": "service",
+        "label": "Service",
+        "score": 7.9
+      },
+      {
+        "id": "facilities",
+        "label": "Facilities",
+        "score": 7.6
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would recommend",
+        "text": "Everything worked as promised. A few small things could be newer, but the people made the stay.",
+        "id": "10-0",
+        "score": 7.6
+      },
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Lovely stay",
+        "text": "The room was spotless and the staff remembered our names from the second day. We would happily come back.",
+        "id": "10-1",
+        "score": 7.9
+      },
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "Great location",
+        "text": "Easy to get around from here, and quiet at night. Check-in was quick even though we arrived late.",
+        "id": "10-2",
+        "score": 8.2
+      },
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Comfortable bed, strong Wi-Fi and friendly service. It felt like more than we paid for.",
+        "id": "10-3",
+        "score": 7.6
+      },
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Relaxing break",
+        "text": "Calm atmosphere and thoughtful touches throughout. The team helped us plan our days out.",
+        "id": "10-4",
+        "score": 7.9
+      }
+    ],
+    "policies": [
+      {
+        "id": "check-in",
+        "title": "Check-in and check-out",
+        "description": "Check-in from 2:00 PM. Check-out by 12:00 PM.",
+        "iconName": "clock"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "Free cancellation up to 48 hours before check-in.",
+        "iconName": "ban"
+      },
+      {
+        "id": "children",
+        "title": "Children",
+        "description": "Children of all ages are welcome. Extra beds depend on the room.",
+        "iconName": "child"
+      },
+      {
+        "id": "pets",
+        "title": "Pets",
+        "description": "Pets are not allowed, except for assistance animals.",
+        "iconName": "paw"
+      },
+      {
+        "id": "payment",
+        "title": "Payment",
+        "description": "Major cards are accepted at the property.",
+        "iconName": "credit-card"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Rome city centre",
+        "distance": "2.0 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest station",
+        "distance": "700 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "39 km",
+        "iconName": "plane"
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "slug": "orchid-bay-hotel",
+    "area": "Marina Bay",
+    "originalPrice": 239,
+    "freeCancellation": true,
+    "breakfastIncluded": true,
+    "featuredRoom": {
+      "name": "Bay Room",
+      "beds": "1 king bed"
+    },
+    "name": "Orchid Bay Hotel",
+    "city": "Singapore",
+    "country": "Singapore",
+    "address": "8 Bayfront Link, Marina Bay",
+    "description": "Tiered pools and palm-lined terraces above the water, with the city's best food a short ride away.",
+    "imageUrl": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=75",
+    "stars": 4,
+    "rating": 8.6,
+    "reviewCount": 2340,
+    "pricePerNight": 199,
+    "currency": "USD",
+    "amenities": [
+      {
+        "id": "pool",
+        "label": "Pool",
+        "iconName": "pool"
+      },
+      {
+        "id": "gym",
+        "label": "Gym",
+        "iconName": "gym"
+      },
+      {
+        "id": "restaurant",
+        "label": "Restaurant",
+        "iconName": "restaurant"
+      },
+      {
+        "id": "wifi",
+        "label": "Free Wi-Fi",
+        "iconName": "wifi"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "11-1",
+        "name": "Bay Room",
+        "beds": "1 king bed",
+        "maxGuests": 2,
+        "pricePerNight": 199,
+        "isAvailable": true,
+        "imageUrl": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1000&q=75",
+        "sizeSqm": 24,
+        "freeCancellation": true,
+        "breakfastIncluded": true
+      },
+      {
+        "id": "11-2",
+        "name": "Family Room",
+        "beds": "2 queen beds",
+        "maxGuests": 4,
+        "pricePerNight": 286,
+        "isAvailable": true,
+        "imageUrl": "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1000&q=75",
+        "sizeSqm": 36,
+        "freeCancellation": true,
+        "breakfastIncluded": true
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=75",
+      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=75"
+    ],
+    "highlights": [
+      "Well-rated stays in Marina Bay",
+      "Free cancellation on most rooms",
+      "Breakfast included"
+    ],
+    "reviewScores": [
+      {
+        "id": "cleanliness",
+        "label": "Cleanliness",
+        "score": 8.8
+      },
+      {
+        "id": "location",
+        "label": "Location",
+        "score": 8.7
+      },
+      {
+        "id": "service",
+        "label": "Service",
+        "score": 8.6
+      },
+      {
+        "id": "facilities",
+        "label": "Facilities",
+        "score": 8.3
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Lovely stay",
+        "text": "The room was spotless and the staff remembered our names from the second day. We would happily come back.",
+        "id": "11-0",
+        "score": 8.3
+      },
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "Great location",
+        "text": "Easy to get around from here, and quiet at night. Check-in was quick even though we arrived late.",
+        "id": "11-1",
+        "score": 8.6
+      },
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Comfortable bed, strong Wi-Fi and friendly service. It felt like more than we paid for.",
+        "id": "11-2",
+        "score": 8.9
+      },
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Relaxing break",
+        "text": "Calm atmosphere and thoughtful touches throughout. The team helped us plan our days out.",
+        "id": "11-3",
+        "score": 8.3
+      },
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would recommend",
+        "text": "Everything worked as promised. A few small things could be newer, but the people made the stay.",
+        "id": "11-4",
+        "score": 8.6
+      }
+    ],
+    "policies": [
+      {
+        "id": "check-in",
+        "title": "Check-in and check-out",
+        "description": "Check-in from 2:00 PM. Check-out by 12:00 PM.",
+        "iconName": "clock"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "Free cancellation up to 48 hours before check-in.",
+        "iconName": "ban"
+      },
+      {
+        "id": "children",
+        "title": "Children",
+        "description": "Children of all ages are welcome. Extra beds depend on the room.",
+        "iconName": "child"
+      },
+      {
+        "id": "pets",
+        "title": "Pets",
+        "description": "Pets are not allowed, except for assistance animals.",
+        "iconName": "paw"
+      },
+      {
+        "id": "payment",
+        "title": "Payment",
+        "description": "Major cards are accepted at the property.",
+        "iconName": "credit-card"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Singapore city centre",
+        "distance": "3.1 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest station",
+        "distance": "300 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "42 km",
+        "iconName": "plane"
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "slug": "harbour-lights-hong-kong",
+    "area": "Tsim Sha Tsui",
+    "freeCancellation": false,
+    "breakfastIncluded": false,
+    "featuredRoom": {
+      "name": "Compact Double",
+      "beds": "1 double bed"
+    },
+    "name": "Harbour Lights Inn",
+    "city": "Hong Kong",
+    "country": "China",
+    "address": "30 Canton Road, Tsim Sha Tsui",
+    "description": "Neat, good-value rooms close to the ferry pier, ideal for days spent out exploring the city.",
+    "imageUrl": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=75",
+    "stars": 3,
+    "rating": 7.6,
+    "reviewCount": 912,
+    "pricePerNight": 96,
+    "currency": "USD",
+    "amenities": [
+      {
+        "id": "wifi",
+        "label": "Free Wi-Fi",
+        "iconName": "wifi"
+      },
+      {
+        "id": "gym",
+        "label": "Gym",
+        "iconName": "gym"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "12-1",
+        "name": "Compact Double",
+        "beds": "1 double bed",
+        "maxGuests": 2,
+        "pricePerNight": 96,
+        "isAvailable": true,
+        "imageUrl": "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1000&q=75",
+        "sizeSqm": 24,
+        "freeCancellation": false,
+        "breakfastIncluded": false
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=75",
+      "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=75",
+      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=75"
+    ],
+    "highlights": [
+      "Well-rated stays in Tsim Sha Tsui",
+      "Great rates when you book ahead",
+      "Cafes and restaurants close by"
+    ],
+    "reviewScores": [
+      {
+        "id": "cleanliness",
+        "label": "Cleanliness",
+        "score": 7.8
+      },
+      {
+        "id": "location",
+        "label": "Location",
+        "score": 7.7
+      },
+      {
+        "id": "service",
+        "label": "Service",
+        "score": 7.6
+      },
+      {
+        "id": "facilities",
+        "label": "Facilities",
+        "score": 7.3
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "Great location",
+        "text": "Easy to get around from here, and quiet at night. Check-in was quick even though we arrived late.",
+        "id": "12-0",
+        "score": 7.3
+      },
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Comfortable bed, strong Wi-Fi and friendly service. It felt like more than we paid for.",
+        "id": "12-1",
+        "score": 7.6
+      },
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Relaxing break",
+        "text": "Calm atmosphere and thoughtful touches throughout. The team helped us plan our days out.",
+        "id": "12-2",
+        "score": 7.9
+      },
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would recommend",
+        "text": "Everything worked as promised. A few small things could be newer, but the people made the stay.",
+        "id": "12-3",
+        "score": 7.3
+      },
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Lovely stay",
+        "text": "The room was spotless and the staff remembered our names from the second day. We would happily come back.",
+        "id": "12-4",
+        "score": 7.6
+      }
+    ],
+    "policies": [
+      {
+        "id": "check-in",
+        "title": "Check-in and check-out",
+        "description": "Check-in from 2:00 PM. Check-out by 12:00 PM.",
+        "iconName": "clock"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "This rate cannot be cancelled or changed after booking.",
+        "iconName": "ban"
+      },
+      {
+        "id": "children",
+        "title": "Children",
+        "description": "Children of all ages are welcome. Extra beds depend on the room.",
+        "iconName": "child"
+      },
+      {
+        "id": "pets",
+        "title": "Pets",
+        "description": "Pets are not allowed, except for assistance animals.",
+        "iconName": "paw"
+      },
+      {
+        "id": "payment",
+        "title": "Payment",
+        "description": "Major cards are accepted at the property.",
+        "iconName": "credit-card"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Hong Kong city centre",
+        "distance": "4.2 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest station",
+        "distance": "400 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "45 km",
+        "iconName": "plane"
+      }
+    ]
+  }
+]

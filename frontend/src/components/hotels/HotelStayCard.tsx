@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { formatCount, formatPrice } from "@/lib";
+import { formatCount } from "@/lib";
 import type { HotelSummary } from "@/types";
 import AppImage from "../ui/AppImage";
 import FavoriteButton from "../ui/FavoriteButton";
 import StarRating from "../ui/StarRating";
+import Price from "../ui/Price";
 
 type HotelStayCardProps = {
   hotel: HotelSummary;
@@ -30,7 +31,14 @@ const HotelStayCard = ({ hotel }: HotelStayCardProps) => {
             <span className="rounded-sm bg-primary px-1 font-semibold text-white">{hotel.rating.toFixed(1)}/10</span>
             {formatCount(hotel.reviewCount, "review")}
           </p>
-          <p className="mt-auto pt-3 font-bold">From {formatPrice(hotel.pricePerNight, hotel.currency)}</p>
+          <p className="mt-auto pt-3 font-bold">
+            From <Price amount={hotel.pricePerNight} currency={hotel.currency} />
+            {hotel.originalPrice && (
+              <s className="ml-1 text-sm font-normal text-muted">
+                <Price amount={hotel.originalPrice} currency={hotel.currency} />
+              </s>
+            )}
+          </p>
         </div>
       </Link>
       <FavoriteButton label={hotel.name} />

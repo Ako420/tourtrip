@@ -58,6 +58,9 @@ const useZodForm = <Result = unknown>(schema: z.ZodType, action: FormAction<Resu
 
   return {
     formProps: {
+      // Outside a <dialog> this sends nothing, so a form submitted before the page has loaded can't
+      // put a password in the address. A plain POST isn't an option, because it comes back blank.
+      method: "dialog",
       noValidate: true,
       onBlur: handleBlur,
       onChange: (event: ChangeEvent<HTMLFormElement>) => validate(event.currentTarget),

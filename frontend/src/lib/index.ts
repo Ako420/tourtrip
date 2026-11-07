@@ -1,3 +1,4 @@
+export * from "./account";
 export * from "./attractionBooking";
 export * from "./attractionFilters";
 export * from "./booking";
@@ -11,3 +12,8 @@ export * from "./hotelFilters";
 export * from "./search";
 export * from "./tripPlan";
 export * from "./trainSearch";
+export * from "./guide";
+export * from "./packageSearch";
+export * from "./tour";
+export * from "./cruise";
+export * from "./assistant";

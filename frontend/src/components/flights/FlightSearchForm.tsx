@@ -17,6 +17,8 @@ import Icon from "../ui/Icon";
 type FlightSearchFormProps = {
   initialValues: FlightSearch;
   airports: string[];
+  compact?: boolean;
+  inline?: boolean;
 };
 
 type FieldErrors = Record<string, string[] | undefined>;
@@ -27,7 +29,7 @@ const FieldError = ({ message }: { message?: string }) => {
   return <p className="px-4 pb-2 text-left text-sm text-danger">{message}</p>;
 };
 
-const FlightSearchForm = ({ initialValues, airports }: FlightSearchFormProps) => {
+const FlightSearchForm = ({ initialValues, airports, compact = false, inline = false }: FlightSearchFormProps) => {
   const router = useRouter();
   const today = useToday();
 
@@ -79,7 +81,12 @@ const FlightSearchForm = ({ initialValues, airports }: FlightSearchFormProps) =>
   };
 
   return (
-    <form onSubmit={handleSubmit} role="search" noValidate className="rounded-panel bg-surface p-4 text-ink shadow-card sm:p-5">
+    <form
+      onSubmit={handleSubmit}
+      role="search"
+      noValidate
+      className={compact ? "text-ink" : "rounded-panel bg-surface p-4 text-ink shadow-card sm:p-5"}
+    >
       <div className="mb-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
         {tripTypes.map((type) => (
           <label key={type.value} className="flex cursor-pointer items-center gap-2">
@@ -104,7 +111,7 @@ const FlightSearchForm = ({ initialValues, airports }: FlightSearchFormProps) =>
         </label>
       </div>
 
-      <div className="grid gap-3 xl:grid-cols-[1fr_auto_auto]">
+      <div className={`grid gap-3 ${compact || inline ? "xl:grid-cols-[1fr_auto_auto_auto]" : "xl:grid-cols-[1fr_auto_auto]"}`}>
         <div className="relative rounded-card border border-line sm:grid sm:grid-cols-2">
           <div className="border-b border-line sm:border-r sm:border-b-0">
             <label className="flex h-14 items-center gap-3 px-4">
@@ -174,17 +181,31 @@ const FlightSearchForm = ({ initialValues, airports }: FlightSearchFormProps) =>
         <div className="flex h-14 items-center rounded-card border border-line px-4 text-sm xl:w-60">
           <PassengerPicker value={passengers} onChange={setPassengers} />
         </div>
+
+        {compact && (
+          <Button type="submit" size="lg" aria-label="Search" className="h-14 px-5">
+            <Icon name="search" />
+          </Button>
+        )}
+        {inline && (
+          <Button type="submit" size="lg" className="h-14 px-6">
+            <Icon name="search" />
+            Search
+          </Button>
+        )}
       </div>
 
-      <div className="mt-3 flex flex-col justify-end gap-2 sm:flex-row">
-        <ButtonLink href="/packages" variant="outline" size="lg">
-          Flight + Hotel
-        </ButtonLink>
-        <Button type="submit" size="lg" className="sm:px-10">
-          <Icon name="search" />
-          Search
-        </Button>
-      </div>
+      {!compact && !inline && (
+        <div className="mt-3 flex flex-col justify-end gap-2 sm:flex-row">
+          <ButtonLink href="/packages" variant="outline" size="lg">
+            Flight + Hotel
+          </ButtonLink>
+          <Button type="submit" size="lg" className="sm:px-10">
+            <Icon name="search" />
+            Search
+          </Button>
+        </div>
+      )}
     </form>
   );
 };

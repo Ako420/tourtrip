@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { HotelListSkeleton, HotelResultsView, SearchForm } from "@/components";
+import { HotelListSkeleton, HotelResultsView, SearchForm, StickyBar } from "@/components";
 import { parseHotelFilters, parseHotelSearch, toSearchQuery } from "@/lib";
 import { getDestinations, searchHotels } from "@/services";
 import type { RouteParams } from "@/types";
@@ -16,7 +16,10 @@ const HotelResults = async ({ searchParams }: HotelsScreenProps) => {
 
   return (
     <>
-      <SearchForm key={toSearchQuery(search)} initialValues={search} destinations={destinations} />
+      <SearchForm key={toSearchQuery(search)} initialValues={search} destinations={destinations} highlighted />
+      <StickyBar dense>
+        <SearchForm key={toSearchQuery(search)} initialValues={search} destinations={destinations} highlighted />
+      </StickyBar>
       <HotelResultsView search={search} filters={filters} result={result} />
     </>
   );

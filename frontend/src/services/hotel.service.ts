@@ -1,5 +1,5 @@
 import { HOTELS_PAGE_SIZE } from "@/constants";
-import { destinations, hotels } from "@/data";
+import { destinations, hotels, hotelsContent } from "@/data";
 import { toHotelQuery } from "@/lib";
 import type {
   Amenity,
@@ -9,8 +9,9 @@ import type {
   HotelSearchResult,
   HotelSort,
   HotelSummary,
+  HotelsContent,
 } from "@/types";
-import { ApiError, apiGet, isApiEnabled } from "./http";
+import { ApiError, apiGet, isApiLive } from "./http";
 
 const matchesDestination = (hotel: HotelSummary, destination?: string) => {
   const query = destination?.trim().toLowerCase();
@@ -39,8 +40,12 @@ const sorters: Partial<Record<HotelSort, (a: HotelSummary, b: HotelSummary) => n
   rating: (a, b) => b.rating - a.rating,
 };
 
+export const getHotelsContent = async (): Promise<HotelsContent> => {
+  return isApiLive("content") ? apiGet<HotelsContent>("/hotels/content") : hotelsContent;
+};
+
 export const searchHotels = async (search: HotelSearch, filters: HotelFilters): Promise<HotelSearchResult> => {
-  if (isApiEnabled) {
+  if (isApiLive("hotels")) {
     const params = Object.fromEntries(new URLSearchParams(toHotelQuery(search, filters)));
 
     return apiGet<HotelSearchResult>("/hotels/search", params);
@@ -67,7 +72,7 @@ export const searchHotels = async (search: HotelSearch, filters: HotelFilters): 
 };
 
 export const getHotels = async (search: Partial<HotelSearch> = {}): Promise<HotelSummary[]> => {
-  if (isApiEnabled) {
+  if (isApiLive("hotels")) {
     return apiGet<HotelSummary[]>("/hotels", search);
   }
 
@@ -75,7 +80,7 @@ export const getHotels = async (search: Partial<HotelSearch> = {}): Promise<Hote
 };
 
 export const getHotelBySlug = async (slug: string): Promise<HotelDetails | null> => {
-  if (!isApiEnabled) {
+  if (!isApiLive("hotels")) {
     return hotels.find((hotel) => hotel.slug === slug) ?? null;
   }
 
@@ -91,7 +96,7 @@ export const getHotelBySlug = async (slug: string): Promise<HotelDetails | null>
 };
 
 export const getSimilarHotels = async (hotel: HotelSummary): Promise<HotelSummary[]> => {
-  if (isApiEnabled) {
+  if (isApiLive("hotels")) {
     return apiGet<HotelSummary[]>(`/hotels/${encodeURIComponent(hotel.slug)}/similar`);
   }
 
@@ -104,5 +109,5 @@ export const getSimilarHotels = async (hotel: HotelSummary): Promise<HotelSummar
 };
 
 export const getDestinations = async (): Promise<string[]> => {
-  return isApiEnabled ? apiGet<string[]>("/destinations") : destinations;
+  return isApiLive("hotels") ? apiGet<string[]>("/destinations") : destinations;
 };

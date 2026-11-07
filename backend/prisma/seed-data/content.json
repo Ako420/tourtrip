@@ -1,0 +1,2940 @@
+{
+  "home": {
+    "hero": {
+      "title": "Your next stay starts here",
+      "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2000&q=75",
+      "guarantees": [
+        {
+          "id": "price",
+          "label": "Clear pricing",
+          "iconName": "tag"
+        },
+        {
+          "id": "compare",
+          "label": "Hotels, flights and more",
+          "iconName": "compass"
+        },
+        {
+          "id": "planner",
+          "label": "Free trip planner",
+          "iconName": "route"
+        }
+      ]
+    },
+    "promotions": {
+      "title": "Welcome offers",
+      "intro": {
+        "title": "Join today and save more on every trip",
+        "ctaLabel": "Sign in & claim all",
+        "ctaHref": "/login"
+      },
+      "items": [
+        {
+          "id": "hotels-10",
+          "title": "10% off",
+          "subtitle": "Hotels & Homes",
+          "terms": "First hotel booking only. Minimum spend applies.",
+          "iconName": "bed",
+          "ctaLabel": "Claim",
+          "ctaHref": "/login"
+        },
+        {
+          "id": "trains-5",
+          "title": "5% off",
+          "subtitle": "Train tickets",
+          "terms": "Selected routes only.",
+          "iconName": "train",
+          "ctaLabel": "Claim",
+          "ctaHref": "/login"
+        },
+        {
+          "id": "tours-10",
+          "title": "10% off",
+          "subtitle": "Attractions & Tours",
+          "terms": "Valid on tickets over $30.",
+          "iconName": "ticket",
+          "ctaLabel": "Claim",
+          "ctaHref": "/login"
+        },
+        {
+          "id": "cars-8",
+          "title": "8% off",
+          "subtitle": "Car rentals",
+          "terms": "Rentals of three days or more.",
+          "iconName": "car",
+          "ctaLabel": "Claim",
+          "ctaHref": "/login"
+        },
+        {
+          "id": "flights-5",
+          "title": "$15 off",
+          "subtitle": "Flights",
+          "terms": "First flight booking only.",
+          "iconName": "plane",
+          "ctaLabel": "Claim",
+          "ctaHref": "/login"
+        }
+      ]
+    },
+    "banners": [
+      {
+        "id": "winter-sun",
+        "eyebrow": "Limited time",
+        "title": "Winter sun escapes",
+        "subtitle": "Up to 18% off warm beach and city stays",
+        "href": "/deals/winter-sun",
+        "ctaLabel": "See deals",
+        "imageUrl": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1400&q=75",
+        "theme": "primary"
+      },
+      {
+        "id": "coast",
+        "eyebrow": "Stay inspired",
+        "title": "Escape to the coast",
+        "subtitle": "Quiet beaches and slow mornings",
+        "href": "/hotels/list?destination=Bali",
+        "ctaLabel": "See stays",
+        "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=75",
+        "theme": "sunset"
+      }
+    ],
+    "inspiration": {
+      "title": "Get inspired for your next trip",
+      "items": [
+        {
+          "id": "anywhere",
+          "name": "Anywhere",
+          "imageUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=500&q=75",
+          "href": "/hotels/list"
+        },
+        {
+          "id": "bali",
+          "name": "Bali",
+          "imageUrl": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=500&q=75",
+          "href": "/hotels/list?destination=Bali"
+        },
+        {
+          "id": "tokyo",
+          "name": "Tokyo",
+          "imageUrl": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=500&q=75",
+          "href": "/hotels/list?destination=Tokyo"
+        },
+        {
+          "id": "paris",
+          "name": "Paris",
+          "imageUrl": "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=500&q=75",
+          "href": "/hotels/list?destination=Paris"
+        },
+        {
+          "id": "rome",
+          "name": "Rome",
+          "imageUrl": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=500&q=75",
+          "href": "/hotels/list?destination=Rome"
+        },
+        {
+          "id": "dubai",
+          "name": "Dubai",
+          "imageUrl": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=500&q=75",
+          "href": "/hotels/list?destination=Dubai"
+        },
+        {
+          "id": "cape-town",
+          "name": "Cape Town",
+          "imageUrl": "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=500&q=75",
+          "href": "/hotels/list?destination=Cape%20Town"
+        },
+        {
+          "id": "marrakech",
+          "name": "Marrakech",
+          "imageUrl": "https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=500&q=75",
+          "href": "/hotels/list?destination=Marrakech"
+        },
+        {
+          "id": "singapore",
+          "name": "Singapore",
+          "imageUrl": "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=500&q=75",
+          "href": "/hotels/list?destination=Singapore"
+        },
+        {
+          "id": "nairobi",
+          "name": "Nairobi",
+          "imageUrl": "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=500&q=75",
+          "href": "/hotels/list?destination=Nairobi"
+        }
+      ]
+    },
+    "places": {
+      "title": "Places you may like",
+      "moreHref": "/attractions",
+      "items": [
+        {
+          "id": "colosseum",
+          "name": "The Colosseum",
+          "city": "Rome",
+          "badge": "Top pick",
+          "imageUrl": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=75",
+          "rating": 4.8,
+          "reviewCount": 3685,
+          "href": "/attractions?q=Rome#results"
+        },
+        {
+          "id": "taj-mahal",
+          "name": "Taj Mahal",
+          "city": "Agra",
+          "badge": "Top pick",
+          "imageUrl": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=75",
+          "rating": 4.9,
+          "reviewCount": 20441,
+          "href": "/attractions?q=Agra#results"
+        },
+        {
+          "id": "machu-picchu",
+          "name": "Machu Picchu",
+          "city": "Cusco",
+          "badge": "Top pick",
+          "imageUrl": "https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=75",
+          "rating": 4.9,
+          "reviewCount": 8120,
+          "href": "/attractions?q=Cusco#results"
+        },
+        {
+          "id": "big-ben",
+          "name": "Big Ben",
+          "city": "London",
+          "badge": "Top pick",
+          "imageUrl": "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&w=800&q=75",
+          "rating": 4.6,
+          "reviewCount": 5179,
+          "href": "/attractions?q=London#results"
+        },
+        {
+          "id": "eiffel-tower",
+          "name": "Eiffel Tower",
+          "city": "Paris",
+          "badge": "Top pick",
+          "imageUrl": "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=800&q=75",
+          "rating": 4.7,
+          "reviewCount": 12490,
+          "href": "/attractions?q=Paris#results"
+        },
+        {
+          "id": "great-wall",
+          "name": "The Great Wall",
+          "city": "Beijing",
+          "badge": "Top pick",
+          "imageUrl": "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=800&q=75",
+          "rating": 4.8,
+          "reviewCount": 9310,
+          "href": "/attractions?q=Beijing#results"
+        }
+      ]
+    },
+    "moments": {
+      "title": "Magical trip moments that last",
+      "moreHref": "/inspiration",
+      "items": [
+        {
+          "id": "balloons",
+          "title": "Sunrise over Cappadocia by hot air balloon",
+          "location": "Cappadocia",
+          "imageUrl": "https://images.unsplash.com/photo-1641128324972-af3212f0f6bd?auto=format&fit=crop&w=800&q=75",
+          "href": "/inspiration/cappadocia"
+        },
+        {
+          "id": "temple",
+          "title": "A quiet morning at a lakeside temple",
+          "location": "Bali",
+          "imageUrl": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=75",
+          "href": "/inspiration/bali"
+        },
+        {
+          "id": "safari",
+          "title": "Golden hour on a savanna safari",
+          "location": "East Africa",
+          "imageUrl": "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=75",
+          "href": "/inspiration/nairobi"
+        },
+        {
+          "id": "aurora",
+          "title": "Chasing the northern lights",
+          "location": "Arctic Circle",
+          "imageUrl": "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=800&q=75",
+          "href": "/inspiration/tromso"
+        },
+        {
+          "id": "lake",
+          "title": "Rowing across a mountain lake",
+          "location": "The Alps",
+          "imageUrl": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=800&q=75",
+          "href": "/inspiration/the-alps"
+        }
+      ]
+    },
+    "handpickedHotels": {
+      "title": "Stay cozy at our handpicked hotels",
+      "moreHref": "/hotels/list"
+    },
+    "app": {
+      "title": "A Hotel Jr app is planned",
+      "imageUrl": "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=2000&q=75",
+      "benefits": [
+        "All your trips",
+        "Trip updates",
+        "Travel assistant"
+      ],
+      "ctaLabel": "See what's planned",
+      "ctaHref": "/app"
+    },
+    "recommendations": {
+      "title": "Hotel Jr recommendations",
+      "items": [
+        {
+          "id": "hotels",
+          "label": "Featured hotel destinations",
+          "links": [
+            {
+              "label": "Hotels in Bali",
+              "href": "/hotels/list?destination=Bali"
+            },
+            {
+              "label": "Hotels in Lisbon",
+              "href": "/hotels/list?destination=Lisbon"
+            },
+            {
+              "label": "Hotels in Tokyo",
+              "href": "/hotels/list?destination=Tokyo"
+            },
+            {
+              "label": "Hotels in Nairobi",
+              "href": "/hotels/list?destination=Nairobi"
+            },
+            {
+              "label": "Hotels in Marrakech",
+              "href": "/hotels/list?destination=Marrakech"
+            },
+            {
+              "label": "Hotels in Phuket",
+              "href": "/hotels/list?destination=Phuket"
+            },
+            {
+              "label": "Hotels in Cape Town",
+              "href": "/hotels/list?destination=Cape%20Town"
+            },
+            {
+              "label": "Hotels in Dubai",
+              "href": "/hotels/list?destination=Dubai"
+            },
+            {
+              "label": "Hotels in Singapore",
+              "href": "/hotels/list?destination=Singapore"
+            },
+            {
+              "label": "Hotels in Hong Kong",
+              "href": "/hotels/list?destination=Hong%20Kong"
+            },
+            {
+              "label": "Hotels in Istanbul",
+              "href": "/hotels/list?destination=Istanbul"
+            },
+            {
+              "label": "Hotels in Paris",
+              "href": "/hotels/list?destination=Paris"
+            },
+            {
+              "label": "Hotels in London",
+              "href": "/hotels/list?destination=London"
+            },
+            {
+              "label": "Hotels in Rome",
+              "href": "/hotels/list?destination=Rome"
+            },
+            {
+              "label": "Hotels in New York",
+              "href": "/hotels/list?destination=New%20York"
+            }
+          ]
+        },
+        {
+          "id": "flights",
+          "label": "Featured flight destinations",
+          "links": [
+            {
+              "label": "Flights to Tokyo",
+              "href": "/flights"
+            },
+            {
+              "label": "Flights to Dubai",
+              "href": "/flights"
+            },
+            {
+              "label": "Flights to Paris",
+              "href": "/flights"
+            },
+            {
+              "label": "Flights to London",
+              "href": "/flights"
+            },
+            {
+              "label": "Flights to Nairobi",
+              "href": "/flights"
+            },
+            {
+              "label": "Flights to Bali",
+              "href": "/flights"
+            },
+            {
+              "label": "Flights to Rome",
+              "href": "/flights"
+            },
+            {
+              "label": "Flights to New York",
+              "href": "/flights"
+            },
+            {
+              "label": "Flights to Singapore",
+              "href": "/flights"
+            },
+            {
+              "label": "Flights to Istanbul",
+              "href": "/flights"
+            }
+          ]
+        },
+        {
+          "id": "guides",
+          "label": "Featured guides",
+          "links": [
+            {
+              "label": "Tokyo travel guide",
+              "href": "/inspiration/tokyo"
+            },
+            {
+              "label": "Bali travel guide",
+              "href": "/inspiration/bali"
+            },
+            {
+              "label": "Paris travel guide",
+              "href": "/inspiration/paris"
+            },
+            {
+              "label": "Rome travel guide",
+              "href": "/inspiration/rome"
+            },
+            {
+              "label": "Marrakech travel guide",
+              "href": "/inspiration/marrakech"
+            },
+            {
+              "label": "Cape Town travel guide",
+              "href": "/inspiration/cape-town"
+            }
+          ]
+        },
+        {
+          "id": "attractions",
+          "label": "Popular attractions",
+          "links": [
+            {
+              "label": "The Colosseum",
+              "href": "/attractions"
+            },
+            {
+              "label": "Taj Mahal",
+              "href": "/attractions"
+            },
+            {
+              "label": "Machu Picchu",
+              "href": "/attractions"
+            },
+            {
+              "label": "Big Ben",
+              "href": "/attractions"
+            },
+            {
+              "label": "Eiffel Tower",
+              "href": "/attractions"
+            },
+            {
+              "label": "The Great Wall",
+              "href": "/attractions"
+            }
+          ]
+        },
+        {
+          "id": "cars",
+          "label": "Car rentals in top cities",
+          "links": [
+            {
+              "label": "Car rentals in Dubai",
+              "href": "/cars"
+            },
+            {
+              "label": "Car rentals in Lisbon",
+              "href": "/cars"
+            },
+            {
+              "label": "Car rentals in Cape Town",
+              "href": "/cars"
+            },
+            {
+              "label": "Car rentals in Rome",
+              "href": "/cars"
+            },
+            {
+              "label": "Car rentals in Bali",
+              "href": "/cars"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "flights": {
+    "hero": {
+      "title": "Find your next flight",
+      "subtitle": "Compare fares and take off for less",
+      "imageUrl": "https://images.unsplash.com/photo-1500835556837-99ac94a94552?auto=format&fit=crop&w=2000&q=75"
+    },
+    "quickLinks": [
+      {
+        "label": "My bookings",
+        "href": "/bookings",
+        "iconName": "ticket"
+      },
+      {
+        "label": "Deals",
+        "href": "/deals",
+        "iconName": "tag"
+      },
+      {
+        "label": "Customer support",
+        "href": "/support",
+        "iconName": "headset"
+      },
+      {
+        "label": "Explore destinations",
+        "href": "/inspiration",
+        "iconName": "globe"
+      }
+    ],
+    "trust": {
+      "title": "Fly with confidence",
+      "moreLabel": "Register now",
+      "moreHref": "/signup",
+      "items": [
+        {
+          "id": "travelers",
+          "title": "Made for travelers",
+          "description": "Search, compare and book every part of your trip in one place.",
+          "iconName": "thumbs-up"
+        },
+        {
+          "id": "support",
+          "title": "Help when you need it",
+          "description": "Find answers on our support page, or send us a message about your trip.",
+          "iconName": "headset"
+        },
+        {
+          "id": "pricing",
+          "title": "Transparent pricing",
+          "description": "No surprises. Taxes and fees are included in the price you see.",
+          "iconName": "tag"
+        },
+        {
+          "id": "planner",
+          "title": "Plan the whole trip",
+          "description": "Add hotels and things to do, and keep your plans in one place.",
+          "iconName": "route"
+        }
+      ]
+    },
+    "trending": {
+      "title": "See what's trending now",
+      "caption": "Great journeys start at the gate",
+      "imageUrl": "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&fit=crop&w=1200&q=75",
+      "mapImageUrl": "https://images.unsplash.com/photo-1499591934245-40b55745b905?auto=format&fit=crop&w=700&q=75",
+      "ctaLabel": "Explore the world",
+      "ctaHref": "/inspiration"
+    },
+    "dealsTitle": "Popular flight deals",
+    "app": {
+      "title": "A Hotel Jr app is planned",
+      "imageUrl": "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=2000&q=75",
+      "benefits": [
+        "All your trips",
+        "Trip updates",
+        "Travel assistant"
+      ],
+      "ctaLabel": "See what's planned",
+      "ctaHref": "/app"
+    },
+    "banners": {
+      "title": "Discover what's happening",
+      "items": [
+        {
+          "id": "new-york",
+          "eyebrow": "Limited time",
+          "title": "Fares from $229",
+          "subtitle": "Sample fares to and from New York",
+          "href": "/deals/new-york-fares",
+          "ctaLabel": "See deals",
+          "imageUrl": "https://images.unsplash.com/photo-1529074963764-98f45c47344b?auto=format&fit=crop&w=800&q=75",
+          "theme": "primary"
+        },
+        {
+          "id": "egypt",
+          "eyebrow": "Stay inspired",
+          "title": "Wonders of Egypt",
+          "subtitle": "History on a grand scale",
+          "href": "/inspiration/cairo",
+          "ctaLabel": "Read guide",
+          "imageUrl": "https://images.unsplash.com/photo-1553913861-c0fddf2619ee?auto=format&fit=crop&w=800&q=75",
+          "theme": "sunset"
+        },
+        {
+          "id": "japan",
+          "eyebrow": "City breaks",
+          "title": "Tokyo after dark",
+          "subtitle": "Neon nights and great food",
+          "href": "/flights?to=Tokyo#deals",
+          "ctaLabel": "See flights",
+          "imageUrl": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=75",
+          "theme": "sunset"
+        },
+        {
+          "id": "greece",
+          "eyebrow": "Sun seekers",
+          "title": "Island hop in Greece",
+          "subtitle": "White walls and blue seas",
+          "href": "/inspiration/santorini",
+          "ctaLabel": "Read guide",
+          "imageUrl": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=75",
+          "theme": "sunset"
+        }
+      ]
+    },
+    "why": {
+      "title": "Why book flights with Hotel Jr",
+      "heading": "Trips that suit you",
+      "body": "Booking a flight should be the exciting part of a trip, not the stressful one. With so much to compare, finding the right fare can take hours. Hotel Jr brings it together so you can search routes, compare prices and dates, and see the full cost before you book. Add a hotel to the same trip, keep your plans in one place, and spend your time looking forward to the journey instead."
+    },
+    "tips": {
+      "title": "How to book cheap flights",
+      "items": [
+        {
+          "id": "midweek",
+          "question": "Fly during the working week",
+          "answer": "Tuesdays and Wednesdays are often cheaper than weekends, when demand from leisure travelers is highest."
+        },
+        {
+          "id": "early",
+          "question": "Book early",
+          "answer": "Fares tend to rise as seats fill up, so booking a few weeks ahead usually beats waiting until the last minute."
+        },
+        {
+          "id": "times",
+          "question": "Consider less popular departure times",
+          "answer": "Early morning and late evening flights are often priced lower than those in the middle of the day."
+        },
+        {
+          "id": "connection",
+          "question": "Choose flights with a connection",
+          "answer": "A stopover can cost less than a nonstop flight. Check that the layover is long enough to make your connection."
+        },
+        {
+          "id": "flexible",
+          "question": "Stay flexible with your dates",
+          "answer": "Moving your trip by a day or two can change the fare, so compare nearby dates before you book."
+        },
+        {
+          "id": "package",
+          "question": "Book a flight and hotel together",
+          "answer": "Package deals can cost less than booking each one separately, especially for longer stays."
+        },
+        {
+          "id": "fees",
+          "question": "Watch out for hidden costs",
+          "answer": "Check what is included in the fare, such as baggage and seat selection, so you can compare the real price."
+        }
+      ]
+    },
+    "recommendations": {
+      "title": "Recommended by Hotel Jr",
+      "items": [
+        {
+          "id": "destinations",
+          "label": "Flights to popular destinations",
+          "links": [
+            {
+              "label": "Flights to Bangkok",
+              "href": "/flights?to=Bangkok#deals"
+            },
+            {
+              "label": "Flights to Dubai",
+              "href": "/flights?to=Dubai#deals"
+            },
+            {
+              "label": "Flights to Hong Kong",
+              "href": "/flights?to=Hong%20Kong#deals"
+            },
+            {
+              "label": "Flights to Johannesburg",
+              "href": "/flights?to=Johannesburg#deals"
+            },
+            {
+              "label": "Flights to London",
+              "href": "/flights?to=London#deals"
+            },
+            {
+              "label": "Flights to Miami",
+              "href": "/flights?to=Miami#deals"
+            },
+            {
+              "label": "Flights to Nairobi",
+              "href": "/flights?to=Nairobi#deals"
+            },
+            {
+              "label": "Flights to New York",
+              "href": "/flights?to=New%20York#deals"
+            },
+            {
+              "label": "Flights to Paris",
+              "href": "/flights?to=Paris#deals"
+            },
+            {
+              "label": "Flights to Tokyo",
+              "href": "/flights?to=Tokyo#deals"
+            }
+          ]
+        },
+        {
+          "id": "routes",
+          "label": "Popular routes",
+          "links": [
+            {
+              "label": "New York to London",
+              "href": "/flights?from=New%20York&to=London#deals"
+            },
+            {
+              "label": "Lagos to London",
+              "href": "/flights?from=Lagos&to=London#deals"
+            },
+            {
+              "label": "Nairobi to Dubai",
+              "href": "/flights?from=Nairobi&to=Dubai#deals"
+            },
+            {
+              "label": "Hong Kong to Tokyo",
+              "href": "/flights?from=Hong%20Kong&to=Tokyo#deals"
+            },
+            {
+              "label": "Accra to Paris",
+              "href": "/flights?from=Accra&to=Paris#deals"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "attractions": {
+    "hero": {
+      "title": "Attractions & Tours",
+      "subtitle": "Find places to see and things to do",
+      "imageUrl": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=2000&q=75"
+    },
+    "quickSearches": [
+      "Rome",
+      "Paris",
+      "Tokyo",
+      "Cape Town",
+      "Bali",
+      "Dubai",
+      "Nairobi"
+    ],
+    "trending": {
+      "title": "Trending destinations",
+      "items": [
+        {
+          "id": "rome",
+          "name": "Rome",
+          "imageUrl": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=900&q=75",
+          "links": [
+            {
+              "label": "Things to do",
+              "href": "/attractions?q=Rome#results"
+            },
+            {
+              "label": "Top rated",
+              "href": "/attractions?q=Rome&sort=rating#results"
+            },
+            {
+              "label": "Free cancellation",
+              "href": "/attractions?q=Rome&freeCancellation=true#results"
+            }
+          ]
+        },
+        {
+          "id": "tokyo",
+          "name": "Tokyo",
+          "imageUrl": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=600&q=75"
+        },
+        {
+          "id": "cape-town",
+          "name": "Cape Town",
+          "imageUrl": "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=600&q=75"
+        },
+        {
+          "id": "dubai",
+          "name": "Dubai",
+          "imageUrl": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=75"
+        },
+        {
+          "id": "bali",
+          "name": "Bali",
+          "imageUrl": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=75"
+        }
+      ]
+    },
+    "offer": {
+      "title": "Join Hotel Jr for free",
+      "points": [
+        "Fill in booking forms faster with your saved details",
+        "Chat with the travel assistant about your trip"
+      ],
+      "ctaLabel": "Create an account",
+      "ctaHref": "/signup?next=%2Fattractions"
+    },
+    "banners": [
+      {
+        "id": "landmarks",
+        "eyebrow": "Landmarks",
+        "title": "Icons worth the trip",
+        "subtitle": "Ancient sites and famous views",
+        "href": "/attractions?category=landmarks#results",
+        "ctaLabel": "Explore",
+        "imageUrl": "https://images.unsplash.com/photo-1553913861-c0fddf2619ee?auto=format&fit=crop&w=800&q=75",
+        "theme": "sunset"
+      },
+      {
+        "id": "flexible",
+        "eyebrow": "Flexible plans",
+        "title": "Free cancellation",
+        "subtitle": "Tickets you can cancel",
+        "href": "/attractions?freeCancellation=true#results",
+        "ctaLabel": "See tickets",
+        "imageUrl": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=75",
+        "theme": "primary"
+      },
+      {
+        "id": "guides",
+        "eyebrow": "Stay inspired",
+        "title": "Plan with a guide",
+        "subtitle": "City guides for your next trip",
+        "href": "/inspiration",
+        "ctaLabel": "Read guides",
+        "imageUrl": "https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=800&q=75",
+        "theme": "sunset"
+      }
+    ],
+    "recommended": {
+      "title": "Recommended for you",
+      "items": [
+        {
+          "id": "landmarks",
+          "title": "Landmarks",
+          "category": "landmarks",
+          "imageUrl": "https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=600&q=75"
+        },
+        {
+          "id": "city",
+          "title": "City breaks",
+          "category": "city",
+          "imageUrl": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=75"
+        },
+        {
+          "id": "nature",
+          "title": "Nature",
+          "category": "nature",
+          "imageUrl": "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=600&q=75"
+        },
+        {
+          "id": "adventure",
+          "title": "Adventure",
+          "category": "adventure",
+          "imageUrl": "https://images.unsplash.com/photo-1641128324972-af3212f0f6bd?auto=format&fit=crop&w=600&q=75"
+        }
+      ]
+    },
+    "resultsTitle": "Popular things to do",
+    "benefits": [
+      {
+        "id": "explore",
+        "title": "Places worth the trip",
+        "description": "Browse landmarks, nature and adventure around the world.",
+        "iconName": "compass"
+      },
+      {
+        "id": "prices",
+        "title": "Clear ticket prices",
+        "description": "See adult and child prices before you book.",
+        "iconName": "tag"
+      },
+      {
+        "id": "cancel",
+        "title": "Flexible options",
+        "description": "Filter for tickets with free cancellation.",
+        "iconName": "shield"
+      },
+      {
+        "id": "currency",
+        "title": "Prices in your currency",
+        "description": "Choose your currency from the top of the page.",
+        "iconName": "globe"
+      }
+    ],
+    "recommendations": {
+      "title": "Hotel Jr picks",
+      "items": [
+        {
+          "id": "cities",
+          "label": "Things to do by city",
+          "links": [
+            {
+              "label": "Things to do in Rome",
+              "href": "/attractions?q=Rome#results"
+            },
+            {
+              "label": "Things to do in Paris",
+              "href": "/attractions?q=Paris#results"
+            },
+            {
+              "label": "Things to do in Tokyo",
+              "href": "/attractions?q=Tokyo#results"
+            },
+            {
+              "label": "Things to do in Cairo",
+              "href": "/attractions?q=Cairo#results"
+            },
+            {
+              "label": "Things to do in Dubai",
+              "href": "/attractions?q=Dubai#results"
+            },
+            {
+              "label": "Things to do in Sydney",
+              "href": "/attractions?q=Sydney#results"
+            },
+            {
+              "label": "Things to do in Beijing",
+              "href": "/attractions?q=Beijing#results"
+            },
+            {
+              "label": "Things to do in Bali",
+              "href": "/attractions?q=Bali#results"
+            },
+            {
+              "label": "Things to do in Nairobi",
+              "href": "/attractions?q=Nairobi#results"
+            },
+            {
+              "label": "Things to do in Cape Town",
+              "href": "/attractions?q=Cape%20Town#results"
+            }
+          ]
+        },
+        {
+          "id": "countries",
+          "label": "Things to do by country",
+          "links": [
+            {
+              "label": "Things to do in Italy",
+              "href": "/attractions?q=Italy#results"
+            },
+            {
+              "label": "Things to do in France",
+              "href": "/attractions?q=France#results"
+            },
+            {
+              "label": "Things to do in Japan",
+              "href": "/attractions?q=Japan#results"
+            },
+            {
+              "label": "Things to do in Egypt",
+              "href": "/attractions?q=Egypt#results"
+            },
+            {
+              "label": "Things to do in Peru",
+              "href": "/attractions?q=Peru#results"
+            },
+            {
+              "label": "Things to do in Kenya",
+              "href": "/attractions?q=Kenya#results"
+            },
+            {
+              "label": "Things to do in Greece",
+              "href": "/attractions?q=Greece#results"
+            },
+            {
+              "label": "Things to do in Norway",
+              "href": "/attractions?q=Norway#results"
+            }
+          ]
+        },
+        {
+          "id": "experiences",
+          "label": "Unique experiences",
+          "links": [
+            {
+              "label": "Cappadocia balloon flight",
+              "href": "/attractions/cappadocia-balloon"
+            },
+            {
+              "label": "Northern lights tour",
+              "href": "/attractions/northern-lights"
+            },
+            {
+              "label": "Savanna safari drive",
+              "href": "/attractions/savanna-safari"
+            },
+            {
+              "label": "Alpine lake boat trip",
+              "href": "/attractions/alpine-lake"
+            },
+            {
+              "label": "Table Mountain views",
+              "href": "/attractions/table-mountain"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "cars": {
+    "hero": {
+      "title": "Car Rentals",
+      "imageUrl": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=2000&q=75"
+    },
+    "offer": {
+      "title": "Join Hotel Jr for free",
+      "points": [
+        "Fill in booking forms faster with your saved details",
+        "Chat with the travel assistant about your trip"
+      ],
+      "ctaLabel": "Create an account",
+      "ctaHref": "/signup?next=%2Fcars"
+    },
+    "benefits": [
+      {
+        "id": "compare",
+        "title": "Compare in one place",
+        "description": "See cars from different suppliers side by side.",
+        "iconName": "search"
+      },
+      {
+        "id": "price",
+        "title": "Clear pricing",
+        "description": "See the total for your rental before you book.",
+        "iconName": "tag"
+      },
+      {
+        "id": "cancel",
+        "title": "Flexible options",
+        "description": "Filter for cars with free cancellation.",
+        "iconName": "check"
+      },
+      {
+        "id": "support",
+        "title": "Help with your trip",
+        "description": "Find answers or send a question from Customer support.",
+        "iconName": "headset"
+      }
+    ],
+    "sectionLinks": [
+      {
+        "label": "Popular cities",
+        "href": "#cities"
+      },
+      {
+        "label": "User reviews",
+        "href": "#reviews"
+      },
+      {
+        "label": "Car rental suppliers",
+        "href": "#suppliers"
+      },
+      {
+        "label": "FAQs",
+        "href": "#faqs"
+      },
+      {
+        "label": "Guide",
+        "href": "#guide"
+      }
+    ],
+    "types": {
+      "title": "Popular car rental types",
+      "items": [
+        {
+          "id": "economy",
+          "label": "Economy",
+          "detail": "Easy to park",
+          "imageUrl": "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=75"
+        },
+        {
+          "id": "compact",
+          "label": "Compact",
+          "detail": "Great for city trips",
+          "imageUrl": "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=600&q=75"
+        },
+        {
+          "id": "sedan",
+          "label": "Sedan",
+          "detail": "Comfortable for longer drives",
+          "imageUrl": "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=600&q=75"
+        },
+        {
+          "id": "suv",
+          "label": "SUV",
+          "detail": "Room for family and bags",
+          "imageUrl": "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=600&q=75"
+        },
+        {
+          "id": "van",
+          "label": "Van",
+          "detail": "Space for groups",
+          "imageUrl": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=600&q=75"
+        },
+        {
+          "id": "luxury",
+          "label": "Luxury",
+          "detail": "For a special trip",
+          "imageUrl": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=75"
+        }
+      ]
+    },
+    "cities": {
+      "title": "Popular car rental cities",
+      "items": [
+        {
+          "id": "dubai",
+          "name": "Dubai",
+          "fromPrice": 29,
+          "currency": "USD",
+          "imageUrl": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=500&q=75"
+        },
+        {
+          "id": "cape-town",
+          "name": "Cape Town",
+          "fromPrice": 21,
+          "currency": "USD",
+          "imageUrl": "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=500&q=75"
+        },
+        {
+          "id": "rome",
+          "name": "Rome",
+          "fromPrice": 26,
+          "currency": "USD",
+          "imageUrl": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=500&q=75"
+        },
+        {
+          "id": "bali",
+          "name": "Bali",
+          "fromPrice": 18,
+          "currency": "USD",
+          "imageUrl": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=500&q=75"
+        },
+        {
+          "id": "tokyo",
+          "name": "Tokyo",
+          "fromPrice": 34,
+          "currency": "USD",
+          "imageUrl": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=500&q=75"
+        },
+        {
+          "id": "marrakech",
+          "name": "Marrakech",
+          "fromPrice": 19,
+          "currency": "USD",
+          "imageUrl": "https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=500&q=75"
+        }
+      ]
+    },
+    "reviews": {
+      "title": "Car rental user reviews",
+      "note": "These are sample reviews, not from real customers.",
+      "items": [
+        {
+          "id": "amara",
+          "author": "Amara O.",
+          "score": 5,
+          "date": "2026-10-13",
+          "carType": "Economy",
+          "text": "Small, easy to park and cheap to run. Pick-up took a few minutes and the car was spotless."
+        },
+        {
+          "id": "luca",
+          "author": "Luca B.",
+          "score": 4.8,
+          "date": "2026-10-17",
+          "carType": "SUV",
+          "text": "Plenty of room for the family and our bags. It handled the mountain roads well and the return was simple."
+        },
+        {
+          "id": "mei",
+          "author": "Mei T.",
+          "score": 5,
+          "date": "2026-10-22",
+          "carType": "Compact",
+          "text": "A good size for city streets. Everything was clear from booking to drop-off."
+        },
+        {
+          "id": "sofia",
+          "author": "Sofia R.",
+          "score": 4.6,
+          "date": "2026-10-29",
+          "carType": "Van",
+          "text": "We fitted the whole group in with room to spare. Check the fuel rules before you leave, ours was full to full."
+        },
+        {
+          "id": "daniel",
+          "author": "Daniel K.",
+          "score": 4.9,
+          "date": "2026-11-02",
+          "carType": "Sedan",
+          "text": "Comfortable on a long drive and quiet on the motorway. No surprises at the desk."
+        }
+      ]
+    },
+    "suppliers": {
+      "title": "Top brand services",
+      "note": "Suppliers and prices are samples.",
+      "items": [
+        "Roadway Rentals",
+        "CityDrive",
+        "Atlas Car Hire"
+      ]
+    },
+    "faqs": {
+      "title": "FAQs",
+      "items": [
+        {
+          "id": "bring",
+          "question": "What do I need to bring to pick up the car?",
+          "answer": "Usually a valid driving license, a passport or ID, and a card in the main driver's name. Check your rental details, as this varies by supplier and country."
+        },
+        {
+          "id": "deposit",
+          "question": "Do I need to pay a deposit?",
+          "answer": "Most suppliers hold a deposit on a card at pick-up and release it after you return the car in good condition."
+        },
+        {
+          "id": "age",
+          "question": "Is there a minimum driver age?",
+          "answer": "This depends on the supplier and country. Drivers under 25 or over 69 may pay an extra fee."
+        },
+        {
+          "id": "fuel",
+          "question": "How does fuel work?",
+          "answer": "Many rentals are full to full, which means you collect the car with a full tank and return it full."
+        },
+        {
+          "id": "cancel",
+          "question": "Can I cancel my booking?",
+          "answer": "Cars marked as free cancellation can be cancelled for free until the time shown. Other rentals follow the supplier's rules."
+        }
+      ]
+    },
+    "guide": {
+      "title": "Car rental guide",
+      "items": [
+        {
+          "id": "why",
+          "title": "Why use Hotel Jr to book a rental car?",
+          "paragraphs": [
+            "The right rental car depends on your destination, your group and your budget. Whether you are planning a family holiday, a weekend road trip or a few days in a city, you can compare your options here in one search.",
+            "Cars, suppliers and prices on this site are samples for now, so no real rental is made when you book."
+          ],
+          "points": [
+            {
+              "label": "Side-by-side results",
+              "text": "Compare car types, suppliers and totals on one page."
+            },
+            {
+              "label": "One-way rentals",
+              "text": "Pick up in one place and drop off in another."
+            },
+            {
+              "label": "Useful filters",
+              "text": "Narrow your list by car type, transmission, supplier or free cancellation."
+            }
+          ]
+        },
+        {
+          "id": "selection",
+          "title": "Hotel Jr's car rental selection",
+          "paragraphs": [
+            "Choose the size of car that suits your trip, from small city cars to space for a whole group."
+          ],
+          "points": [
+            {
+              "label": "Economy and compact",
+              "text": "Easy to park and well suited to city trips."
+            },
+            {
+              "label": "Sedan and SUV",
+              "text": "More comfort on long drives, with extra room for bags."
+            },
+            {
+              "label": "Van and luxury",
+              "text": "Seats for groups, or something special for the occasion."
+            }
+          ]
+        },
+        {
+          "id": "tips",
+          "title": "Car rental tips",
+          "paragraphs": [
+            "A few small checks can make pick-up and return much easier."
+          ],
+          "points": [
+            {
+              "label": "Check your documents",
+              "text": "Bring your driving license, ID and a card in the main driver's name."
+            },
+            {
+              "label": "Look over the car",
+              "text": "Take photos of any marks before you drive away."
+            },
+            {
+              "label": "Know the fuel rule",
+              "text": "On a full to full rental, refill before you return the car."
+            }
+          ]
+        }
+      ]
+    },
+    "recommendations": {
+      "title": "Recommendation",
+      "items": [
+        {
+          "id": "cities",
+          "label": "Popular cities",
+          "links": [
+            {
+              "label": "Dubai car rental",
+              "href": "/cars?location=Dubai#search"
+            },
+            {
+              "label": "Cape Town car rental",
+              "href": "/cars?location=Cape%20Town#search"
+            },
+            {
+              "label": "Rome car rental",
+              "href": "/cars?location=Rome#search"
+            },
+            {
+              "label": "Bali car rental",
+              "href": "/cars?location=Bali#search"
+            },
+            {
+              "label": "Tokyo car rental",
+              "href": "/cars?location=Tokyo#search"
+            },
+            {
+              "label": "Marrakech car rental",
+              "href": "/cars?location=Marrakech#search"
+            }
+          ]
+        },
+        {
+          "id": "countries",
+          "label": "Popular countries",
+          "links": [
+            {
+              "label": "Car rental in Italy",
+              "href": "/cars?location=Italy#search"
+            },
+            {
+              "label": "Car rental in Japan",
+              "href": "/cars?location=Japan#search"
+            },
+            {
+              "label": "Car rental in Morocco",
+              "href": "/cars?location=Morocco#search"
+            },
+            {
+              "label": "Car rental in South Africa",
+              "href": "/cars?location=South%20Africa#search"
+            },
+            {
+              "label": "Car rental in Indonesia",
+              "href": "/cars?location=Indonesia#search"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "trains": {
+    "hero": {
+      "title": "Train tickets",
+      "subtitle": "Compare routes and travel by rail",
+      "imageUrl": "https://images.unsplash.com/photo-1532105956626-9569c03602f6?auto=format&fit=crop&w=2000&q=75"
+    },
+    "benefits": [
+      {
+        "id": "compare",
+        "title": "All in one search",
+        "description": "See times and fares side by side for your journey.",
+        "iconName": "search"
+      },
+      {
+        "id": "price",
+        "title": "Clear pricing",
+        "description": "See the full price for your group before you book.",
+        "iconName": "tag"
+      },
+      {
+        "id": "currency",
+        "title": "Prices in your currency",
+        "description": "Choose your currency from the top of the page.",
+        "iconName": "globe"
+      },
+      {
+        "id": "support",
+        "title": "Help with your trip",
+        "description": "Find answers or send a question from Customer support.",
+        "iconName": "headset"
+      }
+    ],
+    "sectionLinks": [
+      {
+        "label": "Train operators",
+        "href": "#operators"
+      },
+      {
+        "label": "Europe",
+        "href": "#europe"
+      },
+      {
+        "label": "Asia",
+        "href": "#asia"
+      },
+      {
+        "label": "Africa",
+        "href": "#africa"
+      },
+      {
+        "label": "Train routes",
+        "href": "#routes-europe"
+      },
+      {
+        "label": "Book train tickets",
+        "href": "#how-to-book"
+      },
+      {
+        "label": "Travel guides",
+        "href": "#guides"
+      }
+    ],
+    "operators": {
+      "title": "Train operators",
+      "note": "Operators and fares are samples.",
+      "items": [
+        "Meridian Rail",
+        "Coastline Express",
+        "Highland Lines"
+      ]
+    },
+    "regions": [
+      {
+        "id": "europe",
+        "title": "Train travel in Europe",
+        "items": [
+          {
+            "id": "uk",
+            "title": "Trains in the UK",
+            "imageUrl": "https://images.unsplash.com/photo-1486299267070-83823f5448dd?auto=format&fit=crop&w=600&q=75",
+            "links": [
+              {
+                "label": "London to Manchester",
+                "href": "/trains?from=London&to=Manchester&tripType=one-way#search"
+              },
+              {
+                "label": "London to Edinburgh",
+                "href": "/trains?from=London&to=Edinburgh&tripType=one-way#search"
+              },
+              {
+                "label": "London to York",
+                "href": "/trains?from=London&to=York&tripType=one-way#search"
+              },
+              {
+                "label": "London to Paris",
+                "href": "/trains?from=London&to=Paris&tripType=one-way#search"
+              }
+            ],
+            "searches": [
+              {
+                "label": "Search UK trains",
+                "href": "/trains?from=London&tripType=one-way#search"
+              }
+            ]
+          },
+          {
+            "id": "france",
+            "title": "Trains in France",
+            "imageUrl": "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=600&q=75",
+            "links": [
+              {
+                "label": "Paris to Lyon",
+                "href": "/trains?from=Paris&to=Lyon&tripType=one-way#search"
+              },
+              {
+                "label": "Paris to Marseille",
+                "href": "/trains?from=Paris&to=Marseille&tripType=one-way#search"
+              },
+              {
+                "label": "Paris to Bordeaux",
+                "href": "/trains?from=Paris&to=Bordeaux&tripType=one-way#search"
+              },
+              {
+                "label": "Paris to Brussels",
+                "href": "/trains?from=Paris&to=Brussels&tripType=one-way#search"
+              }
+            ],
+            "searches": [
+              {
+                "label": "Search France trains",
+                "href": "/trains?from=Paris&tripType=one-way#search"
+              }
+            ]
+          },
+          {
+            "id": "italy",
+            "title": "Trains in Italy",
+            "imageUrl": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=600&q=75",
+            "links": [
+              {
+                "label": "Rome to Milan",
+                "href": "/trains?from=Rome&to=Milan&tripType=one-way#search"
+              },
+              {
+                "label": "Rome to Florence",
+                "href": "/trains?from=Rome&to=Florence&tripType=one-way#search"
+              },
+              {
+                "label": "Milan to Venice",
+                "href": "/trains?from=Milan&to=Venice&tripType=one-way#search"
+              },
+              {
+                "label": "Rome to Naples",
+                "href": "/trains?from=Rome&to=Naples&tripType=one-way#search"
+              }
+            ],
+            "searches": [
+              {
+                "label": "Search Italy trains",
+                "href": "/trains?from=Rome&tripType=one-way#search"
+              }
+            ]
+          },
+          {
+            "id": "spain",
+            "title": "Trains in Spain",
+            "imageUrl": "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=600&q=75",
+            "links": [
+              {
+                "label": "Madrid to Barcelona",
+                "href": "/trains?from=Madrid&to=Barcelona&tripType=one-way#search"
+              },
+              {
+                "label": "Madrid to Seville",
+                "href": "/trains?from=Madrid&to=Seville&tripType=one-way#search"
+              },
+              {
+                "label": "Madrid to Valencia",
+                "href": "/trains?from=Madrid&to=Valencia&tripType=one-way#search"
+              },
+              {
+                "label": "Barcelona to Valencia",
+                "href": "/trains?from=Barcelona&to=Valencia&tripType=one-way#search"
+              }
+            ],
+            "searches": [
+              {
+                "label": "Search Spain trains",
+                "href": "/trains?from=Madrid&tripType=one-way#search"
+              }
+            ]
+          },
+          {
+            "id": "more-europe",
+            "title": "More trains in Europe",
+            "imageUrl": "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=600&q=75",
+            "links": [
+              {
+                "label": "Berlin to Munich",
+                "href": "/trains?from=Berlin&to=Munich&tripType=one-way#search"
+              },
+              {
+                "label": "Berlin to Hamburg",
+                "href": "/trains?from=Berlin&to=Hamburg&tripType=one-way#search"
+              },
+              {
+                "label": "Lisbon to Porto",
+                "href": "/trains?from=Lisbon&to=Porto&tripType=one-way#search"
+              },
+              {
+                "label": "Amsterdam to Brussels",
+                "href": "/trains?from=Amsterdam&to=Brussels&tripType=one-way#search"
+              }
+            ],
+            "searches": [
+              {
+                "label": "Search Germany trains",
+                "href": "/trains?from=Berlin&tripType=one-way#search"
+              },
+              {
+                "label": "Search Portugal trains",
+                "href": "/trains?from=Lisbon&tripType=one-way#search"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "asia",
+        "title": "Train travel in Asia",
+        "items": [
+          {
+            "id": "china",
+            "title": "Trains in China",
+            "imageUrl": "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=600&q=75",
+            "links": [
+              {
+                "label": "Beijing to Shanghai",
+                "href": "/trains?from=Beijing&to=Shanghai&tripType=one-way#search"
+              },
+              {
+                "label": "Beijing to Xi'an",
+                "href": "/trains?from=Beijing&to=Xi%27an&tripType=one-way#search"
+              },
+              {
+                "label": "Shanghai to Guangzhou",
+                "href": "/trains?from=Shanghai&to=Guangzhou&tripType=one-way#search"
+              },
+              {
+                "label": "Guangzhou to Hong Kong",
+                "href": "/trains?from=Guangzhou&to=Hong+Kong&tripType=one-way#search"
+              }
+            ],
+            "searches": [
+              {
+                "label": "Search China trains",
+                "href": "/trains?from=Beijing&tripType=one-way#search"
+              }
+            ]
+          },
+          {
+            "id": "japan-korea",
+            "title": "Trains in Japan and South Korea",
+            "imageUrl": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=600&q=75",
+            "links": [
+              {
+                "label": "Tokyo to Kyoto",
+                "href": "/trains?from=Tokyo&to=Kyoto&tripType=one-way#search"
+              },
+              {
+                "label": "Tokyo to Osaka",
+                "href": "/trains?from=Tokyo&to=Osaka&tripType=one-way#search"
+              },
+              {
+                "label": "Seoul to Busan",
+                "href": "/trains?from=Seoul&to=Busan&tripType=one-way#search"
+              },
+              {
+                "label": "Seoul to Gyeongju",
+                "href": "/trains?from=Seoul&to=Gyeongju&tripType=one-way#search"
+              }
+            ],
+            "searches": [
+              {
+                "label": "Search Japan trains",
+                "href": "/trains?from=Tokyo&tripType=one-way#search"
+              },
+              {
+                "label": "Search South Korea trains",
+                "href": "/trains?from=Seoul&tripType=one-way#search"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "africa",
+        "title": "Train travel in Africa",
+        "items": [
+          {
+            "id": "nigeria",
+            "title": "Trains in Nigeria",
+            "imageUrl": "https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=600&q=75",
+            "links": [
+              {
+                "label": "Lagos to Ibadan",
+                "href": "/trains?from=Lagos&to=Ibadan&tripType=one-way#search"
+              },
+              {
+                "label": "Abuja to Kaduna",
+                "href": "/trains?from=Abuja&to=Kaduna&tripType=one-way#search"
+              }
+            ],
+            "searches": [
+              {
+                "label": "Search Nigeria trains",
+                "href": "/trains?from=Lagos&tripType=one-way#search"
+              }
+            ]
+          },
+          {
+            "id": "kenya-south-africa",
+            "title": "Trains in Kenya and South Africa",
+            "imageUrl": "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=600&q=75",
+            "links": [
+              {
+                "label": "Nairobi to Mombasa",
+                "href": "/trains?from=Nairobi&to=Mombasa&tripType=one-way#search"
+              },
+              {
+                "label": "Johannesburg to Cape Town",
+                "href": "/trains?from=Johannesburg&to=Cape+Town&tripType=one-way#search"
+              },
+              {
+                "label": "Johannesburg to Durban",
+                "href": "/trains?from=Johannesburg&to=Durban&tripType=one-way#search"
+              }
+            ],
+            "searches": [
+              {
+                "label": "Search Kenya trains",
+                "href": "/trains?from=Nairobi&tripType=one-way#search"
+              },
+              {
+                "label": "Search South Africa trains",
+                "href": "/trains?from=Johannesburg&tripType=one-way#search"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "routeSections": [
+      {
+        "id": "routes-europe",
+        "title": "Popular European train routes",
+        "items": [
+          {
+            "id": "cross-border",
+            "title": "Top cross-border routes",
+            "imageUrl": "https://images.unsplash.com/photo-1541427468627-a89a96e5ca1d?auto=format&fit=crop&w=800&q=75",
+            "routes": [
+              {
+                "from": "London",
+                "to": "Paris",
+                "fromPrice": 56,
+                "currency": "USD"
+              },
+              {
+                "from": "Paris",
+                "to": "London",
+                "fromPrice": 27,
+                "currency": "USD"
+              },
+              {
+                "from": "London",
+                "to": "Brussels",
+                "fromPrice": 54,
+                "currency": "USD"
+              },
+              {
+                "from": "London",
+                "to": "Amsterdam",
+                "fromPrice": 31,
+                "currency": "USD"
+              },
+              {
+                "from": "Paris",
+                "to": "Amsterdam",
+                "fromPrice": 34,
+                "currency": "USD"
+              },
+              {
+                "from": "Brussels",
+                "to": "Amsterdam",
+                "fromPrice": 38,
+                "currency": "USD"
+              }
+            ]
+          },
+          {
+            "id": "uk-routes",
+            "title": "Top UK routes",
+            "imageUrl": "https://images.unsplash.com/photo-1515165562839-978bbcf18277?auto=format&fit=crop&w=800&q=75",
+            "routes": [
+              {
+                "from": "London",
+                "to": "Manchester",
+                "fromPrice": 63,
+                "currency": "USD"
+              },
+              {
+                "from": "Manchester",
+                "to": "London",
+                "fromPrice": 33,
+                "currency": "USD"
+              },
+              {
+                "from": "London",
+                "to": "Edinburgh",
+                "fromPrice": 46,
+                "currency": "USD"
+              },
+              {
+                "from": "Edinburgh",
+                "to": "London",
+                "fromPrice": 43,
+                "currency": "USD"
+              },
+              {
+                "from": "London",
+                "to": "York",
+                "fromPrice": 37,
+                "currency": "USD"
+              },
+              {
+                "from": "Manchester",
+                "to": "York",
+                "fromPrice": 64,
+                "currency": "USD"
+              }
+            ]
+          },
+          {
+            "id": "italy-routes",
+            "title": "Top Italy routes",
+            "imageUrl": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=75",
+            "routes": [
+              {
+                "from": "Rome",
+                "to": "Milan",
+                "fromPrice": 45,
+                "currency": "USD"
+              },
+              {
+                "from": "Milan",
+                "to": "Rome",
+                "fromPrice": 70,
+                "currency": "USD"
+              },
+              {
+                "from": "Rome",
+                "to": "Florence",
+                "fromPrice": 29,
+                "currency": "USD"
+              },
+              {
+                "from": "Florence",
+                "to": "Venice",
+                "fromPrice": 67,
+                "currency": "USD"
+              },
+              {
+                "from": "Milan",
+                "to": "Venice",
+                "fromPrice": 51,
+                "currency": "USD"
+              },
+              {
+                "from": "Rome",
+                "to": "Naples",
+                "fromPrice": 47,
+                "currency": "USD"
+              }
+            ]
+          },
+          {
+            "id": "spain-routes",
+            "title": "Top Spain routes",
+            "imageUrl": "https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=800&q=75",
+            "routes": [
+              {
+                "from": "Madrid",
+                "to": "Barcelona",
+                "fromPrice": 54,
+                "currency": "USD"
+              },
+              {
+                "from": "Barcelona",
+                "to": "Madrid",
+                "fromPrice": 63,
+                "currency": "USD"
+              },
+              {
+                "from": "Madrid",
+                "to": "Seville",
+                "fromPrice": 29,
+                "currency": "USD"
+              },
+              {
+                "from": "Madrid",
+                "to": "Valencia",
+                "fromPrice": 71,
+                "currency": "USD"
+              },
+              {
+                "from": "Barcelona",
+                "to": "Valencia",
+                "fromPrice": 42,
+                "currency": "USD"
+              },
+              {
+                "from": "Barcelona",
+                "to": "Seville",
+                "fromPrice": 40,
+                "currency": "USD"
+              }
+            ]
+          },
+          {
+            "id": "france-routes",
+            "title": "Top France routes",
+            "imageUrl": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=75",
+            "routes": [
+              {
+                "from": "Paris",
+                "to": "Lyon",
+                "fromPrice": 25,
+                "currency": "USD"
+              },
+              {
+                "from": "Lyon",
+                "to": "Paris",
+                "fromPrice": 21,
+                "currency": "USD"
+              },
+              {
+                "from": "Paris",
+                "to": "Marseille",
+                "fromPrice": 36,
+                "currency": "USD"
+              },
+              {
+                "from": "Marseille",
+                "to": "Paris",
+                "fromPrice": 45,
+                "currency": "USD"
+              },
+              {
+                "from": "Paris",
+                "to": "Bordeaux",
+                "fromPrice": 70,
+                "currency": "USD"
+              },
+              {
+                "from": "Lyon",
+                "to": "Marseille",
+                "fromPrice": 70,
+                "currency": "USD"
+              }
+            ]
+          },
+          {
+            "id": "germany-routes",
+            "title": "Top Germany routes",
+            "imageUrl": "https://images.unsplash.com/photo-1560969184-10fe8719e047?auto=format&fit=crop&w=800&q=75",
+            "routes": [
+              {
+                "from": "Berlin",
+                "to": "Munich",
+                "fromPrice": 65,
+                "currency": "USD"
+              },
+              {
+                "from": "Munich",
+                "to": "Berlin",
+                "fromPrice": 29,
+                "currency": "USD"
+              },
+              {
+                "from": "Berlin",
+                "to": "Hamburg",
+                "fromPrice": 41,
+                "currency": "USD"
+              },
+              {
+                "from": "Hamburg",
+                "to": "Berlin",
+                "fromPrice": 66,
+                "currency": "USD"
+              },
+              {
+                "from": "Frankfurt",
+                "to": "Berlin",
+                "fromPrice": 60,
+                "currency": "USD"
+              },
+              {
+                "from": "Frankfurt",
+                "to": "Munich",
+                "fromPrice": 54,
+                "currency": "USD"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "routes-asia",
+        "title": "Popular Asian train routes",
+        "items": [
+          {
+            "id": "china-routes",
+            "title": "Top China routes",
+            "imageUrl": "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=800&q=75",
+            "routes": [
+              {
+                "from": "Beijing",
+                "to": "Shanghai",
+                "fromPrice": 48,
+                "currency": "USD"
+              },
+              {
+                "from": "Shanghai",
+                "to": "Beijing",
+                "fromPrice": 60,
+                "currency": "USD"
+              },
+              {
+                "from": "Beijing",
+                "to": "Xi'an",
+                "fromPrice": 71,
+                "currency": "USD"
+              },
+              {
+                "from": "Beijing",
+                "to": "Guangzhou",
+                "fromPrice": 13,
+                "currency": "USD"
+              },
+              {
+                "from": "Shanghai",
+                "to": "Guangzhou",
+                "fromPrice": 20,
+                "currency": "USD"
+              },
+              {
+                "from": "Guangzhou",
+                "to": "Hong Kong",
+                "fromPrice": 16,
+                "currency": "USD"
+              }
+            ]
+          },
+          {
+            "id": "japan-routes",
+            "title": "Top Japan routes",
+            "imageUrl": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=75",
+            "routes": [
+              {
+                "from": "Tokyo",
+                "to": "Kyoto",
+                "fromPrice": 50,
+                "currency": "USD"
+              },
+              {
+                "from": "Kyoto",
+                "to": "Tokyo",
+                "fromPrice": 12,
+                "currency": "USD"
+              },
+              {
+                "from": "Tokyo",
+                "to": "Osaka",
+                "fromPrice": 24,
+                "currency": "USD"
+              },
+              {
+                "from": "Osaka",
+                "to": "Tokyo",
+                "fromPrice": 11,
+                "currency": "USD"
+              },
+              {
+                "from": "Osaka",
+                "to": "Kyoto",
+                "fromPrice": 65,
+                "currency": "USD"
+              },
+              {
+                "from": "Tokyo",
+                "to": "Hiroshima",
+                "fromPrice": 57,
+                "currency": "USD"
+              }
+            ]
+          },
+          {
+            "id": "korea-routes",
+            "title": "Top South Korea routes",
+            "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?auto=format&fit=crop&w=800&q=75",
+            "routes": [
+              {
+                "from": "Seoul",
+                "to": "Busan",
+                "fromPrice": 18,
+                "currency": "USD"
+              },
+              {
+                "from": "Busan",
+                "to": "Seoul",
+                "fromPrice": 34,
+                "currency": "USD"
+              },
+              {
+                "from": "Seoul",
+                "to": "Gyeongju",
+                "fromPrice": 19,
+                "currency": "USD"
+              },
+              {
+                "from": "Gyeongju",
+                "to": "Busan",
+                "fromPrice": 17,
+                "currency": "USD"
+              },
+              {
+                "from": "Seoul",
+                "to": "Daegu",
+                "fromPrice": 21,
+                "currency": "USD"
+              },
+              {
+                "from": "Daegu",
+                "to": "Seoul",
+                "fromPrice": 51,
+                "currency": "USD"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "routes-africa",
+        "title": "Popular African train routes",
+        "items": [
+          {
+            "id": "nigeria-routes",
+            "title": "Top Nigeria routes",
+            "imageUrl": "https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=800&q=75",
+            "routes": [
+              {
+                "from": "Lagos",
+                "to": "Ibadan",
+                "fromPrice": 34,
+                "currency": "USD"
+              },
+              {
+                "from": "Ibadan",
+                "to": "Lagos",
+                "fromPrice": 60,
+                "currency": "USD"
+              },
+              {
+                "from": "Abuja",
+                "to": "Kaduna",
+                "fromPrice": 31,
+                "currency": "USD"
+              },
+              {
+                "from": "Kaduna",
+                "to": "Abuja",
+                "fromPrice": 60,
+                "currency": "USD"
+              }
+            ]
+          },
+          {
+            "id": "kenya-routes",
+            "title": "Top Kenya routes",
+            "imageUrl": "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=75",
+            "routes": [
+              {
+                "from": "Nairobi",
+                "to": "Mombasa",
+                "fromPrice": 46,
+                "currency": "USD"
+              },
+              {
+                "from": "Mombasa",
+                "to": "Nairobi",
+                "fromPrice": 70,
+                "currency": "USD"
+              }
+            ]
+          },
+          {
+            "id": "south-africa-routes",
+            "title": "Top South Africa routes",
+            "imageUrl": "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=800&q=75",
+            "routes": [
+              {
+                "from": "Johannesburg",
+                "to": "Cape Town",
+                "fromPrice": 60,
+                "currency": "USD"
+              },
+              {
+                "from": "Cape Town",
+                "to": "Johannesburg",
+                "fromPrice": 44,
+                "currency": "USD"
+              },
+              {
+                "from": "Johannesburg",
+                "to": "Durban",
+                "fromPrice": 37,
+                "currency": "USD"
+              },
+              {
+                "from": "Durban",
+                "to": "Johannesburg",
+                "fromPrice": 54,
+                "currency": "USD"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "steps": {
+      "title": "How to book train tickets on Hotel Jr",
+      "items": [
+        {
+          "id": "journey",
+          "question": "1. Enter your journey",
+          "answer": "Choose where you are leaving from, where you are going, your dates and who is travelling."
+        },
+        {
+          "id": "compare",
+          "question": "2. Compare trains",
+          "answer": "Sort by price, speed or departure time, and filter by changes, operator or refundable fares."
+        },
+        {
+          "id": "choose",
+          "question": "3. Choose your train",
+          "answer": "Check the times, class and refund rules, then select the train that suits you."
+        },
+        {
+          "id": "details",
+          "question": "4. Fill in passenger details",
+          "answer": "Add the name of each passenger and the contact details for your booking."
+        },
+        {
+          "id": "review",
+          "question": "5. Review your price",
+          "answer": "See the full price for your group before you confirm."
+        },
+        {
+          "id": "reference",
+          "question": "6. Keep your reference",
+          "answer": "Your confirmation shows a booking reference. While the site runs on sample data this is a demo reference, and no ticket is issued."
+        }
+      ]
+    },
+    "guides": {
+      "title": "Travel guides for your rail trip",
+      "moreLabel": "View more guides",
+      "moreHref": "/inspiration",
+      "tabs": [
+        {
+          "id": "europe",
+          "label": "Europe",
+          "cities": [
+            "Paris",
+            "Rome",
+            "The Alps",
+            "Tromso"
+          ]
+        },
+        {
+          "id": "asia",
+          "label": "Asia",
+          "cities": [
+            "Tokyo",
+            "Bali",
+            "Cappadocia"
+          ]
+        },
+        {
+          "id": "africa",
+          "label": "Africa",
+          "cities": [
+            "Cape Town",
+            "Nairobi",
+            "Marrakech"
+          ]
+        }
+      ]
+    },
+    "journeys": {
+      "title": "Popular train journeys",
+      "items": [
+        {
+          "id": "europe",
+          "title": "Trains in Europe",
+          "links": [
+            {
+              "label": "Trains in the UK",
+              "href": "/trains?from=London&tripType=one-way#search"
+            },
+            {
+              "label": "Trains in France",
+              "href": "/trains?from=Paris&tripType=one-way#search"
+            },
+            {
+              "label": "Trains in Italy",
+              "href": "/trains?from=Rome&tripType=one-way#search"
+            },
+            {
+              "label": "Trains in Spain",
+              "href": "/trains?from=Madrid&tripType=one-way#search"
+            },
+            {
+              "label": "Trains in Germany",
+              "href": "/trains?from=Berlin&tripType=one-way#search"
+            },
+            {
+              "label": "Trains in Portugal",
+              "href": "/trains?from=Lisbon&tripType=one-way#search"
+            }
+          ]
+        },
+        {
+          "id": "asia",
+          "title": "Trains in Asia",
+          "links": [
+            {
+              "label": "Trains in China",
+              "href": "/trains?from=Beijing&tripType=one-way#search"
+            },
+            {
+              "label": "Trains in Japan",
+              "href": "/trains?from=Tokyo&tripType=one-way#search"
+            },
+            {
+              "label": "Trains in South Korea",
+              "href": "/trains?from=Seoul&tripType=one-way#search"
+            }
+          ]
+        },
+        {
+          "id": "africa",
+          "title": "Trains in Africa",
+          "links": [
+            {
+              "label": "Trains in Nigeria",
+              "href": "/trains?from=Lagos&tripType=one-way#search"
+            },
+            {
+              "label": "Trains in Kenya",
+              "href": "/trains?from=Nairobi&tripType=one-way#search"
+            },
+            {
+              "label": "Trains in South Africa",
+              "href": "/trains?from=Johannesburg&tripType=one-way#search"
+            }
+          ]
+        },
+        {
+          "id": "departures",
+          "title": "Popular departure cities",
+          "links": [
+            {
+              "label": "London",
+              "href": "/trains?from=London&tripType=one-way#search"
+            },
+            {
+              "label": "Paris",
+              "href": "/trains?from=Paris&tripType=one-way#search"
+            },
+            {
+              "label": "Rome",
+              "href": "/trains?from=Rome&tripType=one-way#search"
+            },
+            {
+              "label": "Milan",
+              "href": "/trains?from=Milan&tripType=one-way#search"
+            },
+            {
+              "label": "Tokyo",
+              "href": "/trains?from=Tokyo&tripType=one-way#search"
+            },
+            {
+              "label": "Lagos",
+              "href": "/trains?from=Lagos&tripType=one-way#search"
+            }
+          ]
+        },
+        {
+          "id": "destinations",
+          "title": "Top destinations by train",
+          "links": [
+            {
+              "label": "Paris",
+              "href": "/trains?to=Paris&tripType=one-way#search"
+            },
+            {
+              "label": "Barcelona",
+              "href": "/trains?to=Barcelona&tripType=one-way#search"
+            },
+            {
+              "label": "Florence",
+              "href": "/trains?to=Florence&tripType=one-way#search"
+            },
+            {
+              "label": "Kyoto",
+              "href": "/trains?to=Kyoto&tripType=one-way#search"
+            },
+            {
+              "label": "Mombasa",
+              "href": "/trains?to=Mombasa&tripType=one-way#search"
+            },
+            {
+              "label": "Cape Town",
+              "href": "/trains?to=Cape+Town&tripType=one-way#search"
+            }
+          ]
+        },
+        {
+          "id": "more",
+          "title": "More ways to travel",
+          "links": [
+            {
+              "label": "Hotels",
+              "href": "/hotels"
+            },
+            {
+              "label": "Flights",
+              "href": "/flights"
+            },
+            {
+              "label": "Flight + Hotel",
+              "href": "/packages"
+            },
+            {
+              "label": "Cars",
+              "href": "/cars"
+            },
+            {
+              "label": "Attractions",
+              "href": "/attractions"
+            },
+            {
+              "label": "Cruises",
+              "href": "/cruises"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "packages": {
+    "hero": {
+      "title": "Flight + Hotel",
+      "imageUrl": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2000&q=75"
+    },
+    "benefits": [
+      {
+        "id": "save",
+        "title": "Pay less",
+        "description": "Get 6% off the full price of your flight and hotel.",
+        "iconName": "tag"
+      },
+      {
+        "id": "reference",
+        "title": "One booking",
+        "description": "A single reference covers your flight and your stay.",
+        "iconName": "ticket"
+      },
+      {
+        "id": "stays",
+        "title": "Compare stays",
+        "description": "See every hotel with its full package price.",
+        "iconName": "bed"
+      }
+    ],
+    "deals": {
+      "title": "Daily deals",
+      "note": "Sample prices for one adult. Online payment is not connected yet.",
+      "routes": [
+        {
+          "from": "London",
+          "to": "Paris",
+          "daysAhead": 10,
+          "nights": 3
+        },
+        {
+          "from": "Lagos",
+          "to": "Dubai",
+          "daysAhead": 14,
+          "nights": 4
+        },
+        {
+          "from": "Hong Kong",
+          "to": "Tokyo",
+          "daysAhead": 21,
+          "nights": 3
+        },
+        {
+          "from": "London",
+          "to": "Rome",
+          "daysAhead": 24,
+          "nights": 3
+        },
+        {
+          "from": "Dubai",
+          "to": "Cape Town",
+          "daysAhead": 30,
+          "nights": 5
+        },
+        {
+          "from": "Hong Kong",
+          "to": "Bali",
+          "daysAhead": 35,
+          "nights": 4
+        }
+      ]
+    }
+  },
+  "planner": {
+    "heroImageUrl": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=2000&q=75"
+  },
+  "legal-terms": {
+    "slug": "terms",
+    "title": "Booking terms",
+    "summary": "The rules that apply when you use Hotel Jr and book a stay, flight or activity.",
+    "updatedOn": "November 4, 2026",
+    "isDraft": true,
+    "sections": [
+      {
+        "id": "about",
+        "title": "About these terms",
+        "paragraphs": [
+          "Hotel Jr is operated by [Company legal name], registered in [Country] at [Registered address]. In these terms, \"we\" means [Company legal name] and \"you\" means the person using the site.",
+          "By using the site or making a booking, you agree to these terms. If you book for other people, you confirm that you have their permission and that they accept these terms too."
+        ]
+      },
+      {
+        "id": "our-role",
+        "title": "Our role",
+        "paragraphs": [
+          "We help you find and book travel services provided by others, such as hotels, airlines and activity operators. The provider of each service is responsible for delivering it, and its own conditions also apply to your booking."
+        ]
+      },
+      {
+        "id": "booking",
+        "title": "Making a booking",
+        "paragraphs": [
+          "A booking is only confirmed when you receive a booking reference from us."
+        ],
+        "items": [
+          "You must be at least 18 years old to make a booking.",
+          "The details you give must be accurate. Names on flight bookings must match each traveler's passport.",
+          "Prices and availability can change until your booking is confirmed."
+        ]
+      },
+      {
+        "id": "prices",
+        "title": "Prices and payment",
+        "paragraphs": [
+          "Prices are shown in the currency displayed at checkout and include the taxes and fees we are told about, unless we say otherwise. Hotels may charge local taxes or deposits at the property.",
+          "Each booking shows how and when you pay. Some hotel bookings are paid at the property."
+        ]
+      },
+      {
+        "id": "changes",
+        "title": "Changes and cancellations",
+        "paragraphs": [
+          "The cancellation rules for your booking are shown before you confirm it. Where a booking is marked as free cancellation, you can cancel for free until the time stated. Non-refundable bookings cannot be refunded unless the law requires it.",
+          "If a provider changes or cancels your booking, we will tell you as soon as we can and help you with your options."
+        ]
+      },
+      {
+        "id": "your-trip",
+        "title": "Your responsibilities when traveling",
+        "paragraphs": [
+          "You are responsible for having everything you need for your trip."
+        ],
+        "items": [
+          "Valid passports, visas and any required vaccinations.",
+          "Arriving on time for check-in, departures and activities.",
+          "Following the rules of the hotel, airline or activity operator."
+        ]
+      },
+      {
+        "id": "liability",
+        "title": "Our responsibility to you",
+        "paragraphs": [
+          "We take care to show accurate information, but much of it comes from providers. Nothing in these terms limits any rights you have by law that cannot be limited. [Liability wording to be added by your lawyer.]"
+        ]
+      },
+      {
+        "id": "law",
+        "title": "Governing law and contact",
+        "paragraphs": [
+          "These terms are governed by the laws of [Country]. If you have a problem with a booking, contact us at [Support email] and we will try to put it right.",
+          "We may update these terms. The version that applies is the one shown when you made your booking."
+        ]
+      }
+    ]
+  },
+  "legal-privacy": {
+    "slug": "privacy",
+    "title": "Privacy statement",
+    "summary": "What personal information we collect, why we use it and the choices you have.",
+    "updatedOn": "November 4, 2026",
+    "isDraft": true,
+    "sections": [
+      {
+        "id": "who",
+        "title": "Who we are",
+        "paragraphs": [
+          "Hotel Jr is operated by [Company legal name], [Registered address]. We are responsible for your personal information. You can contact us about privacy at [Privacy email]."
+        ]
+      },
+      {
+        "id": "collect",
+        "title": "Information we collect",
+        "paragraphs": [
+          "We collect the information you give us when you use the site."
+        ],
+        "items": [
+          "Account details: your name, email address and password.",
+          "Booking details: names, email, phone number, travel dates, and any arrival time or special requests.",
+          "Flight bookings: the name and date of birth of each traveler, including children.",
+          "Car rentals: the main driver's name and date of birth, to check the driver's age.",
+          "Searches you make, such as destinations and dates."
+        ]
+      },
+      {
+        "id": "use",
+        "title": "How we use your information",
+        "paragraphs": [
+          "We use your information only for these purposes."
+        ],
+        "items": [
+          "To make and manage your bookings.",
+          "To sign you in and keep your account secure.",
+          "To contact you about your trip and answer your questions.",
+          "To meet our legal obligations."
+        ]
+      },
+      {
+        "id": "sharing",
+        "title": "Who we share it with",
+        "paragraphs": [
+          "We share your booking details with the hotel, airline or activity operator providing your service, because they need them to deliver it. We also use service providers that help us run the site: [List of hosting, email and payment providers].",
+          "We do not sell your personal information."
+        ]
+      },
+      {
+        "id": "payments",
+        "title": "Payments",
+        "paragraphs": [
+          "We do not store card numbers. When online payment is added, card details will be handled directly by [Payment provider]."
+        ]
+      },
+      {
+        "id": "cookies",
+        "title": "Cookies and third-party content",
+        "paragraphs": [
+          "We use one essential cookie named \"session\" to keep you signed in. It lasts for 7 days and cannot be read by scripts on the page.",
+          "Photos on the site load directly from Unsplash, so Unsplash receives your IP address and basic browser information when you view them. We do not currently use advertising or analytics cookies."
+        ]
+      },
+      {
+        "id": "retention",
+        "title": "How long we keep it",
+        "paragraphs": [
+          "We keep booking records for [Retention period] to meet accounting and legal requirements. Account details are kept until you ask us to delete your account."
+        ]
+      },
+      {
+        "id": "rights",
+        "title": "Your rights",
+        "paragraphs": [
+          "Depending on where you live, you may have the right to:"
+        ],
+        "items": [
+          "See the personal information we hold about you.",
+          "Correct information that is wrong.",
+          "Ask us to delete your information.",
+          "Object to how we use it, or complain to your data protection authority."
+        ]
+      },
+      {
+        "id": "changes",
+        "title": "Changes to this statement",
+        "paragraphs": [
+          "We may update this statement. We will change the date at the top when we do."
+        ]
+      }
+    ]
+  },
+  "app": {
+    "hero": {
+      "title": "Hotel Jr on your phone",
+      "subtitle": "We are planning a Hotel Jr app to keep your whole trip in your pocket.",
+      "status": "Not available yet. There is nothing to download today."
+    },
+    "planned": {
+      "title": "What we plan to include",
+      "moreLabel": "",
+      "items": [
+        {
+          "id": "trips",
+          "title": "All your trips",
+          "description": "See every booking in one place.",
+          "iconName": "ticket"
+        },
+        {
+          "id": "updates",
+          "title": "Trip updates",
+          "description": "Get news about your bookings as it happens.",
+          "iconName": "plane"
+        },
+        {
+          "id": "assistant",
+          "title": "Travel assistant",
+          "description": "Ask for ideas and tips wherever you are.",
+          "iconName": "robot"
+        },
+        {
+          "id": "planner",
+          "title": "Your trip plan",
+          "description": "Keep your day-by-day plan close at hand.",
+          "iconName": "route"
+        }
+      ]
+    },
+    "today": {
+      "title": "Use Hotel Jr on your phone today",
+      "items": [
+        {
+          "id": "bookings",
+          "title": "Find your booking",
+          "description": "Look up a trip in your phone's browser.",
+          "href": "/bookings",
+          "iconName": "ticket"
+        },
+        {
+          "id": "planner",
+          "title": "Plan your trip",
+          "description": "Build a day-by-day plan for free.",
+          "href": "/planner",
+          "iconName": "route"
+        },
+        {
+          "id": "assistant",
+          "title": "Ask the assistant",
+          "description": "Get ideas and tips for your trip.",
+          "href": "/assistant",
+          "iconName": "robot"
+        }
+      ]
+    }
+  },
+  "hotels": {
+    "hero": {
+      "title": "Hotels & Homes",
+      "imageUrl": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=2000&q=75"
+    },
+    "offer": {
+      "title": "Join Hotel Jr for free",
+      "points": [
+        "Fill in booking forms faster with your saved details",
+        "Chat with the travel assistant about your trip"
+      ],
+      "ctaLabel": "Create an account",
+      "ctaHref": "/signup?next=%2Fhotels"
+    },
+    "whatsNewTitle": "What's new",
+    "benefits": [
+      {
+        "id": "compare",
+        "title": "Compare stays",
+        "description": "See prices, ratings and rooms side by side before you book.",
+        "iconName": "bed"
+      },
+      {
+        "id": "cancel",
+        "title": "Flexible options",
+        "description": "Filter for rooms with free cancellation or breakfast included.",
+        "iconName": "check"
+      },
+      {
+        "id": "plan",
+        "title": "Plan the whole trip",
+        "description": "Add things to do and build a day-by-day plan for free.",
+        "iconName": "route"
+      }
+    ],
+    "showcases": {
+      "luxuryTitle": "Top 5-star stays",
+      "budgetTitle": "Great value stays",
+      "popularTitle": "Guest favorites"
+    },
+    "faqs": {
+      "title": "Hotel questions",
+      "items": [
+        {
+          "id": "hotel-find",
+          "product": "hotels",
+          "question": "How do I find my hotel booking?",
+          "answer": "Open Find bookings and enter your booking reference with the email you booked with."
+        },
+        {
+          "id": "hotel-pay",
+          "product": "hotels",
+          "question": "When do I pay for my stay?",
+          "answer": "You pay at the property when you arrive. You are not charged when you book."
+        },
+        {
+          "id": "hotel-cancel",
+          "product": "hotels",
+          "question": "Can I cancel my room for free?",
+          "answer": "It depends on the room. The cancellation rules are shown before you confirm, and free cancellation is marked on rooms that have it."
+        },
+        {
+          "id": "hotel-requests",
+          "product": "hotels",
+          "question": "Can I ask for an early check-in?",
+          "answer": "Add it under special requests when you book. The property will try to help, but requests are not guaranteed."
+        }
+      ]
+    },
+    "statsTitle": "Stays at a glance",
+    "about": {
+      "title": "Stays on Hotel Jr",
+      "paragraphs": [
+        "Hotel Jr brings hotels and homes together in one place, so you can search by destination and dates, compare what each stay offers, and book when it feels right.",
+        "Use the filters on the results page to narrow things down by budget, guest rating, star rating and amenities. Each hotel page shows its rooms, policies, reviews and what is nearby."
+      ]
+    },
+    "recommendations": {
+      "title": "Recommendations",
+      "items": [
+        {
+          "id": "destinations",
+          "label": "Top destinations",
+          "links": [
+            {
+              "label": "Hotels in Bali",
+              "href": "/hotels/list?destination=Bali"
+            },
+            {
+              "label": "Hotels in Tokyo",
+              "href": "/hotels/list?destination=Tokyo"
+            },
+            {
+              "label": "Hotels in Paris",
+              "href": "/hotels/list?destination=Paris"
+            },
+            {
+              "label": "Hotels in Rome",
+              "href": "/hotels/list?destination=Rome"
+            },
+            {
+              "label": "Hotels in Dubai",
+              "href": "/hotels/list?destination=Dubai"
+            },
+            {
+              "label": "Hotels in Cape Town",
+              "href": "/hotels/list?destination=Cape%20Town"
+            },
+            {
+              "label": "Hotels in Marrakech",
+              "href": "/hotels/list?destination=Marrakech"
+            },
+            {
+              "label": "Hotels in Singapore",
+              "href": "/hotels/list?destination=Singapore"
+            },
+            {
+              "label": "Hotels in Nairobi",
+              "href": "/hotels/list?destination=Nairobi"
+            },
+            {
+              "label": "Hotels in Lisbon",
+              "href": "/hotels/list?destination=Lisbon"
+            },
+            {
+              "label": "Hotels in Phuket",
+              "href": "/hotels/list?destination=Phuket"
+            },
+            {
+              "label": "Hotels in Hong Kong",
+              "href": "/hotels/list?destination=Hong%20Kong"
+            }
+          ]
+        },
+        {
+          "id": "sights",
+          "label": "Hotels near famous sights",
+          "links": [
+            {
+              "label": "Hotels near the Eiffel Tower",
+              "href": "/hotels/list?destination=Paris"
+            },
+            {
+              "label": "Hotels near the Colosseum",
+              "href": "/hotels/list?destination=Rome"
+            },
+            {
+              "label": "Hotels near Table Mountain",
+              "href": "/hotels/list?destination=Cape%20Town"
+            },
+            {
+              "label": "Hotels near Nairobi National Park",
+              "href": "/hotels/list?destination=Nairobi"
+            }
+          ]
+        },
+        {
+          "id": "explore",
+          "label": "Explore more",
+          "links": [
+            {
+              "label": "All hotels",
+              "href": "/hotels/list"
+            },
+            {
+              "label": "Hotel deals",
+              "href": "/deals"
+            },
+            {
+              "label": "Flight + Hotel",
+              "href": "/packages"
+            },
+            {
+              "label": "City guides",
+              "href": "/inspiration"
+            },
+            {
+              "label": "Trip planner",
+              "href": "/planner"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

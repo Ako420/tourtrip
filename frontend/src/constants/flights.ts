@@ -14,6 +14,13 @@ export const defaultPassengers = { adults: 1, children: 0 };
 
 export const FLIGHTS_PAGE_SIZE = 6;
 
+// The API rejects anything outside these, so values typed into the address are limited first.
+export const flightFilterLimits = {
+  cityLength: 100,
+  price: 99_999_999.99,
+  stops: { min: 0, max: 2 },
+};
+
 export const flightSortOptions = [
   { value: "best", label: "Best" },
   { value: "cheapest", label: "Cheapest" },

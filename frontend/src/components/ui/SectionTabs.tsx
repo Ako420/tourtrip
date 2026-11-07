@@ -1,12 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 type SectionTabsProps = {
   sections: { id: string; label: string }[];
+  action?: ReactNode;
+  className?: string;
 };
 
-const SectionTabs = ({ sections }: SectionTabsProps) => {
+const SectionTabs = ({ sections, action, className = "mt-8" }: SectionTabsProps) => {
   const [activeId, setActiveId] = useState(sections[0].id);
 
   useEffect(() => {
@@ -29,8 +31,11 @@ const SectionTabs = ({ sections }: SectionTabsProps) => {
   }, [sections]);
 
   return (
-    <nav aria-label="Page sections" className="sticky top-navbar z-20 mt-5 border-b border-line bg-surface">
-      <ul className="scrollbar-none flex gap-6 overflow-x-auto">
+    <nav
+      aria-label="Page sections"
+      className={`sticky top-navbar z-20 flex items-center justify-between gap-6 border-b border-line bg-surface ${className}`}
+    >
+      <ul className="scrollbar-none flex min-w-0 gap-6 overflow-x-auto">
         {sections.map(({ id, label }) => (
           <li key={id} className="shrink-0">
             <a
@@ -45,6 +50,7 @@ const SectionTabs = ({ sections }: SectionTabsProps) => {
           </li>
         ))}
       </ul>
+      {action}
     </nav>
   );
 };

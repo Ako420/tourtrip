@@ -37,12 +37,6 @@ export type TrustItem = {
   iconName: IconName;
 };
 
-export type AppStat = {
-  id: string;
-  value: string;
-  label: string;
-};
-
 export type FlightTip = {
   id: string;
   question: string;
@@ -62,7 +56,7 @@ export type FlightsContent = {
     ctaHref: string;
   };
   dealsTitle: string;
-  app: { title: string; imageUrl: string; benefits: string[]; stats: AppStat[] };
+  app: { title: string; imageUrl: string; benefits: string[]; ctaLabel: string; ctaHref: string };
   banners: Section<Banner>;
   why: { title: string; heading: string; body: string };
   tips: Section<FlightTip>;
@@ -122,5 +116,5 @@ export type FlightSearchResult = {
   priceRange: { min: number; max: number };
   airlines: { name: string; lowestPrice: number | string }[];
   fareCalendar: FareDay[];
-  sortSummary: Partial<Record<FlightSort, string>>;
+  sortSummary: Partial<Record<FlightSort, number | string>>;
 };

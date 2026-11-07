@@ -8,18 +8,19 @@ import Sidebar from "./Sidebar";
 
 type AppShellProps = {
   hasSidebar?: boolean;
+  account?: ReactNode;
   children: ReactNode;
 };
 
 const isDrawerLayout = () => window.matchMedia("(max-width: 63.999rem)").matches;
 
-const AppShell = ({ hasSidebar = true, children }: AppShellProps) => {
+const AppShell = ({ hasSidebar = true, account, children }: AppShellProps) => {
   // On small screens this opens the drawer. On large screens it collapses the sidebar to icons.
   const [isToggled, setIsToggled] = useState(false);
 
   return (
     <>
-      <Navbar onMenuClick={hasSidebar ? () => setIsToggled((current) => !current) : undefined} />
+      <Navbar onMenuClick={hasSidebar ? () => setIsToggled((current) => !current) : undefined} account={account} />
 
       <div className="flex flex-1">
         {hasSidebar && (

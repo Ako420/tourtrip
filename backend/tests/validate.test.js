@@ -45,6 +45,33 @@ const search = async (query) => {
   return { status: response.status, data: response.body.query, errors: response.body.errors };
 };
 
+describe("null bytes", () => {
+  const assertRejected = (response) => {
+    assert.equal(response.status, 400);
+    assert.equal(response.body.code, "VALIDATION_ERROR");
+  };
+
+  it("rejects one in a body field", async () => {
+    assertRejected(await api.post("/signup").send({ email: "guest@example.com", fullName: "Gue\0st" }));
+  });
+
+  it("rejects one in a list", async () => {
+    assertRejected(await api.get("/search?amenities=pool,sp%00a"));
+  });
+
+  it("ignores one in a field the schema doesn't use", async () => {
+    const response = await api.get("/search?unknown=%00");
+
+    assert.equal(response.status, 200);
+  });
+
+  it("allows the text \\0", async () => {
+    const response = await api.post("/signup").send({ email: "guest@example.com", fullName: "Guest \\0" });
+
+    assert.equal(response.status, 200);
+  });
+});
+
 describe("validate", () => {
   it("passes a valid body on to the route", async () => {
     const response = await api.post("/signup").send({ email: "ada@example.com", fullName: "Ada" });

@@ -1,13 +1,13 @@
 import { attractions, plannerContent } from "@/data";
 import type { PlannerSuggestion } from "@/types";
-import { apiGet, isApiEnabled } from "./http";
+import { apiGet, isApiLive } from "./http";
 
 export const getPlannerContent = async (): Promise<typeof plannerContent> => {
-  return isApiEnabled ? apiGet<typeof plannerContent>("/planner/content") : plannerContent;
+  return isApiLive("content") ? apiGet<typeof plannerContent>("/planner/content") : plannerContent;
 };
 
 export const getPlannerSuggestions = async (): Promise<PlannerSuggestion[]> => {
-  if (isApiEnabled) {
+  if (isApiLive("attractions")) {
     return apiGet<PlannerSuggestion[]>("/planner/suggestions");
   }
 

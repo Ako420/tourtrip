@@ -3,7 +3,7 @@
 import { createAttractionBookingAction } from "@/actions/attractionBooking";
 import { useZodForm } from "@/hooks";
 import { bookingSchema } from "@/schemas";
-import type { AttractionBookingTrip } from "@/types";
+import type { AttractionBookingTrip, ContactDefaults } from "@/types";
 import FormMessage from "../auth/FormMessage";
 import Button from "../ui/Button";
 import LeadTravelerFields from "./LeadTravelerFields";
@@ -12,9 +12,10 @@ import TermsCheckbox from "./TermsCheckbox";
 
 type AttractionBookingFormProps = {
   trip: AttractionBookingTrip;
+  contact?: ContactDefaults;
 };
 
-const AttractionBookingForm = ({ trip }: AttractionBookingFormProps) => {
+const AttractionBookingForm = ({ trip, contact }: AttractionBookingFormProps) => {
   const { formProps, getError, isPending, message } = useZodForm(bookingSchema, (_state, values) =>
     createAttractionBookingAction(trip, values),
   );
@@ -23,7 +24,7 @@ const AttractionBookingForm = ({ trip }: AttractionBookingFormProps) => {
     <form {...formProps} className="flex flex-col gap-6">
       <FormMessage message={message} />
 
-      <LeadTravelerFields getError={getError} />
+      <LeadTravelerFields getError={getError} contact={contact} />
 
       <OnlinePaymentNote />
       <TermsCheckbox error={getError("acceptTerms")} />

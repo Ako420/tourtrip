@@ -1,50 +1,54 @@
 "use client";
 
-import Link from "next/link";
 import { createCarBookingAction } from "@/actions/carBooking";
-import { authLinks } from "@/constants";
 import { useZodForm } from "@/hooks";
 import { createCarBookingSchema } from "@/schemas";
-import type { CarBookingTrip } from "@/types";
+import type { CarBookingTrip, ContactDefaults } from "@/types";
 import FormField from "../auth/FormField";
 import FormMessage from "../auth/FormMessage";
 import Button from "../ui/Button";
 import Icon from "../ui/Icon";
+import SignInToBookLink from "./SignInToBookLink";
 import TermsCheckbox from "./TermsCheckbox";
 
 type CarBookingFormProps = {
   trip: CarBookingTrip;
+  contact?: ContactDefaults;
 };
 
-const CarBookingForm = ({ trip }: CarBookingFormProps) => {
+const CarBookingForm = ({ trip, contact }: CarBookingFormProps) => {
   const { formProps, getError, isPending, message } = useZodForm(
     createCarBookingSchema(trip.pickupDate, trip.isStandardAge),
     (_state, values) => createCarBookingAction(trip, values),
   );
 
   return (
-    <form {...formProps} className="flex flex-col gap-6">
+    <form {...formProps} className="flex flex-col gap-4">
       <FormMessage message={message} />
 
-      <section className="rounded-card border border-line p-5">
-        <div className="mb-1 flex flex-wrap items-center justify-between gap-2">
-          <h2 className="text-lg font-bold">Main driver</h2>
-          <Link href={authLinks.login} className="text-sm font-medium text-primary hover:underline">
-            Sign in to book faster
-          </Link>
+      <section className="rounded-card bg-surface p-5">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <h2 className="text-2xl font-bold">Driver details</h2>
+          {!contact && <SignInToBookLink />}
         </div>
-        <p className="mb-4 text-sm text-muted">Enter the name exactly as it appears on the driving license.</p>
+        <p className="mt-1 mb-4 text-sm">Enter the name exactly as it appears on the driving license.</p>
         <div className="grid gap-4 sm:grid-cols-2">
-          <FormField name="firstName" label="First name" autoComplete="given-name" error={getError("firstName")} />
-          <FormField name="lastName" label="Last name" autoComplete="family-name" error={getError("lastName")} />
+          <FormField name="firstName" label="First name" autoComplete="given-name" defaultValue={contact?.firstName} error={getError("firstName")} />
+          <FormField name="lastName" label="Last name" autoComplete="family-name" defaultValue={contact?.lastName} error={getError("lastName")} />
           <FormField name="birthDate" label="Date of birth" type="date" autoComplete="bday" error={getError("birthDate")} />
-          <FormField name="email" label="Email" type="email" autoComplete="email" error={getError("email")} />
-          <FormField name="phone" label="Phone number" type="tel" autoComplete="tel" error={getError("phone")} />
         </div>
       </section>
 
-      <section className="rounded-card border border-line p-5">
-        <h2 className="mb-2 text-lg font-bold">Payment</h2>
+      <section className="rounded-card bg-surface p-5">
+        <h2 className="mb-4 text-2xl font-bold">Contact info</h2>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <FormField name="phone" label="Phone number" type="tel" autoComplete="tel" defaultValue={contact?.phone} error={getError("phone")} />
+          <FormField name="email" label="Email" type="email" autoComplete="email" defaultValue={contact?.email} error={getError("email")} />
+        </div>
+      </section>
+
+      <section className="rounded-card bg-surface p-5">
+        <h2 className="mb-3 text-xl font-bold">How would you like to pay?</h2>
         <p className="flex items-start gap-3 rounded-md bg-primary-soft p-3 text-sm">
           <Icon name="credit-card" className="mt-0.5 text-primary" />
           <span>
@@ -56,8 +60,8 @@ const CarBookingForm = ({ trip }: CarBookingFormProps) => {
 
       <TermsCheckbox error={getError("acceptTerms")} />
 
-      <Button type="submit" size="lg" disabled={isPending} className="disabled:opacity-60">
-        {isPending ? "Confirming..." : "Confirm booking"}
+      <Button type="submit" size="lg" disabled={isPending} className="w-full text-lg disabled:opacity-60">
+        {isPending ? "Booking..." : "Book now"}
       </Button>
     </form>
   );

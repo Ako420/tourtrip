@@ -16,6 +16,8 @@ type CarSearchFormProps = {
   initialValues: CarSearch;
   locations: string[];
   preselectedType?: CarCategory;
+  compact?: boolean;
+  highlighted?: boolean;
 };
 
 type FieldErrors = Record<string, string[] | undefined>;
@@ -30,7 +32,13 @@ const FieldError = ({ message }: { message?: string }) => {
   return <p className="mt-1 text-left text-sm text-danger">{message}</p>;
 };
 
-const CarSearchForm = ({ initialValues, locations, preselectedType }: CarSearchFormProps) => {
+const CarSearchForm = ({
+  initialValues,
+  locations,
+  preselectedType,
+  compact = false,
+  highlighted = false,
+}: CarSearchFormProps) => {
   const router = useRouter();
   const today = useToday();
 
@@ -85,49 +93,60 @@ const CarSearchForm = ({ initialValues, locations, preselectedType }: CarSearchF
   };
 
   return (
-    <form onSubmit={handleSubmit} role="search" noValidate className="rounded-panel bg-surface p-4 text-ink shadow-card sm:p-5">
-      <div className="grid gap-3 lg:grid-cols-2">
-        <div>
-          <label className={boxClass}>
-            <Icon name="car" className="text-ink-soft" />
-            <input
-              value={location}
-              onChange={(event) => setLocation(event.target.value)}
-              placeholder="Pick-up location"
-              aria-label="Pick-up location"
-              aria-invalid={Boolean(errors.location)}
-              list="car-locations"
-              className="w-full min-w-0 bg-transparent font-medium outline-none placeholder:text-muted"
-            />
-          </label>
-          <FieldError message={errors.location?.[0]} />
-        </div>
-
-        {hasDifferentDropoff && (
+    <form
+      onSubmit={handleSubmit}
+      role="search"
+      noValidate
+      className={compact ? "text-ink" : "rounded-panel bg-surface p-4 text-ink shadow-card sm:p-5"}
+    >
+      <div
+        className={`grid gap-3 sm:grid-cols-2 xl:grid-cols-[1fr_auto_auto_auto] ${
+          highlighted ? "rounded-card border-3 border-primary p-1" : ""
+        }`}
+      >
+        <div className={`grid gap-3 sm:col-span-2 xl:col-span-1 ${hasDifferentDropoff ? "sm:grid-cols-2" : ""}`}>
           <div>
             <label className={boxClass}>
-              <Icon name="location" className="text-ink-soft" />
+              <Icon name="car" className="text-ink-soft" />
               <input
-                value={dropoffLocation}
-                onChange={(event) => setDropoffLocation(event.target.value)}
-                placeholder="Drop-off location"
-                aria-label="Drop-off location"
-                aria-invalid={Boolean(errors.dropoffLocation)}
+                value={location}
+                onChange={(event) => setLocation(event.target.value)}
+                placeholder="Pick-up location"
+                aria-label="Pick-up location"
+                aria-invalid={Boolean(errors.location)}
                 list="car-locations"
                 className="w-full min-w-0 bg-transparent font-medium outline-none placeholder:text-muted"
               />
             </label>
-            <FieldError message={errors.dropoffLocation?.[0]} />
+            <FieldError message={errors.location?.[0]} />
           </div>
-        )}
-        <datalist id="car-locations">
-          {locations.map((option) => (
-            <option key={option} value={option} />
-          ))}
-        </datalist>
-      </div>
 
-      <div className="mt-3 grid gap-3 sm:grid-cols-2">
+          {hasDifferentDropoff && (
+            <div>
+              <label className={boxClass}>
+                <Icon name="location" className="text-ink-soft" />
+                <input
+                  value={dropoffLocation}
+                  onChange={(event) => setDropoffLocation(event.target.value)}
+                  placeholder="Drop-off location"
+                  aria-label="Drop-off location"
+                  aria-invalid={Boolean(errors.dropoffLocation)}
+                  list="car-locations"
+                  className="w-full min-w-0 bg-transparent font-medium outline-none placeholder:text-muted"
+                />
+              </label>
+              <FieldError message={errors.dropoffLocation?.[0]} />
+            </div>
+          )}
+          {(!compact || highlighted) && (
+            <datalist id="car-locations">
+              {locations.map((option) => (
+                <option key={option} value={option} />
+              ))}
+            </datalist>
+          )}
+        </div>
+
         <div className={boxClass}>
           <Icon name="calendar" className="text-ink-soft" />
           <div className="text-sm">
@@ -171,9 +190,14 @@ const CarSearchForm = ({ initialValues, locations, preselectedType }: CarSearchF
           </div>
           <FieldError message={errors.dropoffDate?.[0]} />
         </div>
+
+        <Button type="submit" size="lg" className="sm:col-span-2 sm:ml-auto sm:px-10 xl:col-span-1 xl:ml-0 xl:px-8">
+          <Icon name="search" />
+          Search
+        </Button>
       </div>
 
-      <div className="mt-3 flex flex-col gap-3 text-sm sm:flex-row sm:items-center sm:justify-between">
+      <div className="mt-3 text-sm">
         <div className="flex flex-wrap gap-x-5 gap-y-2">
           <label className="flex cursor-pointer items-center gap-2">
             <input
@@ -194,10 +218,6 @@ const CarSearchForm = ({ initialValues, locations, preselectedType }: CarSearchF
             Driver aged 25 to 69
           </label>
         </div>
-        <Button type="submit" size="lg" className="sm:px-10">
-          <Icon name="search" />
-          Search
-        </Button>
       </div>
     </form>
   );

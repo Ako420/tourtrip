@@ -1,0 +1,2786 @@
+[
+  {
+    "id": "1",
+    "slug": "colosseum",
+    "name": "The Colosseum",
+    "city": "Rome",
+    "country": "Italy",
+    "category": "landmarks",
+    "imageUrl": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=75",
+    "rating": 4.8,
+    "reviewCount": 3685,
+    "duration": "2 hours",
+    "price": 32,
+    "currency": "USD",
+    "freeCancellation": true,
+    "description": "The Colosseum is one of the sights that defines a trip here. Take your time, learn the story behind it and enjoy the views. Plan for about 2 hours to enjoy it properly.",
+    "highlights": [
+      "See an iconic landmark up close",
+      "Learn the story with clear visitor information",
+      "Great photo spots"
+    ],
+    "address": "Rome, Italy",
+    "tickets": [
+      {
+        "id": "standard",
+        "name": "Standard ticket",
+        "description": "Entry for your chosen date.",
+        "includes": [
+          "Entry ticket",
+          "Mobile ticket"
+        ],
+        "adultPrice": 32,
+        "childPrice": 19
+      },
+      {
+        "id": "guided",
+        "name": "Guided experience",
+        "description": "Join a small group with a local guide.",
+        "includes": [
+          "Entry ticket",
+          "Local guide",
+          "Small group"
+        ],
+        "adultPrice": 51,
+        "childPrice": 31
+      },
+      {
+        "id": "private",
+        "name": "Private experience",
+        "description": "Just your group, at your pace.",
+        "includes": [
+          "Entry ticket",
+          "Private guide",
+          "Flexible start time"
+        ],
+        "adultPrice": 90,
+        "childPrice": 54
+      }
+    ],
+    "reviewScores": [
+      {
+        "id": "value",
+        "label": "Value for money",
+        "score": 4.7
+      },
+      {
+        "id": "experience",
+        "label": "Experience",
+        "score": 4.9
+      },
+      {
+        "id": "organisation",
+        "label": "Organisation",
+        "score": 4.8
+      },
+      {
+        "id": "access",
+        "label": "Ease of access",
+        "score": 4.6
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "A highlight of our trip",
+        "text": "Better than we expected. Go early if you can, because it gets busier later in the day.",
+        "id": "1-Amara O.",
+        "score": 4.7
+      },
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Clear instructions and friendly staff. We were glad we booked ahead instead of queuing.",
+        "id": "1-Lukas M.",
+        "score": 4.8
+      },
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Loved it",
+        "text": "Our family enjoyed every minute. Wear comfortable shoes and bring water.",
+        "id": "1-Priya S.",
+        "score": 4.9
+      },
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would do it again",
+        "text": "A memorable day out. It was a little crowded, but the experience made up for it.",
+        "id": "1-Sofia R.",
+        "score": 4.7
+      },
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Worth it",
+        "text": "Well organised from start to finish. The ticket was easy to use and there was plenty of time to look around.",
+        "id": "1-Daniel K.",
+        "score": 4.8
+      }
+    ],
+    "policies": [
+      {
+        "id": "ticket",
+        "title": "Your ticket",
+        "description": "Show your mobile ticket at the entrance. Printing is not needed.",
+        "iconName": "ticket"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "Free cancellation up to 24 hours before your visit.",
+        "iconName": "ban"
+      },
+      {
+        "id": "id",
+        "title": "What to bring",
+        "description": "Bring a photo ID, comfortable shoes and water.",
+        "iconName": "id-card"
+      },
+      {
+        "id": "access",
+        "title": "Accessibility",
+        "description": "Access varies by area. Contact support before you visit if you need help.",
+        "iconName": "wheelchair"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Rome centre",
+        "distance": "2.1 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest public transport",
+        "distance": "400 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "15 km",
+        "iconName": "plane"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "slug": "taj-mahal",
+    "name": "Taj Mahal",
+    "city": "Agra",
+    "country": "India",
+    "category": "landmarks",
+    "imageUrl": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=75",
+    "rating": 4.9,
+    "reviewCount": 20441,
+    "duration": "3 hours",
+    "price": 25,
+    "currency": "USD",
+    "freeCancellation": true,
+    "description": "Taj Mahal is one of the sights that defines a trip here. Take your time, learn the story behind it and enjoy the views. Plan for about 3 hours to enjoy it properly.",
+    "highlights": [
+      "See an iconic landmark up close",
+      "Learn the story with clear visitor information",
+      "Great photo spots"
+    ],
+    "address": "Agra, India",
+    "tickets": [
+      {
+        "id": "standard",
+        "name": "Standard ticket",
+        "description": "Entry for your chosen date.",
+        "includes": [
+          "Entry ticket",
+          "Mobile ticket"
+        ],
+        "adultPrice": 25,
+        "childPrice": 15
+      },
+      {
+        "id": "guided",
+        "name": "Guided experience",
+        "description": "Join a small group with a local guide.",
+        "includes": [
+          "Entry ticket",
+          "Local guide",
+          "Small group"
+        ],
+        "adultPrice": 40,
+        "childPrice": 24
+      },
+      {
+        "id": "private",
+        "name": "Private experience",
+        "description": "Just your group, at your pace.",
+        "includes": [
+          "Entry ticket",
+          "Private guide",
+          "Flexible start time"
+        ],
+        "adultPrice": 70,
+        "childPrice": 42
+      }
+    ],
+    "reviewScores": [
+      {
+        "id": "value",
+        "label": "Value for money",
+        "score": 4.8
+      },
+      {
+        "id": "experience",
+        "label": "Experience",
+        "score": 5
+      },
+      {
+        "id": "organisation",
+        "label": "Organisation",
+        "score": 4.9
+      },
+      {
+        "id": "access",
+        "label": "Ease of access",
+        "score": 4.7
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Clear instructions and friendly staff. We were glad we booked ahead instead of queuing.",
+        "id": "2-Amara O.",
+        "score": 4.8
+      },
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Loved it",
+        "text": "Our family enjoyed every minute. Wear comfortable shoes and bring water.",
+        "id": "2-Lukas M.",
+        "score": 4.9
+      },
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would do it again",
+        "text": "A memorable day out. It was a little crowded, but the experience made up for it.",
+        "id": "2-Priya S.",
+        "score": 5
+      },
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Worth it",
+        "text": "Well organised from start to finish. The ticket was easy to use and there was plenty of time to look around.",
+        "id": "2-Sofia R.",
+        "score": 4.8
+      },
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "A highlight of our trip",
+        "text": "Better than we expected. Go early if you can, because it gets busier later in the day.",
+        "id": "2-Daniel K.",
+        "score": 4.9
+      }
+    ],
+    "policies": [
+      {
+        "id": "ticket",
+        "title": "Your ticket",
+        "description": "Show your mobile ticket at the entrance. Printing is not needed.",
+        "iconName": "ticket"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "Free cancellation up to 24 hours before your visit.",
+        "iconName": "ban"
+      },
+      {
+        "id": "id",
+        "title": "What to bring",
+        "description": "Bring a photo ID, comfortable shoes and water.",
+        "iconName": "id-card"
+      },
+      {
+        "id": "access",
+        "title": "Accessibility",
+        "description": "Access varies by area. Contact support before you visit if you need help.",
+        "iconName": "wheelchair"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Agra centre",
+        "distance": "3.2 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest public transport",
+        "distance": "500 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "18 km",
+        "iconName": "plane"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "slug": "machu-picchu",
+    "name": "Machu Picchu",
+    "city": "Cusco",
+    "country": "Peru",
+    "category": "landmarks",
+    "imageUrl": "https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=75",
+    "rating": 4.9,
+    "reviewCount": 8120,
+    "duration": "Full day",
+    "price": 89,
+    "currency": "USD",
+    "freeCancellation": false,
+    "description": "Machu Picchu is one of the sights that defines a trip here. Take your time, learn the story behind it and enjoy the views. Plan for a full day to enjoy it properly.",
+    "highlights": [
+      "See an iconic landmark up close",
+      "Learn the story with clear visitor information",
+      "Great photo spots"
+    ],
+    "address": "Cusco, Peru",
+    "tickets": [
+      {
+        "id": "standard",
+        "name": "Standard ticket",
+        "description": "Entry for your chosen date.",
+        "includes": [
+          "Entry ticket",
+          "Mobile ticket"
+        ],
+        "adultPrice": 89,
+        "childPrice": 53
+      },
+      {
+        "id": "guided",
+        "name": "Guided experience",
+        "description": "Join a small group with a local guide.",
+        "includes": [
+          "Entry ticket",
+          "Local guide",
+          "Small group"
+        ],
+        "adultPrice": 142,
+        "childPrice": 85
+      },
+      {
+        "id": "private",
+        "name": "Private experience",
+        "description": "Just your group, at your pace.",
+        "includes": [
+          "Entry ticket",
+          "Private guide",
+          "Flexible start time"
+        ],
+        "adultPrice": 249,
+        "childPrice": 149
+      }
+    ],
+    "reviewScores": [
+      {
+        "id": "value",
+        "label": "Value for money",
+        "score": 4.8
+      },
+      {
+        "id": "experience",
+        "label": "Experience",
+        "score": 5
+      },
+      {
+        "id": "organisation",
+        "label": "Organisation",
+        "score": 4.9
+      },
+      {
+        "id": "access",
+        "label": "Ease of access",
+        "score": 4.7
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Loved it",
+        "text": "Our family enjoyed every minute. Wear comfortable shoes and bring water.",
+        "id": "3-Amara O.",
+        "score": 4.8
+      },
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would do it again",
+        "text": "A memorable day out. It was a little crowded, but the experience made up for it.",
+        "id": "3-Lukas M.",
+        "score": 4.9
+      },
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Worth it",
+        "text": "Well organised from start to finish. The ticket was easy to use and there was plenty of time to look around.",
+        "id": "3-Priya S.",
+        "score": 5
+      },
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "A highlight of our trip",
+        "text": "Better than we expected. Go early if you can, because it gets busier later in the day.",
+        "id": "3-Sofia R.",
+        "score": 4.8
+      },
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Clear instructions and friendly staff. We were glad we booked ahead instead of queuing.",
+        "id": "3-Daniel K.",
+        "score": 4.9
+      }
+    ],
+    "policies": [
+      {
+        "id": "ticket",
+        "title": "Your ticket",
+        "description": "Show your mobile ticket at the entrance. Printing is not needed.",
+        "iconName": "ticket"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "This ticket cannot be cancelled or changed after booking.",
+        "iconName": "ban"
+      },
+      {
+        "id": "id",
+        "title": "What to bring",
+        "description": "Bring a photo ID, comfortable shoes and water.",
+        "iconName": "id-card"
+      },
+      {
+        "id": "access",
+        "title": "Accessibility",
+        "description": "Access varies by area. Contact support before you visit if you need help.",
+        "iconName": "wheelchair"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Cusco centre",
+        "distance": "4.3 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest public transport",
+        "distance": "600 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "21 km",
+        "iconName": "plane"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "slug": "cappadocia-balloon",
+    "name": "Cappadocia balloon flight",
+    "city": "Cappadocia",
+    "country": "Turkey",
+    "category": "adventure",
+    "imageUrl": "https://images.unsplash.com/photo-1641128324972-af3212f0f6bd?auto=format&fit=crop&w=800&q=75",
+    "rating": 4.9,
+    "reviewCount": 6240,
+    "duration": "3 hours",
+    "price": 165,
+    "currency": "USD",
+    "freeCancellation": true,
+    "description": "Cappadocia balloon flight is an experience you will talk about long after you get home, led by a friendly local team who look after the details. Plan for about 3 hours to enjoy it properly.",
+    "highlights": [
+      "A once-in-a-lifetime experience",
+      "Led by an experienced local team",
+      "Small groups"
+    ],
+    "address": "Cappadocia, Turkey",
+    "tickets": [
+      {
+        "id": "standard",
+        "name": "Standard ticket",
+        "description": "Entry for your chosen date.",
+        "includes": [
+          "Entry ticket",
+          "Mobile ticket"
+        ],
+        "adultPrice": 165,
+        "childPrice": 99
+      },
+      {
+        "id": "guided",
+        "name": "Guided experience",
+        "description": "Join a small group with a local guide.",
+        "includes": [
+          "Entry ticket",
+          "Local guide",
+          "Small group"
+        ],
+        "adultPrice": 264,
+        "childPrice": 158
+      },
+      {
+        "id": "private",
+        "name": "Private experience",
+        "description": "Just your group, at your pace.",
+        "includes": [
+          "Entry ticket",
+          "Private guide",
+          "Flexible start time"
+        ],
+        "adultPrice": 462,
+        "childPrice": 277
+      }
+    ],
+    "reviewScores": [
+      {
+        "id": "value",
+        "label": "Value for money",
+        "score": 4.8
+      },
+      {
+        "id": "experience",
+        "label": "Experience",
+        "score": 5
+      },
+      {
+        "id": "organisation",
+        "label": "Organisation",
+        "score": 4.9
+      },
+      {
+        "id": "access",
+        "label": "Ease of access",
+        "score": 4.7
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would do it again",
+        "text": "A memorable day out. It was a little crowded, but the experience made up for it.",
+        "id": "4-Amara O.",
+        "score": 4.8
+      },
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Worth it",
+        "text": "Well organised from start to finish. The ticket was easy to use and there was plenty of time to look around.",
+        "id": "4-Lukas M.",
+        "score": 4.9
+      },
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "A highlight of our trip",
+        "text": "Better than we expected. Go early if you can, because it gets busier later in the day.",
+        "id": "4-Priya S.",
+        "score": 5
+      },
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Clear instructions and friendly staff. We were glad we booked ahead instead of queuing.",
+        "id": "4-Sofia R.",
+        "score": 4.8
+      },
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Loved it",
+        "text": "Our family enjoyed every minute. Wear comfortable shoes and bring water.",
+        "id": "4-Daniel K.",
+        "score": 4.9
+      }
+    ],
+    "policies": [
+      {
+        "id": "ticket",
+        "title": "Your ticket",
+        "description": "Show your mobile ticket at the entrance. Printing is not needed.",
+        "iconName": "ticket"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "Free cancellation up to 24 hours before your visit.",
+        "iconName": "ban"
+      },
+      {
+        "id": "id",
+        "title": "What to bring",
+        "description": "Bring a photo ID, comfortable shoes and water.",
+        "iconName": "id-card"
+      },
+      {
+        "id": "access",
+        "title": "Accessibility",
+        "description": "Access varies by area. Contact support before you visit if you need help.",
+        "iconName": "wheelchair"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Cappadocia centre",
+        "distance": "1.4 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest public transport",
+        "distance": "700 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "24 km",
+        "iconName": "plane"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "slug": "eiffel-tower",
+    "name": "Eiffel Tower",
+    "city": "Paris",
+    "country": "France",
+    "category": "landmarks",
+    "imageUrl": "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=800&q=75",
+    "rating": 4.7,
+    "reviewCount": 12490,
+    "duration": "2 hours",
+    "price": 38,
+    "currency": "USD",
+    "freeCancellation": true,
+    "description": "Eiffel Tower is one of the sights that defines a trip here. Take your time, learn the story behind it and enjoy the views. Plan for about 2 hours to enjoy it properly.",
+    "highlights": [
+      "See an iconic landmark up close",
+      "Learn the story with clear visitor information",
+      "Great photo spots"
+    ],
+    "address": "Paris, France",
+    "tickets": [
+      {
+        "id": "standard",
+        "name": "Standard ticket",
+        "description": "Entry for your chosen date.",
+        "includes": [
+          "Entry ticket",
+          "Mobile ticket"
+        ],
+        "adultPrice": 38,
+        "childPrice": 23
+      },
+      {
+        "id": "guided",
+        "name": "Guided experience",
+        "description": "Join a small group with a local guide.",
+        "includes": [
+          "Entry ticket",
+          "Local guide",
+          "Small group"
+        ],
+        "adultPrice": 61,
+        "childPrice": 37
+      },
+      {
+        "id": "private",
+        "name": "Private experience",
+        "description": "Just your group, at your pace.",
+        "includes": [
+          "Entry ticket",
+          "Private guide",
+          "Flexible start time"
+        ],
+        "adultPrice": 106,
+        "childPrice": 64
+      }
+    ],
+    "reviewScores": [
+      {
+        "id": "value",
+        "label": "Value for money",
+        "score": 4.6
+      },
+      {
+        "id": "experience",
+        "label": "Experience",
+        "score": 4.8
+      },
+      {
+        "id": "organisation",
+        "label": "Organisation",
+        "score": 4.7
+      },
+      {
+        "id": "access",
+        "label": "Ease of access",
+        "score": 4.5
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Worth it",
+        "text": "Well organised from start to finish. The ticket was easy to use and there was plenty of time to look around.",
+        "id": "5-Amara O.",
+        "score": 4.6
+      },
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "A highlight of our trip",
+        "text": "Better than we expected. Go early if you can, because it gets busier later in the day.",
+        "id": "5-Lukas M.",
+        "score": 4.7
+      },
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Clear instructions and friendly staff. We were glad we booked ahead instead of queuing.",
+        "id": "5-Priya S.",
+        "score": 4.8
+      },
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Loved it",
+        "text": "Our family enjoyed every minute. Wear comfortable shoes and bring water.",
+        "id": "5-Sofia R.",
+        "score": 4.6
+      },
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would do it again",
+        "text": "A memorable day out. It was a little crowded, but the experience made up for it.",
+        "id": "5-Daniel K.",
+        "score": 4.7
+      }
+    ],
+    "policies": [
+      {
+        "id": "ticket",
+        "title": "Your ticket",
+        "description": "Show your mobile ticket at the entrance. Printing is not needed.",
+        "iconName": "ticket"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "Free cancellation up to 24 hours before your visit.",
+        "iconName": "ban"
+      },
+      {
+        "id": "id",
+        "title": "What to bring",
+        "description": "Bring a photo ID, comfortable shoes and water.",
+        "iconName": "id-card"
+      },
+      {
+        "id": "access",
+        "title": "Accessibility",
+        "description": "Access varies by area. Contact support before you visit if you need help.",
+        "iconName": "wheelchair"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Paris centre",
+        "distance": "2.5 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest public transport",
+        "distance": "300 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "27 km",
+        "iconName": "plane"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "slug": "great-wall",
+    "name": "The Great Wall",
+    "city": "Beijing",
+    "country": "China",
+    "category": "landmarks",
+    "imageUrl": "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=800&q=75",
+    "rating": 4.8,
+    "reviewCount": 9310,
+    "duration": "Half day",
+    "price": 45,
+    "currency": "USD",
+    "freeCancellation": true,
+    "description": "The Great Wall is one of the sights that defines a trip here. Take your time, learn the story behind it and enjoy the views. Plan for a half day to enjoy it properly.",
+    "highlights": [
+      "See an iconic landmark up close",
+      "Learn the story with clear visitor information",
+      "Great photo spots"
+    ],
+    "address": "Beijing, China",
+    "tickets": [
+      {
+        "id": "standard",
+        "name": "Standard ticket",
+        "description": "Entry for your chosen date.",
+        "includes": [
+          "Entry ticket",
+          "Mobile ticket"
+        ],
+        "adultPrice": 45,
+        "childPrice": 27
+      },
+      {
+        "id": "guided",
+        "name": "Guided experience",
+        "description": "Join a small group with a local guide.",
+        "includes": [
+          "Entry ticket",
+          "Local guide",
+          "Small group"
+        ],
+        "adultPrice": 72,
+        "childPrice": 43
+      },
+      {
+        "id": "private",
+        "name": "Private experience",
+        "description": "Just your group, at your pace.",
+        "includes": [
+          "Entry ticket",
+          "Private guide",
+          "Flexible start time"
+        ],
+        "adultPrice": 126,
+        "childPrice": 76
+      }
+    ],
+    "reviewScores": [
+      {
+        "id": "value",
+        "label": "Value for money",
+        "score": 4.7
+      },
+      {
+        "id": "experience",
+        "label": "Experience",
+        "score": 4.9
+      },
+      {
+        "id": "organisation",
+        "label": "Organisation",
+        "score": 4.8
+      },
+      {
+        "id": "access",
+        "label": "Ease of access",
+        "score": 4.6
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "A highlight of our trip",
+        "text": "Better than we expected. Go early if you can, because it gets busier later in the day.",
+        "id": "6-Amara O.",
+        "score": 4.7
+      },
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Clear instructions and friendly staff. We were glad we booked ahead instead of queuing.",
+        "id": "6-Lukas M.",
+        "score": 4.8
+      },
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Loved it",
+        "text": "Our family enjoyed every minute. Wear comfortable shoes and bring water.",
+        "id": "6-Priya S.",
+        "score": 4.9
+      },
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would do it again",
+        "text": "A memorable day out. It was a little crowded, but the experience made up for it.",
+        "id": "6-Sofia R.",
+        "score": 4.7
+      },
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Worth it",
+        "text": "Well organised from start to finish. The ticket was easy to use and there was plenty of time to look around.",
+        "id": "6-Daniel K.",
+        "score": 4.8
+      }
+    ],
+    "policies": [
+      {
+        "id": "ticket",
+        "title": "Your ticket",
+        "description": "Show your mobile ticket at the entrance. Printing is not needed.",
+        "iconName": "ticket"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "Free cancellation up to 24 hours before your visit.",
+        "iconName": "ban"
+      },
+      {
+        "id": "id",
+        "title": "What to bring",
+        "description": "Bring a photo ID, comfortable shoes and water.",
+        "iconName": "id-card"
+      },
+      {
+        "id": "access",
+        "title": "Accessibility",
+        "description": "Access varies by area. Contact support before you visit if you need help.",
+        "iconName": "wheelchair"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Beijing centre",
+        "distance": "3.6 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest public transport",
+        "distance": "400 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "30 km",
+        "iconName": "plane"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "slug": "savanna-safari",
+    "name": "Savanna safari drive",
+    "city": "Nairobi",
+    "country": "Kenya",
+    "category": "adventure",
+    "imageUrl": "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=75",
+    "rating": 4.8,
+    "reviewCount": 2875,
+    "duration": "Full day",
+    "price": 140,
+    "currency": "USD",
+    "freeCancellation": true,
+    "description": "Savanna safari drive is an experience you will talk about long after you get home, led by a friendly local team who look after the details. Plan for a full day to enjoy it properly.",
+    "highlights": [
+      "A once-in-a-lifetime experience",
+      "Led by an experienced local team",
+      "Small groups"
+    ],
+    "address": "Nairobi, Kenya",
+    "tickets": [
+      {
+        "id": "standard",
+        "name": "Standard ticket",
+        "description": "Entry for your chosen date.",
+        "includes": [
+          "Entry ticket",
+          "Mobile ticket"
+        ],
+        "adultPrice": 140,
+        "childPrice": 84
+      },
+      {
+        "id": "guided",
+        "name": "Guided experience",
+        "description": "Join a small group with a local guide.",
+        "includes": [
+          "Entry ticket",
+          "Local guide",
+          "Small group"
+        ],
+        "adultPrice": 224,
+        "childPrice": 134
+      },
+      {
+        "id": "private",
+        "name": "Private experience",
+        "description": "Just your group, at your pace.",
+        "includes": [
+          "Entry ticket",
+          "Private guide",
+          "Flexible start time"
+        ],
+        "adultPrice": 392,
+        "childPrice": 235
+      }
+    ],
+    "reviewScores": [
+      {
+        "id": "value",
+        "label": "Value for money",
+        "score": 4.7
+      },
+      {
+        "id": "experience",
+        "label": "Experience",
+        "score": 4.9
+      },
+      {
+        "id": "organisation",
+        "label": "Organisation",
+        "score": 4.8
+      },
+      {
+        "id": "access",
+        "label": "Ease of access",
+        "score": 4.6
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Clear instructions and friendly staff. We were glad we booked ahead instead of queuing.",
+        "id": "7-Amara O.",
+        "score": 4.7
+      },
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Loved it",
+        "text": "Our family enjoyed every minute. Wear comfortable shoes and bring water.",
+        "id": "7-Lukas M.",
+        "score": 4.8
+      },
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would do it again",
+        "text": "A memorable day out. It was a little crowded, but the experience made up for it.",
+        "id": "7-Priya S.",
+        "score": 4.9
+      },
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Worth it",
+        "text": "Well organised from start to finish. The ticket was easy to use and there was plenty of time to look around.",
+        "id": "7-Sofia R.",
+        "score": 4.7
+      },
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "A highlight of our trip",
+        "text": "Better than we expected. Go early if you can, because it gets busier later in the day.",
+        "id": "7-Daniel K.",
+        "score": 4.8
+      }
+    ],
+    "policies": [
+      {
+        "id": "ticket",
+        "title": "Your ticket",
+        "description": "Show your mobile ticket at the entrance. Printing is not needed.",
+        "iconName": "ticket"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "Free cancellation up to 24 hours before your visit.",
+        "iconName": "ban"
+      },
+      {
+        "id": "id",
+        "title": "What to bring",
+        "description": "Bring a photo ID, comfortable shoes and water.",
+        "iconName": "id-card"
+      },
+      {
+        "id": "access",
+        "title": "Accessibility",
+        "description": "Access varies by area. Contact support before you visit if you need help.",
+        "iconName": "wheelchair"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Nairobi centre",
+        "distance": "4.7 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest public transport",
+        "distance": "500 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "33 km",
+        "iconName": "plane"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "slug": "northern-lights",
+    "name": "Northern lights tour",
+    "city": "Tromso",
+    "country": "Norway",
+    "category": "nature",
+    "imageUrl": "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=800&q=75",
+    "rating": 4.7,
+    "reviewCount": 1980,
+    "duration": "6 hours",
+    "price": 120,
+    "currency": "USD",
+    "freeCancellation": false,
+    "description": "Northern lights tour is a chance to slow down and enjoy the landscape. Fresh air, big views and plenty of time to take it all in. Plan for about 6 hours to enjoy it properly.",
+    "highlights": [
+      "Beautiful natural scenery",
+      "Relaxed pace for all ages",
+      "Bring your camera"
+    ],
+    "address": "Tromso, Norway",
+    "tickets": [
+      {
+        "id": "standard",
+        "name": "Standard ticket",
+        "description": "Entry for your chosen date.",
+        "includes": [
+          "Entry ticket",
+          "Mobile ticket"
+        ],
+        "adultPrice": 120,
+        "childPrice": 72
+      },
+      {
+        "id": "guided",
+        "name": "Guided experience",
+        "description": "Join a small group with a local guide.",
+        "includes": [
+          "Entry ticket",
+          "Local guide",
+          "Small group"
+        ],
+        "adultPrice": 192,
+        "childPrice": 115
+      },
+      {
+        "id": "private",
+        "name": "Private experience",
+        "description": "Just your group, at your pace.",
+        "includes": [
+          "Entry ticket",
+          "Private guide",
+          "Flexible start time"
+        ],
+        "adultPrice": 336,
+        "childPrice": 202
+      }
+    ],
+    "reviewScores": [
+      {
+        "id": "value",
+        "label": "Value for money",
+        "score": 4.6
+      },
+      {
+        "id": "experience",
+        "label": "Experience",
+        "score": 4.8
+      },
+      {
+        "id": "organisation",
+        "label": "Organisation",
+        "score": 4.7
+      },
+      {
+        "id": "access",
+        "label": "Ease of access",
+        "score": 4.5
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Loved it",
+        "text": "Our family enjoyed every minute. Wear comfortable shoes and bring water.",
+        "id": "8-Amara O.",
+        "score": 4.6
+      },
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would do it again",
+        "text": "A memorable day out. It was a little crowded, but the experience made up for it.",
+        "id": "8-Lukas M.",
+        "score": 4.7
+      },
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Worth it",
+        "text": "Well organised from start to finish. The ticket was easy to use and there was plenty of time to look around.",
+        "id": "8-Priya S.",
+        "score": 4.8
+      },
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "A highlight of our trip",
+        "text": "Better than we expected. Go early if you can, because it gets busier later in the day.",
+        "id": "8-Sofia R.",
+        "score": 4.6
+      },
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Clear instructions and friendly staff. We were glad we booked ahead instead of queuing.",
+        "id": "8-Daniel K.",
+        "score": 4.7
+      }
+    ],
+    "policies": [
+      {
+        "id": "ticket",
+        "title": "Your ticket",
+        "description": "Show your mobile ticket at the entrance. Printing is not needed.",
+        "iconName": "ticket"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "This ticket cannot be cancelled or changed after booking.",
+        "iconName": "ban"
+      },
+      {
+        "id": "id",
+        "title": "What to bring",
+        "description": "Bring a photo ID, comfortable shoes and water.",
+        "iconName": "id-card"
+      },
+      {
+        "id": "access",
+        "title": "Accessibility",
+        "description": "Access varies by area. Contact support before you visit if you need help.",
+        "iconName": "wheelchair"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Tromso centre",
+        "distance": "1.8 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest public transport",
+        "distance": "600 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "36 km",
+        "iconName": "plane"
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "slug": "giza-pyramids",
+    "name": "Pyramids of Giza",
+    "city": "Cairo",
+    "country": "Egypt",
+    "category": "landmarks",
+    "imageUrl": "https://images.unsplash.com/photo-1553913861-c0fddf2619ee?auto=format&fit=crop&w=800&q=75",
+    "rating": 4.7,
+    "reviewCount": 7760,
+    "duration": "Half day",
+    "price": 48,
+    "currency": "USD",
+    "freeCancellation": true,
+    "description": "Pyramids of Giza is one of the sights that defines a trip here. Take your time, learn the story behind it and enjoy the views. Plan for a half day to enjoy it properly.",
+    "highlights": [
+      "See an iconic landmark up close",
+      "Learn the story with clear visitor information",
+      "Great photo spots"
+    ],
+    "address": "Cairo, Egypt",
+    "tickets": [
+      {
+        "id": "standard",
+        "name": "Standard ticket",
+        "description": "Entry for your chosen date.",
+        "includes": [
+          "Entry ticket",
+          "Mobile ticket"
+        ],
+        "adultPrice": 48,
+        "childPrice": 29
+      },
+      {
+        "id": "guided",
+        "name": "Guided experience",
+        "description": "Join a small group with a local guide.",
+        "includes": [
+          "Entry ticket",
+          "Local guide",
+          "Small group"
+        ],
+        "adultPrice": 77,
+        "childPrice": 46
+      },
+      {
+        "id": "private",
+        "name": "Private experience",
+        "description": "Just your group, at your pace.",
+        "includes": [
+          "Entry ticket",
+          "Private guide",
+          "Flexible start time"
+        ],
+        "adultPrice": 134,
+        "childPrice": 80
+      }
+    ],
+    "reviewScores": [
+      {
+        "id": "value",
+        "label": "Value for money",
+        "score": 4.6
+      },
+      {
+        "id": "experience",
+        "label": "Experience",
+        "score": 4.8
+      },
+      {
+        "id": "organisation",
+        "label": "Organisation",
+        "score": 4.7
+      },
+      {
+        "id": "access",
+        "label": "Ease of access",
+        "score": 4.5
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would do it again",
+        "text": "A memorable day out. It was a little crowded, but the experience made up for it.",
+        "id": "9-Amara O.",
+        "score": 4.6
+      },
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Worth it",
+        "text": "Well organised from start to finish. The ticket was easy to use and there was plenty of time to look around.",
+        "id": "9-Lukas M.",
+        "score": 4.7
+      },
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "A highlight of our trip",
+        "text": "Better than we expected. Go early if you can, because it gets busier later in the day.",
+        "id": "9-Priya S.",
+        "score": 4.8
+      },
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Clear instructions and friendly staff. We were glad we booked ahead instead of queuing.",
+        "id": "9-Sofia R.",
+        "score": 4.6
+      },
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Loved it",
+        "text": "Our family enjoyed every minute. Wear comfortable shoes and bring water.",
+        "id": "9-Daniel K.",
+        "score": 4.7
+      }
+    ],
+    "policies": [
+      {
+        "id": "ticket",
+        "title": "Your ticket",
+        "description": "Show your mobile ticket at the entrance. Printing is not needed.",
+        "iconName": "ticket"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "Free cancellation up to 24 hours before your visit.",
+        "iconName": "ban"
+      },
+      {
+        "id": "id",
+        "title": "What to bring",
+        "description": "Bring a photo ID, comfortable shoes and water.",
+        "iconName": "id-card"
+      },
+      {
+        "id": "access",
+        "title": "Accessibility",
+        "description": "Access varies by area. Contact support before you visit if you need help.",
+        "iconName": "wheelchair"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Cairo centre",
+        "distance": "2.0 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest public transport",
+        "distance": "700 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "39 km",
+        "iconName": "plane"
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "slug": "alpine-lake",
+    "name": "Alpine lake boat trip",
+    "city": "The Alps",
+    "country": "Italy",
+    "category": "nature",
+    "imageUrl": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=800&q=75",
+    "rating": 4.6,
+    "reviewCount": 1120,
+    "duration": "2 hours",
+    "price": 36,
+    "currency": "USD",
+    "freeCancellation": true,
+    "description": "Alpine lake boat trip is a chance to slow down and enjoy the landscape. Fresh air, big views and plenty of time to take it all in. Plan for about 2 hours to enjoy it properly.",
+    "highlights": [
+      "Beautiful natural scenery",
+      "Relaxed pace for all ages",
+      "Bring your camera"
+    ],
+    "address": "The Alps, Italy",
+    "tickets": [
+      {
+        "id": "standard",
+        "name": "Standard ticket",
+        "description": "Entry for your chosen date.",
+        "includes": [
+          "Entry ticket",
+          "Mobile ticket"
+        ],
+        "adultPrice": 36,
+        "childPrice": 22
+      },
+      {
+        "id": "guided",
+        "name": "Guided experience",
+        "description": "Join a small group with a local guide.",
+        "includes": [
+          "Entry ticket",
+          "Local guide",
+          "Small group"
+        ],
+        "adultPrice": 58,
+        "childPrice": 35
+      },
+      {
+        "id": "private",
+        "name": "Private experience",
+        "description": "Just your group, at your pace.",
+        "includes": [
+          "Entry ticket",
+          "Private guide",
+          "Flexible start time"
+        ],
+        "adultPrice": 101,
+        "childPrice": 61
+      }
+    ],
+    "reviewScores": [
+      {
+        "id": "value",
+        "label": "Value for money",
+        "score": 4.5
+      },
+      {
+        "id": "experience",
+        "label": "Experience",
+        "score": 4.7
+      },
+      {
+        "id": "organisation",
+        "label": "Organisation",
+        "score": 4.6
+      },
+      {
+        "id": "access",
+        "label": "Ease of access",
+        "score": 4.4
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Worth it",
+        "text": "Well organised from start to finish. The ticket was easy to use and there was plenty of time to look around.",
+        "id": "10-Amara O.",
+        "score": 4.5
+      },
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "A highlight of our trip",
+        "text": "Better than we expected. Go early if you can, because it gets busier later in the day.",
+        "id": "10-Lukas M.",
+        "score": 4.6
+      },
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Clear instructions and friendly staff. We were glad we booked ahead instead of queuing.",
+        "id": "10-Priya S.",
+        "score": 4.7
+      },
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Loved it",
+        "text": "Our family enjoyed every minute. Wear comfortable shoes and bring water.",
+        "id": "10-Sofia R.",
+        "score": 4.5
+      },
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would do it again",
+        "text": "A memorable day out. It was a little crowded, but the experience made up for it.",
+        "id": "10-Daniel K.",
+        "score": 4.6
+      }
+    ],
+    "policies": [
+      {
+        "id": "ticket",
+        "title": "Your ticket",
+        "description": "Show your mobile ticket at the entrance. Printing is not needed.",
+        "iconName": "ticket"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "Free cancellation up to 24 hours before your visit.",
+        "iconName": "ban"
+      },
+      {
+        "id": "id",
+        "title": "What to bring",
+        "description": "Bring a photo ID, comfortable shoes and water.",
+        "iconName": "id-card"
+      },
+      {
+        "id": "access",
+        "title": "Accessibility",
+        "description": "Access varies by area. Contact support before you visit if you need help.",
+        "iconName": "wheelchair"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "The Alps centre",
+        "distance": "3.1 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest public transport",
+        "distance": "300 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "42 km",
+        "iconName": "plane"
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "slug": "table-mountain",
+    "name": "Table Mountain views",
+    "city": "Cape Town",
+    "country": "South Africa",
+    "category": "nature",
+    "imageUrl": "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=800&q=75",
+    "rating": 4.8,
+    "reviewCount": 5410,
+    "duration": "3 hours",
+    "price": 29,
+    "currency": "USD",
+    "freeCancellation": true,
+    "description": "Table Mountain views is a chance to slow down and enjoy the landscape. Fresh air, big views and plenty of time to take it all in. Plan for about 3 hours to enjoy it properly.",
+    "highlights": [
+      "Beautiful natural scenery",
+      "Relaxed pace for all ages",
+      "Bring your camera"
+    ],
+    "address": "Cape Town, South Africa",
+    "tickets": [
+      {
+        "id": "standard",
+        "name": "Standard ticket",
+        "description": "Entry for your chosen date.",
+        "includes": [
+          "Entry ticket",
+          "Mobile ticket"
+        ],
+        "adultPrice": 29,
+        "childPrice": 17
+      },
+      {
+        "id": "guided",
+        "name": "Guided experience",
+        "description": "Join a small group with a local guide.",
+        "includes": [
+          "Entry ticket",
+          "Local guide",
+          "Small group"
+        ],
+        "adultPrice": 46,
+        "childPrice": 28
+      },
+      {
+        "id": "private",
+        "name": "Private experience",
+        "description": "Just your group, at your pace.",
+        "includes": [
+          "Entry ticket",
+          "Private guide",
+          "Flexible start time"
+        ],
+        "adultPrice": 81,
+        "childPrice": 49
+      }
+    ],
+    "reviewScores": [
+      {
+        "id": "value",
+        "label": "Value for money",
+        "score": 4.7
+      },
+      {
+        "id": "experience",
+        "label": "Experience",
+        "score": 4.9
+      },
+      {
+        "id": "organisation",
+        "label": "Organisation",
+        "score": 4.8
+      },
+      {
+        "id": "access",
+        "label": "Ease of access",
+        "score": 4.6
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "A highlight of our trip",
+        "text": "Better than we expected. Go early if you can, because it gets busier later in the day.",
+        "id": "11-Amara O.",
+        "score": 4.7
+      },
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Clear instructions and friendly staff. We were glad we booked ahead instead of queuing.",
+        "id": "11-Lukas M.",
+        "score": 4.8
+      },
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Loved it",
+        "text": "Our family enjoyed every minute. Wear comfortable shoes and bring water.",
+        "id": "11-Priya S.",
+        "score": 4.9
+      },
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would do it again",
+        "text": "A memorable day out. It was a little crowded, but the experience made up for it.",
+        "id": "11-Sofia R.",
+        "score": 4.7
+      },
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Worth it",
+        "text": "Well organised from start to finish. The ticket was easy to use and there was plenty of time to look around.",
+        "id": "11-Daniel K.",
+        "score": 4.8
+      }
+    ],
+    "policies": [
+      {
+        "id": "ticket",
+        "title": "Your ticket",
+        "description": "Show your mobile ticket at the entrance. Printing is not needed.",
+        "iconName": "ticket"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "Free cancellation up to 24 hours before your visit.",
+        "iconName": "ban"
+      },
+      {
+        "id": "id",
+        "title": "What to bring",
+        "description": "Bring a photo ID, comfortable shoes and water.",
+        "iconName": "id-card"
+      },
+      {
+        "id": "access",
+        "title": "Accessibility",
+        "description": "Access varies by area. Contact support before you visit if you need help.",
+        "iconName": "wheelchair"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Cape Town centre",
+        "distance": "4.2 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest public transport",
+        "distance": "400 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "45 km",
+        "iconName": "plane"
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "slug": "bali-temple",
+    "name": "Lakeside temple visit",
+    "city": "Bali",
+    "country": "Indonesia",
+    "category": "landmarks",
+    "imageUrl": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=75",
+    "rating": 4.6,
+    "reviewCount": 3320,
+    "duration": "Half day",
+    "price": 22,
+    "currency": "USD",
+    "freeCancellation": true,
+    "description": "Lakeside temple visit is one of the sights that defines a trip here. Take your time, learn the story behind it and enjoy the views. Plan for a half day to enjoy it properly.",
+    "highlights": [
+      "See an iconic landmark up close",
+      "Learn the story with clear visitor information",
+      "Great photo spots"
+    ],
+    "address": "Bali, Indonesia",
+    "tickets": [
+      {
+        "id": "standard",
+        "name": "Standard ticket",
+        "description": "Entry for your chosen date.",
+        "includes": [
+          "Entry ticket",
+          "Mobile ticket"
+        ],
+        "adultPrice": 22,
+        "childPrice": 13
+      },
+      {
+        "id": "guided",
+        "name": "Guided experience",
+        "description": "Join a small group with a local guide.",
+        "includes": [
+          "Entry ticket",
+          "Local guide",
+          "Small group"
+        ],
+        "adultPrice": 35,
+        "childPrice": 21
+      },
+      {
+        "id": "private",
+        "name": "Private experience",
+        "description": "Just your group, at your pace.",
+        "includes": [
+          "Entry ticket",
+          "Private guide",
+          "Flexible start time"
+        ],
+        "adultPrice": 62,
+        "childPrice": 37
+      }
+    ],
+    "reviewScores": [
+      {
+        "id": "value",
+        "label": "Value for money",
+        "score": 4.5
+      },
+      {
+        "id": "experience",
+        "label": "Experience",
+        "score": 4.7
+      },
+      {
+        "id": "organisation",
+        "label": "Organisation",
+        "score": 4.6
+      },
+      {
+        "id": "access",
+        "label": "Ease of access",
+        "score": 4.4
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Clear instructions and friendly staff. We were glad we booked ahead instead of queuing.",
+        "id": "12-Amara O.",
+        "score": 4.5
+      },
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Loved it",
+        "text": "Our family enjoyed every minute. Wear comfortable shoes and bring water.",
+        "id": "12-Lukas M.",
+        "score": 4.6
+      },
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would do it again",
+        "text": "A memorable day out. It was a little crowded, but the experience made up for it.",
+        "id": "12-Priya S.",
+        "score": 4.7
+      },
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Worth it",
+        "text": "Well organised from start to finish. The ticket was easy to use and there was plenty of time to look around.",
+        "id": "12-Sofia R.",
+        "score": 4.5
+      },
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "A highlight of our trip",
+        "text": "Better than we expected. Go early if you can, because it gets busier later in the day.",
+        "id": "12-Daniel K.",
+        "score": 4.6
+      }
+    ],
+    "policies": [
+      {
+        "id": "ticket",
+        "title": "Your ticket",
+        "description": "Show your mobile ticket at the entrance. Printing is not needed.",
+        "iconName": "ticket"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "Free cancellation up to 24 hours before your visit.",
+        "iconName": "ban"
+      },
+      {
+        "id": "id",
+        "title": "What to bring",
+        "description": "Bring a photo ID, comfortable shoes and water.",
+        "iconName": "id-card"
+      },
+      {
+        "id": "access",
+        "title": "Accessibility",
+        "description": "Access varies by area. Contact support before you visit if you need help.",
+        "iconName": "wheelchair"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Bali centre",
+        "distance": "1.3 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest public transport",
+        "distance": "500 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "48 km",
+        "iconName": "plane"
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "slug": "santorini-sunset",
+    "name": "Santorini sunset walk",
+    "city": "Santorini",
+    "country": "Greece",
+    "category": "city",
+    "imageUrl": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=75",
+    "rating": 4.8,
+    "reviewCount": 2640,
+    "duration": "3 hours",
+    "price": 42,
+    "currency": "USD",
+    "freeCancellation": true,
+    "description": "Santorini sunset walk is a great way to get to know the city, its streets and its everyday life, with time to stop along the way. Plan for about 3 hours to enjoy it properly.",
+    "highlights": [
+      "See the city from a local angle",
+      "Easy to fit into your day",
+      "Plenty of photo stops"
+    ],
+    "address": "Santorini, Greece",
+    "tickets": [
+      {
+        "id": "standard",
+        "name": "Standard ticket",
+        "description": "Entry for your chosen date.",
+        "includes": [
+          "Entry ticket",
+          "Mobile ticket"
+        ],
+        "adultPrice": 42,
+        "childPrice": 25
+      },
+      {
+        "id": "guided",
+        "name": "Guided experience",
+        "description": "Join a small group with a local guide.",
+        "includes": [
+          "Entry ticket",
+          "Local guide",
+          "Small group"
+        ],
+        "adultPrice": 67,
+        "childPrice": 40
+      },
+      {
+        "id": "private",
+        "name": "Private experience",
+        "description": "Just your group, at your pace.",
+        "includes": [
+          "Entry ticket",
+          "Private guide",
+          "Flexible start time"
+        ],
+        "adultPrice": 118,
+        "childPrice": 71
+      }
+    ],
+    "reviewScores": [
+      {
+        "id": "value",
+        "label": "Value for money",
+        "score": 4.7
+      },
+      {
+        "id": "experience",
+        "label": "Experience",
+        "score": 4.9
+      },
+      {
+        "id": "organisation",
+        "label": "Organisation",
+        "score": 4.8
+      },
+      {
+        "id": "access",
+        "label": "Ease of access",
+        "score": 4.6
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Loved it",
+        "text": "Our family enjoyed every minute. Wear comfortable shoes and bring water.",
+        "id": "13-Amara O.",
+        "score": 4.7
+      },
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would do it again",
+        "text": "A memorable day out. It was a little crowded, but the experience made up for it.",
+        "id": "13-Lukas M.",
+        "score": 4.8
+      },
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Worth it",
+        "text": "Well organised from start to finish. The ticket was easy to use and there was plenty of time to look around.",
+        "id": "13-Priya S.",
+        "score": 4.9
+      },
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "A highlight of our trip",
+        "text": "Better than we expected. Go early if you can, because it gets busier later in the day.",
+        "id": "13-Sofia R.",
+        "score": 4.7
+      },
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Clear instructions and friendly staff. We were glad we booked ahead instead of queuing.",
+        "id": "13-Daniel K.",
+        "score": 4.8
+      }
+    ],
+    "policies": [
+      {
+        "id": "ticket",
+        "title": "Your ticket",
+        "description": "Show your mobile ticket at the entrance. Printing is not needed.",
+        "iconName": "ticket"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "Free cancellation up to 24 hours before your visit.",
+        "iconName": "ban"
+      },
+      {
+        "id": "id",
+        "title": "What to bring",
+        "description": "Bring a photo ID, comfortable shoes and water.",
+        "iconName": "id-card"
+      },
+      {
+        "id": "access",
+        "title": "Accessibility",
+        "description": "Access varies by area. Contact support before you visit if you need help.",
+        "iconName": "wheelchair"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Santorini centre",
+        "distance": "2.4 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest public transport",
+        "distance": "600 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "51 km",
+        "iconName": "plane"
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "slug": "tokyo-night",
+    "name": "Tokyo after dark food tour",
+    "city": "Tokyo",
+    "country": "Japan",
+    "category": "city",
+    "imageUrl": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=75",
+    "rating": 4.9,
+    "reviewCount": 4120,
+    "duration": "4 hours",
+    "price": 75,
+    "currency": "USD",
+    "freeCancellation": true,
+    "description": "Tokyo after dark food tour is a great way to get to know the city, its streets and its everyday life, with time to stop along the way. Plan for about 4 hours to enjoy it properly.",
+    "highlights": [
+      "See the city from a local angle",
+      "Easy to fit into your day",
+      "Plenty of photo stops"
+    ],
+    "address": "Tokyo, Japan",
+    "tickets": [
+      {
+        "id": "standard",
+        "name": "Standard ticket",
+        "description": "Entry for your chosen date.",
+        "includes": [
+          "Entry ticket",
+          "Mobile ticket"
+        ],
+        "adultPrice": 75,
+        "childPrice": 45
+      },
+      {
+        "id": "guided",
+        "name": "Guided experience",
+        "description": "Join a small group with a local guide.",
+        "includes": [
+          "Entry ticket",
+          "Local guide",
+          "Small group"
+        ],
+        "adultPrice": 120,
+        "childPrice": 72
+      },
+      {
+        "id": "private",
+        "name": "Private experience",
+        "description": "Just your group, at your pace.",
+        "includes": [
+          "Entry ticket",
+          "Private guide",
+          "Flexible start time"
+        ],
+        "adultPrice": 210,
+        "childPrice": 126
+      }
+    ],
+    "reviewScores": [
+      {
+        "id": "value",
+        "label": "Value for money",
+        "score": 4.8
+      },
+      {
+        "id": "experience",
+        "label": "Experience",
+        "score": 5
+      },
+      {
+        "id": "organisation",
+        "label": "Organisation",
+        "score": 4.9
+      },
+      {
+        "id": "access",
+        "label": "Ease of access",
+        "score": 4.7
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would do it again",
+        "text": "A memorable day out. It was a little crowded, but the experience made up for it.",
+        "id": "14-Amara O.",
+        "score": 4.8
+      },
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Worth it",
+        "text": "Well organised from start to finish. The ticket was easy to use and there was plenty of time to look around.",
+        "id": "14-Lukas M.",
+        "score": 4.9
+      },
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "A highlight of our trip",
+        "text": "Better than we expected. Go early if you can, because it gets busier later in the day.",
+        "id": "14-Priya S.",
+        "score": 5
+      },
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Clear instructions and friendly staff. We were glad we booked ahead instead of queuing.",
+        "id": "14-Sofia R.",
+        "score": 4.8
+      },
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Loved it",
+        "text": "Our family enjoyed every minute. Wear comfortable shoes and bring water.",
+        "id": "14-Daniel K.",
+        "score": 4.9
+      }
+    ],
+    "policies": [
+      {
+        "id": "ticket",
+        "title": "Your ticket",
+        "description": "Show your mobile ticket at the entrance. Printing is not needed.",
+        "iconName": "ticket"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "Free cancellation up to 24 hours before your visit.",
+        "iconName": "ban"
+      },
+      {
+        "id": "id",
+        "title": "What to bring",
+        "description": "Bring a photo ID, comfortable shoes and water.",
+        "iconName": "id-card"
+      },
+      {
+        "id": "access",
+        "title": "Accessibility",
+        "description": "Access varies by area. Contact support before you visit if you need help.",
+        "iconName": "wheelchair"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Tokyo centre",
+        "distance": "3.5 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest public transport",
+        "distance": "700 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "54 km",
+        "iconName": "plane"
+      }
+    ]
+  },
+  {
+    "id": "15",
+    "slug": "dubai-skyline",
+    "name": "Dubai skyline tour",
+    "city": "Dubai",
+    "country": "United Arab Emirates",
+    "category": "city",
+    "imageUrl": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=75",
+    "rating": 4.5,
+    "reviewCount": 3890,
+    "duration": "4 hours",
+    "price": 58,
+    "currency": "USD",
+    "freeCancellation": false,
+    "description": "Dubai skyline tour is a great way to get to know the city, its streets and its everyday life, with time to stop along the way. Plan for about 4 hours to enjoy it properly.",
+    "highlights": [
+      "See the city from a local angle",
+      "Easy to fit into your day",
+      "Plenty of photo stops"
+    ],
+    "address": "Dubai, United Arab Emirates",
+    "tickets": [
+      {
+        "id": "standard",
+        "name": "Standard ticket",
+        "description": "Entry for your chosen date.",
+        "includes": [
+          "Entry ticket",
+          "Mobile ticket"
+        ],
+        "adultPrice": 58,
+        "childPrice": 35
+      },
+      {
+        "id": "guided",
+        "name": "Guided experience",
+        "description": "Join a small group with a local guide.",
+        "includes": [
+          "Entry ticket",
+          "Local guide",
+          "Small group"
+        ],
+        "adultPrice": 93,
+        "childPrice": 56
+      },
+      {
+        "id": "private",
+        "name": "Private experience",
+        "description": "Just your group, at your pace.",
+        "includes": [
+          "Entry ticket",
+          "Private guide",
+          "Flexible start time"
+        ],
+        "adultPrice": 162,
+        "childPrice": 97
+      }
+    ],
+    "reviewScores": [
+      {
+        "id": "value",
+        "label": "Value for money",
+        "score": 4.4
+      },
+      {
+        "id": "experience",
+        "label": "Experience",
+        "score": 4.6
+      },
+      {
+        "id": "organisation",
+        "label": "Organisation",
+        "score": 4.5
+      },
+      {
+        "id": "access",
+        "label": "Ease of access",
+        "score": 4.3
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Worth it",
+        "text": "Well organised from start to finish. The ticket was easy to use and there was plenty of time to look around.",
+        "id": "15-Amara O.",
+        "score": 4.4
+      },
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "A highlight of our trip",
+        "text": "Better than we expected. Go early if you can, because it gets busier later in the day.",
+        "id": "15-Lukas M.",
+        "score": 4.5
+      },
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Clear instructions and friendly staff. We were glad we booked ahead instead of queuing.",
+        "id": "15-Priya S.",
+        "score": 4.6
+      },
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Loved it",
+        "text": "Our family enjoyed every minute. Wear comfortable shoes and bring water.",
+        "id": "15-Sofia R.",
+        "score": 4.4
+      },
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would do it again",
+        "text": "A memorable day out. It was a little crowded, but the experience made up for it.",
+        "id": "15-Daniel K.",
+        "score": 4.5
+      }
+    ],
+    "policies": [
+      {
+        "id": "ticket",
+        "title": "Your ticket",
+        "description": "Show your mobile ticket at the entrance. Printing is not needed.",
+        "iconName": "ticket"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "This ticket cannot be cancelled or changed after booking.",
+        "iconName": "ban"
+      },
+      {
+        "id": "id",
+        "title": "What to bring",
+        "description": "Bring a photo ID, comfortable shoes and water.",
+        "iconName": "id-card"
+      },
+      {
+        "id": "access",
+        "title": "Accessibility",
+        "description": "Access varies by area. Contact support before you visit if you need help.",
+        "iconName": "wheelchair"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Dubai centre",
+        "distance": "4.6 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest public transport",
+        "distance": "300 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "57 km",
+        "iconName": "plane"
+      }
+    ]
+  },
+  {
+    "id": "16",
+    "slug": "sydney-harbour",
+    "name": "Sydney harbour cruise",
+    "city": "Sydney",
+    "country": "Australia",
+    "category": "city",
+    "imageUrl": "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=800&q=75",
+    "rating": 4.7,
+    "reviewCount": 2210,
+    "duration": "2 hours",
+    "price": 54,
+    "currency": "USD",
+    "freeCancellation": true,
+    "description": "Sydney harbour cruise is a great way to get to know the city, its streets and its everyday life, with time to stop along the way. Plan for about 2 hours to enjoy it properly.",
+    "highlights": [
+      "See the city from a local angle",
+      "Easy to fit into your day",
+      "Plenty of photo stops"
+    ],
+    "address": "Sydney, Australia",
+    "tickets": [
+      {
+        "id": "standard",
+        "name": "Standard ticket",
+        "description": "Entry for your chosen date.",
+        "includes": [
+          "Entry ticket",
+          "Mobile ticket"
+        ],
+        "adultPrice": 54,
+        "childPrice": 32
+      },
+      {
+        "id": "guided",
+        "name": "Guided experience",
+        "description": "Join a small group with a local guide.",
+        "includes": [
+          "Entry ticket",
+          "Local guide",
+          "Small group"
+        ],
+        "adultPrice": 86,
+        "childPrice": 52
+      },
+      {
+        "id": "private",
+        "name": "Private experience",
+        "description": "Just your group, at your pace.",
+        "includes": [
+          "Entry ticket",
+          "Private guide",
+          "Flexible start time"
+        ],
+        "adultPrice": 151,
+        "childPrice": 91
+      }
+    ],
+    "reviewScores": [
+      {
+        "id": "value",
+        "label": "Value for money",
+        "score": 4.6
+      },
+      {
+        "id": "experience",
+        "label": "Experience",
+        "score": 4.8
+      },
+      {
+        "id": "organisation",
+        "label": "Organisation",
+        "score": 4.7
+      },
+      {
+        "id": "access",
+        "label": "Ease of access",
+        "score": 4.5
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Lukas M.",
+        "country": "Germany",
+        "stayDate": "September 2026",
+        "title": "A highlight of our trip",
+        "text": "Better than we expected. Go early if you can, because it gets busier later in the day.",
+        "id": "16-Amara O.",
+        "score": 4.6
+      },
+      {
+        "author": "Priya S.",
+        "country": "India",
+        "stayDate": "August 2026",
+        "title": "Good value",
+        "text": "Clear instructions and friendly staff. We were glad we booked ahead instead of queuing.",
+        "id": "16-Lukas M.",
+        "score": 4.7
+      },
+      {
+        "author": "Sofia R.",
+        "country": "Brazil",
+        "stayDate": "July 2026",
+        "title": "Loved it",
+        "text": "Our family enjoyed every minute. Wear comfortable shoes and bring water.",
+        "id": "16-Priya S.",
+        "score": 4.8
+      },
+      {
+        "author": "Daniel K.",
+        "country": "Kenya",
+        "stayDate": "June 2026",
+        "title": "Would do it again",
+        "text": "A memorable day out. It was a little crowded, but the experience made up for it.",
+        "id": "16-Sofia R.",
+        "score": 4.6
+      },
+      {
+        "author": "Amara O.",
+        "country": "Nigeria",
+        "stayDate": "October 2026",
+        "title": "Worth it",
+        "text": "Well organised from start to finish. The ticket was easy to use and there was plenty of time to look around.",
+        "id": "16-Daniel K.",
+        "score": 4.7
+      }
+    ],
+    "policies": [
+      {
+        "id": "ticket",
+        "title": "Your ticket",
+        "description": "Show your mobile ticket at the entrance. Printing is not needed.",
+        "iconName": "ticket"
+      },
+      {
+        "id": "cancellation",
+        "title": "Cancellation",
+        "description": "Free cancellation up to 24 hours before your visit.",
+        "iconName": "ban"
+      },
+      {
+        "id": "id",
+        "title": "What to bring",
+        "description": "Bring a photo ID, comfortable shoes and water.",
+        "iconName": "id-card"
+      },
+      {
+        "id": "access",
+        "title": "Accessibility",
+        "description": "Access varies by area. Contact support before you visit if you need help.",
+        "iconName": "wheelchair"
+      }
+    ],
+    "nearby": [
+      {
+        "id": "centre",
+        "name": "Sydney centre",
+        "distance": "1.7 km",
+        "iconName": "building"
+      },
+      {
+        "id": "station",
+        "name": "Nearest public transport",
+        "distance": "400 m",
+        "iconName": "train"
+      },
+      {
+        "id": "airport",
+        "name": "International airport",
+        "distance": "60 km",
+        "iconName": "plane"
+      }
+    ]
+  }
+]

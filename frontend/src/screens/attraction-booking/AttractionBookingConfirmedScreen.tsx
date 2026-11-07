@@ -24,7 +24,7 @@ const AttractionBookingConfirmedContent = async ({ params, searchParams }: Attra
 
   return (
     <>
-      <BookingSteps current={2} />
+      <BookingSteps current={3} />
 
       <div className="mt-6 grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
         <section className="rounded-card border border-line p-6">
@@ -45,7 +45,7 @@ const AttractionBookingConfirmedContent = async ({ params, searchParams }: Attra
 
           <div className="mt-6 flex flex-wrap gap-3">
             <ButtonLink href="/attractions">Find more things to do</ButtonLink>
-            <ButtonLink href={`/hotels?destination=${encodeURIComponent(attraction.city)}`} variant="outline">
+            <ButtonLink href={`/hotels/list?destination=${encodeURIComponent(attraction.city)}`} variant="outline">
               Find a hotel in {attraction.city}
             </ButtonLink>
           </div>

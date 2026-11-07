@@ -1,9 +1,10 @@
 import { AppShell } from "@/components";
+import AccountNav from "../account/AccountNav";
 import NotFoundContent from "./NotFoundContent";
 
 const NotFoundScreen = () => {
   return (
-    <AppShell>
+    <AppShell account={<AccountNav />}>
       <NotFoundContent />
     </AppShell>
   );

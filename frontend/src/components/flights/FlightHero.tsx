@@ -18,7 +18,7 @@ const FlightHero = ({ hero, quickLinks, search, airports }: FlightHeroProps) => 
       <div className="absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/25 to-ink/10" />
 
       <div className="relative mx-auto max-w-content">
-        <h1 className="text-3xl font-bold sm:text-4xl">
+        <h1 className="type-title font-bold">
           {hero.title}
           <span className="text-accent">.</span>
         </h1>
@@ -26,14 +26,14 @@ const FlightHero = ({ hero, quickLinks, search, airports }: FlightHeroProps) => 
         <FlightSearchForm initialValues={search} airports={airports} />
       </div>
 
-      <ul className="absolute top-32 right-6 hidden flex-col gap-3 2xl:flex">
+      <ul className="absolute top-44 right-3 hidden flex-col gap-2 xl:flex">
         {quickLinks.map((link) => (
           <li key={link.href}>
             <Link
               href={link.href}
               aria-label={link.label}
               title={link.label}
-              className="flex size-10 items-center justify-center rounded-md bg-surface text-primary-deep shadow-card transition-transform duration-200 hover:scale-105"
+              className="flex size-12 items-center justify-center rounded-md bg-surface text-primary-deep shadow-card transition-transform duration-200 hover:scale-105"
             >
               {link.iconName && <Icon name={link.iconName} />}
             </Link>

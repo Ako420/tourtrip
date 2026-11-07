@@ -11,12 +11,12 @@ type CarHeroProps = {
 
 const CarHero = ({ hero, search, locations, preselectedType }: CarHeroProps) => {
   return (
-    <section id="search" className="relative scroll-mt-0 bg-primary-deep px-4 pt-32 pb-16 text-white sm:pb-20 xl:pt-24">
+    <section id="search" className="relative scroll-mt-0 bg-primary-deep px-4 pt-32 pb-16 text-white sm:pb-24">
       <AppImage src={hero.imageUrl} alt="" fill priority sizes="100vw" className="object-cover" />
       <div className="absolute inset-0 bg-gradient-to-b from-ink/65 via-ink/30 to-ink/10" />
 
       <div className="relative mx-auto max-w-content">
-        <h1 className="mb-5 text-3xl font-bold sm:text-5xl">
+        <h1 className="mb-5 type-hero font-bold">
           {hero.title}
           <span className="text-accent">.</span>
         </h1>

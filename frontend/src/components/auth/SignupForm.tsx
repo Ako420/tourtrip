@@ -3,13 +3,20 @@
 import { signupAction } from "@/actions/auth";
 import { useZodForm } from "@/hooks";
 import { signupSchema } from "@/schemas";
+import TermsCheckbox from "../booking/TermsCheckbox";
 import Button from "../ui/Button";
 import FormField from "./FormField";
 import FormMessage from "./FormMessage";
 import PasswordField from "./PasswordField";
 
-const SignupForm = () => {
-  const { formProps, getError, isPending, message } = useZodForm(signupSchema, signupAction);
+type SignupFormProps = {
+  next: string;
+};
+
+const SignupForm = ({ next }: SignupFormProps) => {
+  const { formProps, getError, isPending, message } = useZodForm(signupSchema, (_state, values) =>
+    signupAction(next, values),
+  );
 
   return (
     <form {...formProps} className="flex flex-col gap-4">
@@ -23,6 +30,7 @@ const SignupForm = () => {
         autoComplete="new-password"
         error={getError("confirmPassword")}
       />
+      <TermsCheckbox error={getError("acceptTerms")} />
       <Button type="submit" size="lg" disabled={isPending} className="mt-2 disabled:opacity-60">
         {isPending ? "Creating account..." : "Create account"}
       </Button>

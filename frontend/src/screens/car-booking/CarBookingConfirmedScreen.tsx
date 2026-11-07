@@ -24,10 +24,10 @@ const CarBookingConfirmedContent = async ({ searchParams }: CarBookingConfirmedS
 
   return (
     <>
-      <BookingSteps current={2} />
+      <BookingSteps current={3} />
 
-      <div className="mt-6 grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
-        <section className="rounded-card border border-line p-6">
+      <div className="mt-4 grid items-start gap-4 lg:grid-cols-[minmax(0,1fr)_18.75rem]">
+        <section className="rounded-card bg-surface p-6">
           <span className="flex size-14 items-center justify-center rounded-full bg-primary-soft text-2xl text-success">
             <Icon name="check" />
           </span>
@@ -45,7 +45,7 @@ const CarBookingConfirmedContent = async ({ searchParams }: CarBookingConfirmedS
 
           <div className="mt-6 flex flex-wrap gap-3">
             <ButtonLink href="/cars">Back to cars</ButtonLink>
-            <ButtonLink href={`/hotels?destination=${encodeURIComponent(search.location ?? "")}`} variant="outline">
+            <ButtonLink href={`/hotels/list?destination=${encodeURIComponent(search.location ?? "")}`} variant="outline">
               Find a hotel in {search.location}
             </ButtonLink>
           </div>
@@ -59,10 +59,12 @@ const CarBookingConfirmedContent = async ({ searchParams }: CarBookingConfirmedS
 
 const CarBookingConfirmedScreen = ({ searchParams }: CarBookingConfirmedScreenProps) => {
   return (
-    <div className="mx-auto max-w-content pb-8">
-      <Suspense fallback={<FlightResultsSkeleton />}>
-        <CarBookingConfirmedContent searchParams={searchParams} />
-      </Suspense>
+    <div className="-mx-4 -my-4 bg-surface-alt px-4 py-4 lg:-mx-8 lg:-my-8 lg:px-8 lg:py-6">
+      <div className="mx-auto max-w-content pb-8">
+        <Suspense fallback={<FlightResultsSkeleton />}>
+          <CarBookingConfirmedContent searchParams={searchParams} />
+        </Suspense>
+      </div>
     </div>
   );
 };

@@ -1,5 +1,8 @@
 export const ATTRACTIONS_PAGE_SIZE = 8;
 
+// The API rejects a longer search, so text typed into the address is limited first.
+export const ATTRACTION_QUERY_LENGTH = 100;
+
 export const attractionCategories = [
   { id: "all", label: "All", iconName: "compass" },
   { id: "landmarks", label: "Landmarks", iconName: "landmark" },

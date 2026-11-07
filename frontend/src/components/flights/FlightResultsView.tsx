@@ -38,80 +38,85 @@ const FlightResultsView = ({ search, filters, result }: FlightResultsViewProps) 
   };
 
   return (
-    <div className="mt-6 grid gap-6 lg:grid-cols-[17rem_minmax(0,1fr)]">
-      <aside
-        aria-label="Filters"
-        className={`fixed inset-0 z-50 overflow-y-auto bg-surface p-4 lg:static lg:z-auto lg:block lg:overflow-visible lg:p-0 ${
-          isPanelOpen ? "block" : "hidden"
-        }`}
-      >
-        <div className="mb-4 flex items-center justify-between">
-          <h2 className="font-bold">Filters</h2>
-          {clearButton}
-        </div>
-        <FlightFilterPanel
-          key={`${result.priceRange.max}-${filters.maxPrice}`}
-          filters={filters}
-          result={result}
-          onChange={updateFilters}
-        />
-        <Button type="button" onClick={() => setIsPanelOpen(false)} className="sticky bottom-0 mt-4 w-full lg:hidden">
-          Show {formatCount(result.total, "flight")}
-        </Button>
-      </aside>
-
-      <div className="min-w-0">
+    <>
+      <div className="mt-4">
         <DateStrip
           days={result.fareCalendar}
           selectedDate={search.departDate}
           currency={result.currency}
           onSelect={handleDateSelect}
         />
+      </div>
 
-        <div className="mt-4 mb-3 flex items-center justify-between gap-3">
-          <h1 className="text-xl font-bold" aria-live="polite">
-            {search.from} to {search.to}
-            <span className="ml-2 text-sm font-normal text-muted">{formatCount(result.total, "flight")}</span>
-          </h1>
-          <button
-            type="button"
-            onClick={() => setIsPanelOpen(true)}
-            className="flex h-10 shrink-0 items-center gap-2 rounded-md border border-line px-3 text-sm font-medium lg:hidden"
-          >
-            <Icon name="filter" />
-            Filters{activeCount > 0 && ` (${activeCount})`}
-          </button>
-        </div>
+      <div className="mt-6 grid gap-6 lg:grid-cols-[17.3rem_minmax(0,1fr)]">
+        <aside
+          aria-label="Filters"
+          className={`fixed inset-0 z-50 overflow-y-auto bg-surface p-4 lg:static lg:z-auto lg:block lg:overflow-visible lg:bg-transparent lg:p-0 ${
+            isPanelOpen ? "block" : "hidden"
+          }`}
+        >
+          {clearButton && <div className="mb-2 flex justify-end">{clearButton}</div>}
+          <h2 className="mb-4 font-bold lg:hidden">Filters</h2>
+          <FlightFilterPanel
+            key={`${result.priceRange.max}-${filters.maxPrice}`}
+            filters={filters}
+            result={result}
+            onChange={updateFilters}
+          />
+          <Button type="button" onClick={() => setIsPanelOpen(false)} className="sticky bottom-0 mt-4 w-full lg:hidden">
+            Show {formatCount(result.total, "flight")}
+          </Button>
+        </aside>
 
-        <FlightSortTabs
-          value={filters.sort}
-          summary={result.sortSummary}
-          onChange={(sort) => updateFilters({ sort })}
-        />
+        <div className="min-w-0">
+          <div className="flex items-center justify-between gap-3 rounded-t-card bg-primary-deep px-4 py-4 text-white">
+            <h1 className="font-bold" aria-live="polite">
+              {search.from} to {search.to}
+            </h1>
+            <div className="flex shrink-0 items-center gap-3 text-sm">
+              {formatCount(result.total, "flight")} found
+              <button
+                type="button"
+                onClick={() => setIsPanelOpen(true)}
+                className="flex h-9 items-center gap-2 rounded-md border border-white/40 px-3 font-medium lg:hidden"
+              >
+                <Icon name="filter" />
+                Filters{activeCount > 0 && ` (${activeCount})`}
+              </button>
+            </div>
+          </div>
 
-        <div className={`mt-4 transition-opacity duration-200 ${isPending ? "opacity-50" : ""}`}>
-          {result.items.length > 0 ? (
-            <ul className="flex flex-col gap-4">
-              {result.items.map((offer) => (
-                <li key={offer.id}>
-                  <FlightOfferCard
-                    offer={offer}
-                    bookHref={`/flights/book?${toFlightQuery(search)}&offer=${offer.id}`}
-                    travelers={travelers}
-                  />
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <StatusMessage iconName="plane" title="No flights found" description="Try removing a filter or changing your dates.">
-              {clearButton}
-            </StatusMessage>
-          )}
+          <FlightSortTabs
+            value={filters.sort}
+            summary={result.sortSummary}
+            currency={result.currency}
+            onChange={(sort) => updateFilters({ sort })}
+          />
 
-          <Pagination page={result.page} pageCount={result.pageCount} onChange={goToPage} />
+          <div className={`mt-1 transition-opacity duration-200 ${isPending ? "opacity-50" : ""}`}>
+            {result.items.length > 0 ? (
+              <ul className="flex flex-col gap-1">
+                {result.items.map((offer) => (
+                  <li key={offer.id}>
+                    <FlightOfferCard
+                      offer={offer}
+                      bookHref={`/flights/book?${toFlightQuery(search)}&offer=${offer.id}`}
+                      travelers={travelers}
+                    />
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <StatusMessage iconName="plane" title="No flights found" description="Try removing a filter or changing your dates.">
+                {clearButton}
+              </StatusMessage>
+            )}
+
+            <Pagination page={result.page} pageCount={result.pageCount} onChange={goToPage} />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

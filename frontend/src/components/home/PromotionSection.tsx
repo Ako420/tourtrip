@@ -13,7 +13,7 @@ const PromotionSection = ({ section }: PromotionSectionProps) => {
     <section className="mx-auto mt-12 max-w-content">
       <SectionHeading>{section.title}</SectionHeading>
 
-      <Carousel label="offers" slideClassName="h-40 w-64 lg:w-[calc((100%-3rem)/4)]">
+      <Carousel label="offers" slideClassName="h-38 w-64 lg:w-[calc((100%-3rem)/4)]">
         <div className="flex h-full flex-col justify-between rounded-card border border-promo-soft bg-promo-soft/40 p-4">
           <p className="font-semibold">{section.intro.title}</p>
           <ButtonLink href={section.intro.ctaHref} size="sm" className="self-start">

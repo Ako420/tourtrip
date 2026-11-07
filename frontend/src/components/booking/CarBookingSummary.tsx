@@ -2,6 +2,7 @@ import { formatCount, formatPrice, formatShortDate, getRentalDays } from "@/lib"
 import type { CarOffer, CarSearch } from "@/types";
 import AppImage from "../ui/AppImage";
 import Icon from "../ui/Icon";
+import ChargeNotice from "./ChargeNotice";
 
 type CarBookingSummaryProps = {
   offer: CarOffer;
@@ -10,65 +11,70 @@ type CarBookingSummaryProps = {
 
 const CarBookingSummary = ({ offer, search }: CarBookingSummaryProps) => {
   const days = getRentalDays(search);
+  const total = formatPrice(offer.totalPrice, offer.currency);
+  const included = [
+    formatCount(offer.seats, "seat"),
+    formatCount(offer.bags, "bag"),
+    offer.transmission,
+    offer.hasUnlimitedMileage ? "Unlimited mileage" : "Limited mileage",
+  ];
 
   return (
-    <aside aria-label="Booking summary" className="overflow-hidden rounded-card border border-line lg:sticky lg:top-24">
-      <div className="relative aspect-[16/9] bg-surface-alt">
-        <AppImage src={offer.imageUrl} alt={offer.name} fill sizes="(min-width: 1024px) 22rem, 100vw" className="object-cover" />
+    <aside aria-label="Booking summary" className="flex flex-col gap-4">
+      <div className="overflow-hidden rounded-card bg-surface">
+        <div className="relative aspect-[16/9] bg-surface-alt">
+          <AppImage src={offer.imageUrl} alt={offer.name} fill sizes="(min-width: 1024px) 19rem, 100vw" className="object-cover" />
+        </div>
+
+        <div className="p-4 text-sm">
+          <h2 className="font-bold">{offer.name}</h2>
+          <p>{offer.categoryLabel}</p>
+          <p className="mt-3">
+            {formatShortDate(search.pickupDate ?? "")}, {search.pickupTime} - {formatShortDate(search.dropoffDate ?? "")},{" "}
+            {search.dropoffTime} · {formatCount(days, "day")}
+          </p>
+          <p className="mt-2">
+            {search.dropoffLocation
+              ? `Pick-up at ${search.location}, drop-off at ${search.dropoffLocation}`
+              : `Pick-up and drop-off at ${search.location}`}
+          </p>
+          <p className="mt-3 font-medium">{offer.supplier}</p>
+          {offer.freeCancellation && (
+            <p className="mt-2 flex items-center gap-2 text-success">
+              <Icon name="check" />
+              Free cancellation
+            </p>
+          )}
+        </div>
       </div>
 
-      <div className="p-4">
-        <p className="text-sm font-medium text-primary">{offer.categoryLabel}</p>
-        <h2 className="font-semibold">{offer.name}</h2>
-        <p className="text-sm text-muted">
-          {offer.supplier} · {offer.transmission}
+      <div className="rounded-card bg-surface p-4">
+        <h2 className="text-2xl font-bold">Price details</h2>
+        <p className="mt-3 flex items-baseline justify-between gap-4 font-bold">
+          <span className="text-lg">Pay at the counter</span>
+          <span className="text-lg text-primary">{total}</span>
         </p>
 
-        <dl className="mt-3 grid grid-cols-2 gap-2 border-t border-line pt-3 text-sm">
-          <div>
-            <dt className="text-xs text-muted">Pick-up</dt>
-            <dd className="font-medium">{search.location}</dd>
-            <dd className="text-muted">
-              {formatShortDate(search.pickupDate ?? "")}, {search.pickupTime}
-            </dd>
-          </div>
-          <div>
-            <dt className="text-xs text-muted">Drop-off</dt>
-            <dd className="font-medium">{search.dropoffLocation ?? search.location}</dd>
-            <dd className="text-muted">
-              {formatShortDate(search.dropoffDate ?? "")}, {search.dropoffTime}
-            </dd>
-          </div>
-        </dl>
-
-        <ul className="mt-3 flex flex-col gap-1 text-sm">
-          <li className="flex items-center gap-2 text-ink-soft">
-            <Icon name="users" />
-            {formatCount(offer.seats, "seat")}, {formatCount(offer.bags, "bag")}
-          </li>
-          <li className={offer.hasUnlimitedMileage ? "text-success" : "text-muted"}>
-            {offer.hasUnlimitedMileage ? "Unlimited mileage" : "Limited mileage"}
-          </li>
-          {offer.freeCancellation && <li className="text-success">Free cancellation</li>}
-          {!search.isStandardAge && <li className="text-ink-soft">Includes young or senior driver fee</li>}
-        </ul>
-
-        <dl className="mt-3 flex flex-col gap-1 border-t border-line pt-3 text-sm">
-          <div className="flex justify-between">
-            <dt className="text-muted">
-              {formatPrice(offer.pricePerDay, offer.currency)} x {formatCount(days, "day")}
-            </dt>
-            <dd>{formatPrice(offer.totalPrice, offer.currency)}</dd>
-          </div>
-          <div className="flex justify-between">
-            <dt className="text-muted">Taxes and fees</dt>
-            <dd>Included</dd>
-          </div>
-          <div className="mt-2 flex items-baseline justify-between border-t border-line pt-2">
-            <dt className="font-semibold">Total</dt>
-            <dd className="text-2xl font-bold text-primary">{formatPrice(offer.totalPrice, offer.currency)}</dd>
-          </div>
-        </dl>
+        <div className="mt-3 border-t border-line pt-3 text-sm">
+          <p className="flex justify-between gap-4 font-medium">
+            Car rental fee
+            <span>{total}</span>
+          </p>
+          <p className="text-ink-soft">
+            {formatPrice(offer.pricePerDay, offer.currency)} × {formatCount(days, "day")}
+          </p>
+          <ul className="mt-2 flex flex-col gap-1">
+            {included.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+            {!search.isStandardAge && <li>Young or senior driver fee</li>}
+          </ul>
+          <p className="mt-3 flex justify-between gap-4 border-t border-line pt-3 font-medium">
+            Taxes and fees
+            <span>Included</span>
+          </p>
+        </div>
+        <ChargeNotice />
       </div>
     </aside>
   );

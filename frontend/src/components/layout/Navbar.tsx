@@ -1,15 +1,34 @@
 import Form from "next/form";
 import Link from "next/link";
-import { authLinks, navbarLinks } from "@/constants";
-import ButtonLink from "../ui/ButtonLink";
+import type { ReactNode } from "react";
+import { navbarLeadLinks, navbarLinks } from "@/constants";
+import type { NavItem } from "@/types";
 import Icon from "../ui/Icon";
+import CurrencyMenu from "./CurrencyMenu";
 import Logo from "./Logo";
+import SignInButton from "./SignInButton";
 
 type NavbarProps = {
   onMenuClick?: () => void;
+  account?: ReactNode;
 };
 
-const Navbar = ({ onMenuClick }: NavbarProps) => {
+const NavbarLinks = ({ links }: { links: NavItem[] }) => {
+  return (
+    <ul className="hidden items-center gap-5 xl:flex">
+      {links.map((link) => (
+        <li key={link.href}>
+          <Link href={link.href} className="flex items-center gap-1.5 text-sm font-medium transition-colors duration-300 ease-out hover:text-primary">
+            {link.iconName && <Icon name={link.iconName} className="text-ink-soft" />}
+            {link.label}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+};
+
+const Navbar = ({ onMenuClick, account }: NavbarProps) => {
   return (
     <header className="sticky top-0 z-40 flex h-navbar items-center gap-4 border-b border-line bg-surface px-4 lg:px-5">
       {onMenuClick && (
@@ -25,7 +44,7 @@ const Navbar = ({ onMenuClick }: NavbarProps) => {
 
       <Logo />
 
-      <Form action="/hotels" role="search" className="ml-3 hidden h-9 w-72 md:flex">
+      <Form action="/hotels/list" role="search" className="ml-3 hidden h-9 w-75 md:flex">
         <input
           name="destination"
           placeholder="Destination or hotel"
@@ -42,19 +61,10 @@ const Navbar = ({ onMenuClick }: NavbarProps) => {
       </Form>
 
       <nav aria-label="Account" className="ml-auto flex items-center gap-5">
-        <ul className="hidden items-center gap-5 xl:flex">
-          {navbarLinks.map((link) => (
-            <li key={link.href}>
-              <Link href={link.href} className="flex items-center gap-1.5 text-sm font-medium transition-colors duration-300 ease-out hover:text-primary">
-                {link.iconName && <Icon name={link.iconName} className="text-ink-soft" />}
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <ButtonLink href={authLinks.login} size="sm">
-          Sign in/register
-        </ButtonLink>
+        <NavbarLinks links={navbarLeadLinks} />
+        <CurrencyMenu />
+        <NavbarLinks links={navbarLinks} />
+        {account ?? <SignInButton />}
       </nav>
     </header>
   );

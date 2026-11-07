@@ -1,0 +1,98 @@
+[
+  {
+    "id": "hotel-find",
+    "product": "hotels",
+    "question": "How do I find my hotel booking?",
+    "answer": "Open Find bookings and enter your booking reference with the email you booked with."
+  },
+  {
+    "id": "hotel-pay",
+    "product": "hotels",
+    "question": "When do I pay for my stay?",
+    "answer": "You pay at the property when you arrive. You are not charged when you book."
+  },
+  {
+    "id": "hotel-cancel",
+    "product": "hotels",
+    "question": "Can I cancel my room for free?",
+    "answer": "It depends on the room. The cancellation rules are shown before you confirm, and free cancellation is marked on rooms that have it."
+  },
+  {
+    "id": "hotel-requests",
+    "product": "hotels",
+    "question": "Can I ask for an early check-in?",
+    "answer": "Add it under special requests when you book. The property will try to help, but requests are not guaranteed."
+  },
+  {
+    "id": "flight-names",
+    "product": "flights",
+    "question": "How should I enter passenger names?",
+    "answer": "Enter each name exactly as it appears on the passenger's travel document."
+  },
+  {
+    "id": "flight-charge",
+    "product": "flights",
+    "question": "Will I be charged when I book a flight?",
+    "answer": "Online payment is not connected yet, so you will not be charged and no card details are needed."
+  },
+  {
+    "id": "flight-change",
+    "product": "flights",
+    "question": "Can I change or cancel my flight?",
+    "answer": "The rules for your booking are shown before you confirm it. If you need help with a flight you have booked, send us a message."
+  },
+  {
+    "id": "train-charge",
+    "product": "trains",
+    "question": "Will I be charged when I book a train ticket?",
+    "answer": "Online payment is not connected yet, so you will not be charged and no card details are needed."
+  },
+  {
+    "id": "train-find",
+    "product": "trains",
+    "question": "Where can I see my train booking?",
+    "answer": "Open Find bookings and enter your booking reference with the email you booked with."
+  },
+  {
+    "id": "car-name",
+    "product": "cars",
+    "question": "Whose name goes on a car booking?",
+    "answer": "Enter the main driver's name exactly as it appears on their driving license."
+  },
+  {
+    "id": "car-cancel",
+    "product": "cars",
+    "question": "How do I find a car with free cancellation?",
+    "answer": "Use the filters on the car results page to show cars with free cancellation."
+  },
+  {
+    "id": "attraction-charge",
+    "product": "attractions",
+    "question": "Will I be charged when I book tickets?",
+    "answer": "Online payment is not connected yet, so you will not be charged and no card details are needed."
+  },
+  {
+    "id": "attraction-cancel",
+    "product": "attractions",
+    "question": "Can I cancel my tickets?",
+    "answer": "It depends on the ticket. The cancellation rules are shown before you confirm your booking."
+  },
+  {
+    "id": "account-demo",
+    "product": "account",
+    "question": "Why can't I find a booking that starts with DEMO-?",
+    "answer": "Demo bookings are not saved, so they cannot be looked up."
+  },
+  {
+    "id": "account-password",
+    "product": "account",
+    "question": "I forgot my password. What can I do?",
+    "answer": "Password reset is not available yet. Send us a message from the email on your account."
+  },
+  {
+    "id": "account-details",
+    "product": "account",
+    "question": "How do I change my account details?",
+    "answer": "You can see your details on the My account page. Editing them online is not available yet, so send us a message with the change you need."
+  }
+]

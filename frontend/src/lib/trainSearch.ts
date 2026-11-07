@@ -42,6 +42,12 @@ export const parseTrainSearch = (params: RouteParams): TrainSearch => {
   };
 };
 
+export const toTrainRouteHref = (from: string, to?: string) => {
+  const query = new URLSearchParams({ from, ...(to && { to }), tripType: "one-way" });
+
+  return `/trains?${query}#search`;
+};
+
 export const parseTrainFilters = (params: RouteParams): TrainFilters => {
   const sort = getParam(params, "sort") as FlightSort;
   const page = Number.parseInt(getParam(params, "page") ?? "", 10);
